@@ -1,6 +1,4 @@
 name: Jekyll site CI
-  
-theme: jekyll-theme-modernist
 
 on:
   push:
