@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+# The Interesting Times - Jekyll Theme
 
-You can use the [editor on GitHub](https://github.com/Civ13/civ13.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+[Live Demo](https://alvaroduran.com/the-interesting-times) &nbsp; | &nbsp; [Download](https://github.com/ohduran/the-interesting-times/archive/master.zip) &nbsp; | &nbsp; [Support me on Patreon](https://patreon.com/alvaroduran)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![mediumish](assets/images/the-interesting-times.png)
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Copyright
 
-```markdown
-Syntax highlighted code block
+Copyright (C) 2019 Alvaro Duran, https://www.alvaroduran.com
 
-# Header 1
-## Header 2
-### Header 3
+**The Interesting Times theme for Jekyll** is designed and developed by [Alvaro](https://alvaroduran.com) and it is *free* under [MIT license](https://alvaroduran.mit-license.org/).
 
-- Bulleted
-- List
+<a href="https://patreon.com/alvaroduran" target="_blank">Support me on Patreon</a>
 
-1. Numbered
-2. List
+### Contribute
 
-**Bold** and _Italic_ and `Code` text
+1. [Fork the repo](https://github.com/ohduran/the-interesting-times).
+2. Clone a copy of your fork on your local
+3. Create a branch off of master and give it a meaningful name (e.g. my-new-feature).
+4. Make necessary changes, commit, push and open a pull request on GitHub.
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Civ13/civ13.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Thank you!
