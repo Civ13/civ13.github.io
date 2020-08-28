@@ -26,7 +26,7 @@ excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
-theme: the-interesting-times
+#theme: the-interesting-times
 plugins:
   - jekyll-feed
 
@@ -51,7 +51,7 @@ collections:
 
 
 # Social media
-twitter: twitter
-github: github
-linkedin: linkedin
-facebook: facebook
+# twitter: twitter
+github: civ13
+# linkedin: linkedin
+# facebook: facebook
