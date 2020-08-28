@@ -1,6 +1,6 @@
 ---
 layout: page
 title: "Civilization 13: Typespess"
-permalink: /root/
+permalink: /docs/
 ---
 Welcome!
