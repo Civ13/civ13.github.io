@@ -3,10 +3,9 @@ layout: post
 title:  "What is this?"
 author: H. G. Wells
 image: https://i.imgur.com/napac0L.png
+image_caption: Civ13 (formerly 1713) is a game based on Space Station 13 code, which features several epochs of human history. (hence the name). It features both RP and Combat maps and gamemodes.
 position: center
 ---
-
-Civ13 (formerly 1713) is a game based on Space Station 13 code, which features several epochs of human history. (hence the name). It features both RP and Combat maps and gamemodes.
 
 ## Playing the game
 You will need a windows machine or a virtual machine running it from another OS.
