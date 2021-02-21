@@ -231,6 +231,15 @@ a.sidebar-nav-item:focus {
   color: #6a9fb5;
 }
 
+/* Dark */
+.theme-base-dark .sidebar {
+  background-color: #2e505f;
+}
+.theme-base-dark .content a,
+.theme-base-dark .related-posts li a:hover {
+  color: #6a9fb5;
+}
+
 /* Magenta */
 .theme-base-0e .sidebar {
   background-color: #aa759f;
