@@ -59,7 +59,7 @@ html {
 
 body {
   color: #9b9b9b;
-  background-color: #202020;
+  background-color: #2e2e2e;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: bold;
   line-height: 1.25;
-  color: #313131;
+  color: #bbbbbb;
   text-rendering: optimizeLegibility;
 }
 h1 {
@@ -286,8 +286,6 @@ tbody tr:nth-child(odd) th {
 
 .container {
   max-width: 38rem;
-  padding-left:  1rem;
-  padding-right: 1rem;
   margin-left:  auto;
   margin-right: auto;
 }

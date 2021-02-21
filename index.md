@@ -1,8 +1,9 @@
 ---
 layout: default
-title: What's Civ 13?
-image: header.png
+title: Civilization 13
 ---
+
+![](https://i.imgur.com/napac0L.png)
 
 Civ13 is a game based on Space Station 13 code, which features several epochs of human history. (hence the name). It features both Roleplay-oriented and Team-Deathmatch modes, with the main one being Nomads, in which you need to bring your civilization from the Stone Age to the Modern Age.
 RP gamemodes, especially the Nomads maps, are focused on building and interacting with other players.
