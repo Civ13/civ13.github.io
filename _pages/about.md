@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: What's Civ 13?
 image: header.png
 ---

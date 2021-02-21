@@ -103,8 +103,6 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
-    jekyll-agency (1.0.7)
-      jekyll (~> 3.8)
     jekyll-avatar (0.7.0)
       jekyll (>= 3.0, < 5.0)
     jekyll-coffeescript (1.1.1)
@@ -262,9 +260,10 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-agency
-  jekyll-feed (~> 0.6)
-  jekyll-remote-theme
+  jekyll
+  jekyll-gist
+  jekyll-seo-tag
+  jekyll-sitemap
 
 BUNDLED WITH
    2.1.4
