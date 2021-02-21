@@ -1,0 +1,36 @@
+header:
+    title: Civilization 13
+    text: Civ13 is a game based on Space Station 13 code, which features several epochs of human history.
+    button: Tell Me More
+    image: header.png
+    buttonlink: "#about" # "#{section}" or "URL/page link"
+
+about:
+    title: "What is this?"
+    image: nomads.png
+    text: >-
+      Civ13 is a game based on Space Station 13 code, which features several epochs 
+      of human history. (hence the name). It features both Roleplay-oriented and Team-Deathmatch 
+      modes, with the main one being Nomads, in which you need to bring your civilization 
+      from the Stone Age to the Modern Age.
+
+      RP gamemodes, especially the Nomads maps, are focused on building and 
+      interacting with other players.
+
+      Nomads mode is a subtype of the Civilization 13 mode. In Nomads Mode, 
+      everyone spawns without any pre-determined factions, with only a knife and basic clothing.
+      You can stay factionless (a nomad), create your own or be invited to one. 
+      However, research points can only be collected if you have a faction.
+
+      Combat gamemodes have different maps from prehistory to modern times.
+    section: about
+
+typespess:
+    title: "Civilization 13: Typespess"
+    text: >-
+      Welcome! This is an attempt at remaking Civ13, a BYOND game, using TypeScript and Node.js.
+      This is loosely forked from the Bluespess engine, 
+      a JavaScript remake of the /tg/station codebase of SS13, also a BYOND game.
+    section: typespess
+
+# {{ site.data.sitetext.ex.ex | markdownify | default: example }}
