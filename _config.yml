@@ -8,7 +8,3 @@ baseurl:          /
 author:
   name:           'Civilization 13 Team'
   url:            https://github.com/civ13
-
-collections:
-  pages:
-    output: true
