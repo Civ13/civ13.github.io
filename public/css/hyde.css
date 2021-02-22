@@ -41,12 +41,6 @@ html {
   line-height: 1.5;
 }
 
-@media (min-width: 38em) {
-  html {
-    font-size: 20px;
-  }
-}
-
 @media (min-width: 48em) {
   html {
     font-size: 16px;
@@ -110,7 +104,7 @@ p {
 }
 
 strong {
-  color: #303030;
+  color: #ffffff;
 }
 
 
@@ -165,10 +159,19 @@ blockquote p:last-child {
 }
 
 img {
-  display: block;
   max-width: 100%;
   margin: 0 0 1rem;
   border-radius: 5px;
+  margin: 0 auto;
+}
+
+code {
+  padding: .25em .5em;
+  font-size: 85%;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fce5e7;
+  background-color: #94949481;
+  border-radius: 3px;
 }
 
 /* Tables */
@@ -272,7 +275,8 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title,
 .post-title a {
-  color: #303030;
+  color: #e7e7e7;
+  font-family: "Book Antiqua", serif;
 }
 .page-title,
 .post-title {
@@ -322,15 +326,17 @@ tbody tr:nth-child(odd) th {
   margin-top: 0;
   font-family: "Book Antiqua", serif;
   font-size: 3.25rem;
+  text-decoration: none;
 }
-
+.sidebar-about h1 a {
+  text-decoration: none;
+}
 /* Sidebar nav */
 .sidebar-nav {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .sidebar-nav-item {
   display: block;
-  line-height: 1.75;
 }
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
@@ -363,7 +369,7 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    4rem;
+  padding-top:    2rem;
   padding-bottom: 4rem;
 }
 

@@ -2,29 +2,15 @@
 layout: page
 title: TypeSpess
 ---
-# Civ13 TypeSpess
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/civ13/civ13-typespess/Node.js%20CI)](https://github.com/Civ13/civ13-typespess/actions) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=alert_status)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Civ13/civ13-typespess) [![License](https://img.shields.io/github/license/civ13/civ13-typespess?color=blue)](https://github.com/Civ13/civ13-typespess/blob/master/LICENSE)
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/civ13/civ13-typespess/Node.js%20CI)](https://github.com/Civ13/civ13-typespess/actions)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=alert_status)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Civ13/civ13-typespess)
-
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=security_rating)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=bugs)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=code_smells)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess)
-
-![GitHub top language](https://img.shields.io/github/languages/top/civ13/civ13-typespess)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=ncloc)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/civ13/civ13-typespess)
-![GitHub repo size](https://img.shields.io/github/repo-size/civ13/civ13-typespess)
-[![License](https://img.shields.io/github/license/civ13/civ13-typespess?color=blue)](https://github.com/Civ13/civ13-typespess/blob/master/LICENSE)
+![GitHub top language](https://img.shields.io/github/languages/top/civ13/civ13-typespess) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=ncloc)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/civ13/civ13-typespess) ![GitHub repo size](https://img.shields.io/github/repo-size/civ13/civ13-typespess)
 
 Welcome! This is an attempt at remaking Civ13, a [BYOND](http://www.byond.com/) game, using [TypeScript](https://www.typescriptlang.org/) and [Node.js](https://nodejs.org/). This is loosely forked from the [Bluespess](https://github.com/Bluespess) engine, a JavaScript remake of the [/tg/station codebase](https://github.com/tgstation/tgstation) of [SS13](http://www.byond.com/games/Exadv1/SpaceStation13), also a BYOND game.
 
-Check the original Civ13 here: https://github.com/civ13/civ13.
+Check the original Civ13 [here](https://github.com/civ13/civ13).
 
-**Please read the [Contribution Guide](.github/CONTRIBUTING.md) page if you're willing to help! All help is appreciated!**
+**Please read the [Contribution Guide](https://github.com/Civ13/civ13-typespess/blob/master/.github/CONTRIBUTING.md) page if you're willing to help! All help is appreciated!**
 
 ## Installing
 
