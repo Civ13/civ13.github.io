@@ -268,7 +268,7 @@ tbody tr:nth-child(odd) th {
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 /* Blog post or page title */
@@ -304,6 +304,11 @@ tbody tr:nth-child(odd) th {
   color: rgba(255, 255, 255, 0.8);
   background-color: #202020;
 }
+.sidebar-nav-item {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 @media (min-width: 48em) {
   .sidebar {
     position: fixed;
@@ -335,9 +340,7 @@ tbody tr:nth-child(odd) th {
 .sidebar-nav {
   margin-bottom: 0.5rem;
 }
-.sidebar-nav-item {
-  display: block;
-}
+
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
   text-decoration: underline;
@@ -345,22 +348,6 @@ a.sidebar-nav-item:focus {
 .sidebar-nav-item.active {
   font-weight: bold;
 }
-
-/* Sticky sidebar
- *
- * Add the `sidebar-sticky` class to the sidebar's container to affix it the
- * contents to the bottom of the sidebar in tablets and up.
- */
-
-@media (min-width: 48em) {
-  .sidebar-sticky {
-    right:  1rem;
-    bottom: 1rem;
-    left:   1rem;
-    top:    2rem;
-  }
-}
-
 
 /* Container
  *
@@ -370,21 +357,34 @@ a.sidebar-nav-item:focus {
 
 .content {
   padding-top:    2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  display: block;
 }
 
 @media (min-width: 48em) {
   .content {
     max-width: 38rem;
-    margin-left: 20rem;
-    margin-right: 2rem;
+    margin-left: 19.5rem;
+    margin-right: 1.5rem;
+  }
+  .sidebar-nav-item {
+    display: block;
+    border-style: none;
+  }
+  .sidebar-sticky {
+    right:  1rem;
+    bottom: 1rem;
+    left:   1rem;
+    top:    2rem;
   }
 }
 
 @media (min-width: 64em) {
   .content {
-    margin-left: 22rem;
-    margin-right: 4rem;
+    max-width: 54rem;
+    margin-left: 20rem;
+    margin-right: 2rem;
   }
 }
 
