@@ -212,7 +212,7 @@ GEM
       jekyll-seo-tag (~> 2.1)
     minitest (5.14.3)
     multipart-post (2.1.1)
-    nokogiri (1.13.3)
+    nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     octokit (4.20.0)
@@ -253,7 +253,6 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
-    wdm (0.1.1)
     webrick (1.7.0)
     zeitwerk (2.4.2)
 
@@ -266,7 +265,6 @@ DEPENDENCIES
   jekyll-gist
   jekyll-seo-tag
   jekyll-sitemap
-  wdm (>= 0.1.0)
   webrick (~> 1.7)
 
 BUNDLED WITH
