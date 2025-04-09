@@ -1,3 +1,7 @@
+---
+layout: page
+title: TypeSpess
+---
 # Civilization 14
 
 Civilization 14 (Civ14 for short) is a port of Civilization 13 from BYOND to Space Station 14.
@@ -21,4 +25,6 @@ Currently, if you are familiar with Civ13, we are focusing on the **Nomads** gam
 - **Randomly generated maps:** The game includes a map generator so no two rounds are the same.
 
 - **Choose your path:** There are no pre-set roles. Be a loner or join a faction, its up to you!
+
+GitHub: https://GitHub.com/Civ13/civ14
 
