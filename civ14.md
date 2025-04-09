@@ -1,7 +1,8 @@
 ---
 layout: page
-title: TypeSpess
+title: Civ14
 ---
+
 # Civilization 14
 
 Civilization 14 (Civ14 for short) is a port of Civilization 13 from BYOND to Space Station 14.
@@ -14,17 +15,16 @@ Currently, if you are familiar with Civ13, we are focusing on the **Nomads** gam
 
 **Features:**
 
-- **Survival focused:** You start with a loincloth and a torch. You will need to craft everything from scratch!
+-   **Survival focused:** You start with a loincloth and a torch. You will need to craft everything from scratch!
 
-- **Expanded crafting system:** Thousands (!) of craftables available, from clothing to walls to decorations. 
+-   **Expanded crafting system:** Thousands (!) of craftables available, from clothing to walls to decorations.
 
-- **Long rounds:** Rounds last for days! ~~or until the server crashes~~
+-   **Long rounds:** Rounds last for days! ~~or until the server crashes~~
 
-- **Hard to master:** The world is unforgiving. Expect to die to bears, wolves, and even piranhas!
+-   **Hard to master:** The world is unforgiving. Expect to die to bears, wolves, and even piranhas!
 
-- **Randomly generated maps:** The game includes a map generator so no two rounds are the same.
+-   **Randomly generated maps:** The game includes a map generator so no two rounds are the same.
 
-- **Choose your path:** There are no pre-set roles. Be a loner or join a faction, its up to you!
+-   **Choose your path:** There are no pre-set roles. Be a loner or join a faction, its up to you!
 
-GitHub: https://GitHub.com/Civ13/civ14
-
+GitHub: ![https://GitHub.com/Civ13/civ14](https://GitHub.com/Civ13/civ14)
