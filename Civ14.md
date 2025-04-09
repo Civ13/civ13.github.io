@@ -2,6 +2,8 @@
 
 Civilization 14 (Civ14 for short) is a port of Civilization 13 from BYOND to Space Station 14.
 
+![banner](public/img/splash.png)
+
 Civ14 is an immersive game, set across vast timelines, from the Stone Age to the Modern Era, players take on roles as leaders, builders, warriors, or everyday citizens, shaping the course of their chosen society. Whether forging empires through diplomacy and trade, waging war to expand territory, or simply surviving in a dynamic, ever-evolving world, Civ14 offers a sandbox experience defined by cooperation, conflict, and creativity.
 
 Currently, if you are familiar with Civ13, we are focusing on the **Nomads** gamemode. **TDM** mode will come afterwards. We have recently released the first beta, so you can ~~die~~ survive during the Stone Age! We hold regular playtests until the server goes live 24/7.
