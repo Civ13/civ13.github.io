@@ -24,7 +24,16 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler: '2.7.2'
-          bundler-cache: true
+          bundler-cache: false
+      - name: Resolve minimal dependency lock (PR bootstrap)
+        run: |
+          bundle lock
+          bundle install
+      - name: Upload resolved lock
+        uses: actions/upload-artifact@v7
+        with:
+          name: resolved-lock
+          path: Gemfile.lock
       - name: Build site
         run: bundle exec jekyll build
       - name: Validate generated previews and fallback metadata
