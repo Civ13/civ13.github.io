@@ -6,6 +6,8 @@ url:              https://civ13.github.io
 baseurl:          ""
 exclude:
   - tools
+  - vendor
+  - .bundle
   - Gemfile
   - Gemfile.lock
   - README.md
