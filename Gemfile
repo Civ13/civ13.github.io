@@ -1,14 +1,11 @@
-#after any changes to the Gemfile, execute bundle update!
-source "https://rubygems.org"
-gem "jekyll"
-gem "jekyll-gist"
-gem "jekyll-sitemap"
-gem "jekyll-seo-tag"
-# If you do not want to use GitHub Pages, comment out the line below, then run bundle update.
-gem "github-pages", group: :jekyll_plugins
+source 'https://rubygems.org'
 
-# Delete the following lines if not on Windows: 
-# Performance-booster for watching directories on Windows
-gem "wdm", ">= 0.1.0" if Gem.win_platform?
-
-gem "webrick", "~> 1.8"
+# Match the legacy GitHub Pages renderer; layouts and theme assets are local.
+# Avoid the blanket github-pages metagem and its unused remote-theme/ZIP chain.
+gem 'jekyll', '= 3.10.0'
+gem 'kramdown-parser-gfm', '= 1.1.0'
+gem 'jekyll-gist', '= 1.5.0'
+gem 'jekyll-sitemap', '= 1.4.0'
+gem 'jekyll-seo-tag', '= 2.8.0'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'webrick', '~> 1.8'

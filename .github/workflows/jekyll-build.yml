@@ -25,6 +25,8 @@ jobs:
           ruby-version: '3.3'
           bundler: '2.7.2'
           bundler-cache: true
+      - name: Validate local-theme dependency boundary
+        run: bundle exec ruby tools/check_build_contract.rb
       - name: Build site
         run: bundle exec jekyll build
       - name: Validate generated previews and fallback metadata
