@@ -5,7 +5,7 @@ url_encode represents each escaped UTF-8 byte as %XX; subtract two per escape
 to measure actual emitted bytes. Spaces become '+' and still count as one byte.
 Oversized previews keep the jekyll-seo-tag fallback and omit the component tag.
 {%- endcomment -%}
-{%- if page.image and page.description and page.url != '/404.html' -%}
+{%- if page.image and page.description and page.description != empty and page.url != '/404.html' -%}
   {%- assign preview_title = page.title | default: site.title -%}
   {%- if page.url == '/' -%}{%- assign preview_title = site.title -%}{%- endif -%}
   {%- capture preview_text -%}## {{ preview_title }}
