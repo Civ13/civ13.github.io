@@ -52,6 +52,7 @@ def test_render():
         # Keep fixtures isolated while reusing the repository's locked bundle.
         subprocess.run(['bundle', 'exec', 'jekyll', 'build', '--source', str(source), '--destination', str(output), '--config', str(source / '_config.yml') + ',' + str(config)], cwd=source, env=dict(os.environ, BUNDLE_GEMFILE=str(repo / 'Gemfile')), check=True)
         check_site(output, 'https://preview.example', '/civ13')
+        assert 'src="/civ13/public/img/splash.png"' in (output / 'civ14.html').read_text(encoding='utf-8')
         html = (output / 'escaped.html').read_text(encoding='utf-8')
         errors, counts = check_html(html)
         assert not errors, errors

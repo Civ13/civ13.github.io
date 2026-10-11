@@ -13,7 +13,7 @@ image:
 
 Civilization 14 (Civ14 for short) is a port of Civilization 13 from BYOND to Space Station 14.
 
-![banner](public/img/splash.png)
+![banner]({{ '/public/img/splash.png' | relative_url }})
 
 Civ14 is an immersive game, set across vast timelines, from the Stone Age to the Modern Era, players take on roles as leaders, builders, warriors, or everyday citizens, shaping the course of their chosen society. Whether forging empires through diplomacy and trade, waging war to expand territory, or simply surviving in a dynamic, ever-evolving world, Civ14 offers a sandbox experience defined by cooperation, conflict, and creativity.
 
