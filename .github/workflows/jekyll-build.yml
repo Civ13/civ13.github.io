@@ -1,0 +1,39 @@
+name: Build Jekyll site
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: jekyll-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Ruby and install dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler: '2.7.2'
+          bundler-cache: true
+      - name: Build site
+        run: bundle exec jekyll build
+      - name: Validate generated previews and fallback metadata
+        run: python3 tools/check_site_previews.py _site
+      - name: Exercise serialization, invalid payloads, and alternate origins
+        run: python3 tools/test_previews.py
+      - name: Upload validated site
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-${{ github.event.pull_request.head.sha || github.sha }}
+          path: _site
+          retention-days: 7

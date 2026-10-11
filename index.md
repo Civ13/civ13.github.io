@@ -1,17 +1,37 @@
 ---
 layout: default
-title: Civilization 13
+title: Home
+description: Build a civilization from the Stone Age to the modern era in Civ13, a free multiplayer game on BYOND.
+image:
+  path: /public/img/banner.png
+  width: 450
+  height: 232
+  alt: Civilization 13 game banner
 ---
 
-![](public/img/banner.png)
-
-Civ13 is a game based on Space Station 13 code, which features several epochs of human history. (hence the name). It features both Roleplay-oriented and Team-Deathmatch modes, with the main one being Nomads, in which you need to bring your civilization from the Stone Age to the Modern Age.
-RP gamemodes, especially the Nomads maps, are focused on building and interacting with other players.
-
-![](public/img/nomads.png)
-
-Nomads mode is a subtype of the Civilization 13 mode. In Nomads Mode, everyone spawns without any pre-determined factions, with only a knife and basic clothing.You can stay factionless (a nomad), create your own or be invited to one. However, research points can only be collected if you have a faction.
-
-![](public/img/tdm.png)
-
-Combat gamemodes have different maps from prehistory to modern times.
+<section class="home-hero" aria-labelledby="home-title">
+<div class="hero-copy"><p class="home-kicker">Free multiplayer · Space Station 13 · BYOND</p><h1 id="home-title" class="home-title">A world built<br>by its players.</h1><p class="hero-intro">Start with a knife. Build a society. Make history.</p><p>Civilization 13 brings society-building, roleplay, and historical combat into a shared multiplayer world. Grow from the Stone Age to the modern era in Nomads, or choose a side on a historical battlefield.</p><div class="home-actions"><a class="home-button" href="#join">Start playing</a><a class="home-button home-button-secondary" href="#modes">Find your mode</a></div></div>
+<figure class="hero-scene"><img src="{{ '/public/img/nomads.png' | relative_url }}" alt="A scene from Civilization 13 Nomads mode"><figcaption>Build. Research. Cooperate. Compete.</figcaption></figure>
+</section>
+<nav class="home-jump" aria-label="On this page"><a href="#modes">Game modes</a><a href="#gallery">In-game scenes</a><a href="#join">How to join</a><a href="#community">Community</a></nav>
+<section class="home-section" id="modes" aria-labelledby="modes-title">
+<p class="home-kicker">Two ways to make history</p><h2 id="modes-title">Choose your next story</h2><p>Build a society with other players or jump into a team battle. Explore the two main modes below.</p>
+<div class="mode-finder" hidden><label for="mode-search">Find a mode</label><input id="mode-search" type="search" placeholder="Try building, roleplay, or combat"><label for="mode-style">Play style</label><select id="mode-style"><option value="all">All styles</option><option value="society">Society & roleplay</option><option value="combat">Team combat</option></select><p id="mode-count" role="status" aria-live="polite"></p></div>
+<div class="home-grid" id="mode-cards">
+<article class="home-card mode-card" data-style="society" data-search="nomads civilization society building research crafting exploration alliances roleplay factions stone age modern"><img src="{{ '/public/img/nomads.png' | relative_url }}" alt="Nomads gameplay scene" loading="lazy"><div class="card-body"><p class="home-kicker">Society & roleplay</p><h3>Nomads</h3><p>Begin without a predetermined faction, with a knife and basic clothing. Stay a nomad, create a faction, or join one. Explore, build, research, and form alliances as your society develops.</p><p class="mode-detail">For players who enjoy building and interacting with others.</p><a href="https://civ13.github.io/civ13-wiki/gamemodes/Civilizations_and_Nomads.html">Read the Nomads guide →</a></div></article>
+<article class="home-card mode-card" data-style="combat" data-search="tdm team deathmatch combat battle historical maps objectives factions teams history"><img src="{{ '/public/img/tdm.png' | relative_url }}" alt="Team deathmatch gameplay scene" loading="lazy"><div class="card-body"><p class="home-kicker">Team combat</p><h3>Team deathmatch</h3><p>Pick a side and fight across maps from different eras of history. Learn the scenario, work with your team, and play toward the map's objectives.</p><p class="mode-detail">For players who enjoy historical scenarios and teamwork.</p><a href="https://civ13.github.io/civ13-wiki/maps_overview.html">Browse maps and scenarios →</a></div></article>
+</div><p id="mode-empty" hidden>No modes match. Try “building” or “combat”, or choose all styles.</p></section>
+<section class="home-section" id="gallery" aria-labelledby="gallery-title"><p class="home-kicker">Inside the game</p><h2 id="gallery-title">Small sprites. Shared worlds.</h2><p>Select an existing game scene to view it at full size.</p><div class="screenshot-grid">
+<figure><a class="gallery-link" href="{{ '/public/img/nomads.png' | relative_url }}" data-caption="Nomads — society-building and roleplay"><img src="{{ '/public/img/nomads.png' | relative_url }}" alt="View the Nomads gameplay scene at full size" loading="lazy"></a><figcaption>Nomads · Society-building & roleplay</figcaption></figure>
+<figure><a class="gallery-link" href="{{ '/public/img/tdm.png' | relative_url }}" data-caption="Team deathmatch — historical combat"><img src="{{ '/public/img/tdm.png' | relative_url }}" alt="View the team deathmatch gameplay scene at full size" loading="lazy"></a><figcaption>Team deathmatch · Historical combat</figcaption></figure></div>
+<dialog id="screenshot-viewer" aria-labelledby="screenshot-caption"><button type="button" id="gallery-close" class="home-button">Close image</button><img id="screenshot-full" alt=""><p id="screenshot-caption"></p><p class="home-note">Press Escape to close.</p></dialog></section>
+<section class="home-section join-section" id="join" aria-labelledby="join-title"><p class="home-kicker">Your first round</p><h2 id="join-title">From download to the game</h2><ol class="join-steps">
+<li><h3>Install BYOND</h3><p>Civ13 is free to play through the BYOND client. <a href="https://www.byond.com/download/">Download BYOND</a> and set up your account.</p></li>
+<li><h3>Get your bearings</h3><p>Read the <a href="https://civ13.github.io/civ13-wiki/New_Player_Guide.html">new player guide</a> for controls and joining instructions, then check the <a href="https://civ13.github.io/civ13-wiki/rules/Rules.html">server rules</a>.</p></li>
+<li><h3>Choose a server</h3><p>With BYOND installed, use a join link below. If your browser does not open BYOND, use the address in the client. Ask on Discord if you need help finding a round.</p></li></ol>
+<div class="home-grid server-grid"><div class="home-card"><h3>Nomads</h3><a class="home-button" href="byond://civ13.com:1715">Open Nomads in BYOND</a><p class="server-address">byond://civ13.com:1715</p></div><div class="home-card"><h3>Team deathmatch</h3><a class="home-button" href="byond://civ13.com:1714">Open TDM in BYOND</a><p class="server-address">byond://civ13.com:1714</p></div></div>
+<p class="home-note">These are the published game addresses, not live availability indicators. Check community announcements for current rounds.</p>
+<details><summary>New to Space Station 13 controls?</summary><p>Keep the <a href="https://civ13.github.io/civ13-wiki/New_Player_Guide.html">new player guide</a> nearby while you learn. Start with movement and interacting with objects, and ask other players or the Discord community when you get stuck.</p></details>
+<details><summary>Looking for crafting, maps, or rules?</summary><p>The <a href="https://civ13.github.io/civ13-wiki/">Civ13 wiki</a> is the place to look up game systems and map information. Rules and expectations matter in both roleplay and combat modes.</p></details></section>
+<section class="home-section" id="community" aria-labelledby="community-title"><p class="home-kicker">Better with other people</p><h2 id="community-title">Find your community</h2><div class="home-grid"><article class="home-card"><h3>Talk with players</h3><p>Ask questions, follow announcements, and meet the people behind your next round.</p><a class="home-button" href="https://discord.gg/hBEtg4x">Join the Civ13 Discord</a></article><article class="home-card"><h3>Help build Civ13</h3><p>The game and its documentation are open to contributions. Report a problem or help the next new player.</p><p><a href="https://github.com/Civ13/Civ13/issues">Game issues</a> · <a href="https://github.com/Civ13/civ13-wiki/blob/master/src/Contributing_to_the_Wiki.md">Contribute to the wiki</a></p></article></div></section>
+<script src="{{ '/public/js/showcase.js' | relative_url }}" defer></script>
