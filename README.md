@@ -27,3 +27,26 @@ is the versioned read-only schema guard adapted from the installed preview skill
 These checks establish generated HTML/schema correctness, not Discord client
 rendering; verify served HTML and media with the Discordbot user agent after
 publishing. The canonical site is `https://civ13.github.io/`.
+
+## Game-host website redirect
+
+`civ13.com` and `www.civ13.com` resolve to the game host. Its root currently
+uses an HTML meta-refresh to this Pages site; a crawler should instead receive
+an HTTP redirect. In the existing Apache virtual hosts for those names, the
+coordinator can replace the root/index wrapper with this narrowly scoped rule:
+
+```apache
+RewriteEngine On
+RewriteRule "^/?(?:index\.html)?$" "https://civ13.github.io/" [R=301,L]
+```
+
+This matches only `/` and `/index.html`. Keep `/verified` and every other
+game-host service path on the existing host; do not use a catch-all redirect or
+change DNS, BYOND endpoints, or the Pages canonical origin. Apply the rule only
+to the intended virtual hosts, validate with `apachectl configtest`, and reload
+using the host's established procedure. Compare existing service responses
+before and after. Fetch both root variants using the Discordbot user agent and
+confirm a 301 `Location` followed by 200 HTML containing the Pages preview head.
+The redirect is an operational snippet, not a deployment performed by this PR;
+the coordinator owns SSH, configuration changes, and live redirect evidence.
+See the [Apache mod_rewrite reference](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html).
