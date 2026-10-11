@@ -36,6 +36,8 @@ jobs:
           path: Gemfile.lock
       - name: Build site
         run: bundle exec jekyll build
+      - name: Validate local-theme dependency boundary
+        run: bundle exec ruby tools/check_build_contract.rb
       - name: Validate generated previews and fallback metadata
         run: python3 tools/check_site_previews.py _site
       - name: Exercise serialization, invalid payloads, and alternate origins
