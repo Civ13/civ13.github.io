@@ -4,6 +4,14 @@ tagline:          'The multiplayer society-building game'
 description:      'The multiplayer society-building game'
 url:              https://civ13.github.io
 baseurl:          ""
+exclude:
+  - tools
+  - vendor
+  - .bundle
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE.md
 
 author:
   name:           'Civilization 13 Team'
