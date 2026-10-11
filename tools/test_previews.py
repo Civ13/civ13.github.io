@@ -1,6 +1,7 @@
 """Integration checks against the locked Jekyll renderer and malformed payloads."""
 import copy
 import json
+import os
 import shutil
 import subprocess
 import tempfile
@@ -47,7 +48,9 @@ def test_render():
         config = Path(tmp) / 'alternate.yml'
         config.write_text('url: https://preview.example\nbaseurl: /civ13\n', encoding='utf-8')
         output = Path(tmp) / 'site'
-        subprocess.run(['bundle', 'exec', 'jekyll', 'build', '--source', str(source), '--destination', str(output), '--config', str(source / '_config.yml') + ',' + str(config)], cwd=repo, check=True)
+        # Jekyll 3.10 resolves layout paths relative to the working directory.
+        # Keep fixtures isolated while reusing the repository's locked bundle.
+        subprocess.run(['bundle', 'exec', 'jekyll', 'build', '--source', str(source), '--destination', str(output), '--config', str(source / '_config.yml') + ',' + str(config)], cwd=source, env=dict(os.environ, BUNDLE_GEMFILE=str(repo / 'Gemfile')), check=True)
         check_site(output, 'https://preview.example', '/civ13')
         html = (output / 'escaped.html').read_text(encoding='utf-8')
         errors, counts = check_html(html)

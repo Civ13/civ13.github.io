@@ -4,6 +4,25 @@ This is the website for Civ13, which you can find [here](https://github.com/Civ1
 
 It is built using **Jekyll** and the **Hyde** theme [find it here](https://github.com/poole/hyde).
 
+## Build dependency boundary
+
+The theme's layouts, includes, and assets live in this repository. The build
+does not download remote themes or extract ZIP archives. `Gemfile` pins the
+direct Jekyll renderer and plugins rather than installing the `github-pages`
+metagem, whose unused remote-theme chain requires an affected rubyzip version.
+Jekyll 3.10.0 matches the legacy Pages renderer; the GFM parser remains explicit.
+Use Ruby 3.3 and Bundler 2.7.2, then `bundle install` with the committed lockfile.
+Dependency changes should be resolved with Bundler and reviewed, not edited
+into the lockfile by hand.
+
+Run `bundle exec ruby tools/check_build_contract.rb` alongside the build and
+preview checks. It verifies that the resolved bundle contains no remote-theme
+or ZIP extraction dependency and rejects both current and legacy configuration
+keys that could activate remote-theme fetching, including negative controls.
+This protects the repository-managed build. GitHub manages its own legacy Pages
+dependencies separately; the unchanged site configuration supplies no remote
+theme or archive input there. Hosting still publishes `master` through Pages.
+
 ## Website previews
 
 Public content pages declare a concise `description` and a raster `image` with
