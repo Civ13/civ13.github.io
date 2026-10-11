@@ -1,6 +1,12 @@
 ---
 layout: page
 title: TypeSpess
+description: Explore the TypeScript and Node.js remake of Civ13, based on the Bluespess engine.
+image:
+  path: /public/img/banner.png
+  width: 450
+  height: 232
+  alt: Civilization 13 game banner
 ---
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/civ13/civ13-typespess/Node.js%20CI)](https://github.com/Civ13/civ13-typespess/actions) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Civ13_civ13-typespess&metric=alert_status)](https://sonarcloud.io/dashboard?id=Civ13_civ13-typespess) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Civ13/civ13-typespess) [![License](https://img.shields.io/github/license/civ13/civ13-typespess?color=blue)](https://github.com/Civ13/civ13-typespess/blob/master/LICENSE)
 

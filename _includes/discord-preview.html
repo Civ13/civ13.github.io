@@ -1,0 +1,28 @@
+{%- comment -%}
+Website-only JSON, rendered by GitHub Pages without custom plugins. jsonify
+serializes each dynamic string; Unicode escapes protect the HTML raw-text parser.
+url_encode represents each escaped UTF-8 byte as %XX; subtract two per escape
+to measure actual emitted bytes. Spaces become '+' and still count as one byte.
+Oversized previews keep the jekyll-seo-tag fallback and omit the component tag.
+{%- endcomment -%}
+{%- if page.image and page.description and page.description != empty and page.url != '/404.html' -%}
+  {%- assign preview_title = page.title | default: site.title -%}
+  {%- if page.url == '/' -%}{%- assign preview_title = site.title -%}{%- endif -%}
+  {%- capture preview_text -%}## {{ preview_title }}
+{{ page.description }}{%- endcapture -%}
+  {%- assign preview_url = page.url | absolute_url -%}
+  {%- assign preview_image = page.image.path | default: page.image | absolute_url -%}
+  {%- assign preview_alt = page.image.alt | default: preview_title -%}
+  {%- capture preview_json -%}{"component":{"type":17,"components":[{"type":10,"content":{{ preview_text | jsonify }}},{"type":12,"items":[{"media":{"url":{{ preview_image | jsonify }}},"description":{{ preview_alt | jsonify }}}]},{"type":1,"components":[{"type":2,"style":5,"label":"Read more","url":{{ preview_url | jsonify }}},{"type":2,"style":5,"label":"Community","url":"https://discord.gg/hBEtg4x"}]}]}}{%- endcapture -%}
+  {%- assign preview_json = preview_json | replace: '<', '\u003c' | replace: '>', '\u003e' | replace: '&', '\u0026' -%}
+  {%- assign preview_encoded = preview_json | url_encode -%}
+  {%- assign encoded_size = preview_encoded | size -%}
+  {%- assign unmarked = preview_encoded | remove: '%' | size -%}
+  {%- assign escape_overhead = encoded_size | minus: unmarked | times: 2 -%}
+  {%- assign preview_size = encoded_size | minus: escape_overhead -%}
+  {%- assign preview_url_size = preview_url | size -%}
+  {%- assign preview_image_size = preview_image | size -%}
+  {%- if preview_size <= 3000 and preview_url_size <= 512 and preview_image_size <= 2048 -%}
+<script id="discord:component-embed" type="application/json">{{ preview_json }}</script>
+  {%- endif -%}
+{%- endif -%}
