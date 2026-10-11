@@ -1,6 +1,12 @@
 ---
 layout: page
 title: Civ14
+description: Civilization 14 brings Civ13's society-building sandbox from BYOND to Space Station 14.
+image:
+  path: /public/img/splash.png
+  width: 960
+  height: 540
+  alt: Civilization 14 game banner
 ---
 
 # Civilization 14

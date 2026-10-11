@@ -2,6 +2,11 @@
 layout: default
 title: Home
 description: Build a civilization from the Stone Age to the modern era in Civ13, a free multiplayer game on BYOND.
+image:
+  path: /public/img/banner.png
+  width: 450
+  height: 232
+  alt: Civilization 13 game banner
 ---
 
 <section class="home-hero" aria-labelledby="home-title">

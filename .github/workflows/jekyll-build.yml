@@ -27,3 +27,13 @@ jobs:
           bundler-cache: true
       - name: Build site
         run: bundle exec jekyll build
+      - name: Validate generated previews and fallback metadata
+        run: python3 tools/check_site_previews.py _site
+      - name: Exercise serialization, invalid payloads, and alternate origins
+        run: python3 tools/test_previews.py
+      - name: Upload validated site
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-${{ github.event.pull_request.head.sha || github.sha }}
+          path: _site
+          retention-days: 7
