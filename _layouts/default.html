@@ -5,11 +5,12 @@
 
   <body class="theme-base-dark">
 
+    <a class="site-skip-link" href="#main-content">Skip to content</a>
     {% include sidebar.html %}
 
-    <div class="content container">
+    <main id="main-content" class="content container" tabindex="-1">
       {{ content }}
-    </div>
+    </main>
 
   </body>
 </html>
