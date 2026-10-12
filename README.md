@@ -72,6 +72,11 @@ See the [Apache mod_rewrite reference](https://httpd.apache.org/docs/2.4/mod/mod
 
 ## Game mode showcase
 
+`game-modes.md` provides the mode and event catalog, with links to the matching
+wiki guides. The home-page finder also includes survival competitions,
+Gladiators, colony/prison roleplay, islands/wastelands, crew modes and Football.
+Event copy points to community announcements rather than maintaining a schedule.
+
 The home page includes Nomads, team deathmatch, The Art of the Deal (AOTD),
 Wizard Boy and a clearly labeled extraction-survival development preview.
 Promote the preview to a playable mode only after its player availability is
