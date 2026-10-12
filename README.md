@@ -69,3 +69,14 @@ confirm a 301 `Location` followed by 200 HTML containing the Pages preview head.
 The redirect is an operational snippet, not a deployment performed by this PR;
 the coordinator owns SSH, configuration changes, and live redirect evidence.
 See the [Apache mod_rewrite reference](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html).
+
+## Game mode showcase
+
+The home page includes Nomads, team deathmatch, The Art of the Deal (AOTD),
+Wizard Boy and a clearly labeled extraction-survival development preview.
+Promote the preview to a playable mode only after its player availability is
+verified. Existing server join links remain the published Nomads/TDM endpoints.
+
+The AOTD and Wizard Boy card images are existing Civ13 wiki gameplay images,
+reused from `src/images/red_hq.png` and `src/images/wiz/wizard_boy_screen.png`
+in Civ13/civ13-wiki. They are not images of the extraction-survival mode.
