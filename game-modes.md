@@ -1,5 +1,6 @@
 ---
 layout: page
+page_class: mode-catalog
 title: Game modes & events
 permalink: /game-modes/
 description: Find Civ13's survival, arena, roleplay, crew and event scenarios, with links to the player guides.

@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from check_preview import HeadParser, check_html
 
-PAGES = ('index.html', 'civ14.html', 'typespess.html', 'news/civilization.html')
+PAGES = ('index.html', 'civ14.html', 'typespess.html', 'news/civilization.html', 'game-modes/index.html')
 
 
 def check_site(root, origin='https://civ13.github.io', base=''):
@@ -15,7 +15,10 @@ def check_site(root, origin='https://civ13.github.io', base=''):
         errors, counts = check_html(html)
         parser = HeadParser()
         parser.feed(html)
-        expected = origin + base + ('/' if name == 'index.html' else '/' + name)
+        route = '/' if name == 'index.html' else '/' + name
+        if name == 'game-modes/index.html':
+            route = '/game-modes/'
+        expected = origin + base + route
         if parser.metadata.get('og:url') != expected:
             errors.append('incorrect canonical OG URL: ' + expected)
         if parser.metadata.get('twitter:card') != 'summary_large_image':
