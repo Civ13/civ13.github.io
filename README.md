@@ -100,8 +100,9 @@ requests/schema validation do not write data. Page visits also refresh linked
 progress once, with bounded request counts and timeouts; there is no polling.
 Cross-repository push dispatch is optional and is not configured by this change.
 
-Milestone descriptions/status and acceptance contracts require maintainer
-review. To enable automatic **Code complete**, set `completion` to
+Milestone definitions and acceptance contracts require maintainer review.
+Tracked implementation leaving draft advances a planned goal to **In progress**;
+prerequisites cannot do this. To enable automatic **Code complete**, set `completion` to
 `{"acceptance_verified":true,"basis":"what acceptance was verified","required_prs":["Civ13/Civ13#123"]}`.
 Every required PR must be listed as implementation evidence and represent the
 whole milestone's reviewed acceptance, not a prerequisite. The updater advances

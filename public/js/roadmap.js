@@ -39,6 +39,7 @@
         if (!cache.has(key)) cache.set(key, await fetchPR(e));
         Object.assign(e, progress(cache.get(key), e));
       }
+      if (m.status === 'planned' && m.evidence.some(e => e.role === 'implementation' && ['open', 'merged'].includes(e.state))) m.status = 'in_progress';
       if (m.completion && m.completion.required_prs.every(key => m.evidence.some(e => `${e.repository}#${e.number}` === key && e.state === 'merged'))) m.status = 'completed';
       // Availability is maintainer-verified independently of GitHub merges.
     }
@@ -59,7 +60,7 @@
       });
       for (const m of next.milestones) {
         const card = root.document.querySelector(`[data-milestone="${m.id}"]`);
-        if (m.status === 'completed' && m.availability !== 'verified') card.querySelector('.roadmap-status').textContent = 'Code complete';
+        if (m.availability !== 'verified') card.querySelector('.roadmap-status').textContent = m.status === 'completed' ? 'Code complete' : m.status === 'in_progress' ? 'In progress' : 'Planned';
         for (const e of m.evidence) card.querySelector(`[data-evidence="${e.repository}#${e.number}"]`).textContent = labels[e.state];
       }
       root.document.getElementById('roadmap-refresh').textContent = 'Linked development progress checked just now. Server availability is verified separately.';

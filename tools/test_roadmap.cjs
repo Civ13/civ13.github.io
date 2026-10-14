@@ -8,14 +8,14 @@ const pr = (e, state = 'merged') => ({number: e.number, base: {repo: {full_name:
 test('registry is valid and merged prerequisites never complete milestones or imply live', async () => {
   const next = await refresh(copy(), async e => pr(e));
   assert.equal(next.milestones[0].status, 'in_progress');
-  assert.equal(next.milestones[1].status, 'planned');
+  assert.equal(next.milestones[1].status, 'in_progress');
   assert.ok(next.milestones.every(m => m.availability === 'unverified'));
 });
 test('only reviewed exhaustive implementation acceptance advances a goal', async () => {
   const data = copy(), m = data.milestones[1];
   m.completion = {acceptance_verified: true, basis: 'Required gameplay and recovery contracts verified', required_prs: m.evidence.map(e => `${e.repository}#${e.number}`)};
   const partial = await refresh(data, async e => pr(e, e.number === 3118 ? 'open' : 'merged'));
-  assert.equal(partial.milestones[1].status, 'planned');
+  assert.equal(partial.milestones[1].status, 'in_progress');
   const done = await refresh(data, async e => pr(e));
   assert.equal(done.milestones[1].status, 'completed');
   assert.equal(done.milestones[1].availability, 'unverified');
@@ -24,6 +24,12 @@ test('failed refresh is atomic and leaves original last-known-good unchanged', a
   const data = copy(), before = JSON.stringify(data);
   await assert.rejects(refresh(data, async e => { if (e.number === 3118) throw new Error('Rate limit'); return pr(e); }));
   assert.equal(JSON.stringify(data), before);
+});
+test('early drafts stay planned; reviewed implementation leaving draft advances to in progress', async () => {
+  const drafts = await refresh(copy(), async e => pr(e, e.number === 3147 ? 'merged' : 'draft'));
+  assert.equal(drafts.milestones[1].status, 'planned');
+  const active = await refresh(copy(), async e => pr(e, e.number === 3082 ? 'open' : 'draft'));
+  assert.equal(active.milestones[1].status, 'in_progress');
 });
 test('wrong repository, malformed merge, unreviewed acceptance and invented availability fail closed', async () => {
   await assert.rejects(refresh(copy(), async e => ({...pr(e), base: {repo: {full_name: 'other/repo'}}})));
