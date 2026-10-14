@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from check_preview import HeadParser, check_html
 
-PAGES = ('index.html', 'civ14.html', 'typespess.html', 'news/civilization.html', 'game-modes/index.html')
+PAGES = ('index.html', 'civ14.html', 'typespess.html', 'news/civilization.html', 'game-modes/index.html', 'roadmap.html')
 
 
 def check_site(root, origin='https://civ13.github.io', base=''):

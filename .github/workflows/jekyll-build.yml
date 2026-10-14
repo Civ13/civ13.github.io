@@ -29,6 +29,13 @@ jobs:
         run: bundle exec ruby tools/check_build_contract.rb
       - name: Build site
         run: bundle exec jekyll build
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Validate roadmap and simulate updates and failures
+        run: |
+          node --test tools/test_roadmap.cjs
+          node tools/check_roadmap.cjs _site
       - name: Validate generated previews and fallback metadata
         run: python3 tools/check_site_previews.py _site
       - name: Exercise serialization, invalid payloads, and alternate origins

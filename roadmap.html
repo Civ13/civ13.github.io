@@ -1,0 +1,38 @@
+---
+layout: page
+title: Roadmap
+description: What is planned, being developed and ready in Civilization 13.
+image:
+  path: /public/img/banner.png
+  width: 450
+  height: 232
+  alt: Civilization 13 game banner
+---
+<p class="roadmap-intro">Where Civilization 13 is heading. These are goals, not release promises; plans can change as work is tested.</p>
+<div class="roadmap-key" aria-label="Roadmap status guide">
+  <span><strong>Planned</strong> — a future goal</span>
+  <span><strong>In progress</strong> — being developed</span>
+  <span><strong>Code complete</strong> — reviewed implementation finished</span>
+  <span><strong>Available</strong> — verified on a public server</span>
+</div>
+<p class="roadmap-refresh" id="roadmap-refresh" role="status">Showing the latest saved progress. Linked development progress refreshes automatically when you open this page.</p>
+<div class="roadmap-list" id="roadmap-list">
+{% for milestone in site.data.roadmap.milestones %}
+  <article class="roadmap-card" data-milestone="{{ milestone.id | escape }}">
+    <p class="roadmap-status">{% if milestone.availability == 'verified' %}Available{% elsif milestone.status == 'completed' %}Code complete{% elsif milestone.status == 'in_progress' %}In progress{% else %}Planned{% endif %}</p>
+    <h2>{{ milestone.title | escape }}</h2>
+    <p>{{ milestone.summary | escape }}</p>
+    <p class="roadmap-availability">{{ milestone.availability_note | escape }}</p>
+    {% if milestone.evidence.size > 0 %}
+    <details><summary>Development progress</summary><ul class="roadmap-evidence">
+      {% for evidence in milestone.evidence %}
+      <li><a href="https://github.com/{{ evidence.repository | escape }}/pull/{{ evidence.number }}">{{ evidence.label | escape }}</a> <span data-evidence="{{ evidence.repository | escape }}#{{ evidence.number }}">{% if evidence.state == 'merged' %}Merged{% elsif evidence.state == 'draft' %}Early draft{% elsif evidence.state == 'open' %}Under development{% else %}Closed without merging{% endif %}</span>{% if evidence.role == 'prerequisite' %} <small>Groundwork for this goal</small>{% endif %}</li>
+      {% endfor %}
+    </ul></details>
+    {% endif %}
+  </article>
+{% endfor %}
+</div>
+<p class="roadmap-note">Merged code can still need testing and a server update. A goal becomes “Available” only after public availability is separately confirmed. This page tracks selected milestones, not every fix. Progress is saved automatically every six hours; roadmap goals and completion requirements are reviewed by maintainers.</p>
+<script id="roadmap-data" type="application/json">{{ site.data.roadmap | jsonify | replace: '<', '\u003c' | replace: '>', '\u003e' | replace: '&', '\u0026' }}</script>
+<script src="{{ '/public/js/roadmap.js' | relative_url }}" defer></script>
