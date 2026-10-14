@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "milestones": [
+    {
+      "id": "smoother-persistent-saves",
+      "title": "Smoother saves for persistent worlds",
+      "summary": "Save changed world and player state in smaller batches while gameplay continues, with safe recovery after interruptions.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "In development. Full recovery and live-server availability are not yet verified.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3147,
+          "role": "prerequisite",
+          "label": "Save compatibility groundwork",
+          "state": "merged",
+          "merge_sha": "205d2253b7fceaa1defab5e0e5d317e2d16109e9"
+        }
+      ],
+      "completion": null
+    },
+    {
+      "id": "extraction-survival",
+      "title": "Extraction survival",
+      "summary": "Explore dangerous areas, collect loot and return to a persistent safehouse. Extraction and survival shape what you keep between runs.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Planned for future work. Early drafts are not a playable release.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3082,
+          "role": "implementation",
+          "label": "Safehouse and survival draft",
+          "state": "draft",
+          "merge_sha": null
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3118,
+          "role": "implementation",
+          "label": "Extraction raid draft",
+          "state": "draft",
+          "merge_sha": null
+        }
+      ],
+      "completion": null
+    },
+    {
+      "id": "discord-social-integration",
+      "title": "Discord social integration",
+      "summary": "Explore optional Rich Presence, joining friends and invitations through a compatible game client.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "An idea for future investigation; implementation has not started.",
+      "evidence": [],
+      "completion": null
+    }
+  ]
+}

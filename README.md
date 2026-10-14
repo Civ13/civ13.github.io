@@ -85,3 +85,32 @@ verified. Existing server join links remain the published Nomads/TDM endpoints.
 The AOTD and Wizard Boy card images are existing Civ13 wiki gameplay images,
 reused from `src/images/red_hq.png` and `src/images/wiz/wizard_boy_screen.png`
 in Civ13/civ13-wiki. They are not images of the extraction-survival mode.
+# Player roadmap
+
+`_data/roadmap.json` is the reviewed public milestone registry. Jekyll renders
+`/roadmap.html` with navigation automatically, so it remains readable without
+JavaScript or GitHub access. Only curated public PR evidence is queried; no
+private coordinator logs or arbitrary PR titles become player copy.
+
+The **Refresh roadmap progress** workflow runs every six hours, on manual
+dispatch, or on a `roadmap-progress` repository dispatch. It validates the whole
+response before replacing the saved snapshot and requests a build of the
+existing legacy Pages site after a changed snapshot is committed. Failed
+requests/schema validation do not write data. Page visits also refresh linked
+progress once, with bounded request counts and timeouts; there is no polling.
+Cross-repository push dispatch is optional and is not configured by this change.
+
+Milestone descriptions/status and acceptance contracts require maintainer
+review. To enable automatic **Code complete**, set `completion` to
+`{"acceptance_verified":true,"basis":"what acceptance was verified","required_prs":["Civ13/Civ13#123"]}`.
+Every required PR must be listed as implementation evidence and represent the
+whole milestone's reviewed acceptance, not a prerequisite. The updater advances
+only when all are merged. None of the initial milestones has such a contract.
+**Available** additionally requires independently verified public server
+availability, a public `availability_evidence` HTTPS URL and reviewed explanatory
+copy. Merge status never grants availability.
+
+Run `node --test tools/test_roadmap.cjs` offline. Run
+`node tools/refresh_roadmap.cjs` to refresh public data; `GH_TOKEN` is optional for
+local public reads and is supplied by Actions. No credential is embedded in the
+page. Existing Jekyll build/preview checks still apply.
