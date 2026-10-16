@@ -7,7 +7,7 @@
       "summary": "Save changed world and player state in smaller batches while gameplay continues, with safe recovery after interruptions.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "In development. Full recovery and live-server availability are not yet verified.",
+      "availability_note": "Saved-round job capacity restoration is merged and deployed on the local Nomads server. A fresh player's Join flow remains unverified. Save/load operation guards are in progress; full recovery and public availability of this goal are not yet verified.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -16,6 +16,22 @@
           "label": "Save compatibility groundwork",
           "state": "merged",
           "merge_sha": "205d2253b7fceaa1defab5e0e5d317e2d16109e9"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3192,
+          "role": "prerequisite",
+          "label": "Restore job capacity after loading a saved round",
+          "state": "merged",
+          "merge_sha": "7ebba01cb9e91176c81cc4a8af5f8e0d57ec4b6b"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3194,
+          "role": "implementation",
+          "label": "Prevent overlapping world saves and imports",
+          "state": "open",
+          "merge_sha": null
         }
       ],
       "completion": null
@@ -26,7 +42,7 @@
       "summary": "Explore dangerous areas, collect loot and return to a persistent safehouse. Extraction and survival shape what you keep between runs.",
       "status": "planned",
       "availability": "unverified",
-      "availability_note": "Not released. Development changes do not yet establish a playable public release.",
+      "availability_note": "Early drafts. Development changes do not yet establish a playable public release. Instanced save/load, collision reservations and raid transport remain pending.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -45,6 +61,35 @@
           "merge_sha": null
         }
       ],
+      "completion": null
+    },
+    {
+      "id": "party-train-home",
+      "title": "A train home for your party",
+      "summary": "A planned shared train with a protected party compartment that stays safe while raid-docked, a party airlock and safe exit, normal hunger and thirst limits, and independent berths for selected players only.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Early layout draft. An expanded layout, airlock and survival rules are in development. Working transport, instanced saves, collision reservations and raid travel still need implementation and runtime testing.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3193,
+          "role": "implementation",
+          "label": "Party train layout draft",
+          "state": "draft",
+          "merge_sha": null
+        }
+      ],
+      "completion": null
+    },
+    {
+      "id": "windows-server-bot",
+      "title": "Windows server bot integration",
+      "summary": "Develop isolated Windows startup support for the server management bot.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "A draft implementation is under review. It has not been activated or verified against a live Windows server.",
+      "evidence": [],
       "completion": null
     },
     {
