@@ -30,8 +30,8 @@
           "number": 3194,
           "role": "implementation",
           "label": "Prevent overlapping world saves and imports",
-          "state": "open",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "3f42f12010b25a1fd8e8e76237511f9d8bfa7667"
         }
       ],
       "completion": null
