@@ -67,7 +67,7 @@
       "id": "party-train-home",
       "title": "A train home for your party",
       "summary": "A planned shared train with a protected party compartment that stays safe while raid-docked, a party airlock and safe exit, normal hunger and thirst limits, and independent berths for selected players only.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
       "availability_note": "Early layout draft. An expanded layout, airlock and survival rules are in development. Working transport, instanced saves, collision reservations and raid travel still need implementation and runtime testing.",
       "evidence": [
@@ -76,8 +76,8 @@
           "number": 3193,
           "role": "implementation",
           "label": "Party train layout draft",
-          "state": "draft",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "084be309cc1930f20864ef8f688e05e29571d01d"
         }
       ],
       "completion": null
