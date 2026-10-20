@@ -443,3 +443,9 @@ a.sidebar-nav-item:focus {
   max-width: 100%;
   height: auto;
 }
+
+.architecture-notice {
+  border-left: 3px solid currentColor;
+  padding: .75rem 1rem;
+  margin: 1rem 0;
+}
