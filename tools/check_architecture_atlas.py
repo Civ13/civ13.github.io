@@ -60,6 +60,10 @@ def check(root):
         assert bundle.testzip() is None
         assert 'inventory/call-sites.csv' in bundle.namelist()
         assert 'README.md' in bundle.namelist()
+    # Legacy Pages enables optional-front-matter/title plugins beyond plain Jekyll.
+    # Raw report Markdown must remain in the ZIP, not become extra page-layout nav entries.
+    assert not list((root / ASSET).rglob('*.md')), 'raw Markdown reports must remain in ZIP only'
+    assert not list((root / ASSET).rglob('*.html')), 'asset directory must not generate extra Pages documents'
     svgs = list((root / ASSET).rglob('*.svg'))
     assert len(svgs) == 20, 'expected 18 UML and 2 graph views'
     for path in svgs:
