@@ -20,7 +20,7 @@ Explore the game's architecture through readable UML views, source-linked report
 
 [Read the audit]({{ '/architecture/audit/' | relative_url }}) · [Browse the diagrams]({{ '/architecture/diagrams/' | relative_url }}) · [Validation and limits]({{ '/architecture/validation/' | relative_url }})
 
-<a href="{{ '/public/architecture/2026-10-20/diagrams/01-system-components.svg' | relative_url }}"><img src="{{ '/public/architecture/2026-10-20/diagrams/01-system-components.png' | relative_url }}" alt="Component overview: BYOND client, runtime scheduler, gameplay, lighting, persistence and external services" width="1922" height="573"></a>
+<a href="{{ '/public/architecture/2026-10-20/diagrams/01-system-components.svg' | relative_url }}"><img class="architecture-diagram" src="{{ '/public/architecture/2026-10-20/diagrams/01-system-components.png' | relative_url }}" alt="Component overview: BYOND client, runtime scheduler, gameplay, lighting, persistence and external services" width="1922" height="573"></a>
 
 Open the overview image for a full-size, zoomable SVG.
 

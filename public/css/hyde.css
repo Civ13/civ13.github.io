@@ -438,3 +438,8 @@ a.sidebar-nav-item:focus {
 .theme-base-dark .related-posts li a:hover {
   color: #90a956;
 }
+/* Preserve the aspect ratio of source-sized UML diagrams on narrow screens. */
+.architecture-diagram {
+  max-width: 100%;
+  height: auto;
+}
