@@ -1,0 +1,288 @@
+flowchart LR
+%% Declared prerequisite graph, not state transitions or proof all nodes are reachable.
+%% Source: code/modules/research_tree/research_node.dm at 5bf351248de6050876fe5b53f91209a970cc5668
+  basic_tools["Basic Toolmaking<br/>ANALYSIS / 60 study ticks"]
+  click basic_tools "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L234" "Source definition"
+  iron_tools["Iron Tools<br/>ANALYSIS / 130 study ticks"]
+  click iron_tools "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L235" "Source definition"
+  basic_tools --> iron_tools
+  machined_tools["Machined Tools<br/>ANALYSIS / 200 study ticks"]
+  click machined_tools "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L236" "Source definition"
+  iron_tools --> machined_tools
+  steelmaking --> machined_tools
+  power_tools["Power Tools<br/>ANALYSIS / 270 study ticks"]
+  click power_tools "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L237" "Source definition"
+  machined_tools --> power_tools
+  electricity --> power_tools
+  bronze_working["Bronze Working<br/>PROTOTYPE / 142 study ticks"]
+  click bronze_working "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L241" "Source definition"
+  iron_smithing["Iron Smithing<br/>PROTOTYPE / 195 study ticks"]
+  click iron_smithing "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L243" "Source definition"
+  bronze_working --> iron_smithing
+  steelmaking["Steelmaking<br/>ANALYSIS / 200 study ticks"]
+  click steelmaking "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L244" "Source definition"
+  iron_smithing --> steelmaking
+  alloys["Alloys<br/>ANALYSIS / 270 study ticks"]
+  click alloys "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L245" "Source definition"
+  steelmaking --> alloys
+  primitive_construction["Primitive Construction<br/>ANALYSIS / 60 study ticks"]
+  click primitive_construction "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L247" "Source definition"
+  stone_masonry["Stone Masonry<br/>ANALYSIS / 95 study ticks"]
+  click stone_masonry "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L248" "Source definition"
+  primitive_construction --> stone_masonry
+  brickmaking["Brickmaking<br/>ANALYSIS / 130 study ticks"]
+  click brickmaking "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L249" "Source definition"
+  stone_masonry --> brickmaking
+  imperial_architecture["Imperial Architecture<br/>ANALYSIS / 165 study ticks"]
+  click imperial_architecture "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L250" "Source definition"
+  brickmaking --> imperial_architecture
+  reinforced_concrete["Reinforced Concrete<br/>ANALYSIS / 200 study ticks"]
+  click reinforced_concrete "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L251" "Source definition"
+  imperial_architecture --> reinforced_concrete
+  steelmaking --> reinforced_concrete
+  modern_construction["Modern Construction<br/>ANALYSIS / 270 study ticks"]
+  click modern_construction "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L252" "Source definition"
+  reinforced_concrete --> modern_construction
+  ritual_worship["Ritual & Worship<br/>ANALYSIS / 60 study ticks"]
+  click ritual_worship "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L254" "Source definition"
+  regalia["Regalia & Heraldry<br/>ANALYSIS / 60 study ticks"]
+  click regalia "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L257" "Source definition"
+  weaving --> regalia
+  monuments["Monuments & Statuary<br/>ANALYSIS / 130 study ticks"]
+  click monuments "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L258" "Source definition"
+  stone_masonry --> monuments
+  ritual_worship --> monuments
+  fine_arts["Fine Arts & Leisure<br/>ANALYSIS / 165 study ticks"]
+  click fine_arts "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L259" "Source definition"
+  monuments --> fine_arts
+  pottery_storage["Pottery & Cookware<br/>ANALYSIS / 60 study ticks"]
+  click pottery_storage "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L261" "Source definition"
+  cooperage["Cooperage & Containers<br/>ANALYSIS / 95 study ticks"]
+  click cooperage "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L262" "Source definition"
+  basic_tools --> cooperage
+  resource_processing["Resource Processing<br/>ANALYSIS / 95 study ticks"]
+  click resource_processing "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L263" "Source definition"
+  basic_tools --> resource_processing
+  early_economy["Trade & Coinage<br/>ANALYSIS / 95 study ticks"]
+  click early_economy "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L264" "Source definition"
+  workshops["Workshops<br/>ANALYSIS / 130 study ticks"]
+  click workshops "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L265" "Source definition"
+  pottery_storage --> workshops
+  glassworking["Glassworking<br/>ANALYSIS / 130 study ticks"]
+  click glassworking "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L266" "Source definition"
+  pottery_storage --> glassworking
+  papermaking["Papermaking<br/>ANALYSIS / 130 study ticks"]
+  click papermaking "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L267" "Source definition"
+  printing_currency["Printing Press<br/>ANALYSIS / 165 study ticks"]
+  click printing_currency "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L268" "Source definition"
+  papermaking --> printing_currency
+  optics_instruments["Optics & Instruments<br/>ANALYSIS / 165 study ticks"]
+  click optics_instruments "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L269" "Source definition"
+  glassworking --> optics_instruments
+  factories["Factories<br/>ANALYSIS / 200 study ticks"]
+  click factories "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L270" "Source definition"
+  printing_currency --> factories
+  steam_power --> factories
+  assembly_line["Assembly Line<br/>ANALYSIS / 235 study ticks"]
+  click assembly_line "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L271" "Source definition"
+  factories --> assembly_line
+  automation["Automation<br/>ANALYSIS / 305 study ticks"]
+  click automation "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L272" "Source definition"
+  assembly_line --> automation
+  electricity --> automation
+  digital_computing["Digital Computing<br/>PROTOTYPE / 510 study ticks"]
+  click digital_computing "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L275" "Source definition"
+  automation --> digital_computing
+  electricity --> digital_computing
+  weaving["Weaving<br/>ANALYSIS / 60 study ticks"]
+  click weaving "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L278" "Source definition"
+  basic_furniture["Basic Furniture<br/>ANALYSIS / 60 study ticks"]
+  click basic_furniture "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L280" "Source definition"
+  fine_furniture["Fine Furniture<br/>ANALYSIS / 130 study ticks"]
+  click fine_furniture "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L281" "Source definition"
+  basic_furniture --> fine_furniture
+  manufactured_furniture["Manufactured Furniture<br/>ANALYSIS / 200 study ticks"]
+  click manufactured_furniture "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L282" "Source definition"
+  fine_furniture --> manufactured_furniture
+  watermills["Watermills<br/>ANALYSIS / 165 study ticks"]
+  click watermills "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L286" "Source definition"
+  steam_power["Steam Power<br/>PROTOTYPE / 300 study ticks"]
+  click steam_power "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L289" "Source definition"
+  watermills --> steam_power
+  hydraulic_fracturing["Hydraulic Fracturing<br/>ANALYSIS / 400 study ticks"]
+  click hydraulic_fracturing "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L292" "Source definition"
+  electricity --> hydraulic_fracturing
+  modern_construction --> hydraulic_fracturing
+  electricity["Electricity<br/>PROTOTYPE / 352 study ticks"]
+  click electricity "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L293" "Source definition"
+  steam_power --> electricity
+  combustion["Combustion Engine<br/>ANALYSIS / 235 study ticks"]
+  click combustion "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L294" "Source definition"
+  steam_power --> combustion
+  steelmaking --> combustion
+  nuclear_power["Nuclear Power<br/>PROTOTYPE / 458 study ticks"]
+  click nuclear_power "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L297" "Source definition"
+  combustion --> nuclear_power
+  carts["Carts<br/>ANALYSIS / 95 study ticks"]
+  click carts "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L299" "Source definition"
+  wagons_ships["Wagons & Ships<br/>ANALYSIS / 165 study ticks"]
+  click wagons_ships "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L300" "Source definition"
+  carts --> wagons_ships
+  rail_steam["Rail & Steam<br/>ANALYSIS / 200 study ticks"]
+  click rail_steam "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L301" "Source definition"
+  wagons_ships --> rail_steam
+  steam_power --> rail_steam
+  automobiles["Automobiles<br/>ANALYSIS / 235 study ticks"]
+  click automobiles "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L302" "Source definition"
+  rail_steam --> automobiles
+  combustion --> automobiles
+  aviation_rocketry["Aviation & Rocketry<br/>ANALYSIS / 305 study ticks"]
+  click aviation_rocketry "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L303" "Source definition"
+  automobiles --> aviation_rocketry
+  combustion --> aviation_rocketry
+  alloys --> aviation_rocketry
+  paved_infrastructure["Paved Infrastructure<br/>ANALYSIS / 165 study ticks"]
+  click paved_infrastructure "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L305" "Source definition"
+  stone_masonry --> paved_infrastructure
+  utilities["Utilities<br/>ANALYSIS / 235 study ticks"]
+  click utilities "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L306" "Source definition"
+  paved_infrastructure --> utilities
+  electricity --> utilities
+  basic_agriculture["Basic Agriculture<br/>ANALYSIS / 95 study ticks"]
+  click basic_agriculture "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L310" "Source definition"
+  irrigation["Irrigation<br/>ANALYSIS / 165 study ticks"]
+  click irrigation "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L315" "Source definition"
+  basic_agriculture --> irrigation
+  advanced_agriculture["Advanced Agriculture<br/>ANALYSIS / 235 study ticks"]
+  click advanced_agriculture "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L316" "Source definition"
+  irrigation --> advanced_agriculture
+  stone_arms["Stone Arms<br/>ANALYSIS / 60 study ticks"]
+  click stone_arms "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L318" "Source definition"
+  bronze_weapons["Bronze Arms & Armor<br/>ANALYSIS / 95 study ticks"]
+  click bronze_weapons "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L319" "Source definition"
+  stone_arms --> bronze_weapons
+  steel_blades["Steel Blades<br/>ANALYSIS / 130 study ticks"]
+  click steel_blades "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L320" "Source definition"
+  bronze_weapons --> steel_blades
+  iron_smithing --> steel_blades
+  archery["Archery<br/>ANALYSIS / 60 study ticks"]
+  click archery "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L322" "Source definition"
+  crossbows["Crossbows<br/>ANALYSIS / 130 study ticks"]
+  click crossbows "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L323" "Source definition"
+  archery --> crossbows
+  law_order["Law & Order<br/>ANALYSIS / 95 study ticks"]
+  click law_order "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L327" "Source definition"
+  field_defenses["Field Defenses<br/>ANALYSIS / 60 study ticks"]
+  click field_defenses "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L331" "Source definition"
+  fortifications["Fortifications<br/>ANALYSIS / 165 study ticks"]
+  click fortifications "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L334" "Source definition"
+  field_defenses --> fortifications
+  stone_masonry --> fortifications
+  gunpowder["Gunpowder<br/>PROTOTYPE / 248 study ticks"]
+  click gunpowder "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L338" "Source definition"
+  iron_smithing --> gunpowder
+  gunsmithing["Gunsmithing<br/>ANALYSIS / 200 study ticks"]
+  click gunsmithing "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L342" "Source definition"
+  gunpowder --> gunsmithing
+  rifling["Rifling<br/>ANALYSIS / 200 study ticks"]
+  click rifling "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L343" "Source definition"
+  gunpowder --> rifling
+  steelmaking --> rifling
+  cartridge_ammo["Cartridge Firearms<br/>ANALYSIS / 235 study ticks"]
+  click cartridge_ammo "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L347" "Source definition"
+  rifling --> cartridge_ammo
+  selfloading_firearms["Self-Loading Firearms<br/>ANALYSIS / 270 study ticks"]
+  click selfloading_firearms "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L348" "Source definition"
+  cartridge_ammo --> selfloading_firearms
+  automatic_weapons["Automatic Weapons<br/>ANALYSIS / 305 study ticks"]
+  click automatic_weapons "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L349" "Source definition"
+  selfloading_firearms --> automatic_weapons
+  siege_engines["Siege Engines<br/>ANALYSIS / 130 study ticks"]
+  click siege_engines "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L351" "Source definition"
+  cannon["Cannon<br/>ANALYSIS / 165 study ticks"]
+  click cannon "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L352" "Source definition"
+  siege_engines --> cannon
+  imperial_architecture --> cannon
+  field_artillery["Field Artillery<br/>ANALYSIS / 200 study ticks"]
+  click field_artillery "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L353" "Source definition"
+  cannon --> field_artillery
+  steelmaking --> field_artillery
+  mechanized_war["Mechanized Warfare<br/>PROTOTYPE / 405 study ticks"]
+  click mechanized_war "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L355" "Source definition"
+  field_artillery --> mechanized_war
+  combustion --> mechanized_war
+  steelmaking --> mechanized_war
+  missiles["Missiles<br/>ANALYSIS / 305 study ticks"]
+  click missiles "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L356" "Source definition"
+  mechanized_war --> missiles
+  aviation_rocketry --> missiles
+  padded_armor["Primitive Armor<br/>ANALYSIS / 60 study ticks"]
+  click padded_armor "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L358" "Source definition"
+  herbalism["Herbalism<br/>ANALYSIS / 60 study ticks"]
+  click herbalism "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L360" "Source definition"
+  apothecary["Apothecary<br/>ANALYSIS / 130 study ticks"]
+  click apothecary "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L361" "Source definition"
+  herbalism --> apothecary
+  pharmacology["Pharmacology<br/>ANALYSIS / 235 study ticks"]
+  click pharmacology "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L362" "Source definition"
+  apothecary --> pharmacology
+  printing_currency --> pharmacology
+  modern_medicine["Modern Medicine<br/>ANALYSIS / 305 study ticks"]
+  click modern_medicine "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L363" "Source definition"
+  pharmacology --> modern_medicine
+  field_surgery["Field Surgery<br/>ANALYSIS / 95 study ticks"]
+  click field_surgery "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L365" "Source definition"
+  bronze_working --> field_surgery
+  surgical_theory["Surgical Theory<br/>ANALYSIS / 165 study ticks"]
+  click surgical_theory "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L366" "Source definition"
+  field_surgery --> surgical_theory
+  printing_currency --> surgical_theory
+  anesthetic_surgery["Anesthetic Surgery<br/>ANALYSIS / 235 study ticks"]
+  click anesthetic_surgery "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L367" "Source definition"
+  surgical_theory --> anesthetic_surgery
+  hygiene["Hygiene<br/>ANALYSIS / 95 study ticks"]
+  click hygiene "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L369" "Source definition"
+  sanitation["Sanitation<br/>ANALYSIS / 165 study ticks"]
+  click sanitation "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L370" "Source definition"
+  hygiene --> sanitation
+  germ_theory["Germ Theory<br/>ANALYSIS / 235 study ticks"]
+  click germ_theory "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L371" "Source definition"
+  sanitation --> germ_theory
+  public_health["Public Health<br/>ANALYSIS / 305 study ticks"]
+  click public_health "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L372" "Source definition"
+  germ_theory --> public_health
+  classical_dress["Classical Dress<br/>ANALYSIS / 95 study ticks"]
+  click classical_dress "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L374" "Source definition"
+  weaving --> classical_dress
+  furriery["Furriery<br/>ANALYSIS / 95 study ticks"]
+  click furriery "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L375" "Source definition"
+  weaving --> furriery
+  tailoring["Tailoring<br/>ANALYSIS / 130 study ticks"]
+  click tailoring "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L376" "Source definition"
+  classical_dress --> tailoring
+  fine_garments["Fine Garments<br/>ANALYSIS / 165 study ticks"]
+  click fine_garments "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L377" "Source definition"
+  tailoring --> fine_garments
+  haberdashery["Haberdashery<br/>ANALYSIS / 165 study ticks"]
+  click haberdashery "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L378" "Source definition"
+  tailoring --> haberdashery
+  textile_mills["Textile Mills<br/>ANALYSIS / 200 study ticks"]
+  click textile_mills "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L379" "Source definition"
+  fine_garments --> textile_mills
+  steam_power --> textile_mills
+  ready_made["Ready-Made Clothing<br/>ANALYSIS / 235 study ticks"]
+  click ready_made "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L380" "Source definition"
+  textile_mills --> ready_made
+  synthetics["Synthetic Fabrics<br/>ANALYSIS / 305 study ticks"]
+  click synthetics "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L381" "Source definition"
+  ready_made --> synthetics
+  mail_plate["Mail & Plate<br/>ANALYSIS / 130 study ticks"]
+  click mail_plate "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L383" "Source definition"
+  padded_armor --> mail_plate
+  trench_warfare["Trench Warfare<br/>ANALYSIS / 235 study ticks"]
+  click trench_warfare "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L384" "Source definition"
+  mail_plate --> trench_warfare
+  modern_armor["Modern Armor<br/>ANALYSIS / 305 study ticks"]
+  click modern_armor "https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/research_tree/research_node.dm#L385" "Source definition"
+  trench_warfare --> modern_armor
+  alloys --> modern_armor

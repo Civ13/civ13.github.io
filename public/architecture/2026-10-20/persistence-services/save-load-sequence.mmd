@@ -1,0 +1,42 @@
+sequenceDiagram
+  actor Caller as Admin or timer
+  participant T as gameticker wrapper
+  participant O as Operation owner
+  participant M as map_storage
+  participant F as Generation files
+  participant W as World and clients
+  Caller->>T: savemap()
+  T->>O: begin_persistence_operation(save)
+  alt busy, dimension or recovery hold
+    O-->>T: reject without replacing owner
+  else admitted
+    T->>M: run_world_operation(save, owner)
+    M->>W: capture ownership / round / durable metadata
+    M->>F: back up previous complete generation
+    M->>F: invalidate active completion marker
+    loop every z and turf
+      M->>W: before_save_context / recursive changed fields
+      M->>F: versioned typed entries and generation
+      Note over M,W: Tick checks yield; not a universal atomic gameplay snapshot
+    end
+    M->>F: write round.json, then completion marker
+    T->>O: finish(success) or cleanup and finish(failure)
+  end
+  Caller->>T: loadmap()
+  T->>O: begin_persistence_operation(load)
+  T->>M: prepare dimensions and validate all save structures
+  alt preflight rejection
+    T->>O: finish(false), no map clear
+  else preflight accepted
+    T->>W: mark mutation, suspend durable callbacks, ClearMap
+    T->>M: run_world_operation(load, owner)
+    M->>W: allocate all turfs, index, recursively restore
+    M->>W: after_load, ownership registry, opacity and lights
+    alt mutation/restoration failure
+      T->>O: cleanup; latch recovery_required
+    else restoration success
+      T->>W: restore metadata, durable state, round phase and lighting
+      T->>W: reclaim players unless restart transaction owns deferment
+      T->>O: finish(true)
+    end
+  end

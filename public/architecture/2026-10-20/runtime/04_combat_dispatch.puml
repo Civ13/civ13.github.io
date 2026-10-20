@@ -1,0 +1,57 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+title Civ13 default item and combat dispatch
+component "atom.Click -> usr.ClickOn\nclock, target, modifier and special gates" as Click
+component "Modifier / special action" as Mod
+component "Hand / self / adjacency / reach" as Context
+component "item.attack_self" as Self
+component "UnarmedAttack / RangedAttack" as Unarmed
+component "item.resolve_attackby" as Resolve
+component "Turf: item.resolve_attack_turf" as Turf
+component "target.attackby" as AB
+component "Object: item.attack_obj\nif unresolved" as AO
+component "Living surgery branch" as Surgery
+component "item.attack\neligibility, stamina, logs, cooldown" as Attack
+component "target.resolve_item_attack" as Hit
+component "item.apply_hit_effect\n-> target.hit_with_weapon" as Effect
+component "item.afterattack\nif unresolved or ranged" as After
+component "gun: PreFire / Fire" as Gun
+component "consume_next_projectile\nweapon-specific ammo / burst" as Ammo
+component "process_projectile\n-> projectile.launch" as Launch
+component "projectile_list / process.projectile" as Queue
+component "projectile.process -> handleTurf" as Travel
+component "attack_mob / do_bullet_act\n-> target.bullet_act\npenetration / deletion" as Impact
+Click --> Mod
+Click --> Context
+Context --> Self
+Context --> Unarmed
+Context --> Resolve
+Resolve --> Turf
+Turf --> AB : not resolved / not turf
+AB --> AO : object, not resolved
+AB --> Surgery : living
+AB --> Attack : living, normal weapon
+Attack --> Hit
+Hit --> Effect : resolved hit
+AO --> After : unresolved
+Context --> After : ranged item
+After --> Gun
+Gun --> Ammo
+Ammo --> Launch
+Launch --> Queue
+Queue --> Travel
+Travel --> Impact
+note bottom of Effect
+Receiver methods are polymorphic.
+Truthy resolution suppresses subsequent default steps.
+Special weapons, thrown items, explosions and spells
+extend this skeleton rather than following every edge.
+end note
+legend bottom
+code/_onclick/click.dm:7-287; code/_onclick/item_attack.dm:22-121;
+code/modules/projectiles/gun.dm:138-524; projectile.dm:175-821;
+code/processes/projectile.dm:3-40
+Pinned 5bf351248de6050876fe5b53f91209a970cc5668
+endlegend
+@enduml

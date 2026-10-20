@@ -1,0 +1,66 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+title Civ13 research ownership and dependencies
+class ResearchNode {
+ id
+ cost_ticks
+ min_bench_tier
+ mode
+ prereqs
+ era_tier
+ prototype_type
+}
+class SharedRegistry {
+ research_nodes
+ recipe_node_requirements
+ build_research_tree()
+ get_recipe_node_req()
+}
+class MapMetadata {
+ faction_research
+ faction_research_director
+ ordinal_age
+ is_node_done()
+ node_prereqs_met()
+ add_research_ticks()
+ complete_node()
+ can_manage_faction_research()
+}
+class ResearchBench {
+ faction
+ tier
+ assigned_node
+ queue
+ analysis_tick()
+ attackby()
+ Topic()
+ try_advance_queue()
+}
+class ResearchProcess {
+ schedule_interval = 10 seconds
+ fire()
+}
+class Material {
+ generate_recipes_civs()
+}
+SharedRegistry "1" *-- "many" ResearchNode : definitions
+MapMetadata "1" o-- "many" ResearchBench : faction ownership lookup
+ResearchBench --> MapMetadata : authorize and credit progress
+ResearchBench --> SharedRegistry : resolve assigned node
+ResearchProcess --> ResearchBench : registered bench list
+Material --> SharedRegistry : recipe path to node ID
+Material --> MapMetadata : node DONE / legacy thresholds
+ResearchNode --> ResearchNode : prerequisite IDs
+note bottom of MapMetadata
+ANALYSIS: study reaches cost.
+PROTOTYPE: study plus submitted prototype.
+Books: explicit completion route.
+Capstones may advance global ordinal_age.
+end note
+legend bottom
+code/modules/research_tree/research_node.dm:13-74,159-234
+research_bench.dm:23-207,585-740; research_faction.dm:43-232
+Pinned 5bf351248de6050876fe5b53f91209a970cc5668
+endlegend
+@enduml

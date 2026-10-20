@@ -1,0 +1,32 @@
+sequenceDiagram
+  participant C as Client input
+  participant H as Human mob
+  participant M as movementMachine
+  participant CM as client.Move
+  participant NM as Living / movable / native Move
+  participant T as Collision target
+  participant A as Mining action owner
+  C->>H: direction start/stop updates held axes
+  loop independent movement loop
+    M->>H: read direction, movement and delay gates
+    M->>CM: async Move(get_step, direction, diagonal)
+    CM->>CM: canmove / moving / delay / map and actor gates
+    opt opt-in physical sub-tile adapter
+      CM->>H: eligibility and one-use pulse
+    end
+    CM->>NM: polymorphic movement after policy checks
+    NM->>T: native passability / collision
+    opt human collision
+      T->>H: Bump
+      H->>A: try_bump_mining; reserve actor and turf before spawn
+      alt eligible mining
+        A->>A: perform; do_after with exact actor/tool/turf/offset context
+        A->>T: revalidate then mining effects
+        A->>A: release reciprocal reservations
+      else ordinary collision
+        H->>NM: inherited Bump; deferred pushing
+      end
+    end
+    M->>M: remove busy client; wait until move delay; re-add
+  end
+  Note over C,CM: Native movement handlers also enter client movement without waiting for held-input loop

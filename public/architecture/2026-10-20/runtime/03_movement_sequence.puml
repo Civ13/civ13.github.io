@@ -1,0 +1,46 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+title Civ13 movement and collision ownership
+actor Player
+participant "Human mob" as H
+participant movementMachine as M
+participant "client.Move" as C
+participant "living / movable / native Move" as N
+participant "Collision target" as T
+participant "pickaxe_mining_action" as A
+Player -> H : held direction start/stop
+loop independent movement loop
+M -> H : read axes and movement/delay gates
+M -> C : asynchronous Move
+C -> C : canmove / moving / delay / map / actor gates
+opt disabled-by-default physical sub-tile adapter enabled
+C -> H : eligibility and one-use pulse
+end
+C -> N : polymorphic movement
+N -> T : native passability / collision
+opt human collision
+T -> H : Bump
+H -> A : try_bump_mining; reserve actor/turf
+alt eligible mining
+A -> A : perform / do_after(mining_context)
+A -> A : validate actor, tool, turf, physical offsets
+A -> T : effects only after successful wait and revalidation
+A -> A : release reciprocal reservations
+else ordinary collision
+H -> N : inherited Bump; deferred pushing
+end
+end
+M -> M : remove busy client; sleep to delay; re-add
+end
+note over Player,C
+Native movement handlers also enter client movement.
+Configured loop delay is not measured achieved frequency.
+end note
+legend bottom
+code/movementMachine.dm:24-127; code/game/mob/mob_movement.dm:193-340;
+code/game/mob/living/carbon/carbon.dm:392-405;
+code/game/turfs/floor_attackby.dm:677-817
+Pinned 5bf351248de6050876fe5b53f91209a970cc5668
+endlegend
+@enduml

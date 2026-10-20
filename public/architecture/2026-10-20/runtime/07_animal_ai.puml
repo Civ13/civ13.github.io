@@ -1,0 +1,35 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+title Civ13 simple-animal behavior and combat stances
+[*] --> LifeDispatch
+LifeDispatch --> Suppressed : state / client / anchor / empty server / movement gates
+LifeDispatch --> Feeding : hunger takes priority
+LifeDispatch --> Behaviour : handle_ai throttle permits
+Behaviour --> Wandering : wander / scared
+Behaviour --> Idle : combat handler with IDLE stance
+Behaviour --> Alert : combat handler with ALERT stance
+Idle --> Attack : FindTarget selects valid target
+Alert --> Idle : target missing long enough
+Alert --> Attack : stance threshold / hostile mode
+Attack --> Tired : hunt fatigue threshold
+Tired --> Attack : rested with target
+Tired --> Idle : rested without target
+Attack --> Idle : LoseTarget / LostTarget
+Attack --> Attack : pursuit / cover / attack / surroundings
+Feeding --> LifeDispatch : next Life
+Wandering --> LifeDispatch : next Life
+Suppressed --> LifeDispatch : next Life
+note right of Attack
+Simplified stance abstraction.
+FindTarget can enter ATTACK directly.
+ALERT is not a mandatory intermediate.
+Subtype methods extend attack/target behavior.
+Native walking can run between Life calls.
+end note
+legend bottom
+code/game/mob/living/simple_animal/simple_animal.dm:124-175;
+simple_ai.dm:3-121; hostile/tactical_ai.dm:131-435
+Pinned 5bf351248de6050876fe5b53f91209a970cc5668
+endlegend
+@enduml

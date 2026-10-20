@@ -1,0 +1,27 @@
+stateDiagram-v2
+  [*] --> StartupGate
+  StartupGate --> StartupGate: persistence startup_hold
+  StartupGate --> RestoredPhase: import already restored round
+  StartupGate --> Pregame: ordinary fresh round
+  Pregame --> Pregame: countdown paused / vote waits
+  Pregame --> SettingUp: countdown reaches zero
+  SettingUp --> Pregame: admission fails or save gate
+  SettingUp --> SettingUp: startup hold yields/retries
+  SettingUp --> RestoredPhase: import completes during admission
+  SettingUp --> Playing: can_start or admin_started; create/equip; roundstart
+  RestoredPhase --> Playing: saved active round resumed; no fresh seeding
+  Playing --> Playing: persistence active clears finished
+  Playing --> Playing: map.tick / events / gameplay
+  Playing --> Finished: ticker.finished and normal round
+  Finished --> Playing: persistence recheck becomes active
+  Finished --> EndDelayed: admin delay_end
+  Finished --> RebootPending: roundend hook and epoch-adjusted timeout
+  RebootPending --> EndDelayed: admin delay_end before reboot
+  RebootPending --> Playing: persistence recheck
+  RebootPending --> RebootGate: world.Reboot
+  RebootGate --> RebootBlocked: persistence owner/startup hold
+  RebootGate --> [*]: permitted native reboot or supervisor request
+  note right of RestoredPhase
+    Diagram focuses saved active rounds.
+    Imported phase interpretation is owned by persistence.
+  end note

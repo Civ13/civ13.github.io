@@ -1,0 +1,54 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+left to right direction
+title Core domain types (selected, not every subtype)
+class datum
+class atom
+class area
+class turf
+class "atom/movable" as movable
+class obj
+class mob
+class "mob/living" as living
+class carbon
+class human
+class simple_animal
+class item
+class structure
+class map_metadata
+class reagents
+class nanoui
+class research_node
+class client
+class lighting_overlay
+class lighting_corner
+class lighting_source
+class gameticker
+datum <|-- atom
+atom <|-- area
+atom <|-- turf
+atom <|-- movable
+movable <|-- obj
+movable <|-- mob
+mob <|-- living
+living <|-- carbon
+  carbon <|-- human
+living <|-- simple_animal
+obj <|-- item
+obj <|-- structure
+obj <|-- map_metadata
+datum <|-- reagents
+datum <|-- nanoui
+datum <|-- research_node
+atom "1" o-- "0..1" reagents : optional holder
+client --> mob : controlled body
+turf --> lighting_overlay : renderer
+turf --> lighting_corner : shared references
+lighting_source --> lighting_corner : contributions
+map_metadata --> gameticker : round policy
+note bottom of datum
+Selected native + source hierarchy.
+Full lexical table records reopenings and parent_type overrides.
+end note
+@enduml

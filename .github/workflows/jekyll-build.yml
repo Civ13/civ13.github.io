@@ -38,6 +38,8 @@ jobs:
           node tools/check_roadmap.cjs _site
       - name: Validate generated previews and fallback metadata
         run: python3 tools/check_site_previews.py _site
+      - name: Validate architecture atlas and preserved downloads
+        run: python3 tools/check_architecture_atlas.py _site
       - name: Exercise serialization, invalid payloads, and alternate origins
         run: python3 tools/test_previews.py
       - name: Upload validated site

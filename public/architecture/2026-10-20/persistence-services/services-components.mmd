@@ -1,0 +1,20 @@
+flowchart LR
+  Client["BYOND client"] --> Game["Compiled Civ13 world"]
+  Topic["External BYOND Topic request"] --> Filter["Topic rate limits and handlers"] --> Game
+  Supervisor["Optional Nomads TEST1714 supervisor"] --> Local["Loopback token + boot session + operation API"] --> Game
+  Game --> Saves["Completed save + restart intent"]
+  Saves --> Supervisor
+  Supervisor --> Build["Detached commit build / binary hashes / owned process"]
+  Game --> Help["DM client-session Help"] --> Spool["Bounded file spool"]
+  Spool <--> Worker["Optional Python Help worker"] --> Model["Configured Ollama HTTP endpoint"]
+  Worker --> Corpus["Approved player corpus / recipe atlas / wiki"]
+  Bot["External Discord bot, not audited here"] --> DiscordFiles["SQL discord2* delimiter files"] --> Game
+  Game --> Webhook["Optional world.Export webhook"] --> External["Configured external receiver"]
+  Game <--> Prefs["SQL charprefs.txt<br/>delimiter file, not SQLite on this path"]
+  Game --> Python["Native shell Python dispatch"] --> Legacy["Legacy launch / update / mapswap scripts"]
+  Game -. OpenDream only .-> Control["Fixed restart/mapswap file control"]
+  Admin["Admin default-off bot control"] --> Fixed["Fixed helper + flock + cooldown"]
+  Fixed -. not approved for installation by repository guidance .-> Draft["Draft bot systemd unit"]
+  Disabled["Gameplay bridge module<br/>NOT in main DME"] -. separate optional source .-> Client
+  CI["Change-selected CI"] --> Build
+  CI --> Fixtures["Offline contracts and selected native fixtures<br/>not deployed acceptance"]

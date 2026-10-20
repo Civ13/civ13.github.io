@@ -1,0 +1,25 @@
+classDiagram
+  direction LR
+  datum <|-- atom
+  atom <|-- area
+  atom <|-- turf
+  atom <|-- movable
+  movable <|-- obj
+  movable <|-- mob
+  mob <|-- living
+  living <|-- carbon
+  carbon <|-- human
+  living <|-- simple_animal
+  obj <|-- item
+  obj <|-- structure
+  obj <|-- map_metadata
+  datum <|-- reagents
+  datum <|-- nanoui
+  datum <|-- research_node
+  atom "1" o-- "0..1" reagents : optional holder
+  client "1" --> "1" mob : current controlled body
+  turf "1" --> "0..1" lighting_overlay
+  turf "1" --> "0..4" lighting_corner : shared references
+  lighting_source --> lighting_corner : illumination contributions
+  map_metadata --> gameticker : round policy
+  note for datum "Conceptual core hierarchy; native engine ancestry plus DM subtypes. Full lexical inheritance table includes explicit parent_type overrides."

@@ -1,0 +1,24 @@
+stateDiagram-v2
+  [*] --> LifeDispatch
+  LifeDispatch --> Suppressed: dead/unconscious/client/anchored/no clients or movement gates
+  LifeDispatch --> Feeding: hunger branch takes priority
+  LifeDispatch --> Behaviour: handle_ai throttle permits
+  Behaviour --> Wandering: wander/scared
+  Behaviour --> Idle: hunt/defends/hostile combat handler
+  Behaviour --> Alert: enters handler with ALERT stance
+  Idle --> Attack: FindTarget selects valid target
+  Alert --> Idle: lost target long enough
+  Alert --> Attack: stance threshold / hostile
+  Attack --> Tired: hunt mode stance_step reaches fatigue threshold
+  Tired --> Attack: rested / target present
+  Tired --> Idle: rested / no target
+  Attack --> Idle: LoseTarget
+  Attack --> Attack: pursuit, cover, attack, surroundings
+  Feeding --> LifeDispatch: next Life dispatch
+  Wandering --> LifeDispatch: next Life dispatch
+  Suppressed --> LifeDispatch: next Life dispatch
+  note right of Attack
+    Simplified stance abstraction.
+    Attack methods and NPC types override behavior.
+    Native walks/pathfinding also run between Life calls.
+  end note

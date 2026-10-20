@@ -1,0 +1,28 @@
+sequenceDiagram
+  actor Player
+  participant Engine as BYOND callback
+  participant Atom as atom.Click
+  participant Mob as mob.ClickOn
+  participant Target as target subtype
+  participant Item as held item subtype
+  Player->>Engine: click atom / browser link
+  alt Atom click
+    Engine->>Atom: Click(location, control, params)
+    Atom->>Mob: usr.ClickOn(src, params)
+    Mob->>Mob: target + click clock + modifiers
+    alt Modifier shortcut
+      Mob->>Target: modifier-specific dispatch
+    else Ordinary action
+      Mob->>Mob: special equipment, incapacitation, movement gates
+      alt Held item + suitable range
+        Mob->>Target: attackby(item, actor)
+        Mob->>Item: afterattack(target, actor, adjacency, params)
+      else Empty hand / ranged action
+        Mob->>Target: UnarmedAttack or RangedAttack routing
+      end
+    end
+  else Browser href
+    Engine->>Engine: client.Topic validates usr matches mob
+    Engine->>Target: parent/native href target dispatch
+  end
+  Note over Mob,Item: Overrides, queued spawn callbacks and early returns change concrete paths. See exact source, not this abstraction, for authorization order.

@@ -1,0 +1,34 @@
+@startuml
+!theme plain
+title Informational Help - session and transport boundaries
+actor "Authenticated client" as C
+participant "DM Help service" as D
+database "Local bounded spool" as S
+participant "Python Help bridge" as P
+participant "Configured Ollama endpoint" as L
+C -> D : question / token-bound follow-up
+D -> D : availability; bounds; rate limits; slot reservation
+alt Unavailable or rate limited
+ D --> C : bounded rejection
+else Admitted
+ D -> S : request JSON, then id ready marker
+ P -> S : bounded marker + matching request
+ P -> P : validate conversation; rate limit; corpus retrieval
+ P -> L : bounded POST via deadline child
+ note over P,L : No redirects or environment proxy; no gameplay tools
+ L --> P : model text or transport failure
+ P -> S : atomic response if ready id still matches
+ loop Scheduled DM poll
+  D -> S : bounded response with matching id
+  alt Client gone or generation changed
+   D -> D : discard delivery eligibility
+  else Usable response
+   D --> C : escaped plain/basic Markdown
+   D -> D : bounded session history; rotate token
+  else Deadline / unusable / rate limit
+   D --> C : bounded timeout / unavailable / retry
+  end
+ end
+ D -> S : clear slot
+end
+@enduml
