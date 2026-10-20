@@ -27,6 +27,7 @@ class Links(HTMLParser):
         if tag == 'img' and '/architecture/' in a.get('src', ''):
             if not a.get('alt'): self.image_errors.append('diagram lacks alt text')
             if 'architecture-diagram' not in a.get('class', '').split(): self.image_errors.append('diagram lacks responsive sizing class')
+            if 'height: auto' not in a.get('style', ''): self.image_errors.append('diagram lacks cache-safe aspect-ratio fallback')
             if not a.get('width') or not a.get('height'): self.image_errors.append('diagram lacks dimensions')
 
 def check(root):

@@ -14,13 +14,13 @@ image:
 
 Explore the game's architecture through readable UML views, source-linked reports and a reproducible inventory. This atlas describes [Civ13/Civ13 at 5bf351248de6](https://github.com/Civ13/Civ13/tree/5bf351248de6050876fe5b53f91209a970cc5668), not the state of a deployed server or unmerged changes.
 
-<div class="message" role="note">
+<div class="architecture-notice" role="note">
 <strong>Coverage boundary:</strong> these are selected static architecture paths, not an exhaustive enumeration of all possible runtime paths. Dynamic dispatch, callbacks, external input and unbounded loops remain explicit limitations. No gameplay runtime or live server was tested for this audit.
 </div>
 
 [Read the audit]({{ '/architecture/audit/' | relative_url }}) · [Browse the diagrams]({{ '/architecture/diagrams/' | relative_url }}) · [Validation and limits]({{ '/architecture/validation/' | relative_url }})
 
-<a href="{{ '/public/architecture/2026-10-20/diagrams/01-system-components.svg' | relative_url }}"><img class="architecture-diagram" src="{{ '/public/architecture/2026-10-20/diagrams/01-system-components.png' | relative_url }}" alt="Component overview: BYOND client, runtime scheduler, gameplay, lighting, persistence and external services" width="1922" height="573"></a>
+<a href="{{ '/public/architecture/2026-10-20/diagrams/01-system-components.svg' | relative_url }}"><img class="architecture-diagram" style="height: auto;" src="{{ '/public/architecture/2026-10-20/diagrams/01-system-components.png' | relative_url }}" alt="Component overview: BYOND client, runtime scheduler, gameplay, lighting, persistence and external services" width="1922" height="573"></a>
 
 Open the overview image for a full-size, zoomable SVG.
 
