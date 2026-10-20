@@ -1,0 +1,26 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+title Lighting lifecycle and startup barrier
+[*] --> StartupHook
+StartupHook --> SharedCorners : create_lighting
+SharedCorners --> OverlaySweeps : defer corner activity
+OverlaySweeps --> CompatibilitySweep : excluded / dynamic sites
+CompatibilitySweep --> ActiveCorners : activate fresh + reconcile existing
+ActiveCorners --> RuntimeQueues : release barrier
+SharedCorners --> FailedStartup : exception
+OverlaySweeps --> FailedStartup : exception
+CompatibilitySweep --> FailedStartup : exception
+ActiveCorners --> FailedStartup : exception
+FailedStartup --> [*] : readiness flags false; rethrow
+RuntimeQueues --> SourceWork : sources process
+SourceWork --> CornerChanges : contribution update
+CornerChanges --> OverlayWork : queued change
+OverlayWork --> RuntimeQueues
+RuntimeQueues --> RestoredDaylight : saved round import
+RestoredDaylight --> RuntimeQueues : apply_restored_lighting
+note right of SharedCorners
+Neighboring turfs share corner identity.
+Yielding startup must retain barrier ownership.
+end note
+@enduml

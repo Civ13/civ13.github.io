@@ -1,0 +1,24 @@
+digraph G {
+rankdir=LR;
+graph [label="create_lighting: lexical name candidates only; 0 edges omitted by size limit", labelloc=t];
+node [shape=box,fontname="DejaVu Sans"];
+"code/modules/lighting/lighting_system.dm:99" [label="/create_lighting\ncode/modules/lighting/lighting_system.dm:99",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/lighting/lighting_system.dm#L99"];
+"code/__defines/time_of_day.dm:24" [label="/pick_TOD\ncode/__defines/time_of_day.dm:24",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/__defines/time_of_day.dm#L24"];
+"tests/lighting_startup/probe.dm:100" [label="/pick_TOD\ntests/lighting_startup/probe.dm:100",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/tests/lighting_startup/probe.dm#L100"];
+"code/modules/lighting/lighting_system.dm:51" [label="/create_all_lighting_corners\ncode/modules/lighting/lighting_system.dm:51",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/lighting/lighting_system.dm#L51"];
+"code/modules/lighting/lighting_system.dm:12" [label="/create_all_lighting_overlays\ncode/modules/lighting/lighting_system.dm:12",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/lighting/lighting_system.dm#L12"];
+"code/modules/lighting/lighting_system.dm:39" [label="/create_startup_compatibility_overlays\ncode/modules/lighting/lighting_system.dm:39",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/lighting/lighting_system.dm#L39"];
+"code/modules/lighting/lighting_corner.dm:73" [label="/datum/lighting_corner/update_active\ncode/modules/lighting/lighting_corner.dm:73",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/lighting/lighting_corner.dm#L73"];
+"code/_helpers/game.dm:206" [label="/environment_sweep_pause\ncode/_helpers/game.dm:206",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/_helpers/game.dm#L206"];
+"tests/lighting_startup/probe.dm:104" [label="/environment_sweep_pause\ntests/lighting_startup/probe.dm:104",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/tests/lighting_startup/probe.dm#L104"];
+"code/modules/lighting/lighting_system.dm:62" [label="/activate_existing_lighting_corners\ncode/modules/lighting/lighting_system.dm:62",URL="https://github.com/Civ13/Civ13/blob/5bf351248de6050876fe5b53f91209a970cc5668/code/modules/lighting/lighting_system.dm#L62"];
+"code/modules/lighting/lighting_system.dm:99" -> "code/__defines/time_of_day.dm:24" [style=dashed,label="pick_TOD (name candidate)"];
+"code/modules/lighting/lighting_system.dm:99" -> "tests/lighting_startup/probe.dm:100" [style=dashed,label="pick_TOD (name candidate)"];
+"code/modules/lighting/lighting_system.dm:99" -> "code/modules/lighting/lighting_system.dm:51" [style=dashed,label="create_all_lighting_corners (name candidate)"];
+"code/modules/lighting/lighting_system.dm:99" -> "code/modules/lighting/lighting_system.dm:12" [style=dashed,label="create_all_lighting_overlays (name candidate)"];
+"code/modules/lighting/lighting_system.dm:99" -> "code/modules/lighting/lighting_system.dm:39" [style=dashed,label="create_startup_compatibility_overlays (name candidate)"];
+"code/modules/lighting/lighting_system.dm:99" -> "code/modules/lighting/lighting_corner.dm:73" [style=dashed,label="update_active (name candidate)"];
+"code/modules/lighting/lighting_system.dm:99" -> "code/_helpers/game.dm:206" [style=dashed,label="environment_sweep_pause (name candidate)"];
+"code/modules/lighting/lighting_system.dm:99" -> "tests/lighting_startup/probe.dm:104" [style=dashed,label="environment_sweep_pause (name candidate)"];
+"code/modules/lighting/lighting_system.dm:99" -> "code/modules/lighting/lighting_system.dm:62" [style=dashed,label="activate_existing_lighting_corners (name candidate)"];
+}

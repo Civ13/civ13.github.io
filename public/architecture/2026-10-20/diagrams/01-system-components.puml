@@ -1,0 +1,41 @@
+@startuml
+skinparam backgroundColor white
+skinparam componentStyle rectangle
+skinparam shadowing false
+left to right direction
+title Civ13 conceptual component architecture (source pinned)
+actor "Player / administrator" as U
+component "BYOND client\nverbs, Click, Topic, HUD" as C
+component "BYOND runtime\nworld / native callbacks" as E
+component "Global initialization\nworld.New / startup hooks" as B
+component "Legacy processScheduler\n+ game controller" as S
+component "Ticker / map_metadata\njobs / factions" as R
+component "Mob Life / objects\nweather / chemistry / vehicles" as G
+component "Lighting sources\nshared corners / overlays" as L
+component "1713 content\ncrafting / research / turfs" as D
+component "Persistence\nowned save/load + recovery" as P
+database "Per-z saves\ndurable graph / markers" as F
+component "NanoUI / stat panels\nbrowser assets" as N
+component "File spools / world Topic\nwebhooks" as I
+component "Separate bot / Help worker\ndeployment supervisor" as X
+U --> C
+C --> E
+E --> B
+B --> S
+S --> R
+S --> G
+S --> L
+C --> G : input dispatch
+G --> D
+R --> P
+G --> P
+P --> F
+S --> N
+N --> C
+E --> I
+I --> X
+note bottom of S
+MC / timer infrastructure is also included.
+Inclusion alone does not prove active startup reachability.
+end note
+@enduml

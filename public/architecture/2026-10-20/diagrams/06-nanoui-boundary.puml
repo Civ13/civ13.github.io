@@ -1,0 +1,30 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+title NanoUI interaction boundary
+actor Player
+participant "client.Topic" as C
+participant "datum/nanoui" as UI
+participant "topic_state" as State
+participant "src_object" as O
+participant "GLOB.nanomanager" as Manager
+Player -> C : browser href
+C -> C : validate usr == mob
+C -> UI : native target Topic
+UI -> UI : update_status(0)
+UI -> State : interaction policy
+alt status not interactive or user != usr
+UI --> Player : ignore
+else authorized interaction
+UI -> O : Topic(href, href_list, state)
+alt source returns true or map toggle
+UI -> Manager : update_uis(src_object)
+Manager -> UI : update / push data
+UI --> Player : browser output
+end
+end
+note over UI,O
+Other direct Topic handlers have their own gates.
+This is not a universal permission boundary for every UI.
+end note
+@enduml

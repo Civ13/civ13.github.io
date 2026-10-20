@@ -1,0 +1,21 @@
+stateDiagram-v2
+  [*] --> Idle: construct / setup
+  Idle --> Queued: enabled, state allowed, due interval
+  Queued --> Queued: scheduler budget admission deferred
+  Queued --> Running: relayProcess / started
+  Running --> Idle: finished; clear completed snapshot
+  Running --> IdleWithWork: tick budget return and nonempty snapshot
+  IdleWithWork --> Queued: next eligible admission retains snapshot
+  Running --> MaybeHung: elapsed exceeds warning
+  MaybeHung --> ProbablyHung: elapsed exceeds alert
+  ProbablyHung --> Hung: elapsed exceeds restart threshold
+  Hung --> Replaced: next update handleHung / restartProcess
+  Replaced --> Idle: construct same runtime type; copy configuration and owner mappings
+  note right of Idle
+    Disabled, paused and game-state eligibility are orthogonal.
+    Paused process can be admitted but skips fire.
+  end note
+  note right of Running
+    VERY_HIGH uses live lists and skips ordinary budget checks.
+    Others copy lists and retain unfinished work snapshots.
+  end note

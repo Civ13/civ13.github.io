@@ -1,0 +1,52 @@
+classDiagram
+  class ResearchNode {
+    id
+    cost_ticks
+    min_bench_tier
+    mode
+    prereqs
+    era_tier
+    prototype_type
+  }
+  class SharedRegistry {
+    research_nodes
+    recipe_node_requirements
+    build_research_tree()
+    get_recipe_node_req()
+  }
+  class MapMetadata {
+    faction_research
+    faction_research_director
+    ordinal_age
+    is_node_done()
+    node_prereqs_met()
+    add_research_ticks()
+    complete_node()
+    can_manage_faction_research()
+  }
+  class ResearchBench {
+    faction
+    tier
+    assigned_node
+    queue
+    analysis_tick()
+    attackby()
+    Topic()
+    try_advance_queue()
+  }
+  class ResearchProcess {
+    schedule_interval_10_seconds
+    fire()
+  }
+  class Material {
+    generate_recipes_civs()
+  }
+  SharedRegistry "1" *-- "many" ResearchNode : definitions
+  MapMetadata "1" o-- "many" ResearchBench : faction ownership lookup
+  ResearchBench --> MapMetadata : authorize and credit progress
+  ResearchBench --> SharedRegistry : resolve assigned node
+  ResearchProcess --> ResearchBench : registered bench list
+  Material --> SharedRegistry : recipe path to node id
+  Material --> MapMetadata : node DONE or legacy thresholds
+  ResearchNode --> ResearchNode : prerequisite IDs
+  note for MapMetadata "ANALYSIS: study reaches cost. PROTOTYPE: study plus submitted prototype. Books have explicit completion route. Era capstone completion can advance world ordinal_age."

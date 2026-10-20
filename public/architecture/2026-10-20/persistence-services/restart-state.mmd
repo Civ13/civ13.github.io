@@ -1,0 +1,23 @@
+stateDiagram-v2
+  [*] --> Running
+  Running --> Saving: execute admitted, native durable profile
+  Running --> Running: busy / unsupported / allocation rejected
+  Saving --> Running: save or validation failed, no unresolved intent
+  Saving --> IntentPublished: completed generation validated, intent written/read back
+  IntentPublished --> ReplacingWorld: identity revalidated, Reboot or shutdown
+  IntentPublished --> Running: returned failure, owned intent safely consumed
+  IntentPublished --> RecoveryHold: failed or uncertain intent cleanup
+  ReplacingWorld --> StartupHold: new process detects intent
+  StartupHold --> Preflight: validate intent and dimensions
+  Preflight --> RecoveryHold: mismatch / malformed / budget refusal
+  Preflight --> Importing: matching completed generation
+  Importing --> RecoveryHold: failure after mutation; restart original map required
+  Importing --> ConsumingIntent: import completed
+  ConsumingIntent --> RecoveryHold: intent changed or deletion failed
+  ConsumingIntent --> ReclaimPlayers: matching intent consumed, hold released
+  ReclaimPlayers --> Running: eligible waiting clients restored
+  RecoveryHold --> Preflight: explicit resume only when import not partially failed
+  note right of RecoveryHold
+    No fresh-round fallback or automatic destructive retry.
+    Preserve matched generation and original map.
+  end note

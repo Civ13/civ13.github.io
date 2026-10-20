@@ -1,0 +1,40 @@
+@startuml
+!theme plain
+title Persistence components - static production contracts
+skinparam componentStyle uml2
+component "Admin / timer / startup" as Caller
+component "gameticker\nsavemap / loadmap" as Ticker
+component "Restart transaction" as Restart
+component "Operation identity\none-shot admission and cleanup" as Operation
+component "map_storage" as Storage
+component "Per-z typed object graph" as Graph
+component "Opt-in durable metadata graph" as Durable
+component "before_save_context / after_load\nexclusion policy and export frames" as Hooks
+database "Completed generation\nmap.txt, N.sav, round.json, marker" as Files
+database "Previous completed backup" as Backup
+component "Restored body registry\nauthenticated account reclaim" as Reclaim
+component "Normal Login / HUD rebuild" as Login
+artifact "restart_intent.json\ngeneration and file hashes" as Intent
+component "Opacity / light / round-lighting rebuild" as Lighting
+Caller --> Ticker
+Restart --> Ticker
+Ticker --> Operation
+Operation --> Storage
+Storage --> Graph
+Storage --> Durable
+Graph --> Hooks
+Graph --> Files
+Durable --> Files
+Durable ..> Graph : binds existing entries
+Files --> Backup : backup before replacement
+Storage --> Reclaim
+Reclaim --> Login
+Restart --> Intent
+Storage --> Lighting
+note bottom of Graph
+Client, key, HUD, action locks and lighting graphs
+are excluded by explicit runtime policy.
+Direct Save_World / Load_World acquire an operation,
+but do not replace the full ticker-load lifecycle.
+end note
+@enduml

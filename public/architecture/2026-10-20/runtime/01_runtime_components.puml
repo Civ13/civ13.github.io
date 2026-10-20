@@ -1,0 +1,50 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+title Civ13 startup and runtime owners
+component "Native globals / map creation" as Native
+component "global_init.New\nconfig, references, chemistry" as GI
+component "world.New\npersistence detection before yield" as World
+component "startup hooks\ndynamic proc enumeration" as Hook
+component "Materials / research registry" as Reg
+component "spawn: scheduler.setup\nthen setup_everything" as Setup
+component "processScheduler\n/process subtype discovery" as PS
+component "Jobs / atoms / areas / recipes\npersistence import scheduling" as Init
+component "process/ticker.setup" as TP
+component "gameticker.pregame" as Pre
+component "Server watchdog loop" as Watch
+component "Status / external file polling\npersistence loops" as Loops
+component "processScheduler.start\nrun token / queues / tick budgets" as Run
+component "movementMachine\nindependent sleeping loop" as MM
+component "Life / process_interval / map.tick\ngameticker / projectile / research\nscheduled_task / other processes" as Work
+component "client.Move / mob.Move\nnative collision" as Move
+component "Global Master instance\ncompiled StonedMC / timer" as Master
+component "Master.Initialize / StartProcessing\nsubsystem fire / SStimer" as MC #FFF5D6
+Native --> GI
+Native --> World
+World --> Hook
+World --> Reg
+World --> Setup
+Setup --> PS
+Setup --> Init
+PS --> TP
+TP --> Pre
+TP --> Watch
+TP --> Loops
+Watch --> Run
+Watch --> MM
+Run --> Work
+MM --> Move
+Native --> Master
+Master ..> MC : ordinary startup activation unresolved
+note bottom of Work
+Polymorphic dispatch to registered objects.
+No /process member overrides were found:
+SSUtility and similar headings are comments.
+end note
+legend bottom
+code/world.dm:27-123,348-502; code/setup.dm; code/processes/ticker.dm;
+code/processes/__processScheduler.dm:74-209; code/controllers/mc/master.dm:12-225
+Pinned 5bf351248de6050876fe5b53f91209a970cc5668
+endlegend
+@enduml

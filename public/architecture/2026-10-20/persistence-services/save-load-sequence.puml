@@ -1,0 +1,46 @@
+@startuml
+!theme plain
+title Save and full ticker-load sequence
+actor "Admin or timer" as Caller
+participant "gameticker" as T
+participant "Operation owner" as O
+participant "map_storage" as M
+database "Generation files" as F
+participant "World and clients" as W
+Caller -> T : savemap()
+T -> O : begin(save)
+alt Busy, dimension or recovery hold
+ O --> T : reject without replacing owner
+else Admitted
+ T -> M : run_world_operation(save, owner)
+ M -> W : capture ownership / round / durable metadata
+ M -> F : back up previous completed generation
+ M -> F : invalidate active completion marker
+ loop Every z and turf
+  M -> W : hooks / recursive fields and contents
+  M -> F : typed entries and generation
+ end
+ note over M,W : Tick checks yield; not universal atomic snapshot semantics
+ M -> F : round.json, then completion marker
+ T -> O : finish(success) or cleanup + finish(failure)
+end
+== Full load ==
+Caller -> T : loadmap()
+T -> O : begin(load)
+T -> M : prepare dimensions; validate save
+alt Preflight rejection
+ T -> O : finish(false); no map clear
+else Accepted
+ T -> W : mark mutation; suspend; ClearMap
+ T -> M : run_world_operation(load, owner)
+ M -> W : allocate all turfs; index; restore entries
+ M -> W : after_load; registry; opacity and lights
+ alt Mutation or restoration fails
+  T -> O : cleanup; latch recovery_required
+ else Restored
+  T -> W : metadata; durable state; round phase / lighting
+  T -> W : reclaim players unless restart owns deferment
+  T -> O : finish(true)
+ end
+end
+@enduml

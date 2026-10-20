@@ -1,0 +1,55 @@
+@startuml
+!theme plain
+title External services and optional source boundaries
+left to right direction
+skinparam componentStyle uml2
+actor "BYOND client" as Client
+component "Compiled Civ13 world" as Game
+component "Public Topic limiter / handlers" as Topic
+component "Loopback token + session + operation API" as Local
+component "Optional TEST1714 supervisor" as Supervisor
+artifact "Save generation + intent" as Saves
+component "Detached build / binary hashes / owned process" as Build
+component "DM session Help" as Help
+database "Bounded Help spool" as Spool
+component "Optional Help worker" as Worker
+component "Configured Ollama endpoint" as Model
+artifact "Approved gameplay corpus" as Corpus
+component "External Discord bot\nnot audited here" as Bot
+database "SQL discord2* files" as DiscordFiles
+database "SQL charprefs.txt\ndelimiter file on this path" as Prefs
+component "Optional webhook Export" as Webhook
+component "Configured receiver" as External
+component "Native shell Python dispatch" as Python
+component "Legacy launch / update / mapswap" as Legacy
+artifact "OpenDream fixed-action spool" as Control
+component "Default-off admin bot helper\nflock / cooldown / fixed actions" as Fixed
+component "Draft bot unit\ndeployment blocked by repository guidance" as Draft
+component "Gameplay bridge\nNOT in main DME" as Disabled
+component "Change-selected CI" as CI
+component "Offline contracts / selected native fixtures" as Fixtures
+Client --> Game
+Topic --> Game
+Supervisor --> Local
+Local --> Game
+Game --> Saves
+Saves --> Supervisor
+Supervisor --> Build
+Game --> Help
+Help --> Spool
+Spool <--> Worker
+Worker --> Model
+Worker --> Corpus
+Bot --> DiscordFiles
+DiscordFiles --> Game
+Game <--> Prefs
+Game --> Webhook
+Webhook --> External
+Game --> Python
+Python --> Legacy
+Game ..> Control : OpenDream only
+Fixed ..> Draft : not deployment approval
+Disabled ..> Client : separate optional source
+CI --> Build
+CI --> Fixtures
+@enduml

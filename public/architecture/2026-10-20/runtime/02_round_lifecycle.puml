@@ -1,0 +1,36 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+title Civ13 gameticker lifecycle (static abstraction)
+[*] --> StartupGate
+StartupGate --> StartupGate : persistence startup_hold
+StartupGate --> RestoredPhase : round_restored
+StartupGate --> Pregame : fresh round
+Pregame --> Pregame : paused countdown / vote waits
+Pregame --> SettingUp : countdown reaches zero
+SettingUp --> Pregame : admission fails / save gate
+SettingUp --> RestoredPhase : import completes during admission
+SettingUp --> Playing : admission / characters / equip / roundstart
+RestoredPhase --> Playing : resume saved active round
+Playing --> Playing : persistence active clears finished
+Playing --> Finished : normal round and ticker.finished
+Finished --> Playing : persistence recheck
+Finished --> EndDelayed : admin delay_end
+Finished --> RebootPending : roundend hook / adjusted timeout
+RebootPending --> EndDelayed : delay_end before reboot
+RebootPending --> Playing : persistence recheck
+RebootPending --> RebootGate : world.Reboot
+RebootGate --> RebootBlocked : persistence owner / startup hold
+RebootGate --> [*] : permitted restart path
+note right of RestoredPhase
+Saved active rounds shown.
+Other saved-phase semantics belong
+to the persistence implementation.
+end note
+legend bottom
+Source: code/game/gameticker.dm:45-245;
+code/game/objects/map_metadata/_map_metadata.dm:477-522,684-735;
+code/world.dm:235-277
+Pinned 5bf351248de6050876fe5b53f91209a970cc5668
+endlegend
+@enduml

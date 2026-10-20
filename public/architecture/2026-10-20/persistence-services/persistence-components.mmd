@@ -1,0 +1,19 @@
+flowchart TB
+  Admin["Admin save/load verbs"] --> Ticker["gameticker savemap / loadmap"]
+  Auto["Persistence timer / startup autoload"] --> Ticker
+  Restart["persistence_restart_transaction"] --> Ticker
+  Direct["Direct Save_World / Load_World"] --> Operation
+  Ticker --> Operation["Unique persistence_world_operation<br/>admission, one-shot entry, cleanup owner"]
+  Operation --> Storage["map_storage backend"]
+  Storage --> Graph["Per-z object graph<br/>typed values, aliases, contents"]
+  Storage --> Durable["Opt-in durable metadata graph<br/>schemas, timer remainders, areas, environment"]
+  Graph --> Hooks["before_save_context / after_load<br/>runtime exclusions / export frames"]
+  Graph --> Files["map_saves: map.txt, N.sav,<br/>round.json, save_complete.txt"]
+  Durable --> Files
+  Durable -. binds existing entries .-> Graph
+  Files --> Backup["map_backups: previous completed generation"]
+  Storage --> Reclaim["Restored body registry<br/>authenticated ckey reclaim"]
+  Reclaim --> Login["normal human Login and HUD rebuild"]
+  Restart --> Intent["restart_intent.json<br/>generation and file hashes"]
+  Storage --> Lighting["rebuild opacity / lights / round lighting"]
+  Excluded["Excluded runtime state:<br/>client, key, HUD, locks, lighting graph"] -. exclusion policy .-> Graph

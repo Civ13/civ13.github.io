@@ -1,0 +1,31 @@
+sequenceDiagram
+  actor C as Authenticated client session
+  participant D as DM Help service
+  participant S as Local SQL/player-help spool
+  participant P as Python bridge
+  participant L as Configured Ollama endpoint
+  C->>D: Help question / token-bound follow-up
+  D->>D: availability, bounded question/context, account and global rate limits
+  alt unavailable or rate limited
+    D-->>C: bounded rejection
+  else slot admitted
+    D->>S: request JSON then id ready marker
+    P->>S: read bounded marker and matching request
+    P->>P: validate conversation, rate limit, retrieve approved gameplay corpus
+    P->>L: bounded HTTP POST via deadline child (no redirects/proxy)
+    L-->>P: model text or transport failure
+    P->>S: atomic response only if ready id still matches
+    loop scheduled DM poll
+      D->>S: bounded response with matching id
+      alt client gone or conversation generation changed
+        D->>D: discard client delivery eligibility
+      else usable response
+        D-->>C: escaped plain/basic Markdown answer
+        D->>D: remember bounded session turns; rotate action token
+      else deadline / unusable / model rate limit
+        D-->>C: bounded unavailable, timeout or retry message
+      end
+    end
+    D->>S: clear slot
+  end
+  Note over C,L: Help is informational; model receives no gameplay tools or actions

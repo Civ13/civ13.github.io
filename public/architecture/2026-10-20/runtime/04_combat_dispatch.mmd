@@ -1,0 +1,26 @@
+flowchart TD
+  Click["atom.Click -> usr.ClickOn"] --> Gate{"target / next_click / modifiers / special branches"}
+  Gate --> Mod["modifier verbs or special action"]
+  Gate --> Context{"hand, self, adjacency, reach"}
+  Context --> Self["item.attack_self"]
+  Context --> Unarmed["UnarmedAttack or RangedAttack<br/>mob-type override"]
+  Context --> Resolve["item.resolve_attackby"]
+  Resolve --> Turf["turf case: item.resolve_attack_turf"]
+  Turf --> AB["target.attackby"]
+  AB --> AO["object case if unresolved: item.attack_obj"]
+  AB --> Living{"living target"}
+  Living --> Surgery["surgery branch"]
+  Living --> Attack["item.attack<br/>eligibility, stamina, log, cooldown"]
+  Attack --> Hit["target.resolve_item_attack"]
+  Hit --> Effect["item.apply_hit_effect -> target.hit_with_weapon"]
+  AO --> Unresolved{"not resolved"}
+  Context --> Ranged["ranged item path"]
+  Ranged --> After["item.afterattack"]
+  Unresolved --> After
+  After --> Gun["gun afterattack: PreFire or Fire"]
+  Gun --> Ammo["consume_next_projectile<br/>weapon-specific ammo / burst behavior"]
+  Ammo --> Launch["process_projectile -> projectile.launch"]
+  Launch --> Queue["projectile_list / process.projectile"]
+  Queue --> Travel["projectile.process -> handleTurf"]
+  Travel --> Impact["attack_mob / do_bullet_act<br/>target bullet_act, penetration, deletion"]
+  Note["All named receiver procs are polymorphic.<br/>Truthy resolve returns suppress later default branches.<br/>Diagram is the normal skeleton, not every weapon override."]

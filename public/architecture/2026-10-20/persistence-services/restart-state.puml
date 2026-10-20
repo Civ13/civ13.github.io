@@ -1,0 +1,28 @@
+@startuml
+!theme plain
+title Generation-bound native restart recovery
+hide empty description
+[*] --> Running
+Running --> Saving : execute admitted; native durable profile
+Running --> Running : busy / unsupported / allocation rejection
+Saving --> Running : save failure; no unresolved intent
+Saving --> IntentPublished : generation validated; intent read back
+IntentPublished --> ReplacingWorld : revalidate; reboot or shutdown
+IntentPublished --> Running : returned failure; owned intent consumed
+IntentPublished --> RecoveryHold : intent cleanup fails
+ReplacingWorld --> StartupHold : new process detects intent
+StartupHold --> Preflight : intent and dimension validation
+Preflight --> RecoveryHold : malformed / mismatch / budget refusal
+Preflight --> Importing : matching completed generation
+Importing --> RecoveryHold : post-mutation failure
+Importing --> ConsumingIntent : import complete
+ConsumingIntent --> RecoveryHold : intent changed / deletion fails
+ConsumingIntent --> ReclaimPlayers : matching intent consumed
+ReclaimPlayers --> Running : eligible clients restored
+RecoveryHold --> Preflight : explicit resume; no partial failed import
+note right of RecoveryHold
+No fresh-round fallback or automatic retry.
+A partial failed import requires restarting
+from the original map with preserved files.
+end note
+@enduml

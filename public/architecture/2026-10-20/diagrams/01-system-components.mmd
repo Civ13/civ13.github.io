@@ -1,0 +1,20 @@
+flowchart TB
+  User["Player / administrator"] --> Client["BYOND client: verbs, Click, Topic, HUD"]
+  Client --> Engine["BYOND runtime: world, map atoms, native callbacks"]
+  Engine --> Boot["Global initialization + world.New + startup hooks"]
+  Boot --> Scheduler["Legacy processScheduler + game controller"]
+  Scheduler --> Round["Ticker + map_metadata + jobs / factions"]
+  Scheduler --> Simulation["Mob Life, objects, weather, chemistry, vehicles"]
+  Scheduler --> Lighting["Light sources, shared corners, overlays"]
+  Client --> Dispatch["ClickOn / item attacks / Move / Topic"]
+  Dispatch --> Simulation
+  Simulation --> Content["1713 content + turfs + items + research / crafting"]
+  Round --> Persistence["Owned save/load operations + restart recovery"]
+  Persistence --> Disk["Per-z saves + durable graph + generation markers"]
+  Simulation --> Persistence
+  Scheduler --> UI["NanoUI + stat panels + browser assets"]
+  UI --> Client
+  Engine --> Bridges["File spools + world Topic / webhooks"]
+  Bridges --> External["Separate bot / Help worker / deployment supervisor"]
+  Timer["Included MC / timer infrastructure: reachability must be checked"] -.-> Simulation
+  note["Overview: conceptual dependencies, not an exhaustive executable call graph"]

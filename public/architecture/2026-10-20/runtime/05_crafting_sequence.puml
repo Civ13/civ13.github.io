@@ -1,0 +1,49 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+title Civ13 crafting transaction skeleton
+actor Player
+participant "Stack menu / Topic" as S
+participant "Material recipes" as M
+participant "Map research / config data" as R
+participant produce_recipe as P
+participant do_after as D
+participant "World objects" as W
+Player -> S : attack_self / list_recipes
+S -> M : applicable recipes
+M -> R : faction/race, era, node or legacy thresholds
+R --> M : allowed records
+M --> S : stack_recipe datums / result_type
+Player -> S : make, sublist, multiplier
+S -> S : actor state / active hand / multiplier gates
+S -> P : set can_build_recipe FALSE; produce_recipe
+P -> P : feature gates, content-specific prompts and inputs
+opt timed recipe
+P -> D : adjusted duration
+loop cooperative waits
+D -> D : actor / location / hand / target checks
+end
+D --> P : success or cancellation
+end
+alt cancellation / failed revalidation
+P --> S : branch-specific cleanup and return
+else commit admitted
+P -> P : revalidate special inputs and ownership
+P -> S : use(required, actor)
+opt exact handle and successful main debit
+P -> P : clear actual equipment slot; qdel handle
+end
+P -> W : new recipe.result_type; configure result
+end
+P --> S : return; release can_build_recipe
+note over P,W
+Actual debit order and cancellation vary by recipe branch.
+This skeleton is not a blanket atomicity guarantee.
+end note
+legend bottom
+code/game/objects/items/stacks/stack.dm:298-335,1805-1944,2355-2437
+code/game/objects/items/stacks/civ_recipes.dm:19-144
+code/_helpers/mobs.dm:190-280
+Pinned 5bf351248de6050876fe5b53f91209a970cc5668
+endlegend
+@enduml

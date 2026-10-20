@@ -1,0 +1,21 @@
+stateDiagram-v2
+  [*] --> StartupHook
+  StartupHook --> SharedCorners: setup_lighting / create_lighting
+  SharedCorners --> OverlaySweeps: create corners with deferred activity
+  OverlaySweeps --> CompatibilitySweep: excluded or dynamic sites
+  CompatibilitySweep --> ActiveCorners: deferred activation + reconciliation
+  ActiveCorners --> RuntimeQueues: barrier released
+  SharedCorners --> FailedStartup: exception
+  OverlaySweeps --> FailedStartup: exception
+  CompatibilitySweep --> FailedStartup: exception
+  FailedStartup --> [*]: readiness flags false; exception rethrown
+  RuntimeQueues --> SourceWork: sources process
+  SourceWork --> CornerChanges: contributions updated
+  CornerChanges --> OverlayWork: queued overlay changes
+  OverlayWork --> RuntimeQueues
+  RuntimeQueues --> RestoredDaylight: saved round import
+  RestoredDaylight --> RuntimeQueues: apply_restored_lighting
+  note right of SharedCorners
+    Shared identity matters across neighboring turfs.
+    Source mutation can yield; startup barrier is not optional.
+  end note

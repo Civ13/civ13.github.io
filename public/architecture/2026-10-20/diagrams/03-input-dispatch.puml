@@ -1,0 +1,35 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+title Player input dispatch (abstracted branches)
+actor Player
+participant "BYOND callback" as Engine
+participant "atom.Click" as Atom
+participant "mob.ClickOn" as Mob
+participant "target subtype" as Target
+participant "held item subtype" as Item
+Player -> Engine : click atom / browser link
+alt Atom click
+Engine -> Atom : Click(location, control, params)
+Atom -> Mob : usr.ClickOn(src, params)
+Mob -> Mob : target / click clock / modifiers
+alt Modifier shortcut
+Mob -> Target : modifier-specific dispatch
+else Ordinary action
+Mob -> Mob : equipment / state / range gates
+alt Held item and suitable range
+Mob -> Target : attackby(item, actor)
+Mob -> Item : afterattack(target, actor, adjacency, params)
+else Empty hand or ranged action
+Mob -> Target : UnarmedAttack / RangedAttack routing
+end
+end
+else Browser href
+Engine -> Engine : client.Topic validates usr matches mob
+Engine -> Target : parent / native href target dispatch
+end
+note over Mob,Item
+Overrides, queued callbacks and early returns affect actual paths.
+Exact source determines authorization order.
+end note
+@enduml

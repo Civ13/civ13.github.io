@@ -1,0 +1,36 @@
+sequenceDiagram
+  participant U as Player
+  participant S as Stack menu / Topic
+  participant M as Material recipe generation
+  participant R as Map research and recipe data
+  participant P as produce_recipe
+  participant D as do_after
+  participant W as World objects
+  U->>S: attack_self / list_recipes
+  S->>M: obtain applicable recipes
+  M->>R: faction/race, era, node or legacy thresholds
+  R-->>M: allowed records
+  M-->>S: stack_recipe datums with dynamic result_type
+  U->>S: make + sublist + multiplier
+  S->>S: restrained/stat/active-hand and multiplier gates
+  S->>P: set can_build_recipe FALSE; produce_recipe
+  P->>P: content-specific eligibility, prompts, inputs
+  opt timed recipe
+    P->>D: adjusted duration, actor state
+    loop cooperative waits
+      D->>D: actor, hand, movement, target revalidation
+    end
+    D-->>P: success or cancellation
+  end
+  alt cancelled or failed revalidation
+    P-->>S: branch-specific cleanup/return
+  else admitted commit
+    P->>P: revalidate special inputs / source ownership
+    P->>S: use(required, actor)
+    opt wood-handle recipe and successful main debit
+      P->>P: remove exact handle from its slot; qdel
+    end
+    P->>W: new recipe.result_type; apply branch-specific configuration
+  end
+  P-->>S: return; release can_build_recipe
+  Note over P,W: This is a transaction skeleton. Payment order, prompts and cancellation vary by recipe branch.

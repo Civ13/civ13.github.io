@@ -1,0 +1,32 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+title Civ13 legacy process lifecycle
+[*] --> Idle : construct / setup
+Idle --> Queued : enabled, allowed game state, interval due
+Queued --> Queued : budget admission deferred
+Queued --> Running : relayProcess / started
+Running --> Idle : finished; clear completed snapshot
+Running --> IdleWithWork : budget return and nonempty snapshot
+IdleWithWork --> Queued : next eligible admission retains snapshot
+Running --> MaybeHung : elapsed exceeds warning
+MaybeHung --> ProbablyHung : elapsed exceeds alert
+ProbablyHung --> Hung : elapsed exceeds restart threshold
+Hung --> Replaced : next update / handleHung / restartProcess
+Replaced --> Idle : same runtime type; copied config; owner replacement
+note right of Idle
+Disabled, paused and game-state gates are orthogonal.
+Paused processes can be admitted but skip fire.
+end note
+note right of Running
+VERY_HIGH aliases live lists and skips ordinary budget checks.
+Other priorities copy lists and retain unfinished snapshots.
+Scheduler start uses a token to retire prior sleeping loops.
+end note
+legend bottom
+code/processes/__processScheduler.dm:100-209,238-306,399-407;
+code/processes/_process.dm:134-273,317-348;
+code/processes/___defines.dm:28-33
+Pinned 5bf351248de6050876fe5b53f91209a970cc5668
+endlegend
+@enduml
