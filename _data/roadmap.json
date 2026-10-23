@@ -83,6 +83,16 @@
       "completion": null
     },
     {
+      "id": "industrialization",
+      "title": "Industrialization: pipes, pumps and foundries",
+      "summary": "Develop industrialization systems with pipes, pumps and foundries.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "A planned development goal; details may change as development and testing progress. Public availability has not been verified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "windows-server-bot",
       "title": "Windows server bot integration",
       "summary": "Develop isolated Windows startup support for the server management bot.",

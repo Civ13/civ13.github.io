@@ -92,6 +92,10 @@ in Civ13/civ13-wiki. They are not images of the extraction-survival mode.
 JavaScript or GitHub access. Only curated public PR evidence is queried; no
 private coordinator logs or arbitrary PR titles become player copy.
 
+The industrialization milestone covers planned pipes, pumps and foundries.
+It remains **Planned** with unverified availability; implementation evidence
+and completion requirements need review before the milestone can advance.
+
 The **Refresh roadmap progress** workflow runs every six hours, on manual
 dispatch, or on a `roadmap-progress` repository dispatch. It validates the whole
 response before replacing the saved snapshot and requests a build of the
