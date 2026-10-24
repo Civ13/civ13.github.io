@@ -154,10 +154,20 @@
     {
       "id": "usa-regional-persistence-pilot",
       "title": "A small USA regional persistence pilot",
-      "summary": "Explore two small USA region slices with explicit routes, regional biomes and civil/daylight clocks over one authoritative timeline. Keep saves and lightweight route metadata while idle processes sleep; wake and validate a destination before travel. Depends on geographic, authoring and safe-transfer foundations, bounded resource admission and an explicit offline-simulation policy. Planned optional launcher integration would discover/select shards, show wake/load/readiness progress, choose a compatible client package and connect or reconnect. Preserve direct/manual BYOND joining for non-launcher users and recovery.",
+      "summary": "Explore two small USA region slices with explicit routes, regional biomes and civil/daylight clocks over one authoritative timeline. Keep saves and lightweight route metadata while idle processes sleep; wake and validate a destination before travel. Depends on geographic, authoring and safe-transfer foundations, bounded resource admission and an explicit offline-simulation policy. Support optional launcher integration and direct/manual BYOND joining for non-launcher users and recovery.",
       "status": "planned",
       "availability": "unverified",
       "availability_note": "Region selection, on-demand startup and safe idle shutdown are planned. A supported manual discovery/wake/readiness path is required before the pilot is available. Measure performance and recovery before expansion; no tested capacity, zero-overhead hosting or unlimited scale is claimed.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "optional-launcher-interface",
+      "title": "An optional desktop launcher and shared connection core",
+      "summary": "Evolve the official Civ13 launcher around a shared connection/update core, an optional desktop GUI and a retained CLI for automation. Plan a server/shard browser, wake/load/readiness progress, compatible client-package selection and recoverable connect/reconnect flows. Direct/manual BYOND connection remains supported.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "A design goal only; no GUI framework has been selected. Joining, custody, route validity and recovery remain server-authoritative for all connection paths. Public availability of these additions is unverified.",
       "evidence": [],
       "completion": null
     },

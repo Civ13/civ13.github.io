@@ -151,10 +151,10 @@ travel or zero downtime is promised:
 
 ## Linked geography, authoring and regional-travel goals
 
-The roadmap groups this direction into six player-facing goals. **In progress**
+The roadmap groups this direction into seven player-facing goals. **In progress**
 can mean metadata groundwork or bounded interface/documentation design; it does
 not establish a complete feature, published guide, working sharding service or
-public availability. All six goals retain unverified availability and no automatic
+public availability. All seven goals retain unverified availability and no automatic
 completion contract. Dependencies below describe design order, not delivery dates.
 
 | Goal | Current scope | Depends on |
@@ -164,6 +164,7 @@ completion contract. Dependencies below describe design order, not delivery date
 | Persistent world editing and map authoring | Unpublished zone/spawn candidate; export design started; mapper documentation underway | Geographic metadata and safe persistence |
 | Safe persistence and transfer foundations | Bounded admission/custody/handoff interface design; no working sharding service | Shared operation admission and durable recovery contracts |
 | Small USA regional persistence pilot | Tentative two-slice experiment with explicit routes and on-demand processes | Geographic, authoring and safe-transfer foundations; bounded resource admission and offline-simulation policy |
+| Optional desktop launcher and shared connection core | Planned GUI, retained CLI automation, shard browser and recoverable joining; framework undecided | Shared connection/update contract and server-authoritative readiness/admission; optional for manual BYOND joining |
 | Player-built crossings and rail routes | Planned construction-dependent regional route graph | Regional travel, connectivity summaries and safe transfers |
 
 ### Geography and snow
@@ -227,10 +228,12 @@ prerequisites to the pilot. Sleeping processes can reduce active memory use but
 retained data and lifecycle work still have costs; no zero overhead or unlimited
 scale is established. This is planned design only, with no server changes.
 
-Optional official Civ13 launcher integration is planned for discovering/selecting a shard,
-showing wake/load/readiness progress, selecting a compatible client package and
-connecting or reconnecting to the destination. It is not a verified current
-launcher capability. Direct/manual BYOND connection remains supported for
+Official Civ13 launcher evolution is planned around a shared connection/update
+core with an optional desktop GUI and a retained CLI for automation. Plan a
+server/shard browser for discovering/selecting a destination, wake/load/readiness
+progress, compatible client-package selection and a recoverable join flow with
+connect/reconnect support. No GUI framework is selected and these additions are
+not verified current launcher capabilities. Direct/manual BYOND remains supported for
 non-launcher users and as a recovery path. Server-side authentication, custody,
 transfer reconciliation, route validity, authorization and readiness safeguards
 apply identically to both paths; launcher progress or a connection request cannot
