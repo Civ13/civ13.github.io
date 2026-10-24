@@ -299,6 +299,10 @@ regions, active simulations, machinery, persistent storage and backups. Requests
 such as 300x300 with 3-4 native z-levels illustrate desired scale, not tested
 capacity or an approved allocation. Greater sizes require their own evidence.
 
+Creation requests and resource reservations must be idempotent so retries cannot
+duplicate regions or allocations. Publish inactivity, archival and recovery
+policies, and notify affected players before archival rather than surprise deletion.
+
 Region identity and its persistent save must survive an idle hosting process.
 The first version should keep dimensions fixed; expansion is later scope needing
 host-approved offline migration that preserves original saves and metadata.
@@ -319,6 +323,10 @@ durable outside individual region snapshots, with authoritative single-owner
 custody/generation and departure records that old region saves cannot override.
 These are design/acceptance requirements, not implemented recovery guarantees.
 
+Recovery also requires stable item identities/ownership and pickup/drop/trade/
+consume/container transactions coordinated with character and world state;
+snapshots alone are insufficient.
+
 - **Graceful shutdown:** durably checkpoint character state and recursive
   inventory before evacuation, then use the normal authorized transfer handoff.
 - **Unexpected outage:** recover only durable state after fencing old ownership.
@@ -332,6 +340,9 @@ These are design/acceptance requirements, not implemented recovery guarantees.
 - **Source reconciliation:** before resuming an old save, reconcile authoritative
   departure/custody records for characters and their recursive items. Departed
   characters or cargo must not reappear or become playable at the old source.
+  Account for items later dropped, traded or consumed at the destination. Retain
+  departure history across the allowed backup-restore window, or reject
+  incompatible older backups rather than resurrect departed state.
 - **Acceptance and limits:** demonstrate single ownership and inventory custody
   across shutdown, crash, retry and old-save restoration without duplication or
   loss of recoverable durable state. Changes never durably written cannot be
