@@ -282,3 +282,58 @@ depth, altitude, pressure or orbital environments. Each needs explicit metadata,
 rules and persistence/transition handling. These are Civ13 roadmap directions,
 distinct from Frontier Systems implementation; no game systems or assets for
 either project are implemented or verified by this documentation change.
+
+### Player-owned persistent expedition regions
+
+This **Planned**, availability-unverified goal builds on world authoring,
+geographic layers, industrialization, on-demand regional processes and safe
+transfers. It covers player-requested ocean/continental expedition regions,
+offshore rigs and remote factories reached through explicit geographic routes.
+Ownership or shared hosting must not create an unbuilt route or false adjacency.
+
+A request must specify location, purpose, approved template, dimensions, native
+z-level count and access policy. The host provider must approve or reject that
+exact resource specification before creation; a changed specification needs
+review again. Define benchmarked size classes and limits on owned/registered
+regions, active simulations, machinery, persistent storage and backups. Requests
+such as 300x300 with 3-4 native z-levels illustrate desired scale, not tested
+capacity or an approved allocation. Greater sizes require their own evidence.
+
+Region identity and its persistent save must survive an idle hosting process.
+The first version should keep dimensions fixed; expansion is later scope needing
+host-approved offline migration that preserves original saves and metadata.
+Owner building/access rights do not confer operator administration or permission
+to upload arbitrary scripts. Retain the shared world mode, era and authoritative
+timeline, and keep elevation separate from native z-count. Entry/exit still needs
+readiness-gated, crash-safe transfers and the supported manual BYOND fallback.
+
+An explicit, bounded offline-simulation/production policy is required for remote
+factories and machinery; sleeping a region does not grant free unlimited output.
+Nothing here provisions a region, selects a paid service or establishes capacity.
+
+### Recovery when a region shuts down or becomes unavailable
+
+This separate **Planned**, availability-unverified goal depends on the durable
+custody and recovery foundation. Character state and recursive inventory must be
+durable outside individual region snapshots, with authoritative single-owner
+custody/generation and departure records that old region saves cannot override.
+These are design/acceptance requirements, not implemented recovery guarantees.
+
+- **Graceful shutdown:** durably checkpoint character state and recursive
+  inventory before evacuation, then use the normal authorized transfer handoff.
+- **Unexpected outage:** recover only durable state after fencing old ownership.
+  A missing heartbeat alone does not prove ownership is released. Refuse recovery
+  if custody or its generation cannot be established; do not create a new copy
+  merely because a player reconnects or a source is unreachable.
+- **Destination admission:** another world/region must be live, compatible with
+  the shared mode/era, authorized for that player and capacity-ready. Apply the
+  same server checks to launcher and manual BYOND joins; no compatible destination
+  or unresolved custody means safe refusal, not an unsafe quick-travel shortcut.
+- **Source reconciliation:** before resuming an old save, reconcile authoritative
+  departure/custody records for characters and their recursive items. Departed
+  characters or cargo must not reappear or become playable at the old source.
+- **Acceptance and limits:** demonstrate single ownership and inventory custody
+  across shutdown, crash, retry and old-save restoration without duplication or
+  loss of recoverable durable state. Changes never durably written cannot be
+  promised after an outage; offline production remains subject to the explicit
+  bounded policy. No game code or server operations are part of this roadmap task.

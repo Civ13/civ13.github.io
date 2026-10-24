@@ -212,6 +212,26 @@
       "completion": null
     },
     {
+      "id": "player-owned-expedition-regions",
+      "title": "Player-owned persistent expedition regions",
+      "summary": "Plan player-owned regions for ocean or continental expeditions, offshore rigs and remote factories. Players request a location, purpose, template, dimensions, native z-count and access policy for host approval within benchmarked resource limits. Region identity and saves survive idle processes. Depends on geographic, authoring, industrialization and safe regional-transfer foundations.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Future design only. A 300x300 map with 3-4 native z-levels is a requested example, not proven capacity. Initial dimensions would be fixed; expansion needs later approved offline migration. Public availability is unverified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "unavailable-region-character-recovery",
+      "title": "Character and inventory recovery when regions go offline",
+      "summary": "Plan separate durable records for characters and all nested belongings so an eligible player can recover into another live region after shutdown or an outage. Depends on authoritative custody, fenced ownership, departure reconciliation and compatible, authorized, capacity-ready destinations.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Recovery must prevent duplicate characters or cargo and refuse when custody cannot be established. Only durably written state can be recovered after fencing old ownership; heartbeat absence alone is insufficient. Unwritten changes are not guaranteed. Public availability is unverified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "windows-server-bot",
       "title": "Windows server bot integration",
       "summary": "Develop isolated Windows startup support for the server management bot.",
