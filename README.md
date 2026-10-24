@@ -363,6 +363,16 @@ required capabilities before any save restoration or transfer. The
 warns that a missing saved object type restores as `null`; separate compiled
 feature sets require demonstrated migration and type-compatibility safeguards.
 
+Native BYOND savefiles are one backend option. Planned versioned domain records,
+stable IDs, explicit migration/validation and a transaction journal for custody
+and recovery may extend or replace native serialization; backend choice remains
+open. Preserve unknown or unsupported records intact in recoverable storage;
+reject unsupported restoration/execution rather than discard data. Preserving a
+record does not make an unknown object type available to instantiate or execute.
+Existing pre-restoration capability validation and shared-type compatibility
+requirements remain in force. These are design requirements, not an implemented
+replacement backend or permission to bypass compatibility checks.
+
 Admission and restoration must check required capabilities for characters, nested
 belongings and world state. Refuse incompatible loading/travel safely or retain
 recoverable custody; never silently delete unsupported saved/transferred items.
