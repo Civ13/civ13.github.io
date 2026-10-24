@@ -103,6 +103,115 @@
       "completion": null
     },
     {
+      "id": "geographic-layers",
+      "title": "Geographic layers and elevation",
+      "summary": "Keep biome, optional elevation, room or shelter, and overlapping special regions independent. Preserve this geography through roofing, terrain changes and saved worlds. Elevation describes height; map z-levels do not represent altitude.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Elevation metadata groundwork is in development. Temperature coupling, mountain profiles and consistent precipitation remain planned; public availability is unverified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "weather-driven-snow",
+      "title": "Snow shaped by local weather",
+      "summary": "Let snowfall build ground cover that can melt or be shoveled away while preserving the same underlying soil. Build on geographic and weather consistency instead of automatically replacing terrain when the season changes.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "A draft implementation still needs native runtime validation. It has not been merged or deployed; public availability is unverified.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3300,
+          "role": "implementation",
+          "label": "Weather-driven ground snow draft",
+          "state": "draft",
+          "merge_sha": null
+        }
+      ],
+      "completion": null
+    },
+    {
+      "id": "persistent-world-authoring",
+      "title": "Persistent world editing and map authoring",
+      "summary": "Keep zones and spawn points stable when created, moved, deleted or restored. Plan reviewed static-world exports to Civ13 map source, with a Civ13 mapper guide and checklist. Build on geographic metadata and safe persistence.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Zone/spawn persistence is an unpublished candidate. Export design and mapper documentation work are underway; export is not implemented and the guide is not published. Public availability is unverified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "sharded-persistence-foundation",
+      "title": "Safe persistence and transfer foundations",
+      "summary": "Design shared save/transfer admission and durable custody records for safe handoffs between servers. Repeated or interrupted transfers must recover to one owner, and loading an older save must not resurrect a transferred character. This underpins hosted-server travel.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Bounded interface design is underway. There is no working sharding service or verified public availability; handoff and recovery still require implementation and testing.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "usa-regional-persistence-pilot",
+      "title": "A small USA regional persistence pilot",
+      "summary": "Explore two small USA region slices with explicit routes, regional biomes and civil/daylight clocks over one authoritative timeline. Keep saves and lightweight route metadata while idle processes sleep; wake and validate a destination before travel. Depends on geographic, authoring and safe-transfer foundations, bounded resource admission and an explicit offline-simulation policy. Support optional launcher integration and direct/manual BYOND joining for non-launcher users and recovery.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Region selection, on-demand startup and safe idle shutdown are planned. A supported manual discovery/wake/readiness path is required before the pilot is available. Measure performance and recovery before expansion; no tested capacity, zero-overhead hosting or unlimited scale is claimed.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "optional-launcher-interface",
+      "title": "An optional desktop launcher and shared connection core",
+      "summary": "Evolve the official Civ13 launcher around a shared connection/update core, an optional desktop GUI and a retained CLI for automation. Plan a server/shard browser, wake/load/readiness progress, compatible client-package selection and recoverable connect/reconnect flows. Direct/manual BYOND connection remains supported.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "A design goal only; no GUI framework has been selected. Joining, custody, route validity and recovery remain server-authoritative for all connection paths. Public availability of these additions is unverified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "player-built-regional-transit",
+      "title": "Player-built crossings and rail routes",
+      "summary": "Make border crossings and rail travel depend on connections players have built. Join local rail and station connectivity into regional routes, with fresh route checks and destination admission before travel. Builds on regional travel and safe transfers.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Cached known connections do not guarantee a usable route. Safe outage handling is planned; travel through offline intermediaries needs later durable-transit design, not cache alone. Public availability is unverified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "ocean-voyages-offshore-industry",
+      "title": "Ocean voyages and offshore industry",
+      "summary": "Plan voyages across one or more ocean maps, connected map levels or regions, with offshore oil rigs players can build and maintain. Depends on industrialization, geographic layers, persistent world authoring and regional travel foundations.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Future Civ13 design scope. Routes and physical depth need explicit definitions; a map z-level alone does not establish depth or altitude. These additions have no verified public availability.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "submarines-underwater-habitats",
+      "title": "Submarines and pressurized underwater habitats",
+      "summary": "Plan player-built submarines and underwater habitats with pressure and atmosphere, power and ongoing maintenance. Builds on ocean voyages, industrialization, geographic depth metadata and persistence foundations.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Future design and testing are required for the combined habitat and vessel systems. Physical depth must be modeled explicitly, not inferred automatically from z-levels. Public availability is unverified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "advanced-era-space-mode",
+      "title": "A later advanced-era space game mode",
+      "summary": "Explore a separate future Civ13 game mode for launches and for building and maintaining satellites, space stations and settlements on the Moon or Mars. Depends on industrialization, geographic/environment metadata, persistence and regional travel foundations.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "A later design direction, with no selected delivery date or verified public availability. Altitude and orbital or surface environments need explicit modeling; z-levels alone do not supply them.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "windows-server-bot",
       "title": "Windows server bot integration",
       "summary": "Develop isolated Windows startup support for the server management bot.",
