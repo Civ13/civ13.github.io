@@ -232,6 +232,16 @@
       "completion": null
     },
     {
+      "id": "map-capability-profiles",
+      "title": "Map capability profiles and measured resource use",
+      "summary": "Plan map profiles that initialize only required simulation systems and entities, such as submarine and pressure mechanics on supporting maps. Declare dependencies and save/transfer compatibility while preserving ordinary default compatibility. Investigate separate code/asset build profiles only after measuring actual savings and demonstrating migration/type-compatibility safeguards.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Design research is ongoing; memory savings and engine-specific behavior are unverified. Unsupported saved or transferred belongings must never be silently deleted. No runtime code/asset unloading or eager asset residency is assumed.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "windows-server-bot",
       "title": "Windows server bot integration",
       "summary": "Develop isolated Windows startup support for the server management bot.",

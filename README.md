@@ -348,3 +348,29 @@ snapshots alone are insufficient.
   loss of recoverable durable state. Changes never durably written cannot be
   promised after an outage; offline production remains subject to the explicit
   bounded policy. No game code or server operations are part of this roadmap task.
+
+### Planned map capability profiles
+
+Map capability profiles are a **Planned**, availability-unverified research goal.
+Initialize only required simulation systems/entities, such as submarine/pressure
+mechanics on maps that support them. Define profile dependencies and versioned
+persistence/transfer compatibility before selective initialization; preserve the
+ordinary default profile and compatibility for existing maps and saves.
+
+Initially preserve shared persisted/transferable type definitions and validate
+required capabilities before any save restoration or transfer. The
+[BYOND savefile guide, section 6.4](https://www.byond.com/docs/guide/chap12.html)
+warns that a missing saved object type restores as `null`; separate compiled
+feature sets require demonstrated migration and type-compatibility safeguards.
+
+Admission and restoration must check required capabilities for characters, nested
+belongings and world state. Refuse incompatible loading/travel safely or retain
+recoverable custody; never silently delete unsupported saved/transferred items.
+Depends on geographic/environment metadata, authoring and the persistence/transfer
+foundation, including the future underwater scope where relevant.
+
+Measure actual resource savings before investigating separate code/asset build
+profiles. Runtime toggles are not evidence that compiled DM types or assets are
+unloaded, and engine assets must not be assumed to all eagerly occupy RAM.
+Research remains open; no engine-specific memory, unloading or performance
+guarantee, measured saving or feature implementation is established here.
