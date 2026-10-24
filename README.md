@@ -259,3 +259,26 @@ route usability: travel needs fresh validation, destination admission and safe
 behavior when a required server or connection is unavailable. Passing through an
 offline intermediary is later durable-transit scope; caching alone does not solve
 custody, interruption recovery or arrival. No transit service is implemented here.
+
+### Future ocean, underwater and advanced-era scope
+
+These three future **Civ13** goals are **Planned**, with unverified availability,
+no implementation evidence or completion contract, and no delivery commitment:
+
+- **Ocean voyages and offshore industry:** travel across one or more ocean maps,
+  connected map levels or regions, with player-built and maintained offshore oil
+  rigs. Depends on industrialization, geographic layers, persistent world authoring
+  and regional travel foundations; routes must define the actual connections.
+- **Submarines and pressurized underwater habitats:** building and maintenance
+  require explicit pressure/atmosphere, power and ongoing upkeep. Depends on ocean
+  voyages, industrialization, geographic depth metadata and persistence contracts.
+- **A later advanced-era space mode:** a separate future game mode for launches,
+  satellites, space stations and building/maintenance on the Moon or Mars. Depends
+  on industrialization, geographic/environment metadata, persistence and regional
+  travel foundations; scope and environments still require design and testing.
+
+Map z-levels may organize connected maps but do not automatically define physical
+depth, altitude, pressure or orbital environments. Each needs explicit metadata,
+rules and persistence/transition handling. These are Civ13 roadmap directions,
+distinct from Frontier Systems implementation; no game systems or assets for
+either project are implemented or verified by this documentation change.

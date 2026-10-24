@@ -182,6 +182,36 @@
       "completion": null
     },
     {
+      "id": "ocean-voyages-offshore-industry",
+      "title": "Ocean voyages and offshore industry",
+      "summary": "Plan voyages across one or more ocean maps, connected map levels or regions, with offshore oil rigs players can build and maintain. Depends on industrialization, geographic layers, persistent world authoring and regional travel foundations.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Future Civ13 design scope. Routes and physical depth need explicit definitions; a map z-level alone does not establish depth or altitude. These additions have no verified public availability.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "submarines-underwater-habitats",
+      "title": "Submarines and pressurized underwater habitats",
+      "summary": "Plan player-built submarines and underwater habitats with pressure and atmosphere, power and ongoing maintenance. Builds on ocean voyages, industrialization, geographic depth metadata and persistence foundations.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Future design and testing are required for the combined habitat and vessel systems. Physical depth must be modeled explicitly, not inferred automatically from z-levels. Public availability is unverified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "advanced-era-space-mode",
+      "title": "A later advanced-era space game mode",
+      "summary": "Explore a separate future Civ13 game mode for launches and for building and maintaining satellites, space stations and settlements on the Moon or Mars. Depends on industrialization, geographic/environment metadata, persistence and regional travel foundations.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "A later design direction, with no selected delivery date or verified public availability. Altitude and orbital or surface environments need explicit modeling; z-levels alone do not supply them.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "windows-server-bot",
       "title": "Windows server bot integration",
       "summary": "Develop isolated Windows startup support for the server management bot.",
