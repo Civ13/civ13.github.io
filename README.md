@@ -148,3 +148,111 @@ travel or zero downtime is promised:
   transfers and recovery at each interruption boundary, with character identity,
   inventory and state accounted for without duplication or loss. Public availability
   still requires separate verification under the roadmap's existing rules.
+
+## Linked geography, authoring and regional-travel goals
+
+The roadmap groups this direction into six player-facing goals. **In progress**
+can mean metadata groundwork or bounded interface/documentation design; it does
+not establish a complete feature, published guide, working sharding service or
+public availability. All six goals retain unverified availability and no automatic
+completion contract. Dependencies below describe design order, not delivery dates.
+
+| Goal | Current scope | Depends on |
+| --- | --- | --- |
+| Geographic layers and elevation | Elevation metadata groundwork in development; temperature coupling, mountain profiles and precipitation consistency planned | Durable metadata preservation through terrain changes and saves |
+| Snow shaped by local weather | Unmerged, undeployed draft; native runtime validation pending | Geographic and weather consistency |
+| Persistent world editing and map authoring | Unpublished zone/spawn candidate; export design started; mapper documentation underway | Geographic metadata and safe persistence |
+| Safe persistence and transfer foundations | Bounded admission/custody/handoff interface design; no working sharding service | Shared operation admission and durable recovery contracts |
+| Small USA regional persistence pilot | Tentative two-slice experiment with explicit routes and on-demand processes | Geographic, authoring and safe-transfer foundations; bounded resource admission and offline-simulation policy |
+| Player-built crossings and rail routes | Planned construction-dependent regional route graph | Regional travel, connectivity summaries and safe transfers |
+
+### Geography and snow
+
+Biome, optional elevation (default `0`), room/shelter and future overlapping
+special regions are independent metadata layers. A z-level is a map layer, not
+altitude. Roofing, turf replacement and save/load must preserve the appropriate
+metadata rather than infer one layer from another. Elevation-to-temperature
+coupling, mountain profiles and precipitation rules must remain consistent when
+added; the metadata foundation alone does not implement those climate effects.
+
+Snow accumulation follows actual local weather and exposure. Melting or shoveling
+generated cover must reveal the same underlying soil without automatic seasonal
+terrain replacement. The linked ground-snow implementation remains a draft;
+source/CI checks do not establish native gameplay, save round-trip or deployment
+acceptance. Existing authored terrain and generated cover need distinct handling.
+
+### Persistent editing, export and mapper guidance
+
+Zone and spawn persistence must cover create/move/delete operations with stable
+local identities and safe restoration, including durable removal so deleted
+definitions do not reappear. The current candidate is unpublished, not complete.
+
+Save-to-map export design must preserve originals and export reviewed static world
+state as compilable Civ13 map source plus necessary metadata. Exclude player,
+private and runtime state by default; report unsupported state instead of silently
+dropping it or claiming a complete world export. Export is not implemented.
+A Civ13-specific wiki guide and repository mapper checklist are being prepared;
+neither is represented as published or verified by this roadmap.
+
+### Persistence-aware transfers and the USA pilot
+
+Shared operation admission, durable custody/transfer records and idempotent,
+fenced handoff/recovery must protect one authoritative owner. Loading an older
+source save must not resurrect a character already transferred elsewhere.
+Global character identities are distinct from local zone identities. This is
+bounded interface design, not an implemented sharding service; the earlier
+cross-server travel compatibility and recovery contract still applies.
+
+The USA pilot should begin with two small logical region slices and explicit
+routes. A logical geographic region, shard process and physical host are separate
+concepts. Regional biomes and civil/daylight clocks share one authoritative world
+timeline. State borders and hosting groups need not match; hosting noncontiguous
+places together must not create geographic adjacency. Exact regions remain
+tentative. Measure performance, state custody and interruption recovery before
+expansion; no player capacity or full-state scale has been established.
+
+Registered regions must retain durable saves and lightweight route metadata while
+their hosting game process is stopped. An on-demand destination must first obtain
+bounded concurrency/resource admission, then start, load, reconcile custody and
+pass health/readiness checks before accepting a transfer. Keep players at the
+source if startup fails; cached registration or topology is not readiness.
+
+An idle shard may save and sleep only with no players, no pending custody or
+transfer work, and no unsafe active operations. Shutdown admission must prevent
+new work from racing that decision and preserve recoverable durable state before
+stopping. An explicit offline-simulation policy must define which clocks and
+systems pause or reconcile across sleep; the common timeline alone does not
+define catch-up behavior. Resource/concurrency limits and that policy are
+prerequisites to the pilot. Sleeping processes can reduce active memory use but
+retained data and lifecycle work still have costs; no zero overhead or unlimited
+scale is established. This is planned design only, with no server changes.
+
+Optional official Civ13 launcher integration is planned for discovering/selecting a shard,
+showing wake/load/readiness progress, selecting a compatible client package and
+connecting or reconnecting to the destination. It is not a verified current
+launcher capability. Direct/manual BYOND connection remains supported for
+non-launcher users and as a recovery path. Server-side authentication, custody,
+transfer reconciliation, route validity, authorization and readiness safeguards
+apply identically to both paths; launcher progress or a connection request cannot
+grant admission. Ordinary authorized joining must not require a launcher-only
+secret. Do not put secrets in public launch arguments.
+
+Before publishing an on-demand pilot, provide a documented manual workflow:
+discover a registered region and its public wake/control surface, request wake
+through that surface, wait for reported load/reconciliation/readiness, then connect
+with BYOND to the published destination address. That surface and workflow remain
+to be designed and verified; no endpoint or current capability is claimed here.
+A stopped game port cannot receive the connection or serve as its own wake path.
+Startup failure leaves the player at the source and reports that readiness was
+not reached. No launcher, wake/control service or networking implementation is
+part of this roadmap change.
+
+### Constructed crossings and rail travel
+
+Player-established border crossings and local rail/station connectivity summaries
+should feed a cross-shard route graph. A usable route requires constructed
+continuity along the whole route. Cached known topology is separate from current
+route usability: travel needs fresh validation, destination admission and safe
+behavior when a required server or connection is unavailable. Passing through an
+offline intermediary is later durable-transit scope; caching alone does not solve
+custody, interruption recovery or arrival. No transit service is implemented here.
