@@ -144,7 +144,7 @@
     {
       "id": "sharded-persistence-foundation",
       "title": "Safe persistence and transfer foundations",
-      "summary": "Design shared save/transfer admission and durable custody records for safe handoffs between servers. Repeated or interrupted transfers must recover to one owner, and loading an older save must not resurrect a transferred character. This underpins hosted-server travel.",
+      "summary": "Design shared save/transfer admission and durable custody records for safe handoffs between servers. Repeated or interrupted transfers must recover to one owner, and loading an older save must not resurrect a transferred character. This underpins hosted-server travel. Planned versioned domain records, stable IDs, explicit migration/validation and a transaction journal for custody and recovery may extend or replace native serialization; backend choice remains open.",
       "status": "in_progress",
       "availability": "unverified",
       "availability_note": "Bounded interface design is underway. There is no working sharding service or verified public availability; handoff and recovery still require implementation and testing.",
