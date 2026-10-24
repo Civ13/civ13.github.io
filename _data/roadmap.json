@@ -93,6 +93,16 @@
       "completion": null
     },
     {
+      "id": "cross-server-travel",
+      "title": "Real-time travel between hosted servers",
+      "summary": "Plan real-time travel between Civ13-hosted servers: safely unload a character from one server and transfer it to another. Requires compatible eras and persistence game modes, shared character identity and transfer ownership, protected inventory/state custody, destination readiness and recovery from interruptions to prevent duplication or loss.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "A planned goal. Compatibility, transfer and recovery behavior still need design and testing; public availability has not been verified.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "windows-server-bot",
       "title": "Windows server bot integration",
       "summary": "Develop isolated Windows startup support for the server management bot.",

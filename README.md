@@ -119,3 +119,32 @@ Run `node --test tools/test_roadmap.cjs` offline. Run
 `node tools/refresh_roadmap.cjs` to refresh public data; `GH_TOKEN` is optional for
 local public reads and is supplied by Actions. No credential is embedded in the
 page. Existing Jekyll build/preview checks still apply.
+
+## Planned cross-server travel contract
+
+Real-time travel between servers we host is a **Planned** goal with unverified
+availability. The bounded scope is one character moving from one Civ13-hosted
+source server to one Civ13-hosted destination per transfer. The following
+requirements still need design and verification. No delivery date, seamless
+travel or zero downtime is promised:
+
+- **Compatibility:** use a reviewed compatibility definition for the in-game era
+  and persistence game mode. Refuse incompatible or unknown combinations before
+  unloading the source character; do not silently convert or synchronize worlds.
+- **Identity and ownership:** preserve shared character identity and a unique
+  transfer identity, with one authoritative owner. Concurrent or replayed requests
+  must not let the same character play on both servers or create another copy.
+- **Inventory and state custody:** define the transferred inventory/state snapshot
+  and compatible save schema. Retain durable, recoverable source custody until the
+  destination durably accepts ownership; every item and state field needs an owner.
+- **Destination readiness:** confirm admission, capacity and compatible load
+  readiness before source unload. Failed or stale readiness must leave the
+  character recoverable, rather than discard its source state.
+- **Interrupted transfers:** bound each attempt and persist its identity and
+  progress. Timeouts, disconnects and either server restarting before, during or
+  after handoff must support safe retry or reconciliation to one authoritative
+  owner. An uncertain outcome must not trigger a fresh import or playable copy.
+- **Acceptance:** demonstrate rejection of incompatible servers, concurrent/replayed
+  transfers and recovery at each interruption boundary, with character identity,
+  inventory and state accounted for without duplication or loss. Public availability
+  still requires separate verification under the roadmap's existing rules.
