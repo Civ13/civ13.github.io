@@ -116,7 +116,7 @@
       "id": "weather-driven-snow",
       "title": "Snow shaped by local weather",
       "summary": "Let snowfall build ground cover that can melt or be shoveled away while preserving the same underlying soil. Build on geographic and weather consistency instead of automatically replacing terrain when the season changes.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
       "availability_note": "A draft implementation still needs native runtime validation. It has not been merged or deployed; public availability is unverified.",
       "evidence": [
@@ -125,8 +125,8 @@
           "number": 3300,
           "role": "implementation",
           "label": "Weather-driven ground snow draft",
-          "state": "draft",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "ae70f1b0064584cb825e3d5e338476e22f834029"
         }
       ],
       "completion": null
