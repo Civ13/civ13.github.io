@@ -242,6 +242,16 @@
       "completion": null
     },
     {
+      "id": "procedural-surface-worlds",
+      "title": "Procedurally generated surface worlds",
+      "summary": "Plan fully procedurally generated maps spanning Civ13's surface biomes, with coherent terrain and biome transitions, appropriate resources and wildlife, and safe starting locations. Investigate Pocket Stronghold's generation approach as a reference. Build on geographic layers, persistent world authoring and safe saves, with reproducible seeds and versioned generation rules.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Future design and testing are required. Begin with bounded maps and verify biome coverage, reachable survival resources, reproducibility, performance and preservation of player changes through saves. Streaming chunks and larger worlds require separate measured designs; no implementation, capacity or public availability is established.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "windows-server-bot",
       "title": "Windows server bot integration",
       "summary": "Develop isolated Windows startup support for the server management bot.",
