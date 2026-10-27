@@ -120,6 +120,43 @@ Run `node --test tools/test_roadmap.cjs` offline. Run
 local public reads and is supplied by Actions. No credential is embedded in the
 page. Existing Jekyll build/preview checks still apply.
 
+## Current public development directions
+
+The registry preserves earlier goals and distinguishes merged groundwork from
+offline prototypes, disabled drafts and planned integration. A merged component
+does not complete its broader goal or verify public-server availability.
+
+- **Generated worlds:** configurable surface and oceanic generation with seeds,
+  versioned rules, static DMM export and accompanying metadata are draft tools.
+  Caverns remain planned; offline validation is not native gameplay acceptance.
+- **Two indoor scenarios:** finite authored-room escape and powered-gateway
+  Backrooms exploration/colonization share room contracts but retain separate
+  objectives and mutable world identities. Both default to in-game year 1990
+  with explicit period equipment, prop, crafting and research policies. Design,
+  topology tools, static asset previews and a disabled power foundation do not
+  establish a playable mode.
+- **Movement:** regular human walking/diagonal smoothing is merged, with a public
+  user report confirming regular walking. Prone, vendor NPC, held crafting-menu
+  and throw behavior have independent drafts; pulling and broader interactions
+  still need integration and acceptance.
+- **Sight and lighting:** authoritative, Civ14-inspired line of sight must protect
+  information and actions. Oversized-sprite lighting is a separate disabled
+  prototype with unresolved general-rendering issues. Neither is a shipped goal.
+- **Optional tools:** launcher version checks and observe-only instance contracts
+  are merged groundwork. GUI/shard management remains planned. Discord Social SDK
+  companion integration is draft work, with real runtime and distribution gates;
+  direct/manual BYOND joining remains supported.
+- **Food:** winter/underground foods and learned berry-smell notes are merged
+  supporting work. [Diet and preference design](https://github.com/Civ13/Civ13/issues/3313)
+  remains planned; require accessible food variety before penalties. Direct
+  Crafting Atlas resource search is a separate draft.
+- **Runtime research:** a compatible 64-bit runtime and selective JIT are high-level
+  research goals only, with no adopted replacement, measured gain or capacity claim.
+
+Existing industrial and underwater goals retain their scoped pipes/pumps and
+pressure/atmosphere direction; this review does not promise a general atmosphere
+or fluid simulation. No release dates or completion contracts are introduced.
+
 ## Planned cross-server travel contract
 
 Real-time travel between servers we host is a **Planned** goal with unverified
@@ -159,9 +196,9 @@ completion contract. Dependencies below describe design order, not delivery date
 
 | Goal | Current scope | Depends on |
 | --- | --- | --- |
-| Geographic layers and elevation | Elevation metadata groundwork in development; temperature coupling, mountain profiles and precipitation consistency planned | Durable metadata preservation through terrain changes and saves |
-| Snow shaped by local weather | Unmerged, undeployed draft; native runtime validation pending | Geographic and weather consistency |
-| Persistent world editing and map authoring | Unpublished zone/spawn candidate; export design started; mapper documentation underway | Geographic metadata and safe persistence |
+| Geographic layers and elevation | Optional elevation metadata merged; temperature coupling, mountain profiles and precipitation consistency planned | Durable metadata preservation through terrain changes and saves |
+| Snow shaped by local weather | Merged with bounded native fixture evidence; public-server availability unverified | Geographic and weather consistency |
+| Persistent world editing and map authoring | Zone/spawn persistence merged for supported profiles; complete export workflow and mapper guidance remain in progress | Geographic metadata and safe persistence |
 | Safe persistence and transfer foundations | Bounded admission/custody/handoff interface design; no working sharding service | Shared operation admission and durable recovery contracts |
 | Small USA regional persistence pilot | Tentative two-slice experiment with explicit routes and on-demand processes | Geographic, authoring and safe-transfer foundations; bounded resource admission and offline-simulation policy |
 | Optional desktop launcher and shared connection core | Planned GUI, retained CLI automation, shard browser and recoverable joining; framework undecided | Shared connection/update contract and server-authoritative readiness/admission; optional for manual BYOND joining |
