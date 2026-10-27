@@ -134,9 +134,10 @@ does not complete its broader goal or verify public-server availability.
   objectives and mutable world identities. Both default to in-game year 1990
   with explicit period equipment, prop, crafting and research policies. Design,
   topology tools, static asset previews and a disabled power foundation do not
-  establish a playable mode.
-- **Movement:** regular human walking/diagonal smoothing is merged, with a public
-  user report confirming regular walking. Prone, vendor NPC, held crafting-menu
+  establish a playable mode. The initial static room layouts were rejected and
+  are being revised; the previews do not establish an approved design.
+- **Movement:** regular human walking/diagonal smoothing is merged; broader
+  movement acceptance remains incomplete. Prone, vendor NPC, held crafting-menu
   and throw behavior have independent drafts; pulling and broader interactions
   still need integration and acceptance.
 - **Sight and lighting:** authoritative, Civ14-inspired line of sight must protect

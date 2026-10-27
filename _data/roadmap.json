@@ -309,7 +309,7 @@
       "summary": "Build on merged smooth human walking and diagonal movement. Extend collision-checked motion to prone/crawl movement and vendor NPCs, then pulling and other interactions without changing admitted speed or costs. Keep held crafting menus compatible, improve physical throw release behavior and preserve save, body-handoff and client preferences.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Regular walking has public user-reported live confirmation. Prone, vendor NPC, crafting-menu and throw changes remain separate drafts with differing test coverage; pulling and broader interaction acceptance remain future work. This is not acceptance of every movement mode or player-scale performance.",
+      "availability_note": "Regular human walking and diagonal smoothing are merged; broader movement acceptance remains incomplete. Prone, vendor NPC, crafting-menu and throw changes remain separate drafts with differing test coverage; pulling and broader interaction acceptance remain future work. This is not acceptance of every movement mode or player-scale performance.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -398,7 +398,7 @@
       "summary": "Plan a finite escape scenario assembled from original authored room families with validated connections, clearance, discovery, service objectives and escape routes. Default to in-game year 1990 with an explicit early-1990s equipment, prop, crafting and research policy. Reuse geometry contracts without inheriting expedition or colony state.",
       "status": "planned",
       "availability": "unverified",
-      "availability_note": "Design, offline topology/manifests and static existing-asset room previews are drafts. Previews are not gameplay screenshots; native export, equipment enforcement, mode integration and playable acceptance remain pending.",
+      "availability_note": "Design, offline topology/manifests and static existing-asset room previews are drafts. The initial static room layouts were rejected and are being revised; the previews do not establish an approved design or gameplay appearance. Native export, equipment enforcement, mode integration and playable acceptance remain pending.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -420,7 +420,7 @@
           "repository": "Civ13/Civ13",
           "number": 3349,
           "role": "prerequisite",
-          "label": "Static existing-asset room previews",
+          "label": "Initial room previews - layouts rejected, revision pending",
           "state": "draft",
           "merge_sha": null
         }
