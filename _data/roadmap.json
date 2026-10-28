@@ -40,7 +40,7 @@
       "id": "extraction-survival",
       "title": "Extraction survival",
       "summary": "Explore dangerous areas, collect loot and return to a persistent safehouse. Extraction and survival shape what you keep between runs. Planned for in-game eras starting in 1943 and onward.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
       "availability_note": "Early drafts. Development changes do not yet establish a playable public release. Instanced save/load, collision reservations and raid transport remain pending.",
       "evidence": [
@@ -49,7 +49,7 @@
           "number": 3082,
           "role": "implementation",
           "label": "Safehouse and survival draft",
-          "state": "draft",
+          "state": "open",
           "merge_sha": null
         },
         {
