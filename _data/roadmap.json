@@ -42,13 +42,13 @@
       "summary": "Explore dangerous areas, collect loot and return to a persistent safehouse. Extraction and survival shape what you keep between runs. Planned for in-game eras starting in 1943 and onward.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Early drafts. Development changes do not yet establish a playable public release. Instanced save/load, collision reservations and raid transport remain pending.",
+      "availability_note": "Safehouse and survival implementation is under review in a regular open PR; the mall raid remains a draft. Development changes do not establish a playable public release. Combined persistence, transport and recovery acceptance remain separate; public availability is unverified.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
           "number": 3082,
           "role": "implementation",
-          "label": "Safehouse and survival draft",
+          "label": "Safehouse and survival",
           "state": "open",
           "merge_sha": null
         },
@@ -75,7 +75,7 @@
           "repository": "Civ13/Civ13",
           "number": 3193,
           "role": "implementation",
-          "label": "Party train layout draft",
+          "label": "Party train layout",
           "state": "merged",
           "merge_sha": "084be309cc1930f20864ef8f688e05e29571d01d"
         }
@@ -280,25 +280,25 @@
       "id": "procedural-surface-worlds",
       "title": "Procedurally generated surface, oceanic and cavern worlds",
       "summary": "Develop configurable, reproducible maps across Civ13's surface biomes, ocean islands and future underground caverns, with coherent terrain transitions, resources, wildlife and safe starts. Preserve seeds, versioned generation rules and configuration alongside reviewed static DMM exports and metadata. Build on geographic layers, world authoring and safe saves; Pocket Stronghold remains a reference to investigate.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Offline surface generation and a separate oceanic-island profile are draft prototypes; cavern generation remains planned. Static DMM export is not native playability. Verify survival resources, biome coverage, saves and performance before use; streaming and larger worlds need separate measured designs.",
+      "availability_note": "Offline surface generation and the oceanic-island profile are merged tools; cavern generation remains planned. Static DMM export does not establish native playability, survival resources or runtime save preservation. Streaming and larger worlds still need separate measured designs; public activation is unverified.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
           "number": 3331,
           "role": "implementation",
-          "label": "Offline surface generator and DMM export draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Offline surface generator and DMM export",
+          "state": "merged",
+          "merge_sha": "446170c48821c98be8d04baf6eefd760a780f7a4"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3338,
           "role": "implementation",
-          "label": "Offline oceanic-island profile draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Offline oceanic-island profile",
+          "state": "merged",
+          "merge_sha": "c19ae1dc7956f4c27167bf9e3927ae1515f36592"
         }
       ],
       "completion": null
@@ -309,7 +309,7 @@
       "summary": "Build on merged smooth human walking and diagonal movement. Extend collision-checked motion to prone/crawl movement and vendor NPCs, then pulling and other interactions without changing admitted speed or costs. Keep held crafting menus compatible, improve physical throw release behavior and preserve save, body-handoff and client preferences.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Regular human walking and diagonal smoothing are merged; broader movement acceptance remains incomplete. Prone, vendor NPC, crafting-menu and throw changes remain separate drafts with differing test coverage; pulling and broader interaction acceptance remain future work. This is not acceptance of every movement mode or player-scale performance.",
+      "availability_note": "Regular walking/diagonal smoothing, prone/crawl motion and throw-source clearance are merged source changes. Vendor NPC motion remains a draft; held crafting-menu compatibility is under review in a regular open PR. Pulling and broader interaction acceptance remain incomplete; public availability of the combined goal is unverified.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -323,9 +323,9 @@
           "repository": "Civ13/Civ13",
           "number": 3344,
           "role": "implementation",
-          "label": "Prone and crawl movement draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Prone and crawl movement",
+          "state": "merged",
+          "merge_sha": "01566713425d9e923b6ed2e18332113d48f6bc67"
         },
         {
           "repository": "Civ13/Civ13",
@@ -339,17 +339,17 @@
           "repository": "Civ13/Civ13",
           "number": 3347,
           "role": "implementation",
-          "label": "Held crafting-menu compatibility draft",
-          "state": "draft",
+          "label": "Held crafting-menu compatibility",
+          "state": "open",
           "merge_sha": null
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3342,
           "role": "implementation",
-          "label": "Physical throw launch draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Physical throw launch",
+          "state": "merged",
+          "merge_sha": "d6ba0a85e5b459d257902456fd64dc4cc6286966"
         }
       ],
       "completion": null
@@ -358,17 +358,17 @@
       "id": "authoritative-line-of-sight",
       "title": "Authoritative line of sight",
       "summary": "Explore Civ14-inspired geometric occlusion for walls, doors and openings, with a per-player view that preserves the HUD. Apply authoritative visibility to information and actions, including hover, examine, targeting and agent observations. Keep illumination separate and distinguish large artwork from physical blocker footprints.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "A disabled same-level read-context core is a draft prototype, not a working visibility renderer. Gameplay adapters, hidden-information protection, reconnect/save restoration, visual acceptance and measured costs remain incomplete; cross-level expansion comes later.",
+      "availability_note": "The disabled same-level read-context core is merged groundwork, not a working visibility renderer. Gameplay adapters, hidden-information protection, reconnect/save restoration, visual acceptance and measured costs remain incomplete; cross-level expansion comes later. Public activation is unverified.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
           "number": 3340,
           "role": "implementation",
-          "label": "Disabled geometric visibility core draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Disabled geometric visibility core",
+          "state": "merged",
+          "merge_sha": "bc7209b23d4ee39651a736a7a9ddb1d1081166ac"
         }
       ],
       "completion": null
@@ -377,17 +377,17 @@
       "id": "oversized-sprite-lighting",
       "title": "Lighting for oversized sprites",
       "summary": "Develop lighting coverage for large trees, shadows and other artwork that extends beyond its root tile. Preserve ordinary light propagation, darkness, weather, fullbright cells and special sight rules, separately from authoritative line of sight.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "The composition prototype remains disabled and under review. General rendering issues and connected-client acceptance remain unresolved; fixture checks do not establish production appearance, memory savings or public availability.",
+      "availability_note": "The disabled composition prototype is merged groundwork. General rendering issues and connected-client acceptance remain unresolved; source and fixture checks do not establish production appearance, memory savings or public activation.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
           "number": 3225,
           "role": "implementation",
           "label": "Disabled lighting composition prototype",
-          "state": "draft",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "3d35f802e580ac4f4d012a4ffc448bd485b62b53"
         }
       ],
       "completion": null
@@ -396,33 +396,33 @@
       "id": "authored-room-escape-mode",
       "title": "Authored-room escape mode",
       "summary": "Plan a finite escape scenario assembled from original authored room families with validated connections, clearance, discovery, service objectives and escape routes. Default to in-game year 1990 with an explicit early-1990s equipment, prop, crafting and research policy. Reuse geometry contracts without inheriting expedition or colony state.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Design, offline topology/manifests and static existing-asset room previews are drafts. The initial static room layouts were rejected and are being revised; the previews do not establish an approved design or gameplay appearance. Native export, equipment enforcement, mode integration and playable acceptance remain pending.",
+      "availability_note": "Design, offline topology/manifests and renderer-audit source are merged groundwork. The initial static room layouts were rejected and are being revised; the newer renderer study is also not an approved design or gameplay screenshot. Native export, period-policy enforcement, mode integration and playable acceptance remain pending.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
           "number": 3346,
           "role": "prerequisite",
           "label": "Authored-room escape design",
-          "state": "draft",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "0f12bdd809f93ea8d8d6c631332404a894eb55df"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3348,
           "role": "implementation",
-          "label": "Offline room topology and scenario manifests draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Offline room topology and scenario manifests",
+          "state": "merged",
+          "merge_sha": "0f2227b6c8496ec41e7387447a41331a8b4100a3"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3349,
           "role": "prerequisite",
-          "label": "Initial room previews - layouts rejected, revision pending",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Renderer audit; initial room layouts remain rejected",
+          "state": "merged",
+          "merge_sha": "2b7f77cd5264ca4dd4eed0446fa741f0d51336e9"
         }
       ],
       "completion": null
@@ -431,9 +431,9 @@
       "id": "powered-backrooms-expeditions",
       "title": "Powered-gateway exploration and colonies",
       "summary": "Plan a separate Backrooms expedition scenario: deliberately power a gateway, survey authored rooms, carry finite supplies and establish a persistent colony. Power loss closes crossings while preserving residents and construction. Default to in-game year 1990 with period equipment rules; require safe admission, return/rescue and paired world persistence.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Public design and a default-disabled power/identity foundation are drafts. They provide no playable gateway or colony mode. Physical crossing, paid supplies, rescue, period-policy enforcement and full-world save integration still need implementation and testing.",
+      "availability_note": "The default-disabled power/identity foundation is merged; the separate expedition design remains a draft. This provides no playable gateway or colony mode. Physical crossing, paid supplies, rescue, period-policy enforcement and full-world save integration still need implementation and testing; public activation is unverified.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -447,9 +447,9 @@
           "repository": "Civ13/Civ13",
           "number": 3351,
           "role": "implementation",
-          "label": "Disabled gateway power-state foundation draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Disabled gateway power-state foundation",
+          "state": "merged",
+          "merge_sha": "ecdb248c26b7390ea968a099231145482a6cad32"
         }
       ],
       "completion": null
@@ -460,7 +460,7 @@
       "summary": "Plan understandable diet balance and learned character food preferences, with useful energy benefits from varied meals and meaningful recipe lineage. Build on private character discovery notes and accessible winter/underground foods. Extend Crafting Atlas resource discovery without revealing hidden tastes; keep ordinary survival practical.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Winter turnips, underground plump helmets and learned berry-smell notes are merged supporting work; direct Atlas resource search is a draft. Nutrition bonuses, hidden tastes and discovery beyond those notes remain planned. Validate reachable food variety before penalties; full-goal public availability is unverified.",
+      "availability_note": "Winter turnips, underground plump helmets, learned berry-smell notes and direct Atlas resource search are merged supporting work. Nutrition bonuses, hidden tastes and discovery beyond those notes remain planned. Validate reachable food variety before penalties; full-goal public availability is unverified.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -482,9 +482,9 @@
           "repository": "Civ13/Civ13",
           "number": 3345,
           "role": "prerequisite",
-          "label": "Direct Atlas resource search draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Direct Atlas resource search",
+          "state": "merged",
+          "merge_sha": "083cbf20f0d64abffdbef9b478bf1eda74458f65"
         }
       ],
       "completion": null
@@ -513,33 +513,33 @@
       "id": "discord-social-integration",
       "title": "Discord social integration",
       "summary": "Prioritize optional Discord Social SDK integration through the launcher companion: presence first, with friends, invitations and joining subject to later review. Keep ordinary BYOND play independent of the launcher and preserve server-authoritative admission and transfer checks.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Managed transport, native SDK-adapter and Windows host/provider drafts are prototypes with production startup unwired or disabled. Real SDK runtime acceptance, distribution terms and end-to-end integration remain gates; live presence, friends or joining are not established.",
+      "availability_note": "Managed transport, native SDK-adapter and Windows host/provider source are merged groundwork, with production startup still unwired or disabled. Real SDK runtime acceptance, distribution terms and end-to-end integration remain gates; live presence, friends and joining are not established.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
           "number": 3327,
           "role": "implementation",
-          "label": "Managed companion transport draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Managed companion transport",
+          "state": "merged",
+          "merge_sha": "8540a134b3775bc3515830b0a258130baff84b62"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3333,
           "role": "implementation",
-          "label": "Native Social SDK adapter draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Native Social SDK adapter",
+          "state": "merged",
+          "merge_sha": "4dbcf65e7b8cd73fc1948246c4ef20d13fd0a293"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3339,
           "role": "implementation",
-          "label": "Inactive Windows companion host draft",
-          "state": "draft",
-          "merge_sha": null
+          "label": "Inactive Windows companion host",
+          "state": "merged",
+          "merge_sha": "33b15fd6dacafc04e65e39c678744196c4a1a08e"
         }
       ],
       "completion": null

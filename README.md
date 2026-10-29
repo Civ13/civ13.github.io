@@ -127,30 +127,36 @@ offline prototypes, disabled drafts and planned integration. A merged component
 does not complete its broader goal or verify public-server availability.
 
 - **Generated worlds:** configurable surface and oceanic generation with seeds,
-  versioned rules, static DMM export and accompanying metadata are draft tools.
+  versioned rules, static DMM export and accompanying metadata are merged tools.
   Caverns remain planned; offline validation is not native gameplay acceptance.
 - **Two indoor scenarios:** finite authored-room escape and powered-gateway
   Backrooms exploration/colonization share room contracts but retain separate
   objectives and mutable world identities. Both default to in-game year 1990
-  with explicit period equipment, prop, crafting and research policies. Design,
-  topology tools, static asset previews and a disabled power foundation do not
-  establish a playable mode. The initial static room layouts were rejected and
-  are being revised; the previews do not establish an approved design.
+  with explicit period equipment, prop, crafting and research policies. The escape
+  design, offline topology tools, renderer-audit source and disabled gateway-power
+  foundation are merged groundwork, not playable modes. The separate expedition
+  design remains a draft. The initial static room layouts were rejected and are
+  being revised; the newer renderer study is also not an approved design or
+  gameplay screenshot.
 - **Movement:** regular human walking/diagonal smoothing is merged; broader
-  movement acceptance remains incomplete. Prone, vendor NPC, held crafting-menu
-  and throw behavior have independent drafts; pulling and broader interactions
-  still need integration and acceptance.
+  movement acceptance remains incomplete. Prone/crawl motion and throw-source
+  clearance are merged source changes. Vendor NPC motion remains a draft; held
+  crafting-menu compatibility is a regular open PR. Pulling and broader
+  interactions still need integration and acceptance.
 - **Sight and lighting:** authoritative, Civ14-inspired line of sight must protect
-  information and actions. Oversized-sprite lighting is a separate disabled
-  prototype with unresolved general-rendering issues. Neither is a shipped goal.
+  information and actions. Its disabled read-context core and the separate
+  disabled oversized-sprite lighting prototype are merged groundwork, with
+  integration and general-rendering issues still unresolved. Public activation
+  of either goal is unverified.
 - **Optional tools:** launcher version checks and observe-only instance contracts
   are merged groundwork. GUI/shard management remains planned. Discord Social SDK
-  companion integration is draft work, with real runtime and distribution gates;
+  companion transport, SDK-adapter and inactive Windows host source are merged
+  groundwork, with production startup, real runtime and distribution gates;
   direct/manual BYOND joining remains supported.
 - **Food:** winter/underground foods and learned berry-smell notes are merged
   supporting work. [Diet and preference design](https://github.com/Civ13/Civ13/issues/3313)
   remains planned; require accessible food variety before penalties. Direct
-  Crafting Atlas resource search is a separate draft.
+  Crafting Atlas resource search is merged supporting work.
 - **Runtime research:** a compatible 64-bit runtime and selective JIT are high-level
   research goals only, with no adopted replacement, measured gain or capacity claim.
 
@@ -216,15 +222,17 @@ added; the metadata foundation alone does not implement those climate effects.
 
 Snow accumulation follows actual local weather and exposure. Melting or shoveling
 generated cover must reveal the same underlying soil without automatic seasonal
-terrain replacement. The linked ground-snow implementation remains a draft;
-source/CI checks do not establish native gameplay, save round-trip or deployment
-acceptance. Existing authored terrain and generated cover need distinct handling.
+terrain replacement. The linked ground-snow implementation is merged with bounded
+native fixture evidence; it does not establish full-world or connected-client
+acceptance or public activation. Existing authored terrain and generated cover
+need distinct handling.
 
 ### Persistent editing, export and mapper guidance
 
 Zone and spawn persistence must cover create/move/delete operations with stable
 local identities and safe restoration, including durable removal so deleted
-definitions do not reappear. The current candidate is unpublished, not complete.
+definitions do not reappear. Zone/spawn persistence is merged for supported
+durable profiles; the broader authoring/export workflow remains incomplete.
 
 Save-to-map export design must preserve originals and export reviewed static world
 state as compilable Civ13 map source plus necessary metadata. Exclude player,
