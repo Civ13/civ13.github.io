@@ -25,11 +25,15 @@ test('failed refresh is atomic and leaves original last-known-good unchanged', a
   await assert.rejects(refresh(data, async e => { if (e.number === 3118) throw new Error('Rate limit'); return pr(e); }));
   assert.equal(JSON.stringify(data), before);
 });
-test('early drafts stay planned; reviewed implementation leaving draft advances to in progress', async () => {
-  const drafts = await refresh(copy(), async e => pr(e, e.number === 3147 ? 'merged' : 'draft'));
+test('planned drafts stay planned; open implementation advances without downgrading existing progress', async () => {
+  const planned = copy(); planned.milestones[1].status = 'planned';
+  const drafts = await refresh(planned, async e => pr(e, e.number === 3147 ? 'merged' : 'draft'));
   assert.equal(drafts.milestones[1].status, 'planned');
-  const active = await refresh(copy(), async e => pr(e, e.number === 3082 ? 'open' : 'draft'));
+  const active = await refresh(planned, async e => pr(e, e.number === 3082 ? 'open' : 'draft'));
   assert.equal(active.milestones[1].status, 'in_progress');
+  const progressed = copy(); progressed.milestones[1].status = 'in_progress';
+  const staleDrafts = await refresh(progressed, async e => pr(e, 'draft'));
+  assert.equal(staleDrafts.milestones[1].status, 'in_progress');
 });
 test('wrong repository, malformed merge, unreviewed acceptance and invented availability fail closed', async () => {
   await assert.rejects(refresh(copy(), async e => ({...pr(e), base: {repo: {full_name: 'other/repo'}}})));
