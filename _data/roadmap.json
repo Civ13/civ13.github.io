@@ -57,8 +57,8 @@
           "number": 3118,
           "role": "implementation",
           "label": "Extraction raid draft",
-          "state": "draft",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "710860be44eb16ddada0faca993c0fce7b67b188"
         }
       ],
       "completion": null
@@ -440,8 +440,8 @@
           "number": 3350,
           "role": "prerequisite",
           "label": "Powered expedition and colony design",
-          "state": "open",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "bbb3b00a4f8dea2c8cb7c6ae01383eea3156881e"
         },
         {
           "repository": "Civ13/Civ13",
