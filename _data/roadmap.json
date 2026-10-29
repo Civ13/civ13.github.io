@@ -49,8 +49,8 @@
           "number": 3082,
           "role": "implementation",
           "label": "Safehouse and survival",
-          "state": "open",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "76c6f244f6eca7f2f7b9037da80181c52d498afb"
         },
         {
           "repository": "Civ13/Civ13",
@@ -332,16 +332,16 @@
           "number": 3343,
           "role": "implementation",
           "label": "Vendor NPC movement draft",
-          "state": "draft",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "ebaa94ecdb99e4b120e399d15fed687911ce51f4"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3347,
           "role": "implementation",
           "label": "Held crafting-menu compatibility",
-          "state": "open",
-          "merge_sha": null
+          "state": "merged",
+          "merge_sha": "3a2926ece4a19f732b285fb9f1d4e9da2fcb46fb"
         },
         {
           "repository": "Civ13/Civ13",
@@ -440,7 +440,7 @@
           "number": 3350,
           "role": "prerequisite",
           "label": "Powered expedition and colony design",
-          "state": "draft",
+          "state": "open",
           "merge_sha": null
         },
         {
