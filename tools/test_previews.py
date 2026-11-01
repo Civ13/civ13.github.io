@@ -8,6 +8,7 @@ import tempfile
 from pathlib import Path
 from check_preview import HeadParser, check_html, script_json, validate_payload
 from check_site_previews import check_site
+from check_player_help import check_help
 
 
 def test_invalid():
@@ -45,6 +46,12 @@ def test_render():
         }
         for name, text in fixtures.items():
             (source / (name + '.md')).write_text('---\nlayout: default\ntitle: ' + json.dumps(text, ensure_ascii=False) + '\ndescription: ' + json.dumps(text, ensure_ascii=False) + '\nimage: /public/img/banner.png\n---\nFixture\n', encoding='utf-8')
+        catalog_path = source / '_data/help_resources.json'
+        catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+        catalog[0]['title'] = fixtures['escaped']
+        catalog[0]['description'] = '<script>alert(1)</script> & "quoted" guide text'
+        catalog[0]['keywords'] = '" onfocus="alert(1) <script> café'
+        catalog_path.write_text(json.dumps(catalog, ensure_ascii=False), encoding='utf-8')
         config = Path(tmp) / 'alternate.yml'
         config.write_text('url: https://preview.example\nbaseurl: /civ13\n', encoding='utf-8')
         output = Path(tmp) / 'site'
@@ -52,6 +59,7 @@ def test_render():
         # Keep fixtures isolated while reusing the repository's locked bundle.
         subprocess.run(['bundle', 'exec', 'jekyll', 'build', '--source', str(source), '--destination', str(output), '--config', str(source / '_config.yml') + ',' + str(config)], cwd=source, env=dict(os.environ, BUNDLE_GEMFILE=str(repo / 'Gemfile')), check=True)
         check_site(output, 'https://preview.example', '/civ13')
+        check_help(output, source, '/civ13')
         assert 'src="/civ13/public/img/splash.png"' in (output / 'civ14.html').read_text(encoding='utf-8')
         html = (output / 'escaped.html').read_text(encoding='utf-8')
         errors, counts = check_html(html)

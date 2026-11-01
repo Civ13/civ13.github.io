@@ -1,0 +1,27 @@
+{
+  "schema": "civ13.public-monitoring.v1",
+  "enabled": false,
+  "interval_seconds": 300,
+  "targets": [
+    {
+      "id": "website",
+      "url": "https://civ13.github.io/",
+      "marker": "Civilization 13"
+    },
+    {
+      "id": "wiki",
+      "url": "https://civ13.github.io/civ13-wiki/",
+      "marker": "Civilization 13"
+    },
+    {
+      "id": "source-reference",
+      "url": "https://civ13.github.io/Civ13/",
+      "marker": "Civ13"
+    },
+    {
+      "id": "crafting-atlas",
+      "url": "https://civ13.github.io/Civ13/crafting/",
+      "marker": "Crafting"
+    }
+  ]
+}
