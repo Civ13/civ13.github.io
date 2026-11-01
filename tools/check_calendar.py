@@ -12,6 +12,7 @@ class CalendarParser(HTMLParser):
         self.card = None
         self.downloads = []
         self.empty = False
+        self.sync_downloads = 0
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -26,7 +27,12 @@ class CalendarParser(HTMLParser):
             if tag == 'a':
                 self.card['hrefs'].append(attrs.get('href'))
         if tag == 'a' and 'download' in attrs:
-            self.downloads.append(attrs.get('href'))
+            if 'data-sync-download' in attrs:
+                assert 'hidden' in attrs and 'href' not in attrs, 'Discord placeholder offers a static download'
+                assert attrs['download'] == 'civ13-discord.ics', 'unexpected Discord download placeholder'
+                self.sync_downloads += 1
+            else:
+                self.downloads.append(attrs.get('href'))
 
     def handle_data(self, data):
         if self.card is not None:
@@ -44,6 +50,8 @@ def check_calendar(root, source, base=''):
     events = json.loads((source / '_data/community_calendar.json').read_text(encoding='utf-8'))['events']
     parser = CalendarParser()
     parser.feed(html)
+    sync_enabled = json.loads((source / '_data/discord_calendar.json').read_text(encoding='utf-8'))['enabled']
+    assert parser.sync_downloads == int(sync_enabled), 'Discord download placeholder differs from reviewed configuration'
     assert len(parser.cards) == len(events)
     ics = root / 'public/calendar/civ13.ics'
     if not events:

@@ -3,3 +3,4 @@ public/architecture/**/*.zip binary
 public/calendar/*.ics -text
 _data/community_calendar.json text eol=lf
 tools/map-explorer/index.html text eol=lf
+tools/calendar/discord-snapshot.fixture.json text eol=lf
