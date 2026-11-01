@@ -96,6 +96,14 @@ def test_render():
             assert not parser.scripts, name + ' should omit the component preview'
             assert parser.metadata.get('og:title') and parser.metadata.get('og:image')
         print('Jekyll Unicode, script escaping, oversized/empty omission, alternate-origin and fallback checks passed', counts)
+        retained = os.environ.get('CIV13_PREVIEW_FIXTURE_OUTPUT')
+        if retained:
+            destination = Path(retained).resolve()
+            shutil.copytree(output, destination)
+            (destination / 'fixture-provenance.txt').write_text(
+                'Synthetic offline render fixture only. No real scheduled events.\n'
+                'Alternate origin https://preview.example and base /civ13.\n', encoding='utf-8')
+            print('Retained synthetic Jekyll fixture output for artifact-only inspection')
 
 
 if __name__ == '__main__':
