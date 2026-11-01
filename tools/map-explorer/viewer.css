@@ -1,0 +1,21 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; line-height: 1.6; background: #101b20; color: #ccd5d5; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 68rem; margin: auto; padding: clamp(1rem, 4vw, 3rem); }
+h1, h2 { color: #f3eee1; line-height: 1.2; }
+h1 { font-family: Georgia, serif; font-size: clamp(2rem, 5vw, 3.4rem); }
+a { color: #edc981; overflow-wrap: anywhere; }
+.kicker { color: #c1d2cd; text-transform: uppercase; font-size: .8rem; letter-spacing: .08em; }
+.map-card { border: 1px solid #52665b; background: #18282b; margin: 1.5rem 0; padding: clamp(1rem, 3vw, 1.8rem); }
+.map-card h2 { margin-top: 0; }
+button, select { font: inherit; padding: .6rem; color: #f3eee1; background: #101b20; border: 1px solid #edc981; border-radius: .2rem; max-width: 100%; }
+button, summary { cursor: pointer; }
+label { display: block; font-weight: bold; }
+figure { margin: 1rem 0; }
+.overview { display: block; width: auto; max-width: 100%; height: auto; max-height: 70vh; object-fit: contain; image-rendering: pixelated; }
+figcaption, .image-status { font-size: .85rem; }
+li { margin: .5rem 0; }
+summary { color: #edc981; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #f5d78d; outline-offset: 4px; }
+@media (max-width: 30rem) { ul { padding-left: 1.25rem; } button { width: 100%; } }

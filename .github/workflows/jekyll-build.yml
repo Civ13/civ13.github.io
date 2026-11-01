@@ -37,6 +37,11 @@ jobs:
           node tools/calendar/build.cjs --check
           node --test tools/test_calendar.cjs
           python3 tools/check_calendar.py _site
+      - name: Check unpublished map browser prototype
+        run: |
+          node tools/map-explorer/build.cjs --check
+          node --test tools/map-explorer/test.cjs
+          test ! -e _site/tools/map-explorer/index.html
       - name: Validate roadmap and simulate updates and failures
         run: |
           node --test tools/test_roadmap.cjs

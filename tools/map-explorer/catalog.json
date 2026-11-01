@@ -1,0 +1,194 @@
+{
+  "schema": "civ13.static-maps.v1",
+  "wiki_commit": "48094b1fbac7031a3a49c5c9ddce84e51dea0258",
+  "verified_game_commit": "10d264e5896221b34949ee4b67c0fd2b94bde249",
+  "png_production_commit": "067478b82c7ad9f1b83759a221e6f22080ba865a",
+  "manifest_path": "src/images/maps/nomads-authored-10d264e58962/asset-manifest.json",
+  "maps": [
+    {
+      "id": "gaia",
+      "title": "Gaia",
+      "guide_path": "src/maps/Gaia.md",
+      "source_status": "Authored variant, outside the standard Nomads map-vote list.",
+      "dmm_path": "maps/nomads/nomads_gaia.dmm",
+      "dmm_sha256": "2f86604296c437a7f4d6661ce4662787b381ddff35a74bb129beeb465163ead3",
+      "overview": {
+        "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_gaia/nomads_gaia__all_z_overview.png",
+        "bytes": 455286,
+        "sha256": "db9625a49de3eb4f910d1edc0694723b0c6aa35ba55c2efb4a55ec9d539bc770",
+        "width": 1240,
+        "height": 625
+      },
+      "layers": [
+        {
+          "z": 1,
+          "label": "Underground",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_gaia/nomads_gaia__z01__full.png",
+          "bytes": 2672995,
+          "sha256": "61455919a56cde873a5f1efee95e59cae9702a986dd3edc364654284384a5b37",
+          "width": 16000,
+          "height": 11200
+        },
+        {
+          "z": 2,
+          "label": "Surface",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_gaia/nomads_gaia__z02__full.png",
+          "bytes": 9699214,
+          "sha256": "0946465a7ebcff7572e218eef14e7b11e84f8ba6a4cbc37ea65876c69e84e4e0",
+          "width": 16000,
+          "height": 11200
+        }
+      ]
+    },
+    {
+      "id": "mountain",
+      "title": "Mountain",
+      "guide_path": "src/maps/Mountain.md",
+      "source_status": "Authored variant, outside the standard Nomads map-vote list.",
+      "dmm_path": "maps/nomads/nomads_mountain.dmm",
+      "dmm_sha256": "44799d1c327582c6aced27ac5b0f9c599c306441842773c5dc01d6e23756ad33",
+      "overview": {
+        "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__all_z_overview.png",
+        "bytes": 91115,
+        "sha256": "4d944ca4cef70a09d321ca59ffe9466c2cbb8262c74ad343cb4e3bc76abd4d64",
+        "width": 1240,
+        "height": 2275
+      },
+      "layers": [
+        {
+          "z": 1,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__z01__full.png",
+          "bytes": 204076,
+          "sha256": "030e446af57d18462a282816340e0f67a72791742c34edd9b158244d2168232e",
+          "width": 3840,
+          "height": 3840
+        },
+        {
+          "z": 2,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__z02__full.png",
+          "bytes": 201871,
+          "sha256": "64e033e20b04ac2e047117efbd89c2054e379d6c5dcbd0ac1f01bf0c0711b6a1",
+          "width": 3840,
+          "height": 3840
+        },
+        {
+          "z": 3,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__z03__full.png",
+          "bytes": 201710,
+          "sha256": "94477af534192a03e73d0204cc5370db5509de4ad98c54af2753a947d093d6e4",
+          "width": 3840,
+          "height": 3840
+        },
+        {
+          "z": 4,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__z04__full.png",
+          "bytes": 201515,
+          "sha256": "dbcfb3b1abd62de97fb2f188123a256ea470bb4a6b76277f298742ac252d0550",
+          "width": 3840,
+          "height": 3840
+        },
+        {
+          "z": 5,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__z05__full.png",
+          "bytes": 201428,
+          "sha256": "5b5d0d85fa6a265810d1dab4e9f21a17e052b40899c64a281a87f73cfc260ca7",
+          "width": 3840,
+          "height": 3840
+        },
+        {
+          "z": 6,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__z06__full.png",
+          "bytes": 201254,
+          "sha256": "4caeec733557f6afb09268c302a2b0d69875ab13bdffbd4058fd0f1e77849829",
+          "width": 3840,
+          "height": 3840
+        },
+        {
+          "z": 7,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__z07__full.png",
+          "bytes": 201254,
+          "sha256": "4caeec733557f6afb09268c302a2b0d69875ab13bdffbd4058fd0f1e77849829",
+          "width": 3840,
+          "height": 3840
+        },
+        {
+          "z": 8,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_mountain/nomads_mountain__z08__full.png",
+          "bytes": 678844,
+          "sha256": "450d5df525a4af70ab54da4484d827094b3a8e63f10e2196a57583b1a5221035",
+          "width": 3840,
+          "height": 3840
+        }
+      ]
+    },
+    {
+      "id": "oceania",
+      "title": "Oceania",
+      "guide_path": "src/maps/Oceania.md",
+      "source_status": "Authored variant, outside the standard Nomads map-vote list.",
+      "dmm_path": "maps/nomads/nomads_oceania.dmm",
+      "dmm_sha256": "f311a847a14bf89386dcc3d53adcf99f72d63877e065453512eacedcc7a1c025",
+      "overview": {
+        "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_oceania/nomads_oceania__all_z_overview.png",
+        "bytes": 248090,
+        "sha256": "1c7bb9765f4ed93be04ee0197d9ac792e82843cdd8fbbf0e2b3b501b0112a06e",
+        "width": 620,
+        "height": 625
+      },
+      "layers": [
+        {
+          "z": 1,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_oceania/nomads_oceania__z01__full.png",
+          "bytes": 5658378,
+          "sha256": "4f79c0f8f9e232ae3cbfa222f99529a8fe80e5da0f76d3e8ca1eea2151d71676",
+          "width": 12800,
+          "height": 11200
+        }
+      ]
+    },
+    {
+      "id": "stranded",
+      "title": "Stranded",
+      "guide_path": "src/maps/Stranded.md",
+      "source_status": "Authored variant, outside the standard Nomads map-vote list.",
+      "dmm_path": "maps/nomads/nomads_stranded.dmm",
+      "dmm_sha256": "b0ace5c894ecca74beabc5aa95fc83663a2ec9ec7cc7e2989e015bfd97b9e42e",
+      "overview": {
+        "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_stranded/nomads_stranded__all_z_overview.png",
+        "bytes": 229432,
+        "sha256": "396229bde515ddee675465fb1f1a7314360e96021143052413d123653f9d20e8",
+        "width": 1240,
+        "height": 625
+      },
+      "layers": [
+        {
+          "z": 1,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_stranded/nomads_stranded__z01__full.png",
+          "bytes": 608440,
+          "sha256": "3553404358c3fa44a11ca0aadcd8c78952462331098e0121d822516d9c1b8ca3",
+          "width": 7040,
+          "height": 7040
+        },
+        {
+          "z": 2,
+          "label": "Authored layer",
+          "path": "src/images/maps/nomads-authored-10d264e58962/nomads__nomads_stranded/nomads_stranded__z02__full.png",
+          "bytes": 1981672,
+          "sha256": "885af1fdb9696c9fcefd8d16f98d20bd05596665413d03ea524f375ec00955f1",
+          "width": 7040,
+          "height": 7040
+        }
+      ]
+    }
+  ]
+}

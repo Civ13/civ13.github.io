@@ -43,6 +43,10 @@ existing `tools` exclusion keeps operator material outside the published site.
 Event calendars, public map exploration and compatibility evidence remain
 separate staged additions; status/join and launcher metadata have another owner.
 
+An [unpublished map-browser prototype](tools/map-explorer/README.md) explores four
+already-merged wiki layouts with pinned source labels and explicit image loading.
+It stays under the existing `tools/` exclusion until separate publication review.
+
 ## Community calendar source
 
 `tools/calendar/events.json` is the reviewed event inventory. It starts empty:
