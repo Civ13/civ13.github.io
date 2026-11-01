@@ -5,6 +5,7 @@ description:      'The multiplayer society-building game'
 url:              https://civ13.github.io
 baseurl:          ""
 exclude:
+  - workers
   - tools
   - vendor
   - .bundle
