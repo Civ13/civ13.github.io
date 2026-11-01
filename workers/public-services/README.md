@@ -115,6 +115,8 @@ A task-local cache succeeded; no system permission/configuration was changed.
 Tests use fixture names explicitly, never pretend they are live Gaia evidence.
 
 Proposed Worker name: `civ13-public-services`, separate from `dphp-docs-mcp`.
+Compatibility is pinned to `2026-10-01`, a date supported by both the local
+runtime and the observed dashboard date selector. No compatibility flags are set.
 Public deployment requires Main's source review and an existing Free account.
 There is no deploy script, token, account ID, CI secret or account grant here.
 Do not add paid products to work around limits. Deployment must verify exact
