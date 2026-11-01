@@ -1,0 +1,50 @@
+---
+layout: page
+title: Player help
+permalink: /player-help/
+description: Find Civ13 controls, crafting recipes, resources, rules and scenario guides in one place.
+image:
+  path: /public/img/banner.png
+  width: 450
+  height: 232
+  alt: Civilization 13 game banner
+---
+
+<p>Find the right guide for your next round. Start with the controls and rules, look up a recipe in the Crafting Atlas, or explore the scenario you want to play.</p>
+
+<div class="help-finder" id="help-finder" hidden>
+  <div>
+    <label for="help-search">Search guide links</label>
+    <input id="help-search" type="search" maxlength="160" placeholder="Try controls, bronze, or Nomads" autocomplete="off" aria-controls="help-resources" aria-describedby="help-search-note">
+  </div>
+  <div>
+    <label for="help-category">Topic</label>
+    <select id="help-category" aria-controls="help-resources">
+      <option value="all">All topics</option>
+      {% assign categories = site.data.help_resources | map: 'category' | uniq %}
+      {% for category in categories %}<option value="{{ category | escape }}">{{ category | escape }}</option>{% endfor %}
+    </select>
+  </div>
+  <p id="help-search-note">This filters the titles, summaries and topics below. Open a guide to search its full contents. Your search stays in this browser.</p>
+  <p id="help-count" role="status" aria-live="polite" aria-atomic="true"></p>
+</div>
+
+<div class="help-resources" id="help-resources">
+{% for resource in site.data.help_resources %}
+  <article class="home-card help-resource" data-category="{{ resource.category | escape }}" data-keywords="{{ resource.keywords | escape }}">
+    <p class="home-kicker">{{ resource.category | escape }}</p>
+    <h2><a href="{% if resource.url contains 'https://' %}{{ resource.url | escape }}{% else %}{{ resource.url | relative_url | escape }}{% endif %}">{{ resource.title | escape }}</a></h2>
+    <p>{{ resource.description | escape }}</p>
+    <p class="help-source">{{ resource.source | escape }}</p>
+  </article>
+{% endfor %}
+</div>
+
+<p id="help-empty" hidden>No guide links match. Try a shorter search or choose all topics. You can also open the <a href="https://civ13.github.io/civ13-wiki/">player wiki</a> or the <a href="https://civ13.github.io/Civ13/crafting/">Crafting Atlas</a> directly.</p>
+
+<section class="home-section" aria-labelledby="help-in-game">
+  <h2 id="help-in-game">While you are playing</h2>
+  <p>Open <strong>Crafting Atlas</strong> in the game to follow recipes and resources. Availability still depends on the map, research and other conditions shown in the reference.</p>
+  <p><strong>Help! &gt; Ask for help</strong> is available when the server has its optional AI help service configured. Read its privacy notice and avoid personal information. If the service is unavailable, the wiki and Crafting Atlas remain available.</p>
+</section>
+<script src="{{ '/public/js/player-help.js' | relative_url }}" defer></script>

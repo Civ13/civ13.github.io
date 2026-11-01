@@ -1,0 +1,110 @@
+[
+  {
+    "id": "first-round",
+    "title": "Your first round",
+    "category": "Getting started",
+    "description": "Learn controls, interaction and the basics of joining Civ13.",
+    "keywords": "new player beginner movement inventory pickup drop controls start",
+    "url": "https://civ13.github.io/civ13-wiki/New_Player_Guide.html",
+    "source": "Player wiki"
+  },
+  {
+    "id": "rules",
+    "title": "Server rules",
+    "category": "Getting started",
+    "description": "Read the community's rules before joining a round.",
+    "keywords": "rules conduct roleplay combat expectations",
+    "url": "https://civ13.github.io/civ13-wiki/rules/Rules.html",
+    "source": "Player wiki"
+  },
+  {
+    "id": "join",
+    "title": "Install and join",
+    "category": "Getting started",
+    "description": "Find BYOND setup instructions and the published game addresses.",
+    "keywords": "download launcher byond client connect server join installation",
+    "url": "/#join",
+    "source": "Civ13 website"
+  },
+  {
+    "id": "crafting",
+    "title": "Crafting Atlas",
+    "category": "Crafting and resources",
+    "description": "Search recipes and resource acquisition, then follow their ingredients, processors and research conditions.",
+    "keywords": "craft recipe recipes resources research unlock era copper tin bronze kiln furnace food leather tannin iron wood mill",
+    "url": "https://civ13.github.io/Civ13/crafting/",
+    "source": "Crafting Atlas"
+  },
+  {
+    "id": "wiki",
+    "title": "Player wiki",
+    "category": "Crafting and resources",
+    "description": "Browse game systems and use the wiki's own full-text search for detailed questions.",
+    "keywords": "wiki help guide gameplay systems crafting building medicine farming",
+    "url": "https://civ13.github.io/civ13-wiki/",
+    "source": "Player wiki"
+  },
+  {
+    "id": "nomads",
+    "title": "Civilizations and Nomads",
+    "category": "Modes and scenarios",
+    "description": "Get started with society building, factions and roleplay.",
+    "keywords": "nomads civilization society faction building research survival alliances",
+    "url": "https://civ13.github.io/civ13-wiki/gamemodes/Civilizations_and_Nomads.html",
+    "source": "Player wiki"
+  },
+  {
+    "id": "modes",
+    "title": "Choose a game mode",
+    "category": "Modes and scenarios",
+    "description": "Compare play styles and find the existing mode guides and event guidance.",
+    "keywords": "mode scenario event team deathmatch tdm football voyage submarine colonies survival",
+    "url": "/game-modes/",
+    "source": "Civ13 website"
+  },
+  {
+    "id": "maps",
+    "title": "Maps and historical scenarios",
+    "category": "Modes and scenarios",
+    "description": "Browse the wiki's map overview before choosing a scenario.",
+    "keywords": "map maps historical scenario history battlefield objectives tdm",
+    "url": "https://civ13.github.io/civ13-wiki/maps_overview.html",
+    "source": "Player wiki"
+  },
+  {
+    "id": "wizard",
+    "title": "Wizard Boy quickstart",
+    "category": "Modes and scenarios",
+    "description": "Find the academy guide for wands, spells and potions.",
+    "keywords": "wizard boy academy magic fantasy wand spell potion duel",
+    "url": "https://civ13.github.io/civ13-wiki/gamemodes/wizard_boy_quickstart.html",
+    "source": "Player wiki"
+  },
+  {
+    "id": "community",
+    "title": "Ask the community",
+    "category": "Getting started",
+    "description": "Ask players for help and check Discord announcements for organised rounds.",
+    "keywords": "discord community ask question help event announcement time",
+    "url": "https://discord.gg/hBEtg4x",
+    "source": "Civ13 Discord"
+  },
+  {
+    "id": "contribute",
+    "title": "Improve a player guide",
+    "category": "Contributing",
+    "description": "Learn how to suggest a correction or contribute to the wiki.",
+    "keywords": "contribute contribution documentation docs wiki edit correction guide",
+    "url": "https://github.com/Civ13/civ13-wiki/blob/master/src/Contributing_to_the_Wiki.md",
+    "source": "Wiki contribution guide"
+  },
+  {
+    "id": "source",
+    "title": "Game source reference",
+    "category": "Contributing",
+    "description": "Browse documented game code. This is a contributor reference, separate from player instructions.",
+    "keywords": "contributor source code dm dreammaker api proc type reference development",
+    "url": "https://civ13.github.io/Civ13/",
+    "source": "Source documentation"
+  }
+]

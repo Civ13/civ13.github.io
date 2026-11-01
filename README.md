@@ -23,6 +23,22 @@ This protects the repository-managed build. GitHub manages its own legacy Pages
 dependencies separately; the unchanged site configuration supplies no remote
 theme or archive input there. Hosting still publishes `master` through Pages.
 
+## Player help and monitoring groundwork
+
+`/player-help/` adds a curated guide-link index from `_data/help_resources.json`.
+Its browser-only filter searches card text and reviewed keywords, not every
+linked page. Existing wiki/source search and the Crafting Atlas remain the
+destinations for full contents. All cards remain available without JavaScript;
+no queries, accounts or player data are sent to a service by the filter.
+
+Run `node --test tools/test_player_help.cjs tools/test_monitoring.cjs` and
+`node tools/monitoring/check.cjs`. The inactive monitoring inventory and its
+local-only observation checker are documented in `tools/monitoring/README.md`.
+They register no monitors, send no alerts and do not query game servers. The
+existing `tools` exclusion keeps operator material outside the published site.
+Event calendars, public map exploration and compatibility evidence remain
+separate staged additions; status/join and launcher metadata have another owner.
+
 ## Website previews
 
 Public content pages declare a concise `description` and a raster `image` with
