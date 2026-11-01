@@ -4,6 +4,10 @@ This is the website for Civ13, which you can find [here](https://github.com/Civ1
 
 It is built using **Jekyll** and the **Hyde** theme [find it here](https://github.com/poole/hyde).
 
+The separate [public-services Worker](workers/public-services/README.md) provides
+a cached public server directory and stable launcher metadata. It is excluded
+from Jekyll, has no database, and does not deploy through the website build.
+
 ## Build dependency boundary
 
 The theme's layouts, includes, and assets live in this repository. The build

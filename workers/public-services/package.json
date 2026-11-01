@@ -1,0 +1,16 @@
+{
+  "name": "civ13-public-services",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "smoke": "node test/workerd-smoke.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
