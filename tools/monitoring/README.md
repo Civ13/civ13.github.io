@@ -30,6 +30,15 @@ The plan's four ordinary public Pages URLs fit that scope. Its markers are
 proposals to validate against the served HTML before registration. A 200 error
 page can still contain a generic title; use meaningful reviewed markers.
 
+The independent PR review observed roughly 8.63 MB for the live Crafting Atlas
+HTML. This checker's 1 MiB response-body bound deliberately classifies that full
+sample as `unknown` / `body_limit`, even if its HTTP status is 200. The proposed
+Atlas target therefore needs a separately reviewed metadata-only observation
+contract, or a provider-native availability check with clearly narrower semantics,
+before activation. Do not interpret the current checker as working Atlas content
+monitoring or raise the body limit merely to make it pass. The other targets also
+need actual response-size/marker checks during operational review.
+
 Do not register monitors or recipients from this repository. The owner must
 first select their existing account/free plan, confirm actual target behavior
 and provider limits, choose alert recipients, and authorize activation. Do not
