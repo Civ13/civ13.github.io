@@ -34,7 +34,7 @@
       text(event.title, 400); text(event.description, 4000); text(event.location, 400);
       if (!event.title.trim()) throw Error('invalid_event');
       if (event.status === 'withdrawn') {
-        if (event.title !== 'Event no longer listed' || event.description !== 'Details withdrawn; check Discord for current information.' || event.location !== '' || event.url !== '' || event.end_at !== null || event.recurrence !== 'none') throw Error('invalid_withdrawal');
+        if (event.title !== 'Event no longer listed' || event.description !== 'Details withdrawn; check Discord for current information.' || event.location !== '' || event.url !== '' || event.end_at !== null || event.recurrence !== 'none' || event.start_at !== event.updated_at) throw Error('invalid_withdrawal');
       } else if (event.url !== `https://discord.com/events/${guild}/${event.event_id}`) throw Error('invalid_event_url');
       if (event.recurrence !== 'none' && (snapshot.state !== 'degraded' || !snapshot.notes.includes('recurrence_not_expanded'))) throw Error('incomplete_recurrence_unlabelled');
     }
@@ -88,7 +88,7 @@
       for (const event of value.events) {
         const card = doc.createElement('article'); card.className = 'home-card calendar-event';
         add(card, 'h3', event.title); add(card, 'p', event.status === 'withdrawn' ? 'Removed from website listing' : event.status[0].toUpperCase() + event.status.slice(1));
-        add(card, 'p', event.start_at.replace('T', ' ').replace('Z', ' UTC') + (event.end_at ? ' to ' + event.end_at.replace('T', ' ').replace('Z', ' UTC') : ' · End time not specified'));
+        add(card, 'p', event.status === 'withdrawn' ? 'Removal observed ' + event.updated_at.replace('T', ' ').replace('Z', ' UTC') : event.start_at.replace('T', ' ').replace('Z', ' UTC') + (event.end_at ? ' to ' + event.end_at.replace('T', ' ').replace('Z', ' UTC') : ' · End time not specified'));
         add(card, 'p', event.description); if (event.location) add(card, 'p', 'Location: ' + event.location);
         if (event.recurrence !== 'none') add(card, 'p', 'Repeating schedule is not expanded here. See Discord for all occurrences and exceptions.');
         if (event.url) { const link = add(card, 'a', 'Open original Discord event'); link.href = event.url; }

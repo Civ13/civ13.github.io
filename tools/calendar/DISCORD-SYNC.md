@@ -40,7 +40,9 @@ visible but explicitly degraded: no RRULE or invented future instances, and the
 download describes its single displayed instance. Discord is the authority for
 occurrences/exceptions. Withdrawals use the original UID and increased SEQUENCE,
 but contain generic text and no former restricted details. They are retained by
-the producer for 30 days. ICS line escaping/75-octet UTF-8 folding are tested.
+the producer with withdrawal-observation time rather than the old event schedule;
+the page labels that removal time. They remain exported for the cancellation window,
+30 days. ICS line escaping/75-octet UTF-8 folding are tested.
 Imported downloads remain static copies; this does not create subscriptions or
 promise that already downloaded private details can be recalled.
 

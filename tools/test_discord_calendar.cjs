@@ -36,9 +36,10 @@ test('ICS has stable UID/revisions, omitted unknown DTEND, safe text and explici
   const changed=copy(); changed.events[0].sequence=2; changed.events[0].description='雪'.repeat(70)+'\r\nUID:injected,;\\';
   const bytes=ics(changed); for(const line of bytes.trimEnd().split('\r\n')) assert.ok(Buffer.byteLength(line)<=75);
   assert.ok(bytes.includes('SEQUENCE:2')); assert.equal((bytes.match(/\r\nUID:/g)||[]).length,1);
-  const withdrawn=copy(); Object.assign(withdrawn.events[0],{status:'withdrawn',title:'Event no longer listed',description:'Details withdrawn; check Discord for current information.',location:'',url:'',sequence:3});
+  const withdrawn=copy(); Object.assign(withdrawn.events[0],{status:'withdrawn',title:'Event no longer listed',description:'Details withdrawn; check Discord for current information.',location:'',url:'',sequence:3,start_at:withdrawn.events[0].updated_at});
   validate(withdrawn,fixture.guild_id,now); assert.ok(ics(withdrawn).includes('STATUS:CANCELLED')); assert.ok(!ics(withdrawn).includes('URL:'));
   withdrawn.events[0].description='Old restricted description'; assert.throws(()=>validate(withdrawn,fixture.guild_id,now));
+  withdrawn.events[0].description='Details withdrawn; check Discord for current information.'; withdrawn.events[0].start_at=fixture.events[0].start_at; assert.throws(()=>validate(withdrawn,fixture.guild_id,now));
   assert.equal(ics({...fixture,events:[]}),null);
 });
 test('bounded transport rejects bad MIME, HTTP failure, oversized and invalid UTF-8 snapshots', async () => {

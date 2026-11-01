@@ -17,7 +17,7 @@
     value.revision = revision; value.generated_at = new Date(originTime + Math.floor(performance.now() - began)).toISOString().replace(/\.\d{3}Z$/,'Z');
     value.expires_at = new Date(Date.parse(value.generated_at) + 120000).toISOString().replace(/\.\d{3}Z$/,'Z');
     value.events[0].sequence = sequence; value.events[0].updated_at = value.generated_at;
-    if (state === 'withdrawn') Object.assign(value.events[0],{title:'Event no longer listed',description:'Details withdrawn; check Discord for current information.',status:'withdrawn',url:'',location:'',end_at:null,recurrence:'none'});
+    if (state === 'withdrawn') Object.assign(value.events[0],{title:'Event no longer listed',description:'Details withdrawn; check Discord for current information.',status:'withdrawn',url:'',location:'',end_at:null,recurrence:'none',start_at:value.events[0].updated_at});
     return new Response(JSON.stringify(value),{status:state==='outage'?503:200,headers:{'content-type':'application/json'}});
   }
   const controller = module.exports.mount(document.querySelector('#calendar-preview'),{enabled:true,source_url:'https://civ13.com/calendar/v1/snapshot',guild_id:fixture.guild_id},
