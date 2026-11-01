@@ -12,6 +12,21 @@ node tools/map-explorer/build.cjs --check
 node --test tools/map-explorer/test.cjs
 ```
 
+For a deliberate source review, download the exact pinned manifest linked below
+to a review directory outside this repository, then run:
+
+```sh
+node tools/map-explorer/verify-assets.cjs --manifest PATH_TO_PINNED_MANIFEST
+```
+
+This checks all four map identities and 17 image records against that manifest.
+Add `--download-to OUTSIDE_REPOSITORY_DIRECTORY` to explicitly retrieve only the
+four compact overviews, each bounded to 2 MiB and 15 seconds with no redirects.
+It verifies bytes, SHA-256 and PNG dimensions before writing new review files;
+existing files are never overwritten. The JSON receipt records each result.
+Normal builds and CI make no image requests. A local render using these verified
+bytes proves rendering only, not browser-to-GitHub reachability or game availability.
+
 For local browser review, serve only this directory (not the repository root):
 
 ```powershell

@@ -7,6 +7,33 @@ const vm = require('node:vm');
 const { validate, render } = require('./build.cjs');
 const catalog = require('./catalog.json');
 const source = fs.readFileSync(path.join(__dirname, 'viewer.js'), 'utf8');
+const { verifyManifest, verifyPng } = require('./verify-assets.cjs');
+
+test('source verification rejects changed manifest pins, bytes and dimensions', () => {
+  const manifest = { source_repository: 'https://github.com/Civ13/Civ13', source_commit_verified: catalog.verified_game_commit,
+    png_production_source_commit: catalog.png_production_commit,
+    maps: catalog.maps.map(map => ({ dmm: map.dmm_path, dmm_sha256: map.dmm_sha256, source_status: map.source_status,
+      layers: map.layers, source_commit_verified: catalog.verified_game_commit, png_production_source_commit: catalog.png_production_commit })),
+    files: catalog.maps.flatMap(map => [map.overview, ...map.layers]).map(file => ({ path: file.path, bytes: file.bytes, sha256: file.sha256, dimensions_px: [file.width, file.height] })) };
+  verifyManifest(catalog, manifest);
+  for (const mutate of [m => { m.source_commit_verified = catalog.png_production_commit; },
+    m => { m.files[0].sha256 = '0'.repeat(64); }, m => { m.files[0].dimensions_px[0]++; },
+    m => { m.files[0].bytes++; }, m => { m.files.pop(); }, m => { m.files.push(m.files[0]); }]) {
+    const changed = structuredClone(manifest); mutate(changed); assert.throws(() => verifyManifest(catalog, changed));
+  }
+});
+
+test('download verification rejects corruption and misleading PNG dimensions', () => {
+  const bytes = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jT1kAAAAASUVORK5CYII=', 'base64');
+  const file = { bytes: bytes.length, sha256: require('node:crypto').createHash('sha256').update(bytes).digest('hex'), width: 1, height: 1 };
+  verifyPng(bytes, file);
+  const changed = Buffer.from(bytes); changed[changed.length - 1] ^= 1;
+  assert.throws(() => verifyPng(changed, file));
+  assert.throws(() => verifyPng(bytes, { ...file, width: 2 }));
+  assert.throws(() => verifyPng(bytes, { ...file, bytes: bytes.length + 1 }));
+  const notPng = Buffer.alloc(24); const hash = require('node:crypto').createHash('sha256').update(notPng).digest('hex');
+  assert.throws(() => verifyPng(notPng, { ...file, bytes: 24, sha256: hash }));
+});
 
 test('four merged wiki maps retain distinct source pins, layers and image budgets', () => {
   validate(catalog);
