@@ -53,6 +53,11 @@ def test_render():
         catalog[0]['description'] = '<script>alert(1)</script> & "quoted" guide text'
         catalog[0]['keywords'] = '" onfocus="alert(1) <script> café'
         catalog_path.write_text(json.dumps(catalog, ensure_ascii=False), encoding='utf-8')
+        # Configuration-only opt-in fixture. No network or real Discord records.
+        (source / '_data/discord_calendar.json').write_text(json.dumps({
+            'enabled': True, 'source_url': 'https://civ13.com/calendar/v1/snapshot',
+            'guild_id': '900000000000000001',
+        }), encoding='utf-8')
         event = {
             'id': 'synthetic-render-fixture', 'sequence': 1,
             'updated_at': '2026-10-31T12:00:00Z',
@@ -82,6 +87,11 @@ def test_render():
         check_site(output, 'https://preview.example', '/civ13')
         check_help(output, source, '/civ13')
         check_calendar(output, source, '/civ13')
+        synced_html = (output / 'community-events/index.html').read_text(encoding='utf-8')
+        assert 'id="discord-calendar"' in synced_html
+        assert 'data-guild="900000000000000001"' in synced_html
+        assert 'src="/civ13/public/js/discord-calendar.js"' in synced_html
+        assert 'Synthetic community round' not in synced_html, 'Discord fixture details baked into HTML'
         assert 'src="/civ13/public/img/splash.png"' in (output / 'civ14.html').read_text(encoding='utf-8')
         html = (output / 'escaped.html').read_text(encoding='utf-8')
         errors, counts = check_html(html)

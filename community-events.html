@@ -13,7 +13,7 @@ image:
 <p>Find published dates for organised Civ13 rounds. Read the original announcement for the server, scenario, roles and rules, and check it again before joining.</p>
 
 {% if site.data.community_calendar.events.size == 0 %}
-<p class="calendar-empty">No scheduled events are listed in this website calendar yet. Check <a href="https://discord.gg/hBEtg4x">Civ13 Discord announcements</a> for current plans.</p>
+<p class="calendar-empty">{% if site.data.discord_calendar.enabled %}No manually added events are listed. Discord events appear below when sync is available.{% else %}No scheduled events are listed in this website calendar yet.{% endif %} Check <a href="https://discord.gg/hBEtg4x">Civ13 Discord announcements</a> for current plans.</p>
 {% else %}
 <p>Times below are in UTC. Your calendar app can display the downloaded events in your own time zone.</p>
 {% for event in site.data.community_calendar.events %}
@@ -33,5 +33,16 @@ image:
 <p>This is a static download. Imported copies may not update automatically; check this page and the original announcement for changes or cancellations. A calendar entry does not reserve a place in a round.</p>
 {% else %}
 <p>A calendar download will appear when a dated event is published here.</p>
+{% endif %}
+{% if site.data.discord_calendar.enabled %}
+<section id="discord-calendar" class="home-section" aria-labelledby="discord-calendar-title" data-source="{{ site.data.discord_calendar.source_url | escape }}" data-guild="{{ site.data.discord_calendar.guild_id | escape }}">
+  <h2 id="discord-calendar-title">Discord community calendar</h2>
+  <p>Events visible to ordinary Civ13 members. Restricted-channel events and attendee information are excluded.</p>
+  <p data-sync-status role="status" aria-live="polite">Live Discord calendar needs JavaScript and a fresh public snapshot. Check <a href="https://discord.gg/hBEtg4x">Discord</a> for current plans.</p>
+  <div data-sync-events></div>
+  <a data-sync-download hidden download="civ13-discord.ics">Download this Discord snapshot</a>
+  <p>Times are UTC. A missing end time stays unspecified. Repeating schedules and exceptions must be checked in Discord. Downloads are static copies, not subscriptions; imported copies may retain old details. Withdrawals are included for 30 days.</p>
+</section>
+<script src="{{ '/public/js/discord-calendar.js' | relative_url }}" defer></script>
 {% endif %}
 <p>Looking for what to play? Browse <a href="{{ '/game-modes/' | relative_url }}#events">game modes and event guidance</a> or read the <a href="https://civ13.github.io/civ13-wiki/gamemodes/Events.html">Events Guide</a>.</p>
