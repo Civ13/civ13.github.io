@@ -127,9 +127,27 @@ test('launcher never fetches arbitrary feed URL, latest releases or malformed ta
   } });
   const output = await service.launcher(); await service.launcher();
   assert.equal(output.state, 'fresh');
+  assert.equal(output.expires_at, new Date(NOW + 3600000).toISOString());
   assert.deepEqual(calls, [FEED_URL, 'https://api.github.com/repos/Civ13/Civ13/releases/tags/launcher-v1.0.8']);
   const bad = createService({ clock: () => NOW, fetcher: async url => { assert.equal(url, FEED_URL); return response({ ...feed, version: '../../secrets' }); } });
   assert.equal((await bad.launcher()).state, 'unavailable');
+});
+
+test('canonical GitHub Raw feed accepts its observed text/plain MIME only at the exact URL', async () => {
+  const plain = () => new Response(JSON.stringify(feed), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+  const service = createService({ clock: () => NOW, fetcher: async url => url === FEED_URL ? plain() : response(release()) });
+  assert.equal((await service.launcher()).state, 'fresh');
+  for (const url of [...STATUS_URLS, FEED_URL + '?other=1',
+    'https://raw.githubusercontent.com/Civ13/Civ13/master/other.json',
+    'https://api.github.com/repos/Civ13/Civ13/releases/tags/launcher-v1.0.8']) {
+    await assert.rejects(readJson(url, async () => plain()), /upstream_content_type/);
+  }
+  await assert.rejects(readJson(FEED_URL, async () => new Response('not JSON', {
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+  })));
+  await assert.rejects(readJson(FEED_URL, async () => new Response('x'.repeat(4097), {
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+  }), 4096), /upstream_size/);
 });
 
 test('launcher outage yields explicit stale metadata then no expired download', async () => {

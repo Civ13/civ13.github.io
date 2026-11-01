@@ -50,7 +50,8 @@ test('directory UI uses text nodes, hides stale join/download links and labels u
       checked_at: 'fixture', join_url: 'byond://civ13.com:1714' }] }] };
   const launcher = { state: 'stale', launcher: { version: '1.0.8', size: 1, sha256: 'a'.repeat(64),
     url: 'https://github.com/download', release_url: 'https://github.com/release', verification: 'fixture' } };
-  vm.runInNewContext(script, { document: { getElementById: id => nodes[id], createElement: tag => new Node(tag) },
+  vm.runInNewContext(script, { document: { getElementById: id => nodes[id], createElement: tag => new Node(tag), addEventListener() {} },
+    window: { addEventListener() {} }, performance: { now: () => 0 }, setInterval() {},
     fetch: async path => ({ json: async () => path === '/api/status' ? status : launcher }) });
   await new Promise(resolve => setImmediate(resolve));
   const all = Object.values(nodes).flatMap(function walk(node) { return [node, ...node.children.flatMap(walk)]; });

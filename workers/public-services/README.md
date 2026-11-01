@@ -81,8 +81,16 @@ No claim of an account-wide upstream rate limit is made.
   A verified zero-player row remains online. Partial provider success is explicit.
 - Launcher refresh/backoff: one hour. Failed refreshes may retain metadata for
   at most 24 hours, labelled stale; the page hides stale direct download links.
+- The launcher API supplies an explicit `expires_at`. An open page ages status
+  and launcher freshness locally against server `as_of`/expiry budgets, subtracting
+  fetch elapsed time. A one-second local check, visibility/focus/page-resume
+  checks and action-time guards remove expired verified join/download links
+  without network polling. Missing, malformed or overlong timestamp budgets fail
+  closed. Wall and monotonic elapsed clocks cover sleep and client UTC skew;
+  expiry is irreversible for that snapshot until a manual refresh supplies new data.
 - Each upstream has a three-second headers/body deadline, no redirects or retries,
-  strict JSON MIME and UTF-8. Status bodies are at most 64 KiB, feed 4 KiB,
+  strict JSON MIME and UTF-8, with `text/plain` also accepted only for the exact
+  canonical GitHub Raw JSON feed URL (its observed MIME). Status bodies are at most 64 KiB, feed 4 KiB,
   release API 512 KiB. Stream buffering is bounded even for tiny chunks.
 - Maximum 32 rows per provider (the existing producer caps 32 across its inventory),
   fixed provider hosts, ports 1714/1715 only, unique IDs and ports, bounded text,

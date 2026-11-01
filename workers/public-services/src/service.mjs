@@ -29,7 +29,11 @@ export async function readJson(url, fetcher, limit = MAX_BODY) {
       headers: { Accept: 'application/json', 'User-Agent': 'Civ13-Public-Services/1.0' },
     });
     if (response.status !== 200) fail(`upstream_http_${response.status}`);
-    if (!/^application\/json(?:\s*;|$)/i.test(response.headers.get('content-type') ?? '')) fail('upstream_content_type');
+    const mime = response.headers.get('content-type') ?? '';
+    // GitHub Raw serves this exact canonical JSON feed as text/plain.
+    // The exception is not available to status sources, release APIs or callers.
+    if (!/^application\/json(?:\s*;|$)/i.test(mime)
+      && !(url === FEED_URL && /^text\/plain(?:\s*;|$)/i.test(mime))) fail('upstream_content_type');
     const length = response.headers.get('content-length');
     if (length && (!/^\d+$/.test(length) || Number(length) > limit)) fail('upstream_size');
     if (!response.body) fail('upstream_empty');
@@ -166,6 +170,7 @@ export function createService({ fetcher = fetch, clock = Date.now, cache = null 
       const now = clock(), good = entry.good && now - entry.good_at <= 24 * HOUR ? entry.good : null;
       return { schema: 1, as_of: stamp(now), state: good ? (!entry.error && now - entry.good_at < HOUR ? 'fresh' : 'stale') : 'unavailable',
         last_attempt_at: stamp(entry.attempted), last_success_at: good ? stamp(entry.good_at) : null,
+        expires_at: good ? stamp(entry.good_at + HOUR) : null,
         error: entry.error, launcher: good };
     },
   };
