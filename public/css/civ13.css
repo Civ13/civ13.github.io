@@ -66,6 +66,14 @@
   font-size: .8rem;
 }
 
+.calendar-event {
+  margin: 1rem 0;
+}
+
+.calendar-event h2 {
+  margin-top: 0;
+}
+
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(16rem, .85fr);

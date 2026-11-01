@@ -43,6 +43,17 @@ existing `tools` exclusion keeps operator material outside the published site.
 Event calendars, public map exploration and compatibility evidence remain
 separate staged additions; status/join and launcher metadata have another owner.
 
+## Community calendar source
+
+`tools/calendar/events.json` is the reviewed event inventory. It starts empty:
+no dates are inferred from existing mode descriptions or Discord activity.
+`node tools/calendar/build.cjs --write` prepares normalized page data and, when
+events exist, a static ICS download. Empty configuration has no download link.
+Run `node tools/calendar/build.cjs --check`, `node --test tools/test_calendar.cjs`
+and `python3 tools/check_calendar.py _site` alongside the existing build checks.
+See `tools/calendar/README.md` for explicit-offset dates, cancellation revisions,
+text/URL bounds and publication scope. No Discord posting or subscriptions exist.
+
 ## Website previews
 
 Public content pages declare a concise `description` and a raster `image` with

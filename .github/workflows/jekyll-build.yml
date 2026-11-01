@@ -32,6 +32,11 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
+      - name: Check static community calendar contracts
+        run: |
+          node tools/calendar/build.cjs --check
+          node --test tools/test_calendar.cjs
+          python3 tools/check_calendar.py _site
       - name: Validate roadmap and simulate updates and failures
         run: |
           node --test tools/test_roadmap.cjs
@@ -47,10 +52,19 @@ jobs:
       - name: Validate architecture atlas and preserved downloads
         run: python3 tools/check_architecture_atlas.py _site
       - name: Exercise serialization, invalid payloads, and alternate origins
+        env:
+          CIV13_PREVIEW_FIXTURE_OUTPUT: ${{ runner.temp }}/calendar-preview
         run: python3 tools/test_previews.py
       - name: Upload validated site
         uses: actions/upload-artifact@v7
         with:
           name: site-${{ github.event.pull_request.head.sha || github.sha }}
           path: _site
+          retention-days: 7
+      - name: Upload synthetic preview for inspection
+        uses: actions/upload-artifact@v7
+        with:
+          name: calendar-preview-${{ github.event.pull_request.head.sha || github.sha }}
+          path: ${{ runner.temp }}/calendar-preview
+          if-no-files-found: error
           retention-days: 7

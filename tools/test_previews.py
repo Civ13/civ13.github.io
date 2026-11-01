@@ -9,6 +9,7 @@ from pathlib import Path
 from check_preview import HeadParser, check_html, script_json, validate_payload
 from check_site_previews import check_site
 from check_player_help import check_help
+from check_calendar import check_calendar
 
 
 def test_invalid():
@@ -52,6 +53,26 @@ def test_render():
         catalog[0]['description'] = '<script>alert(1)</script> & "quoted" guide text'
         catalog[0]['keywords'] = '" onfocus="alert(1) <script> café'
         catalog_path.write_text(json.dumps(catalog, ensure_ascii=False), encoding='utf-8')
+        event = {
+            'id': 'synthetic-render-fixture', 'sequence': 1,
+            'updated_at': '2026-10-31T12:00:00Z',
+            'start_at': '2026-11-01T01:30:00-04:00',
+            'end_at': '2026-11-01T01:30:00-05:00',
+            'title': fixtures['escaped'],
+            'description': 'Synthetic fixture only.\n<script>alert(1)</script> & "quoted"',
+            'location': 'Offline fixture <test>',
+            'url': 'https://civ13.github.io/', 'status': 'cancelled',
+        }
+        rendered = subprocess.run([
+            'node', '-e',
+            'const fs = require("node:fs"); const {build} = require(process.argv[1]); process.stdout.write(JSON.stringify(build(JSON.parse(fs.readFileSync(0, "utf8")))));',
+            str(repo / 'tools/calendar/build.cjs')
+        ], input=json.dumps({'schema': 'civ13.events.v1', 'events': [event]}),
+            capture_output=True, text=True, check=True)
+        calendar = json.loads(rendered.stdout)
+        (source / '_data/community_calendar.json').write_text(calendar['data'], encoding='utf-8')
+        (source / 'public/calendar').mkdir(parents=True, exist_ok=True)
+        (source / 'public/calendar/civ13.ics').write_bytes(calendar['ics'].encode('utf-8'))
         config = Path(tmp) / 'alternate.yml'
         config.write_text('url: https://preview.example\nbaseurl: /civ13\n', encoding='utf-8')
         output = Path(tmp) / 'site'
@@ -60,6 +81,7 @@ def test_render():
         subprocess.run(['bundle', 'exec', 'jekyll', 'build', '--source', str(source), '--destination', str(output), '--config', str(source / '_config.yml') + ',' + str(config)], cwd=source, env=dict(os.environ, BUNDLE_GEMFILE=str(repo / 'Gemfile')), check=True)
         check_site(output, 'https://preview.example', '/civ13')
         check_help(output, source, '/civ13')
+        check_calendar(output, source, '/civ13')
         assert 'src="/civ13/public/img/splash.png"' in (output / 'civ14.html').read_text(encoding='utf-8')
         html = (output / 'escaped.html').read_text(encoding='utf-8')
         errors, counts = check_html(html)
@@ -74,6 +96,14 @@ def test_render():
             assert not parser.scripts, name + ' should omit the component preview'
             assert parser.metadata.get('og:title') and parser.metadata.get('og:image')
         print('Jekyll Unicode, script escaping, oversized/empty omission, alternate-origin and fallback checks passed', counts)
+        retained = os.environ.get('CIV13_PREVIEW_FIXTURE_OUTPUT')
+        if retained:
+            destination = Path(retained).resolve()
+            shutil.copytree(output, destination)
+            (destination / 'fixture-provenance.txt').write_text(
+                'Synthetic offline render fixture only. No real scheduled events.\n'
+                'Alternate origin https://preview.example and base /civ13.\n', encoding='utf-8')
+            print('Retained synthetic Jekyll fixture output for artifact-only inspection')
 
 
 if __name__ == '__main__':
