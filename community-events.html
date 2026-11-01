@@ -1,0 +1,37 @@
+---
+layout: page
+title: Community events
+permalink: /community-events/
+description: Find published Civ13 community event times and a downloadable calendar, with links to the original announcements.
+image:
+  path: /public/img/banner.png
+  width: 450
+  height: 232
+  alt: Civilization 13 game banner
+---
+
+<p>Find published dates for organised Civ13 rounds. Read the original announcement for the server, scenario, roles and rules, and check it again before joining.</p>
+
+{% if site.data.community_calendar.events.size == 0 %}
+<p class="calendar-empty">No scheduled events are listed in this website calendar yet. Check <a href="https://discord.gg/hBEtg4x">Civ13 Discord announcements</a> for current plans.</p>
+{% else %}
+<p>Times below are in UTC. Your calendar app can display the downloaded events in your own time zone.</p>
+{% for event in site.data.community_calendar.events %}
+<article class="home-card calendar-event">
+  <h2>{{ event.title | escape }}</h2>
+  <p><strong>{% if event.status == 'cancelled' %}Cancelled{% else %}Scheduled{% endif %}</strong></p>
+  <p><time datetime="{{ event.start_at | escape }}">{{ event.start_label | escape }}</time> to <time datetime="{{ event.end_at | escape }}">{{ event.end_label | escape }}</time></p>
+  <p>{{ event.description | escape | newline_to_br }}</p>
+  <p>Location: {{ event.location | escape }}</p>
+  <p><a href="{{ event.url | escape }}">Read the original announcement</a></p>
+</article>
+{% endfor %}
+{% endif %}
+
+{% if site.data.community_calendar.events.size > 0 %}
+<p><a href="{{ '/public/calendar/civ13.ics' | relative_url }}" download="civ13.ics">Download the calendar file</a></p>
+<p>This is a static download. Imported copies may not update automatically; check this page and the original announcement for changes or cancellations. A calendar entry does not reserve a place in a round.</p>
+{% else %}
+<p>A calendar download will appear when a dated event is published here.</p>
+{% endif %}
+<p>Looking for what to play? Browse <a href="{{ '/game-modes/' | relative_url }}#events">game modes and event guidance</a> or read the <a href="https://civ13.github.io/civ13-wiki/gamemodes/Events.html">Events Guide</a>.</p>

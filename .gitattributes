@@ -1,2 +1,3 @@
 public/architecture/**/*.pdf binary
 public/architecture/**/*.zip binary
+public/calendar/*.ics -text

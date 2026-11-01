@@ -42,7 +42,7 @@ Civ13's Nomads and TDM servers host modes and maps chosen through votes. Read th
 
 ## Events
 
-We sometimes run events around these modes and other scenarios. Follow [Civ13 Discord announcements](https://discord.gg/hBEtg4x) for the server, map, time, participation instructions and rules. Check the announcement before joining; this page does not list a fixed schedule.
+We sometimes run events around these modes and other scenarios. Check the [community event calendar]({{ '/community-events/' | relative_url }}) for dates published on this website, and follow [Civ13 Discord announcements](https://discord.gg/hBEtg4x) for the server, map, time, participation instructions and rules. Check the original announcement before joining.
 
 Events can use arena bouts, roleplay settings, crew scenarios or survival objectives. Special scenarios also include **event-city Hunt**, **Player vs NPCs / Cursed Island**, and **Lab breach**. Read the [Events Guide](https://civ13.github.io/civ13-wiki/gamemodes/Events.html) for their public briefings and preparation. Event-city Hunt differs from the shipwrecked-pirate Hunt map's Survival RP.
 

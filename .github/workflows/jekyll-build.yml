@@ -32,6 +32,11 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
+      - name: Check static community calendar contracts
+        run: |
+          node tools/calendar/build.cjs --check
+          node --test tools/test_calendar.cjs
+          python3 tools/check_calendar.py _site
       - name: Validate roadmap and simulate updates and failures
         run: |
           node --test tools/test_roadmap.cjs
