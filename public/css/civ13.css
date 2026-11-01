@@ -74,6 +74,9 @@
   margin-top: 0;
 }
 
+#discord-calendar .calendar-event { overflow-wrap: anywhere; }
+#discord-calendar .calendar-event p { white-space: pre-wrap; }
+
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(16rem, .85fr);

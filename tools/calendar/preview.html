@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Synthetic Discord calendar review</title><link rel="stylesheet" href="public/css/civ13.css">
+<style>body{padding:1.25rem}main{max-width:52rem;margin:auto}button{font:inherit;padding:.6rem;margin:.3rem;background:#18282b;color:#edc981;border:1px solid #edc981}a{color:#edc981}.calendar-event{overflow-wrap:anywhere}#review-controls{display:flex;flex-wrap:wrap;gap:.4rem}</style></head><body><main>
+<h1>Synthetic offline review</h1><p>No real events. The actual consumer below uses an injected fixture transport; it cannot contact Discord or the public bot.</p>
+<div id="review-controls"><button id="withdraw">Simulate restricted channel</button><button id="outage">Simulate outage</button><button id="restore">Restore fixture</button><button id="expire">Simulate expiry</button></div>
+<section id="calendar-preview"><h2>Discord calendar preview</h2><p data-sync-status role="status" aria-live="polite">Loading local fixture…</p><div data-sync-events></div><a data-sync-download hidden download="synthetic-discord.ics">Download synthetic snapshot</a></section>
+<script>window.module={exports:{}};</script><script src="public/js/discord-calendar.js"></script>
+<script>
+(async function () {
+  const fixture = await (await fetch('discord-snapshot.fixture.json',{cache:'no-store'})).json();
+  const originTime = Date.parse(fixture.generated_at), began = performance.now();
+  let offset = 0, revision = 1, sequence = 0, state = 'normal';
+  const clock = () => originTime + Math.floor(performance.now() - began) + offset;
+  function response() {
+    const value = structuredClone(fixture);
+    value.revision = revision; value.generated_at = new Date(originTime + Math.floor(performance.now() - began)).toISOString().replace(/\.\d{3}Z$/,'Z');
+    value.expires_at = new Date(Date.parse(value.generated_at) + 120000).toISOString().replace(/\.\d{3}Z$/,'Z');
+    value.events[0].sequence = sequence; value.events[0].updated_at = value.generated_at;
+    if (state === 'withdrawn') Object.assign(value.events[0],{title:'Event no longer listed',description:'Details withdrawn; check Discord for current information.',status:'withdrawn',url:'',location:'',end_at:null,recurrence:'none'});
+    return new Response(JSON.stringify(value),{status:state==='outage'?503:200,headers:{'content-type':'application/json'}});
+  }
+  const controller = module.exports.mount(document.querySelector('#calendar-preview'),{enabled:true,source_url:'https://civ13.com/calendar/v1/snapshot',guild_id:fixture.guild_id},
+    {document,window,fetch:async url=>{if(url!=='https://civ13.com/calendar/v1/snapshot')throw Error('Unexpected fixture request');return response();},now:clock,monotonic:()=>performance.now(),schedule:setTimeout,cancel:clearTimeout,createUrl:URL.createObjectURL.bind(URL),revokeUrl:URL.revokeObjectURL.bind(URL)});
+  document.querySelector('#withdraw').onclick=()=>{state='withdrawn';offset=0;revision++;sequence++;controller.refresh();};
+  document.querySelector('#outage').onclick=()=>{state='outage';revision++;controller.refresh();};
+  document.querySelector('#restore').onclick=()=>{state='normal';offset=0;revision++;sequence++;controller.refresh();};
+  document.querySelector('#expire').onclick=()=>{offset=121000;document.dispatchEvent(new Event('visibilitychange'));};
+})();
+</script></main></body></html>

@@ -54,6 +54,12 @@ and `python3 tools/check_calendar.py _site` alongside the existing build checks.
 See `tools/calendar/README.md` for explicit-offset dates, cancellation revisions,
 text/URL bounds and publication scope. No Discord posting or subscriptions exist.
 
+The separate [Discord snapshot consumer](tools/calendar/DISCORD-SYNC.md) is
+default-off in `_data/discord_calendar.json`. It imports a fresh sanitized feed
+from the existing bot; it never embeds mirrored details in static HTML. Source
+and HTTPS delivery require Main review before activation. Run
+`node --test tools/test_discord_calendar.cjs` for its offline contracts.
+
 ## Website previews
 
 Public content pages declare a concise `description` and a raster `image` with
