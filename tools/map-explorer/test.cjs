@@ -77,11 +77,11 @@ test('generated prototype has complete no-JS links, explicit image loading and t
   assert.match(config, /exclude:[\s\S]*\n  - tools\r?\n/);
 });
 
-test('real viewer script filters without requests and only loads clicked overviews', () => {
+function viewerFixture() {
   const node = extra => Object.assign({ hidden: false, textContent: '', listeners: {}, addEventListener(event, fn) { this.listeners[event] = fn; } }, extra);
   const requests = [];
   const cards = catalog.maps.map(map => {
-    const button = node({ hidden: true });
+    const button = node({ hidden: true, textContent: `Load ${map.title} overview` });
     const image = node({ hidden: true, dataset: { src: 'https://raw.githubusercontent.com/' + map.overview.path } });
     Object.defineProperty(image, 'src', { set(value) { requests.push(value); } });
     const status = node();
@@ -89,6 +89,11 @@ test('real viewer script filters without requests and only loads clicked overvie
   });
   const nodes = { '#map-choice': node({ value: 'all' }), '#map-controls': node({ hidden: true }), '#map-count': node() };
   vm.runInNewContext(source, { document: { querySelector: selector => nodes[selector], querySelectorAll: () => cards } });
+  return { cards, nodes, requests };
+}
+
+test('real viewer script filters without requests and only loads clicked overviews', () => {
+  const { cards, nodes, requests } = viewerFixture();
   assert.equal(requests.length, 0);
   assert.equal(nodes['#map-controls'].hidden, false);
   nodes['#map-choice'].value = 'mountain'; nodes['#map-choice'].listeners.change();
@@ -103,4 +108,30 @@ test('real viewer script filters without requests and only loads clicked overvie
   nodes['#map-choice'].value = 'all'; nodes['#map-choice'].listeners.change();
   assert.ok(cards.every(card => !card.hidden)); assert.equal(requests.length, 1);
   assert.doesNotThrow(() => vm.runInNewContext(source, { document: { querySelector: () => null, querySelectorAll: () => [] } }));
+});
+
+test('overview failure offers a native manual retry without automatic requests', () => {
+  const { cards, requests } = viewerFixture();
+  const { button, image, status } = cards[0];
+  assert.equal((render(catalog).match(/class="load-overview" type="button"/g) || []).length, 4);
+  assert.equal(requests.length, 0);
+  button.listeners.click();
+  assert.equal(button.hidden, true);
+  assert.equal(requests.length, 1);
+  image.listeners.error();
+  assert.equal(image.hidden, true);
+  assert.equal(button.hidden, false);
+  assert.equal(button.textContent, 'Retry Gaia overview');
+  assert.match(status.textContent, /could not load/);
+  assert.equal(requests.length, 1, 'error must not start another image request');
+  button.listeners.click();
+  assert.equal(requests.length, 2);
+  assert.equal(requests[1], requests[0], 'retry must retain the pinned image URL');
+  assert.equal(button.hidden, true);
+  assert.equal(button.textContent, 'Load Gaia overview');
+  assert.equal(image.hidden, false);
+  image.listeners.load();
+  assert.match(status.textContent, /loaded/);
+  assert.equal(button.hidden, true);
+  assert.equal(requests.length, 2, 'success must not start another image request');
 });
