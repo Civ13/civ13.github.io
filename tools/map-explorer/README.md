@@ -38,7 +38,9 @@ map to narrow the list, then explicitly load its compact overview. Thirteen
 full-resolution layers remain ordinary links, with dimensions and compressed
 file sizes visible before opening; a small PNG can still decode to a large image.
 Without JavaScript, all four guides, overviews and layer links remain readable.
-Remote image failure leaves the source links available. There are no analytics,
+Remote image failure leaves the source links available and restores the same
+native button as an explicit, keyboard-accessible Retry control. Only a user
+activation retries the pinned URL; there are no automatic retries. There are no analytics,
 accounts, local storage, server queries, subscriptions or new external services.
 Images load from GitHub Raw only when requested, with no referrer sent.
 
