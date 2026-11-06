@@ -18,6 +18,7 @@ Civ13's Nomads and TDM servers host modes and maps chosen through votes. Read th
 | Mode | What you do | Player guide |
 | --- | --- | --- |
 | Nomads and civilizations | Gather, build, research and form a society with other players. | [Nomads](https://civ13.github.io/civ13-wiki/gamemodes/Civilizations_and_Nomads.html) |
+| Persistence | Keep your character, buildings and belongings in a saved Nomads world, and travel by trail between linked lands. | [Travel Between Lands](https://civ13.github.io/civ13-wiki/guides/Guide_to_Travel.html) |
 | Colony Building RP | Establish a settlement through assigned trades, supplies and cooperation. | [Colony building](https://civ13.github.io/civ13-wiki/gamemodes/Colony_Building.html) |
 | Prison Simulation | Play a prisoner or guard within the selected setting and its roleplay rules. | [Prison roleplay](https://civ13.github.io/civ13-wiki/gamemodes/Prison_Roleplay.html) |
 | The Art of the Deal | Work for a company, negotiate and trade with rivals. | [The Art of the Deal](https://civ13.github.io/civ13-wiki/gamemodes/The_Art_of_the_Deal.html) |
