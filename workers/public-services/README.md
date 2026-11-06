@@ -38,7 +38,7 @@ display live server snapshots. This change does not configure the bot, inventory
 reverse proxy, source eligibility, or game server. Do not probe BYOND as a fallback.
 
 The [published site](https://civ13.github.io/) lists `byond://civ13.com:1715`,
-`byond://civ13.com:1714` and `byond://valzargaming.com:1714` (Persistence).
+`byond://civ13.com:1714` and `byond://play.valzargaming.com:1714` (Persistence).
 These appear separately as unverified static join
 addresses. The launcher candidate hosts/ports do not prove a current mode or Gaia
 mapping. Names and modes in live rows come only from validated producer data.
