@@ -7,3 +7,6 @@ __pycache__/
 workers/**/node_modules/
 workers/**/.wrangler/
 workers/**/dist/
+render-report/
+vendor/
+.bundle/
