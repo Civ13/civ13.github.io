@@ -586,7 +586,7 @@ dialog::backdrop { background: rgb(0 0 0 / .85); }
 }
 .join-steps h3 { margin-top: .2rem; }
 .join-steps p:last-child { margin-bottom: 0; }
-.server-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.server-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .server-grid .home-card { background: var(--bg); }
 .server-address { margin: .75rem 0 0; font-family: var(--font-mono); font-size: .85rem; color: var(--text-muted); overflow-wrap: anywhere; }
 .join-section details:last-of-type { border-bottom: 1px solid var(--line); }
