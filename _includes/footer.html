@@ -1,0 +1,52 @@
+<footer class="site-footer">
+  <div class="wrap site-footer-inner">
+    <div class="site-footer-brand">
+      <img src="{{ '/public/img/civ13.png' | relative_url }}" alt="" width="48" height="48">
+      <p><strong>Civ13</strong><br>{{ site.tagline }}. Free to play on BYOND.</p>
+    </div>
+    <nav class="site-footer-links" aria-label="Play">
+      <h2>Play</h2>
+      <a href="byond://civ13.com:1715">Join Nomads</a>
+      <a href="byond://civ13.com:1714">Join Team deathmatch</a>
+      <a href="https://github.com/Civ13/Civ13/releases/latest">Windows launcher</a>
+      <a href="https://www.byond.com/download/">Get BYOND</a>
+    </nav>
+    <nav class="site-footer-links" aria-label="Learn">
+      <h2>Learn</h2>
+      <a href="{{ '/player-help/' | relative_url }}">Player help</a>
+      <a href="{{ '/game-modes/' | relative_url }}">Game modes &amp; events</a>
+      <a href="https://civ13.github.io/civ13-wiki/">Wiki</a>
+      <a href="https://civ13.github.io/civ13-wiki/rules/Rules.html">Server rules</a>
+      <a href="https://civ13.github.io/Civ13/crafting/">Crafting Atlas</a>
+    </nav>
+    <nav class="site-footer-links" aria-label="Project">
+      <h2>Project</h2>
+      <a href="https://github.com/Civ13/Civ13">Game source on GitHub</a>
+      <a href="{{ '/roadmap.html' | relative_url }}">Roadmap</a>
+      <a href="{{ '/civ14.html' | relative_url }}">Civ14</a>
+      <a href="{{ '/typespess.html' | relative_url }}">TypeSpess</a>
+      <a href="{{ '/architecture/' | relative_url }}">UML Atlas</a>
+    </nav>
+    <nav class="site-footer-links" aria-label="Community">
+      <h2>Community</h2>
+      <a href="https://discord.gg/hBEtg4x">Discord</a>
+      <a href="{{ '/community-events/' | relative_url }}">Community events</a>
+      <a href="https://github.com/Civ13/Civ13/issues">Report a game issue</a>
+      <a href="https://github.com/Civ13/civ13-wiki/blob/master/src/Contributing_to_the_Wiki.md">Contribute to the wiki</a>
+    </nav>
+  </div>
+  <p class="wrap site-footer-note">Civ13 is a community project. Game addresses are published endpoints, not live round indicators; check Discord for what is running now.</p>
+</footer>
+<script>
+  (function () {
+    var toggle = document.getElementById('site-menu-toggle');
+    var nav = document.getElementById('site-nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function (event) {
+      event.preventDefault();
+      var open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.textContent = open ? 'Close' : 'Menu';
+    });
+  })();
+</script>

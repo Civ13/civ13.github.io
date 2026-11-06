@@ -1,6 +1,8 @@
 ---
 layout: page
 title: "UML Atlas"
+page_class: page-narrow
+lead: Source-linked UML views, reports and downloadable evidence for the Civ13 codebase.
 permalink: /architecture/
 description: "Explore Civ13 architecture with 18 UML diagrams, source-linked reports and downloadable evidence."
 image:
