@@ -1,0 +1,60 @@
+name: Render previews
+
+# Builds the site from the PR, opens every page in Chromium at desktop and
+# mobile sizes, and uploads the screenshots as a browsable report.
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    # Standard hosted runners are free for public repositories. Never use larger runners.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler: '2.7.2'
+          bundler-cache: true
+      - name: Build site
+        run: bundle exec jekyll build
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Install Playwright and Chromium
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.63.0
+          python -m playwright install --with-deps chromium
+      - name: Test page selection
+        run: python tools/test_render_previews.py
+      - name: Render desktop and mobile previews
+        id: render
+        run: python tools/render_previews.py _site --all --title "Website render previews" --artifact site-render-report
+      - name: Verify source files are unchanged
+        if: ${{ !cancelled() }}
+        run: |
+          git status --porcelain --untracked-files=all
+          test -z "$(git status --porcelain --untracked-files=all)"
+      - name: Save browsable report and screenshots
+        if: ${{ !cancelled() && hashFiles('render-report/index.html') != '' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-render-report
+          path: render-report/
+          if-no-files-found: error
+          retention-days: 3
