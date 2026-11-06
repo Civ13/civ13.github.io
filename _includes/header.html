@@ -1,0 +1,35 @@
+{%- comment -%}
+Site header: brand, primary navigation and the join call to action. Primary
+links are explicit so player pages come first; contributor material lives
+under "More" and in the footer. The menu toggle works without JavaScript via
+the :target fallback and is enhanced by a small inline script.
+{%- endcomment -%}
+<header class="site-header">
+  <div class="site-header-inner wrap">
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Civ13 home">
+      <img src="{{ '/public/img/civ13.png' | relative_url }}" alt="" width="40" height="40">
+      <span class="site-brand-text"><span class="site-brand-name">Civ13</span><span class="site-brand-tagline">{{ site.tagline }}</span></span>
+    </a>
+    <a class="site-menu-toggle" href="#site-nav" id="site-menu-toggle" aria-controls="site-nav" aria-expanded="false">Menu</a>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="site-nav-link{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+      <a class="site-nav-link{% if page.url == '/game-modes/' %} is-active{% endif %}" href="{{ '/game-modes/' | relative_url }}"{% if page.url == '/game-modes/' %} aria-current="page"{% endif %}>Game modes</a>
+      <a class="site-nav-link{% if page.url == '/player-help/' %} is-active{% endif %}" href="{{ '/player-help/' | relative_url }}"{% if page.url == '/player-help/' %} aria-current="page"{% endif %}>Player help</a>
+      <a class="site-nav-link{% if page.url == '/community-events/' %} is-active{% endif %}" href="{{ '/community-events/' | relative_url }}"{% if page.url == '/community-events/' %} aria-current="page"{% endif %}>Events</a>
+      <a class="site-nav-link{% if page.url == '/roadmap.html' %} is-active{% endif %}" href="{{ '/roadmap.html' | relative_url }}"{% if page.url == '/roadmap.html' %} aria-current="page"{% endif %}>Roadmap</a>
+      <a class="site-nav-link" href="https://civ13.github.io/civ13-wiki/">Wiki</a>
+      <a class="site-nav-link" href="https://discord.gg/hBEtg4x">Discord</a>
+      <details class="site-nav-more">
+        <summary>More</summary>
+        <div class="site-nav-more-menu">
+          <a href="https://github.com/Civ13/">GitHub</a>
+          <a href="{{ '/civ14.html' | relative_url }}">Civ14</a>
+          <a href="{{ '/typespess.html' | relative_url }}">TypeSpess</a>
+          <a href="{{ '/architecture/' | relative_url }}">UML Atlas</a>
+          <a href="https://www.byond.com/download/">Get BYOND</a>
+        </div>
+      </details>
+      <a class="button site-nav-cta" href="{{ '/' | relative_url }}#join">Play now</a>
+    </nav>
+  </div>
+</header>

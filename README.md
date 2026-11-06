@@ -2,7 +2,12 @@
 
 This is the website for Civ13, which you can find [here](https://github.com/Civ13).
 
-It is built using **Jekyll** and the **Hyde** theme [find it here](https://github.com/poole/hyde).
+It is built using **Jekyll** with a small repository-owned theme: `_layouts/`,
+`_includes/header.html`, `_includes/footer.html` and the single stylesheet
+`public/css/civ13.css`. The site uses the system font stack and loads no
+remote fonts or scripts. Primary navigation is explicit in the header include
+(player pages first, contributor pages under "More" and in the footer); a page
+may set `page_class: page-narrow` for prose width and `lead:` for a subtitle.
 
 The separate [public-services Worker](workers/public-services/README.md) provides
 a cached public server directory and stable launcher metadata. It is excluded

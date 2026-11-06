@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Civ14
+page_class: page-narrow
+lead: Civilization 13's society-building sandbox, rebuilt on Space Station 14.
 description: Civilization 14 brings Civ13's society-building sandbox from BYOND to Space Station 14.
 image:
   path: /public/img/splash.png
@@ -8,8 +10,6 @@ image:
   height: 540
   alt: Civilization 14 game banner
 ---
-
-# Civilization 14
 
 Civilization 14 (Civ14 for short) is a port of Civilization 13 from BYOND to Space Station 14.
 
@@ -33,4 +33,4 @@ Currently, if you are familiar with Civ13, we are focusing on the **Nomads** gam
 
 -   **Choose your path:** There are no pre-set roles. Be a loner or join a faction, its up to you!
 
-GitHub: ![https://GitHub.com/Civ13/civ14](https://GitHub.com/Civ13/civ14)
+Source code: [github.com/Civ13/civ14](https://github.com/Civ13/civ14)

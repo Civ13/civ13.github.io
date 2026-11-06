@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en-us">
+---
+layout: default
+---
 
-  {% include head.html %}
-
-  <body class="theme-base-dark" background_image="public/img/paper1.png">
-
-    <div class="content container">
-        <div class="post">
-            <h1 class="post-newspaper" style="font-family:'Eagle Lake'">{{ page.newspaper }}</h1>
-            <h2 class="post-title">{{ page.title }}</h2>
-            <span class="post-date">{{ page.date | date_to_string }}</span>
-            {{ content }}
-          </div>
-    </div>
-
-  </body>
-</html>
+<article class="page page-narrow news-post">
+  <header class="page-header">
+    <p class="home-kicker">{{ page.newspaper }}</p>
+    <h1 class="page-title">{{ page.title }}</h1>
+    <p class="post-date">{{ page.date }}</p>
+  </header>
+  {{ content }}
+</article>

@@ -3,14 +3,15 @@
 
   {% include head.html %}
 
-  <body class="theme-base-dark">
+  <body{% if page.url == '/' %} class="is-home"{% endif %}>
 
     <a class="site-skip-link" href="#main-content">Skip to content</a>
-    {% include sidebar.html %}
+    {% include header.html %}
 
-    <main id="main-content" class="content container" tabindex="-1">
+    <main id="main-content" class="site-main wrap" tabindex="-1">
       {{ content }}
     </main>
 
+    {% include footer.html %}
   </body>
 </html>
