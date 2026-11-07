@@ -6,8 +6,8 @@
       "title": "A connected world of regions",
       "summary": "Several persistent worlds run side by side as one group: Gaia (the mainland), the Rail Yard, Mars and the Moon. Every character has one home world, starts on Gaia and travels to the others in seconds, carrying food, tools and supplies. Sleeping regions wake when a traveller sets off. An Orbit region for space stations follows.",
       "status": "completed",
-      "availability": "unverified",
-      "availability_note": "Region groups, travel, home worlds, Mars and the Moon are merged. The Orbit world is built and goes live next. Travel between groups on different machines is a separate goal below.",
+      "availability": "verified",
+      "availability_note": "Live on the public server: Gaia, the Rail Yard, Mars and the Moon run as one region group, and the launcher lists and joins every region. The Orbit world is built and goes live next. Travel between groups on different machines is a separate goal below.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -39,7 +39,8 @@
           "Civ13/Civ13#3715",
           "Civ13/Civ13#3864"
         ]
-      }
+      },
+      "availability_evidence": "https://github.com/Civ13/Civ13/releases/tag/launcher-v1.5.6"
     },
     {
       "id": "staged-builds",
@@ -110,8 +111,8 @@
       "title": "Optional Discord sign-in",
       "summary": "Sign in through the launcher with a Discord account so your character can follow your account rather than one BYOND key. Discord stays optional; playing with a BYOND key alone works as before.",
       "status": "completed",
-      "availability": "unverified",
-      "availability_note": "Account keys, single-use join tickets and launcher sign-in are merged, and sign-in is on by default in the launcher.",
+      "availability": "verified",
+      "availability_note": "Live: Discord sign-in is on by default in the launcher since version 1.4.0, through the public sign-in service.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -135,7 +136,8 @@
           "Civ13/Civ13#3851",
           "Civ13/Civ13#3853"
         ]
-      }
+      },
+      "availability_evidence": "https://github.com/Civ13/Civ13/releases/tag/launcher-v1.4.0"
     },
     {
       "id": "orbital-stations",

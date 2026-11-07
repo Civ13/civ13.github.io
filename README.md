@@ -140,7 +140,8 @@ private coordinator logs or arbitrary PR titles become player copy.
 
 The registry was reviewed against Civ13 master on 2026-11-07. Goals whose
 implementation is merged carry a completion contract and show **Code complete**;
-everything else is **In progress** or **Planned**. No goal claims **Available**.
+everything else is **In progress** or **Planned**. Only the region group and
+Discord sign-in show **Available**, confirmed live by the maintainer on 2026-11-07.
 
 The **Refresh roadmap progress** workflow runs every six hours, on manual
 dispatch, or on a `roadmap-progress` repository dispatch. It validates the whole
