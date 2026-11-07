@@ -2,36 +2,453 @@
   "schema_version": 1,
   "milestones": [
     {
-      "id": "smoother-persistent-saves",
-      "title": "Smoother saves for persistent worlds",
-      "summary": "Save changed world and player state in smaller batches while gameplay continues, with safe recovery after interruptions.",
-      "status": "in_progress",
+      "id": "connected-regions",
+      "title": "A connected world of regions",
+      "summary": "Several persistent worlds run side by side as one group: Gaia (the mainland), the Rail Yard, Mars and the Moon. Every character has one home world, starts on Gaia and travels to the others in seconds, carrying food, tools and supplies. Sleeping regions wake when a traveller sets off. An Orbit region for space stations follows.",
+      "status": "completed",
       "availability": "unverified",
-      "availability_note": "Save compatibility, saved-round job restoration and overlapping-save guards are merged groundwork. Smaller save batches and complete interruption recovery remain under development; full-goal public availability is unverified.",
+      "availability_note": "Region groups, travel, home worlds, Mars and the Moon are merged. The Orbit world is built and goes live next. Travel between groups on different machines is a separate goal below.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
-          "number": 3147,
-          "role": "prerequisite",
-          "label": "Save compatibility groundwork",
-          "state": "merged",
-          "merge_sha": "205d2253b7fceaa1defab5e0e5d317e2d16109e9"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3192,
-          "role": "prerequisite",
-          "label": "Restore job capacity after loading a saved round",
-          "state": "merged",
-          "merge_sha": "7ebba01cb9e91176c81cc4a8af5f8e0d57ec4b6b"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3194,
+          "number": 3694,
           "role": "implementation",
-          "label": "Prevent overlapping world saves and imports",
-          "state": "merged",
-          "merge_sha": "3f42f12010b25a1fd8e8e76237511f9d8bfa7667"
+          "label": "Run regions as a group on one host",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3715,
+          "role": "implementation",
+          "label": "Travel between regions",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3864,
+          "role": "implementation",
+          "label": "The Moon as its own world",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3694",
+          "Civ13/Civ13#3715",
+          "Civ13/Civ13#3864"
+        ]
+      }
+    },
+    {
+      "id": "staged-builds",
+      "title": "Server updates without a long outage",
+      "summary": "A new build is staged beside a running region, loads its save as a standby and takes over while the old world keeps playing. Each region updates in turn, and a failed handover rolls back so play continues on the old build.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "Staged handover and its port fixes are merged and can be driven from the launcher. A region's first update onto this build is still an ordinary restart.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3906,
+          "role": "implementation",
+          "label": "Hand a running region over to its staged build",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3936,
+          "role": "implementation",
+          "label": "Staged handover ports and launcher view",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3906",
+          "Civ13/Civ13#3936"
+        ]
+      }
+    },
+    {
+      "id": "optional-launcher-interface",
+      "title": "An optional desktop launcher",
+      "summary": "The optional Civ13 launcher finds servers, wakes sleeping ones and joins them, and gives hosts a Host tab for every region: start, stop, sleep, wake, save, update with a staged build, advance the shared epoch and run Player help. Direct BYOND joining stays supported.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "Per-region host actions, staged updates and epoch control are merged and published in the launcher. New server-management features keep landing in the launcher as they merge.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3865,
+          "role": "implementation",
+          "label": "Save, update and restart each region",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3938,
+          "role": "implementation",
+          "label": "One-region host actions and group status",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3865",
+          "Civ13/Civ13#3938"
+        ]
+      }
+    },
+    {
+      "id": "discord-sign-in",
+      "title": "Optional Discord sign-in",
+      "summary": "Sign in through the launcher with a Discord account so your character can follow your account rather than one BYOND key. Discord stays optional; playing with a BYOND key alone works as before.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "Account keys, single-use join tickets and launcher sign-in are merged, and sign-in is on by default in the launcher.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3851,
+          "role": "implementation",
+          "label": "Discord account keys and join tickets",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3853,
+          "role": "implementation",
+          "label": "Discord sign-in in the launcher",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3851",
+          "Civ13/Civ13#3853"
+        ]
+      }
+    },
+    {
+      "id": "orbital-stations",
+      "title": "Rockets and space stations in orbit",
+      "summary": "Launch into orbit from 1969 with two-stage rockets and capsules, work outside on EVA with handholds and safety tethers, and build a starter station through a launch complex project. Next comes the 2013 stage: modular pods that dock, extra decks and station upkeep, then reusable rockets and wider station networks from 2026.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Stage B is merged: orbital flight, EVA, station hardware, starter stations and Moon sortie gear. Stage C (modular docking stations) is next, and the Orbit region still has to go live.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3916,
+          "role": "implementation",
+          "label": "1969 orbital flight",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3940,
+          "role": "implementation",
+          "label": "Starter stations and Moon sorties",
+          "state": "merged"
+        }
+      ],
+      "completion": null
+    },
+    {
+      "id": "off-world-settlement",
+      "title": "Settlements on Mars and the Moon",
+      "summary": "Survey other worlds with probes, fly crewed landers, build pressurised habitats with life support, explore in pressure suits, mine ice and regolith, drive sealed rovers and grow self-sufficient bases with a propellant plant and flights home. The Moon opens from 1969 and Mars from 2026.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "All six settlement phases are merged, from survey probes to closed-loop bases and return flights.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3756,
+          "role": "implementation",
+          "label": "Survey probes and mission console",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3837,
+          "role": "implementation",
+          "label": "Closed loops, propellant plant and flights home",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3756",
+          "Civ13/Civ13#3837"
+        ]
+      }
+    },
+    {
+      "id": "modular-aircraft",
+      "title": "Aircraft that take off and land",
+      "summary": "Build aircraft from parts, taxi down runways and fly over the map, seeing the ground below and casting a shadow. Next: hangars and research so players can build planes, then free-form parts, helicopters and jets, and later air routes, parachutes and weapons.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "The flight core and the view from the air are merged; planes are admin-spawned for testing. Hangars and research, which make aircraft available to players, are the next phase.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3937,
+          "role": "implementation",
+          "label": "Flight core and runways",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3946,
+          "role": "implementation",
+          "label": "Ground view, shadows and in-flight saves",
+          "state": "merged"
+        }
+      ],
+      "completion": null
+    },
+    {
+      "id": "industrialization",
+      "title": "Industrialization: factories, pipes and foundries",
+      "summary": "Run automated factories with belts, feeder and sorting arms, fabricators and a factory monitor; move liquids through pipe networks with pumps, tanks and reaction vessels; and pour molten metal straight into tools at a casting foundry. Steam-era belts open earlier, and factory arms can load vehicle cargo holds.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "Factory automation, chemistry pipelines and the casting foundry are merged. A balance pass on player-built production lines comes later.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3626,
+          "role": "implementation",
+          "label": "Belts, arms and parts bins",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3656,
+          "role": "implementation",
+          "label": "Pipe networks and pumps",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3931,
+          "role": "implementation",
+          "label": "Casting foundry",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3626",
+          "Civ13/Civ13#3656",
+          "Civ13/Civ13#3931"
+        ]
+      }
+    },
+    {
+      "id": "metalworking-electroplating",
+      "title": "Metalworking benches and electroplating",
+      "summary": "Dedicated weapon, fletching and toolsmith's benches turn materials straight into finished items, and an electroplating bath coats metal objects. More plating metals can follow once those metals exist in the game.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "The dedicated benches and the electroplating bath are merged.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3932,
+          "role": "implementation",
+          "label": "Electroplating bath",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3932"
+        ]
+      }
+    },
+    {
+      "id": "byond-devtools",
+      "title": "Map tools for builders",
+      "summary": "byond-devtools reads Civ13 maps, renders them as stored or as they look in game with lighting, makes safe copy-on-write edits and previews maps in VS Code. Next: a visual map editor and AI-assisted editing.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "The tool foundation is merged in the byond-devtools repository. The visual editor and AI-assisted editing are the next stage.",
+      "evidence": [
+        {
+          "repository": "Civ13/byond-devtools",
+          "number": 8,
+          "role": "implementation",
+          "label": "In-game map rendering",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/byond-devtools#8"
+        ]
+      }
+    },
+    {
+      "id": "party-train-home",
+      "title": "A train home for your party",
+      "summary": "Build your party's first train as a project at a railway station whose track runs to the map edge. The finished train waits in its own berth in the Rail Yard world, with party-only doors that raiders can force only while a member is online.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "Railway works offices, the Rail Yard world and its berths are merged.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3771,
+          "role": "implementation",
+          "label": "Build a train at a railway station",
+          "state": "merged"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3778,
+          "role": "implementation",
+          "label": "Rail Yard world with party berths",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3771",
+          "Civ13/Civ13#3778"
+        ]
+      }
+    },
+    {
+      "id": "digital-age",
+      "title": "The 2026 Digital Age",
+      "summary": "A new age after the Modern Age with smartphones, drones, lithium-ion batteries, LED panels, 3D printers and a smart hub that takes voice commands for lights, plugs and locks.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "The Digital Age and its first devices are merged.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3736,
+          "role": "implementation",
+          "label": "The 2026 Digital Age",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3736"
+        ]
+      }
+    },
+    {
+      "id": "raiders-and-traders",
+      "title": "Raiders, traders and reputation",
+      "summary": "Nomad settlements meet NPC raiding parties and trader caravans, and build a reputation with the groups they deal with.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "Raids, caravans and reputation are merged.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3751,
+          "role": "implementation",
+          "label": "NPC raiders, caravans and reputation",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3751"
+        ]
+      }
+    },
+    {
+      "id": "ecology-wildlife",
+      "title": "Wildlife by habitat",
+      "summary": "Animals spawn across the whole map according to their habitat instead of fixed spawners that refill on every restart.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "Habitat-based wildlife spawning is merged for Nomads maps.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3922,
+          "role": "implementation",
+          "label": "Wildlife by habitat across the map",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3922"
+        ]
+      }
+    },
+    {
+      "id": "procedural-surface-worlds",
+      "title": "Generated surface, island and cavern worlds",
+      "summary": "Generate reproducible surface, ocean-island, cavern and airless worlds from a seed and turn them into playable region maps with resources, wildlife, elevation and climate.",
+      "status": "completed",
+      "availability": "unverified",
+      "availability_note": "The generators and playable region maps are merged; Mars and the Moon are built this way.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3697,
+          "role": "implementation",
+          "label": "Playable generated region maps",
+          "state": "merged"
+        }
+      ],
+      "completion": {
+        "acceptance_verified": true,
+        "basis": "Maintainer roadmap review on 2026-11-07 accepted the merged implementation as this milestone's scope.",
+        "required_prs": [
+          "Civ13/Civ13#3697"
+        ]
+      }
+    },
+    {
+      "id": "smoother-persistent-saves",
+      "title": "Smoother saves for persistent worlds",
+      "summary": "Save the world quickly while it keeps running, recover safely after an interrupted save and check the result outside the game so validation never stalls play.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "The stream saver, interrupted-save recovery and faster large saves are merged; a full save now takes minutes instead of about twenty. Moving validation into an outside process is the next step.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3811,
+          "role": "implementation",
+          "label": "Stream saver",
+          "state": "merged"
         }
       ],
       "completion": null
@@ -39,103 +456,42 @@
     {
       "id": "extraction-survival",
       "title": "Extraction survival",
-      "summary": "Explore dangerous areas, collect loot and return to a persistent safehouse. Extraction and survival shape what you keep between runs. Planned for in-game eras starting in 1943 and onward.",
+      "summary": "Explore dangerous areas, collect loot and return to a persistent safehouse. Raid worlds such as the Crossroads Mall and the zombie city send persistent characters out and bring them home. Planned for in-game eras from 1943 onward.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Safehouse and survival implementation is under review in a regular open PR; the mall raid remains a draft. Development changes do not establish a playable public release. Combined persistence, transport and recovery acceptance remain separate; public availability is unverified.",
+      "availability_note": "Safe houses, the mall raid and raid worlds are merged. Combined persistence, transport and recovery acceptance on a real run remains.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
           "number": 3082,
           "role": "implementation",
-          "label": "Safehouse and survival",
-          "state": "merged",
-          "merge_sha": "76c6f244f6eca7f2f7b9037da80181c52d498afb"
+          "label": "Safe houses and survival",
+          "state": "merged"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3118,
           "role": "implementation",
-          "label": "Extraction raid draft",
-          "state": "merged",
-          "merge_sha": "710860be44eb16ddada0faca993c0fce7b67b188"
+          "label": "Mall extraction raid",
+          "state": "merged"
         }
       ],
-      "completion": null
-    },
-    {
-      "id": "party-train-home",
-      "title": "A train home for your party",
-      "summary": "A planned shared train with a protected party compartment that stays safe while raid-docked, a party airlock and safe exit, normal hunger and thirst limits, and independent berths for selected players only. Planned for in-game eras starting in 1943 and onward.",
-      "status": "in_progress",
-      "availability": "unverified",
-      "availability_note": "The initial party-train layout is merged groundwork. Expanded compartments, airlock and survival rules, working transport, instanced saves and raid travel still need implementation and runtime testing.",
-      "evidence": [
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3193,
-          "role": "implementation",
-          "label": "Party train layout",
-          "state": "merged",
-          "merge_sha": "084be309cc1930f20864ef8f688e05e29571d01d"
-        }
-      ],
-      "completion": null
-    },
-    {
-      "id": "industrialization",
-      "title": "Industrialization: pipes, pumps and foundries",
-      "summary": "Develop industrialization systems with pipes, pumps and foundries.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "A planned development goal; details may change as development and testing progress. Public availability has not been verified.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "cross-server-travel",
-      "title": "Real-time travel between hosted servers",
-      "summary": "Plan real-time travel between Civ13-hosted servers: safely unload a character from one server and transfer it to another. Requires compatible eras and persistence game modes, shared character identity and transfer ownership, protected inventory/state custody, destination readiness and recovery from interruptions to prevent duplication or loss.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "A planned goal. Compatibility, transfer and recovery behavior still need design and testing; public availability has not been verified.",
-      "evidence": [],
       "completion": null
     },
     {
       "id": "geographic-layers",
-      "title": "Geographic layers and elevation",
-      "summary": "Keep biome, optional elevation, room or shelter, and overlapping special regions independent. Preserve this geography through roofing, terrain changes and saved worlds. Elevation describes height; map z-levels do not represent altitude.",
+      "title": "Geography, elevation and weather-driven snow",
+      "summary": "Keep biome, elevation and shelter independent, make hills and mountains colder, and let snowfall build ground cover that melts or can be shovelled away without replacing the soil underneath.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Optional coordinate-owned elevation metadata is merged, with existing maps defaulting to 0 metres. Temperature coupling, mountain profiles and precipitation consistency remain planned; public availability of the complete goal is unverified.",
+      "availability_note": "Elevation metadata, colder high ground on generated maps and weather-driven snow are merged. Hand-made maps opting in and a real-client snow check remain.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
-          "number": 3301,
-          "role": "prerequisite",
-          "label": "Optional elevation metadata",
-          "state": "merged",
-          "merge_sha": "281fb2e8b236fc814dbf1d88f41c318fc66099fb"
-        }
-      ],
-      "completion": null
-    },
-    {
-      "id": "weather-driven-snow",
-      "title": "Snow shaped by local weather",
-      "summary": "Let snowfall build ground cover that can melt or be shoveled away while preserving the same underlying soil. Build on geographic and weather consistency instead of automatically replacing terrain when the season changes.",
-      "status": "in_progress",
-      "availability": "unverified",
-      "availability_note": "Weather-driven ground snow is merged with bounded native fixture evidence. Connected-client appearance and full-world acceptance remain separate; public-server availability is unverified.",
-      "evidence": [
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3300,
+          "number": 3726,
           "role": "implementation",
-          "label": "Weather-driven ground snow",
-          "state": "merged",
-          "merge_sha": "ae70f1b0064584cb825e3d5e338476e22f834029"
+          "label": "Colder hills and mountains",
+          "state": "merged"
         }
       ],
       "completion": null
@@ -143,213 +499,35 @@
     {
       "id": "persistent-world-authoring",
       "title": "Persistent world editing and map authoring",
-      "summary": "Keep zones and spawn points stable when created, moved, deleted or restored. Plan reviewed static-world exports to Civ13 map source, with a Civ13 mapper guide and checklist. Build on geographic metadata and safe persistence.",
+      "summary": "Keep zones and spawn points stable through saves and export a saved world back into Civ13 map source for mappers.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Zone and spawn-registry persistence is merged for the supported durable world profiles. Reviewed save-to-map export and mapper guidance remain work in progress; this does not establish a complete authoring workflow or verified public availability.",
+      "availability_note": "Zone persistence and whole-world map export are merged. A visual editor built on byond-devtools and a mapper guide are planned.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
-          "number": 3304,
-          "role": "prerequisite",
-          "label": "Persist created, moved and deleted zones and spawns",
-          "state": "merged",
-          "merge_sha": "68a89db5c3d93afc486522e4d0a9be9351758a0e"
-        }
-      ],
-      "completion": null
-    },
-    {
-      "id": "sharded-persistence-foundation",
-      "title": "Safe persistence and transfer foundations",
-      "summary": "Design shared save/transfer admission and durable custody records for safe handoffs between servers. Repeated or interrupted transfers must recover to one owner, and loading an older save must not resurrect a transferred character. This underpins hosted-server travel. Planned versioned domain records, stable IDs, explicit migration/validation and a transaction journal for custody and recovery may extend or replace native serialization; backend choice remains open.",
-      "status": "in_progress",
-      "availability": "unverified",
-      "availability_note": "Bounded interface design is underway. There is no working sharding service or verified public availability; handoff and recovery still require implementation and testing.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "usa-regional-persistence-pilot",
-      "title": "A small USA regional persistence pilot",
-      "summary": "Explore two small USA region slices with explicit routes, regional biomes and civil/daylight clocks over one authoritative timeline. Keep saves and lightweight route metadata while idle processes sleep; wake and validate a destination before travel. Depends on geographic, authoring and safe-transfer foundations, bounded resource admission and an explicit offline-simulation policy. Support optional launcher integration and direct/manual BYOND joining for non-launcher users and recovery.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "Region selection, on-demand startup and safe idle shutdown are planned. A supported manual discovery/wake/readiness path is required before the pilot is available. Measure performance and recovery before expansion; no tested capacity, zero-overhead hosting or unlimited scale is claimed.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "optional-launcher-interface",
-      "title": "An optional desktop launcher and shared connection core",
-      "summary": "Evolve the optional Civ13 launcher around a shared connection/update core, desktop GUI and retained CLI. Plan server/shard discovery and management, wake/load/readiness progress, compatible package selection and recoverable joining. Direct/manual BYOND connection remains supported; server-side authority governs admission, custody and transfers.",
-      "status": "in_progress",
-      "availability": "unverified",
-      "availability_note": "Packaged launcher/compiler version checks and observe-only instance-catalog contracts are merged groundwork. GUI, integrated shard management and automatic lifecycle control remain planned; process presence does not prove readiness. These additions have no verified public availability.",
-      "evidence": [
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3335,
-          "role": "prerequisite",
-          "label": "Packaged launcher version-contract checks",
-          "state": "merged",
-          "merge_sha": "2bfbef4bdc3622b61f09a914d8f1e6b89ba8e7a1"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3325,
-          "role": "prerequisite",
-          "label": "Observe-only instance catalog",
-          "state": "merged",
-          "merge_sha": "11e5a26e0c3d53889a5330c9085a7d582e07e50e"
-        }
-      ],
-      "completion": null
-    },
-    {
-      "id": "player-built-regional-transit",
-      "title": "Player-built crossings and rail routes",
-      "summary": "Make border crossings and rail travel depend on connections players have built. Join local rail and station connectivity into regional routes, with fresh route checks and destination admission before travel. Builds on regional travel and safe transfers.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "Cached known connections do not guarantee a usable route. Safe outage handling is planned; travel through offline intermediaries needs later durable-transit design, not cache alone. Public availability is unverified.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "ocean-voyages-offshore-industry",
-      "title": "Ocean voyages and offshore industry",
-      "summary": "Plan voyages across one or more ocean maps, connected map levels or regions, with offshore oil rigs players can build and maintain. Depends on industrialization, geographic layers, persistent world authoring and regional travel foundations.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "Future Civ13 design scope. Routes and physical depth need explicit definitions; a map z-level alone does not establish depth or altitude. These additions have no verified public availability.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "submarines-underwater-habitats",
-      "title": "Submarines and pressurized underwater habitats",
-      "summary": "Plan player-built submarines and underwater habitats with pressure and atmosphere, power and ongoing maintenance. Builds on ocean voyages, industrialization, geographic depth metadata and persistence foundations.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "Future design and testing are required for the combined habitat and vessel systems. Physical depth must be modeled explicitly, not inferred automatically from z-levels. Public availability is unverified.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "advanced-era-space-mode",
-      "title": "A later advanced-era space game mode",
-      "summary": "Explore a separate future Civ13 game mode for launches and for building and maintaining satellites, space stations and settlements on the Moon or Mars. Depends on industrialization, geographic/environment metadata, persistence and regional travel foundations.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "A later design direction, with no selected delivery date or verified public availability. Altitude and orbital or surface environments need explicit modeling; z-levels alone do not supply them.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "player-owned-expedition-regions",
-      "title": "Player-owned persistent expedition regions",
-      "summary": "Plan player-owned regions for ocean or continental expeditions, offshore rigs and remote factories. Players request a location, purpose, template, dimensions, native z-count and access policy for host approval within benchmarked resource limits. Region identity and saves survive idle processes. Depends on geographic, authoring, industrialization and safe regional-transfer foundations.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "Future design only. A 300x300 map with 3-4 native z-levels is a requested example, not proven capacity. Initial dimensions would be fixed; expansion needs later approved offline migration. Public availability is unverified.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "unavailable-region-character-recovery",
-      "title": "Character and inventory recovery when regions go offline",
-      "summary": "Plan separate durable records for characters and all nested belongings so an eligible player can recover into another live region after shutdown or an outage. Depends on authoritative custody, fenced ownership, departure reconciliation and compatible, authorized, capacity-ready destinations.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "Recovery must prevent duplicate characters or cargo and refuse when custody cannot be established. Only durably written state can be recovered after fencing old ownership; heartbeat absence alone is insufficient. Unwritten changes are not guaranteed. Public availability is unverified.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "map-capability-profiles",
-      "title": "Map capability profiles and measured resource use",
-      "summary": "Plan map profiles that initialize only required simulation systems and entities, such as submarine and pressure mechanics on supporting maps. Declare dependencies and save/transfer compatibility while preserving ordinary default compatibility. Investigate separate code/asset build profiles only after measuring actual savings and demonstrating migration/type-compatibility safeguards.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "Design research is ongoing; memory savings and engine-specific behavior are unverified. Unsupported saved or transferred belongings must never be silently deleted. No runtime code/asset unloading or eager asset residency is assumed.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "procedural-surface-worlds",
-      "title": "Procedurally generated surface, oceanic and cavern worlds",
-      "summary": "Develop configurable, reproducible maps across Civ13's surface biomes, ocean islands and future underground caverns, with coherent terrain transitions, resources, wildlife and safe starts. Preserve seeds, versioned generation rules and configuration alongside reviewed static DMM exports and metadata. Build on geographic layers, world authoring and safe saves; Pocket Stronghold remains a reference to investigate.",
-      "status": "in_progress",
-      "availability": "unverified",
-      "availability_note": "Offline surface generation and the oceanic-island profile are merged tools; cavern generation remains planned. Static DMM export does not establish native playability, survival resources or runtime save preservation. Streaming and larger worlds still need separate measured designs; public activation is unverified.",
-      "evidence": [
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3331,
+          "number": 3671,
           "role": "implementation",
-          "label": "Offline surface generator and DMM export",
-          "state": "merged",
-          "merge_sha": "446170c48821c98be8d04baf6eefd760a780f7a4"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3338,
-          "role": "implementation",
-          "label": "Offline oceanic-island profile",
-          "state": "merged",
-          "merge_sha": "c19ae1dc7956f4c27167bf9e3927ae1515f36592"
+          "label": "Export the whole world as a map",
+          "state": "merged"
         }
       ],
       "completion": null
     },
     {
       "id": "smooth-movement-expansion",
-      "title": "Smooth movement and interaction compatibility",
-      "summary": "Build on merged smooth human walking and diagonal movement. Extend collision-checked motion to prone/crawl movement and vendor NPCs, then pulling and other interactions without changing admitted speed or costs. Keep held crafting menus compatible, improve physical throw release behavior and preserve save, body-handoff and client preferences.",
+      "title": "Smooth movement",
+      "summary": "Smooth walking, diagonal moves, prone crawling, vendor NPCs and pulling crates and stacks, without changing movement speed or costs.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Regular walking/diagonal smoothing, prone/crawl motion and throw-source clearance are merged source changes. Vendor NPC motion remains a draft; held crafting-menu compatibility is under review in a regular open PR. Pulling and broader interaction acceptance remain incomplete; public availability of the combined goal is unverified.",
+      "availability_note": "Player, crawl, vendor and pulling movement are merged and on by default. Smooth wildlife movement remains disabled until its timing is fixed.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
-          "number": 3337,
-          "role": "prerequisite",
-          "label": "Merged regular human walking and diagonal foundation",
-          "state": "merged",
-          "merge_sha": "10d264e5896221b34949ee4b67c0fd2b94bde249"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3344,
+          "number": 3367,
           "role": "implementation",
-          "label": "Prone and crawl movement",
-          "state": "merged",
-          "merge_sha": "01566713425d9e923b6ed2e18332113d48f6bc67"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3343,
-          "role": "implementation",
-          "label": "Vendor NPC movement draft",
-          "state": "merged",
-          "merge_sha": "ebaa94ecdb99e4b120e399d15fed687911ce51f4"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3347,
-          "role": "implementation",
-          "label": "Held crafting-menu compatibility",
-          "state": "merged",
-          "merge_sha": "3a2926ece4a19f732b285fb9f1d4e9da2fcb46fb"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3342,
-          "role": "implementation",
-          "label": "Physical throw launch",
-          "state": "merged",
-          "merge_sha": "d6ba0a85e5b459d257902456fd64dc4cc6286966"
+          "label": "Smooth pulling",
+          "state": "merged"
         }
       ],
       "completion": null
@@ -357,18 +535,17 @@
     {
       "id": "authoritative-line-of-sight",
       "title": "Authoritative line of sight",
-      "summary": "Explore Civ14-inspired geometric occlusion for walls, doors and openings, with a per-player view that preserves the HUD. Apply authoritative visibility to information and actions, including hover, examine, targeting and agent observations. Keep illumination separate and distinguish large artwork from physical blocker footprints.",
+      "summary": "Walls, doors and openings block what each player can see, applied to hover, examine, targeting and agent observations while the HUD stays visible.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "The disabled same-level read-context core is merged groundwork, not a working visibility renderer. Gameplay adapters, hidden-information protection, reconnect/save restoration, visual acceptance and measured costs remain incomplete; cross-level expansion comes later. Public activation is unverified.",
+      "availability_note": "Geometric line of sight, wall faces and opacity refresh are merged. Gameplay adapters, hidden-information protection and cost measurements remain.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
-          "number": 3340,
+          "number": 3579,
           "role": "implementation",
-          "label": "Disabled geometric visibility core",
-          "state": "merged",
-          "merge_sha": "bc7209b23d4ee39651a736a7a9ddb1d1081166ac"
+          "label": "Wall faces and opacity refresh",
+          "state": "merged"
         }
       ],
       "completion": null
@@ -376,80 +553,53 @@
     {
       "id": "oversized-sprite-lighting",
       "title": "Lighting for oversized sprites",
-      "summary": "Develop lighting coverage for large trees, shadows and other artwork that extends beyond its root tile. Preserve ordinary light propagation, darkness, weather, fullbright cells and special sight rules, separately from authoritative line of sight.",
+      "summary": "Light large trees, shadows and other artwork that extends beyond its tile, without changing ordinary light propagation.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "The disabled composition prototype is merged groundwork. General rendering issues and connected-client acceptance remain unresolved; source and fixture checks do not establish production appearance, memory savings or public activation.",
+      "availability_note": "A disabled composition prototype is merged. Rendering issues and a connected-client check remain.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
           "number": 3225,
           "role": "implementation",
-          "label": "Disabled lighting composition prototype",
-          "state": "merged",
-          "merge_sha": "3d35f802e580ac4f4d012a4ffc448bd485b62b53"
+          "label": "Lighting composition prototype",
+          "state": "merged"
         }
       ],
       "completion": null
     },
     {
       "id": "authored-room-escape-mode",
-      "title": "Authored-room escape mode",
-      "summary": "Plan a finite escape scenario assembled from original authored room families with validated connections, clearance, discovery, service objectives and escape routes. Default to in-game year 1990 with an explicit early-1990s equipment, prop, crafting and research policy. Reuse geometry contracts without inheriting expedition or colony state.",
+      "title": "Liminal Facility escape mode",
+      "summary": "A finite escape round through authored rooms, set in 1990, with a threat to avoid, steady lamps and indoor sound.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Design, offline topology/manifests and renderer-audit source are merged groundwork. The initial static room layouts were rejected and are being revised; the newer renderer study is also not an approved design or gameplay screenshot. Native export, period-policy enforcement, mode integration and playable acceptance remain pending.",
+      "availability_note": "Room layouts, map export, the escape round and the threat, light and sound pass are merged. Playtesting with real players remains.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
-          "number": 3346,
-          "role": "prerequisite",
-          "label": "Authored-room escape design",
-          "state": "merged",
-          "merge_sha": "0f12bdd809f93ea8d8d6c631332404a894eb55df"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3348,
+          "number": 3722,
           "role": "implementation",
-          "label": "Offline room topology and scenario manifests",
-          "state": "merged",
-          "merge_sha": "0f2227b6c8496ec41e7387447a41331a8b4100a3"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3349,
-          "role": "prerequisite",
-          "label": "Renderer audit; initial room layouts remain rejected",
-          "state": "merged",
-          "merge_sha": "2b7f77cd5264ca4dd4eed0446fa741f0d51336e9"
+          "label": "Threat, light and sound pass",
+          "state": "merged"
         }
       ],
       "completion": null
     },
     {
       "id": "powered-backrooms-expeditions",
-      "title": "Powered-gateway exploration and colonies",
-      "summary": "Plan a separate Backrooms expedition scenario: deliberately power a gateway, survey authored rooms, carry finite supplies and establish a persistent colony. Power loss closes crossings while preserving residents and construction. Default to in-game year 1990 with period equipment rules; require safe admission, return/rescue and paired world persistence.",
+      "title": "Powered-gateway expeditions",
+      "summary": "Power a gateway, survey authored rooms with finite supplies and found a persistent colony on the other side.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "The default-disabled power/identity foundation is merged; the separate expedition design remains a draft. This provides no playable gateway or colony mode. Physical crossing, paid supplies, rescue, period-policy enforcement and full-world save integration still need implementation and testing; public activation is unverified.",
+      "availability_note": "The design and a disabled power-state foundation are merged. Physical gateways, supplies, rescue and paired-world saves remain.",
       "evidence": [
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3350,
-          "role": "prerequisite",
-          "label": "Powered expedition and colony design",
-          "state": "merged",
-          "merge_sha": "bbb3b00a4f8dea2c8cb7c6ae01383eea3156881e"
-        },
         {
           "repository": "Civ13/Civ13",
           "number": 3351,
           "role": "implementation",
-          "label": "Disabled gateway power-state foundation",
-          "state": "merged",
-          "merge_sha": "ecdb248c26b7390ea968a099231145482a6cad32"
+          "label": "Gateway power-state foundation",
+          "state": "merged"
         }
       ],
       "completion": null
@@ -457,91 +607,93 @@
     {
       "id": "diet-preferences-and-food-discovery",
       "title": "Diet, preferences and food discovery",
-      "summary": "Plan understandable diet balance and learned character food preferences, with useful energy benefits from varied meals and meaningful recipe lineage. Build on private character discovery notes and accessible winter/underground foods. Extend Crafting Atlas resource discovery without revealing hidden tastes; keep ordinary survival practical.",
+      "summary": "Balanced meals build nutrient reserves and energy, characters learn hidden tastes, and varied recipes pay off.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Winter turnips, underground plump helmets, learned berry-smell notes and direct Atlas resource search are merged supporting work. Nutrition bonuses, hidden tastes and discovery beyond those notes remain planned. Validate reachable food variety before penalties; full-goal public availability is unverified.",
+      "availability_note": "Balanced diet and hidden tastes are merged. Penalties stay off until every map has enough food variety.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
-          "number": 3314,
-          "role": "prerequisite",
-          "label": "Winter and underground food groundwork",
-          "state": "merged",
-          "merge_sha": "a1f08b3d3ac366cd85a08eaf2fd4f9e734faa9a6"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3315,
-          "role": "prerequisite",
-          "label": "Learned berry-smell Notes groundwork",
-          "state": "merged",
-          "merge_sha": "062fc10a2709220eb14684483da88f5bf8b20dfd"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3345,
-          "role": "prerequisite",
-          "label": "Direct Atlas resource search",
-          "state": "merged",
-          "merge_sha": "083cbf20f0d64abffdbef9b478bf1eda74458f65"
+          "number": 3597,
+          "role": "implementation",
+          "label": "Balanced diet and hidden tastes",
+          "state": "merged"
         }
       ],
-      "completion": null
-    },
-    {
-      "id": "compatible-runtime-research",
-      "title": "Compatible runtime and selective JIT research",
-      "summary": "Research a compatible 64-bit runtime and selective just-in-time compilation for suitable workloads. Keep Civ13 behavior, persistence and tooling compatibility central; require reproducible correctness and performance evidence before considering adoption.",
-      "status": "planned",
-      "availability": "unverified",
-      "availability_note": "High-level research only. No production runtime replacement, performance gain, supported capacity or public availability is established. Backend choices and adoption remain open.",
-      "evidence": [],
-      "completion": null
-    },
-    {
-      "id": "windows-server-bot",
-      "title": "Windows server bot integration",
-      "summary": "Develop isolated Windows startup support for the server management bot.",
-      "status": "in_progress",
-      "availability": "unverified",
-      "availability_note": "A draft implementation is under review. It has not been activated or verified against a live Windows server.",
-      "evidence": [],
       "completion": null
     },
     {
       "id": "discord-social-integration",
-      "title": "Discord social integration",
-      "summary": "Prioritize optional Discord Social SDK integration through the launcher companion: presence first, with friends, invitations and joining subject to later review. Keep ordinary BYOND play independent of the launcher and preserve server-authoritative admission and transfer checks.",
+      "title": "Discord presence, friends and invites",
+      "summary": "Show what you are playing on Discord through the launcher, with friends lists, invitations and joining to follow.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Managed transport, native SDK-adapter and Windows host/provider source are merged groundwork, with production startup still unwired or disabled. Real SDK runtime acceptance, distribution terms and end-to-end integration remain gates; live presence, friends and joining are not established.",
+      "availability_note": "Discord activity through the launcher is merged. Friends, invitations and joining are planned.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
-          "number": 3327,
+          "number": 3680,
           "role": "implementation",
-          "label": "Managed companion transport",
-          "state": "merged",
-          "merge_sha": "8540a134b3775bc3515830b0a258130baff84b62"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3333,
-          "role": "implementation",
-          "label": "Native Social SDK adapter",
-          "state": "merged",
-          "merge_sha": "4dbcf65e7b8cd73fc1948246c4ef20d13fd0a293"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 3339,
-          "role": "implementation",
-          "label": "Inactive Windows companion host",
-          "state": "merged",
-          "merge_sha": "33b15fd6dacafc04e65e39c678744196c4a1a08e"
+          "label": "Discord activity in the launcher",
+          "state": "merged"
         }
       ],
+      "completion": null
+    },
+    {
+      "id": "player-built-regional-transit",
+      "title": "Player-built crossings and routes",
+      "summary": "Players build trail markers that open to another region once an admin approves them, and later ferries and rail routes between regions.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Admin-approved trail markers are merged. Player-made ferries and rail routes between regions are planned.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3755,
+          "role": "implementation",
+          "label": "Player-built trail markers",
+          "state": "merged"
+        }
+      ],
+      "completion": null
+    },
+    {
+      "id": "cross-server-travel",
+      "title": "Travel between servers on different machines",
+      "summary": "Extend region travel so characters can move between region groups hosted on different machines, with the same single-owner custody and recovery rules.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Travel works within one host's region group. Groups spanning machines need design and testing.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "ocean-voyages-and-submarines",
+      "title": "Ocean voyages, offshore rigs and submarines",
+      "summary": "Sail between ocean maps, build and maintain offshore oil rigs, and build submarines and underwater habitats with pressure, air and power.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Ocean bridges, boats and a shared air ledger for submarine compartments are groundwork. Routes, depth and the vessels themselves need design.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3754,
+          "role": "prerequisite",
+          "label": "Shared submarine air ledger",
+          "state": "merged"
+        }
+      ],
+      "completion": null
+    },
+    {
+      "id": "unavailable-region-character-recovery",
+      "title": "Recovery when a region goes offline",
+      "summary": "Let a player recover their character and belongings into another live region after a shutdown or outage, without duplicating anything.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "The home ledger records which region owns each player. Fenced ownership of goods and a recovery path remain.",
+      "evidence": [],
       "completion": null
     }
   ]
