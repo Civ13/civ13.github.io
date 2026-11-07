@@ -138,9 +138,9 @@ in Civ13/civ13-wiki. They are not images of the extraction-survival mode.
 JavaScript or GitHub access. Only curated public PR evidence is queried; no
 private coordinator logs or arbitrary PR titles become player copy.
 
-The industrialization milestone covers planned pipes, pumps and foundries.
-It remains **Planned** with unverified availability; implementation evidence
-and completion requirements need review before the milestone can advance.
+The registry was reviewed against Civ13 master on 2026-11-07. Goals whose
+implementation is merged carry a completion contract and show **Code complete**;
+everything else is **In progress** or **Planned**. No goal claims **Available**.
 
 The **Refresh roadmap progress** workflow runs every six hours, on manual
 dispatch, or on a `roadmap-progress` repository dispatch. It validates the whole
@@ -156,7 +156,7 @@ prerequisites cannot do this. To enable automatic **Code complete**, set `comple
 `{"acceptance_verified":true,"basis":"what acceptance was verified","required_prs":["Civ13/Civ13#123"]}`.
 Every required PR must be listed as implementation evidence and represent the
 whole milestone's reviewed acceptance, not a prerequisite. The updater advances
-only when all are merged. None of the initial milestones has such a contract.
+only when all are merged.
 **Available** additionally requires independently verified public server
 availability, a public `availability_evidence` HTTPS URL and reviewed explanatory
 copy. Merge status never grants availability.
