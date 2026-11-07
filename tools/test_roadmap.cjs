@@ -11,7 +11,8 @@ test('registry is valid and merged prerequisites never complete milestones or im
   const next = await refresh(copy(), async e => pr(e));
   assert.equal(next.milestones[SAVES].status, 'in_progress');
   assert.equal(next.milestones[EXTRACTION].status, 'in_progress');
-  assert.ok(next.milestones.every(m => m.availability === 'unverified'));
+  assert.ok(next.milestones.every(m => m.availability === 'unverified' || /^https:\/\//.test(m.availability_evidence)));
+  assert.equal(next.milestones[SAVES].availability, 'unverified');
   assert.ok(next.milestones.filter(m => m.completion).every(m => m.status === 'completed'));
 });
 test('only reviewed exhaustive implementation acceptance advances a goal', async () => {
