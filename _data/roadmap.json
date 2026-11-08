@@ -14,21 +14,24 @@
           "number": 3694,
           "role": "implementation",
           "label": "Run regions as a group on one host",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "cbca6bd7fc907c93129bb4fac9a692042dd4468e"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3715,
           "role": "implementation",
           "label": "Travel between regions",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "52b87581807ffdf3f64a045b34beeeadd6ede53c"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3864,
           "role": "implementation",
           "label": "The Moon as its own world",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "ca8387d5ae947214d9c7de4a3f4b90794391a702"
         }
       ],
       "completion": {
@@ -55,14 +58,16 @@
           "number": 3906,
           "role": "implementation",
           "label": "Hand a running region over to its staged build",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "e5d84fe061d1ed79dfc23a249228b75c5bbfc48a"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3936,
           "role": "implementation",
           "label": "Staged handover ports and launcher view",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "ef788621e3d18d8a0784c3b0b4be11e7c4accd58"
         }
       ],
       "completion": {
@@ -87,14 +92,16 @@
           "number": 3865,
           "role": "implementation",
           "label": "Save, update and restart each region",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "b0700793af19d4d24ce49400b33473c22d58c602"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3938,
           "role": "implementation",
           "label": "One-region host actions and group status",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "5825b84c0fdb20e86975b98b688e58988218099a"
         }
       ],
       "completion": {
@@ -119,14 +126,16 @@
           "number": 3851,
           "role": "implementation",
           "label": "Discord account keys and join tickets",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "ddb4255345058b2fd6cbac0cc3c55cf7075faa1c"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3853,
           "role": "implementation",
           "label": "Discord sign-in in the launcher",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "b53e0eebc736621458c9e0044903a1b8dcdabcef"
         }
       ],
       "completion": {
@@ -152,14 +161,16 @@
           "number": 3916,
           "role": "implementation",
           "label": "1969 orbital flight",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "e3a34ff8ef6b7e545f0acc6a289ab097bbd3e292"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3940,
           "role": "implementation",
           "label": "Starter stations and Moon sorties",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "da350a85508074c71a8249e117288627a0c1bf9e"
         }
       ],
       "completion": null
@@ -177,14 +188,16 @@
           "number": 3756,
           "role": "implementation",
           "label": "Survey probes and mission console",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "78683e52736bdbced2ee42df9267bc55d7bfa95f"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3837,
           "role": "implementation",
           "label": "Closed loops, propellant plant and flights home",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "f80dad07ad062c78d2aabe43963b323b9faa9ccd"
         }
       ],
       "completion": {
@@ -209,14 +222,16 @@
           "number": 3937,
           "role": "implementation",
           "label": "Flight core and runways",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "8d0ba6f88ab04d6e3e9fb7ec3781852e2f5d8bf7"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3946,
           "role": "implementation",
           "label": "Ground view, shadows and in-flight saves",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "46c7e1b7d6728b1f9a1f792e0b2a0bacd7011e03"
         }
       ],
       "completion": null
@@ -234,21 +249,24 @@
           "number": 3626,
           "role": "implementation",
           "label": "Belts, arms and parts bins",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "6c8d798b8c25133048dfef1c4b5b0d6dd31d3812"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3656,
           "role": "implementation",
           "label": "Pipe networks and pumps",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "d68436b688db893a87a95d09928b13d087e6d878"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3931,
           "role": "implementation",
           "label": "Casting foundry",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "dfe369d1acd6165f090dceb9684402dd8ded2d01"
         }
       ],
       "completion": {
@@ -274,7 +292,8 @@
           "number": 3932,
           "role": "implementation",
           "label": "Electroplating bath",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "e7834b47714a1af4d76b62390457768004dbf5ce"
         }
       ],
       "completion": {
@@ -298,7 +317,8 @@
           "number": 8,
           "role": "implementation",
           "label": "In-game map rendering",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "6a7d3ca91b64b438acca728c2ccf08cff6e8cf65"
         }
       ],
       "completion": {
@@ -322,14 +342,16 @@
           "number": 3771,
           "role": "implementation",
           "label": "Build a train at a railway station",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "ffe952dced705d629d623d00316249ef67786bb2"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3778,
           "role": "implementation",
           "label": "Rail Yard world with party berths",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "70ba5a9b71f84ed1be2ce97661b2a53a3af3b457"
         }
       ],
       "completion": {
@@ -354,7 +376,8 @@
           "number": 3736,
           "role": "implementation",
           "label": "The 2026 Digital Age",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "db8afb76b183ab64a431dcf1c116d6ae539ff3ba"
         }
       ],
       "completion": {
@@ -378,7 +401,8 @@
           "number": 3751,
           "role": "implementation",
           "label": "NPC raiders, caravans and reputation",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "837e20586164b752705020445142b30892226af6"
         }
       ],
       "completion": {
@@ -402,7 +426,8 @@
           "number": 3922,
           "role": "implementation",
           "label": "Wildlife by habitat across the map",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "dbe3beb25b6bdbb630ff0ca6a4ec9d26c31e8181"
         }
       ],
       "completion": {
@@ -426,7 +451,8 @@
           "number": 3697,
           "role": "implementation",
           "label": "Playable generated region maps",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "8a7166d50c787f4c0f617616be2a38a9cbac5533"
         }
       ],
       "completion": {
@@ -450,7 +476,8 @@
           "number": 3811,
           "role": "implementation",
           "label": "Stream saver",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "a88c3ffadc359fc2d0e873c61aeaaea4819cd72a"
         }
       ],
       "completion": null
@@ -468,14 +495,16 @@
           "number": 3082,
           "role": "implementation",
           "label": "Safe houses and survival",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "76c6f244f6eca7f2f7b9037da80181c52d498afb"
         },
         {
           "repository": "Civ13/Civ13",
           "number": 3118,
           "role": "implementation",
           "label": "Mall extraction raid",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "710860be44eb16ddada0faca993c0fce7b67b188"
         }
       ],
       "completion": null
@@ -493,7 +522,8 @@
           "number": 3726,
           "role": "implementation",
           "label": "Colder hills and mountains",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "b4fda7c9bc6c7b49f01c7bff57770dde6448a986"
         }
       ],
       "completion": null
@@ -511,7 +541,8 @@
           "number": 3671,
           "role": "implementation",
           "label": "Export the whole world as a map",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "481fb250930b292478a4684dddcb43f3d0990d0b"
         }
       ],
       "completion": null
@@ -529,7 +560,8 @@
           "number": 3367,
           "role": "implementation",
           "label": "Smooth pulling",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "dac59262181a02a3c66702e5ad5bc584ce59bac6"
         }
       ],
       "completion": null
@@ -547,7 +579,8 @@
           "number": 3579,
           "role": "implementation",
           "label": "Wall faces and opacity refresh",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "1485a082ef1b0d4fcc6e8deb9f46d471458674d2"
         }
       ],
       "completion": null
@@ -565,7 +598,8 @@
           "number": 3225,
           "role": "implementation",
           "label": "Lighting composition prototype",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "3d35f802e580ac4f4d012a4ffc448bd485b62b53"
         }
       ],
       "completion": null
@@ -583,7 +617,8 @@
           "number": 3722,
           "role": "implementation",
           "label": "Threat, light and sound pass",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "f40cb4e5b9e6b050f3071b2874915790a5ce8d49"
         }
       ],
       "completion": null
@@ -601,7 +636,8 @@
           "number": 3351,
           "role": "implementation",
           "label": "Gateway power-state foundation",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "ecdb248c26b7390ea968a099231145482a6cad32"
         }
       ],
       "completion": null
@@ -619,7 +655,8 @@
           "number": 3597,
           "role": "implementation",
           "label": "Balanced diet and hidden tastes",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "1e49db6ca1a7a9d288c808519a8446df65505b91"
         }
       ],
       "completion": null
@@ -637,7 +674,8 @@
           "number": 3680,
           "role": "implementation",
           "label": "Discord activity in the launcher",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "80ab1485a75efa37033e763ca89b91cb9fb26e5b"
         }
       ],
       "completion": null
@@ -655,7 +693,8 @@
           "number": 3755,
           "role": "implementation",
           "label": "Player-built trail markers",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "47931801cfa8ffb9f0ec6f001af110ae7fdb71b9"
         }
       ],
       "completion": null
@@ -683,7 +722,8 @@
           "number": 3754,
           "role": "prerequisite",
           "label": "Shared submarine air ledger",
-          "state": "merged"
+          "state": "merged",
+          "merge_sha": "55a36446b7ba2c5da9a4e3bf829c2ca40b5e8f2d"
         }
       ],
       "completion": null
