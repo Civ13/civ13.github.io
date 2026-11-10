@@ -32,6 +32,10 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
+      - name: Validate Persistence join shortcut
+        run: |
+          python3 tools/test_persistence_join.py
+          python3 tools/test_persistence_join.py _site
       - name: Check static community calendar contracts
         run: |
           node tools/calendar/build.cjs --check
