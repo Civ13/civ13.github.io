@@ -648,7 +648,7 @@
       "summary": "Balanced meals build nutrient reserves and energy, characters learn hidden tastes, and varied recipes pay off.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Balanced diet and hidden tastes are merged. Penalties stay off until every map has enough food variety.",
+      "availability_note": "Balanced diet and hidden tastes are merged. Cave wheat now gives underground farms a year-round grain, and the mild stamina penalty for a long narrow diet is on for the Nomads maps, where every nutrient group can be grown or hunted in every season.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
