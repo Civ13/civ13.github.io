@@ -657,14 +657,6 @@
           "label": "Balanced diet and hidden tastes",
           "state": "merged",
           "merge_sha": "1e49db6ca1a7a9d288c808519a8446df65505b91"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 4568,
-          "role": "implementation",
-          "label": "Cave wheat and the diet penalty on Nomads maps",
-          "state": "merged",
-          "merge_sha": "e0fcae1afc628facc90e90b0ff69db4fa3f6d5e7"
         }
       ],
       "completion": null
