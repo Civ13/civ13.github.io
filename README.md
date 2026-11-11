@@ -477,3 +477,30 @@ profiles. Runtime toggles are not evidence that compiled DM types or assets are
 unloaded, and engine assets must not be assumed to all eagerly occupy RAM.
 Research remains open; no engine-specific memory, unloading or performance
 guarantee, measured saving or feature implementation is established here.
+
+## Persistence join shortcut
+
+`persistence/index.html` supplies `/persistence/`, matching the existing live
+`https://civ13.com/tdm/` convention of an HTML refresh to a BYOND URI, with an
+explicit link and copyable address when protocol launching is blocked.
+It targets only `byond://play.valzargaming.com:1714`, the Persistence/Gaia gate
+already published on the homepage and defined by Civ13's launcher catalog.
+It must never fall back to Rail Yard or another routed region on port 1715.
+See [the gate-down fix](https://github.com/Civ13/Civ13/pull/3869) and
+[launcher discovery](https://github.com/Civ13/Civ13/blob/4c5737db694d63a0f00e1d52e7540f7bebb556cc/tools/opendream-client/native/SERVER-DISCOVERY.md).
+
+This static shortcut does not query the doorman, wake a stopped/frozen world,
+or verify availability. Use the launcher for wake-and-join. Keep the gate address
+even when unavailable; do not substitute a directly reachable region.
+
+The source belongs to the existing Jekyll site, which publishes master through
+Pages. The root of civ13.com served this site's content during inspection, but
+the separate origin/proxy configuration serving its older /tdm/ shortcut is not
+in this repository. After approved merge/publication, its operator must verify
+that https://civ13.com/persistence/ serves this exact new file (and adjust routing
+if required). This PR changes neither DNS nor proxy configuration. Do not enable
+Discord Play buttons for this URL before that check.
+
+Run `python3 tools/test_persistence_join.py` and, after Jekyll build,
+`python3 tools/test_persistence_join.py _site`. Browser-to-BYOND launch behavior
+and real gateway availability are separate operator acceptance checks.
