@@ -700,6 +700,16 @@
       "completion": null
     },
     {
+      "id": "better-cooked-dishes",
+      "title": "Better cooked dishes: seasonings and garnishes",
+      "summary": "Cooking grows past the three pot stews. Season dishes with salt, pepper, dried herbs, vinegar and oils, finish them with garnishes such as fresh mint, pickles, jam or roasted seeds, and cook new dishes on the grill, griddle, oven and fryer. A well-seasoned, garnished dish tastes better, earns a higher meal quality and lifts mood more than plain roasted food.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "The groundwork is in: pot stews with three quality tiers (salt seasons the best one), learned tastes, and the herbs, teas, mortar-ground oils, vinegar, pickles and jam from the plant processing work. Seasonings, garnishes and the new dishes are not built yet.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "cross-server-travel",
       "title": "Travel between servers on different machines",
       "summary": "Extend region travel so characters can move between region groups hosted on different machines, with the same single-owner custody and recovery rules.",
