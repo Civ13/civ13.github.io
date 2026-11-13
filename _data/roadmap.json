@@ -713,9 +713,9 @@
       "id": "wild-west-mounted-raids",
       "title": "Wild West mounted raids",
       "summary": "Ride into town with your gang. A new Little Creek battle starts the outlaws in the saddle outside town, with loot spread along the main street so the raid is a gallop past the bank and the shops, firing from horseback while the Sheriff's posse mounts up to give chase.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Riding, trampling and shooting from the saddle already work, and Little Creek has a bank robbery battle. Mounted starts, enough horses for a gang, spread-out loot and dust trails are not built yet.",
+      "availability_note": "Merged: on Little Creek every outlaw now starts in the saddle at the gang's camp, and galloping horses kick up dust (Civ13 PR 5031). Still to come: loot spread along the main street and a mounted Sheriff's posse.",
       "evidence": [],
       "completion": null
     },
