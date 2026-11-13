@@ -2,7 +2,7 @@
   'use strict';
   const STATES = ['draft', 'open', 'closed', 'merged'];
   function validate(data) {
-    if (!data || data.schema_version !== 1 || !Array.isArray(data.milestones) || data.milestones.length > 30) throw new Error('Invalid roadmap');
+    if (!data || data.schema_version !== 1 || !Array.isArray(data.milestones) || data.milestones.length > 40) throw new Error('Invalid roadmap');
     const ids = new Set();
     let count = 0;
     for (const m of data.milestones) {
