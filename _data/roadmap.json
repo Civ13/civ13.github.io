@@ -723,9 +723,9 @@
       "id": "ides-of-march",
       "title": "The Ides of March",
       "summary": "A new Roman battle in and around the senate house. Caesar and his loyal friends and lictors stand together in white togas while conspirators among the senators draw hidden daggers. Keep Caesar alive and get him out, or strike him down and escape to the Capitol.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "White togas that stain with blood, daggers, Roman legions and a protect-the-leader win condition already exist. The senate map, Caesar and conspirator roles, a hidden dagger and senators' togas are not built yet.",
+      "availability_note": "Merged: The Ides of March battle, with the Curia of Pompey, Caesar, his lictors and friends against Brutus and the senators, who carry a pugio hidden in a pocket; the conspirators win when Caesar dies (Civ13 PR 5034). Still to come: senators' striped togas and the lictors' fasces.",
       "evidence": [],
       "completion": null
     },
