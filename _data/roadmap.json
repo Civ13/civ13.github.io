@@ -733,9 +733,9 @@
       "id": "naval-broadsides",
       "title": "Naval broadsides",
       "summary": "Crew a sailing warship with your friends. The ships in the naval battle sail and turn for position, full gun decks are worked by gun crews who sponge, load and run out each cannon, and the captain orders a broadside that fires down the whole side in clouds of powder smoke.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "The naval battle, black-powder cannons, boarding and a sailing core used by other ships already exist. Sailing the battle ships, full gun decks, crew drills and broadside orders are not built yet.",
+      "availability_note": "Merged: on the Naval Battle each ship has six guns facing the enemy, and the captain's boatswain's call fires every loaded gun on one side in a ripple (Civ13 PR 5036). Still to come: ships that sail and manoeuvre, gun crew drills, and splashes for misses.",
       "evidence": [],
       "completion": null
     },
