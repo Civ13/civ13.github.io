@@ -735,7 +735,7 @@
       "summary": "Crew a sailing warship with your friends. The ships in the naval battle sail and turn for position, full gun decks are worked by gun crews who sponge, load and run out each cannon, and the captain orders a broadside that fires down the whole side in clouds of powder smoke.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: on the Naval Battle each ship has six guns facing the enemy, and the captain's boatswain's call fires every loaded gun on one side in a ripple (Civ13 PR 5036). Still to come: ships that sail and manoeuvre, gun crew drills, and splashes for misses.",
+      "availability_note": "Merged: on the Naval Battle the captain's boatswain's call fires every loaded gun on one side in a ripple (Civ13 PR 5036), and the new Broadside battle puts two ships under sail that close on each other, lay their guns on the enemy hull and win by sinking or boarding her (Civ13 PR 5042). Still to come: gun crew drills and splashes for misses.",
       "evidence": [],
       "completion": null
     },
@@ -743,9 +743,9 @@
       "id": "huey-air-assault",
       "title": "Helicopter air assault",
       "summary": "Ride a Huey into battle in Vietnam. Squads board a helicopter at base, fly low over the map with a door gunner firing below, and jump out at a landing zone while the helicopter heads back for the next wave. Ground fire can damage it and bring it down.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Vietnam battles, supply drops announced as helicopter fly-bys and an aircraft flight core for planes already exist. A helicopter players can see, board and fly is not built yet.",
+      "availability_note": "Merged: on the Vietnam battles a UH-1 Huey waits at the American base; squads board it, pick a landing zone or pop signal smoke, and it flies them in over the treetops, drops them off and flies back for the next squad (Civ13 PR 5044). Still to come: door gunners who fire and ground fire that can bring it down.",
       "evidence": [],
       "completion": null
     },
