@@ -700,6 +700,56 @@
       "completion": null
     },
     {
+      "id": "visible-jet-airstrikes",
+      "title": "Jet airstrikes you can see",
+      "summary": "Call in close air support and watch it arrive: jets sweep across the battlefield with their shadows below, missiles streak in on smoke trails and bombs walk along the attack line. A forward air controller on modern battles marks targets with a laser designator, and enemy SAM sites can still shoot the jets down.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Laser-designated strikes with rockets and bombs, period aircraft by era and SAM shoot-downs already exist, but the jet is only heard, and only a few battles hand out designators. Drawing the aircraft and giving modern battles an air controller are not built yet.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "wild-west-mounted-raids",
+      "title": "Wild West mounted raids",
+      "summary": "Ride into town with your gang. A new Little Creek battle starts the outlaws in the saddle outside town, with loot spread along the main street so the raid is a gallop past the bank and the shops, firing from horseback while the Sheriff's posse mounts up to give chase.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Riding, trampling and shooting from the saddle already work, and Little Creek has a bank robbery battle. Mounted starts, enough horses for a gang, spread-out loot and dust trails are not built yet.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "ides-of-march",
+      "title": "The Ides of March",
+      "summary": "A new Roman battle in and around the senate house. Caesar and his loyal friends and lictors stand together in white togas while conspirators among the senators draw hidden daggers. Keep Caesar alive and get him out, or strike him down and escape to the Capitol.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "White togas that stain with blood, daggers, Roman legions and a protect-the-leader win condition already exist. The senate map, Caesar and conspirator roles, a hidden dagger and senators' togas are not built yet.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "naval-broadsides",
+      "title": "Naval broadsides",
+      "summary": "Crew a sailing warship with your friends. The ships in the naval battle sail and turn for position, full gun decks are worked by gun crews who sponge, load and run out each cannon, and the captain orders a broadside that fires down the whole side in clouds of powder smoke.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "The naval battle, black-powder cannons, boarding and a sailing core used by other ships already exist. Sailing the battle ships, full gun decks, crew drills and broadside orders are not built yet.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "huey-air-assault",
+      "title": "Helicopter air assault",
+      "summary": "Ride a Huey into battle in Vietnam. Squads board a helicopter at base, fly low over the map with a door gunner firing below, and jump out at a landing zone while the helicopter heads back for the next wave. Ground fire can damage it and bring it down.",
+      "status": "planned",
+      "availability": "unverified",
+      "availability_note": "Vietnam battles, supply drops announced as helicopter fly-bys and an aircraft flight core for planes already exist. A helicopter players can see, board and fly is not built yet.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "better-cooked-dishes",
       "title": "Better cooked dishes: seasonings and garnishes",
       "summary": "Cooking grows past the three pot stews. Season dishes with salt, pepper, dried herbs, vinegar and oils, finish them with garnishes such as fresh mint, pickles, jam or roasted seeds, and cook new dishes on the grill, griddle, oven and fryer. A well-seasoned, garnished dish tastes better, earns a higher meal quality and lifts mood more than plain roasted food.",
