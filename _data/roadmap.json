@@ -703,9 +703,9 @@
       "id": "visible-jet-airstrikes",
       "title": "Jet airstrikes you can see",
       "summary": "Call in close air support and watch it arrive: jets sweep across the battlefield with their shadows below, missiles streak in on smoke trails and bombs walk along the attack line. A forward air controller on modern battles marks targets with a laser designator, and enemy SAM sites can still shoot the jets down.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Laser-designated strikes with rockets and bombs, period aircraft by era and SAM shoot-downs already exist, but the jet is only heard, and only a few battles hand out designators. Drawing the aircraft and giving modern battles an air controller are not built yet.",
+      "availability_note": "Merged: F-16 and Su-25 strikes now draw the jet, its shadow and rocket smoke trails, and every Delta Force operator on Syria carries a laser designator (Civ13 PR 5028). Still to come: air controllers on more modern battles.",
       "evidence": [],
       "completion": null
     },
