@@ -837,6 +837,16 @@
       "availability_note": "Wild nests, honey hunting, stings, beeswax candles and the sting and allergy traits are merged (Civ13 #5805), and so are log hives, clay hives, skeps and swarms (Civ13 #5812). Pollination, frame hives, sealing wax and mead are not built yet. Not yet checked in a live game.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "castle-defences",
+      "title": "Castle defences and gateway traps",
+      "summary": "Make castles worth building and hard to take. Cut arrow slits and gun loops through walls to shoot out from cover, build battlements that shield one side, and heat water, oil, pitch, sand or molten lead to pour through murder holes, machicolations and timber hoardings onto attackers below, or drop stones on them. A tar kiln makes pitch. Gateways get drop trapdoors over staked pits worked from a lever, portcullises that crush whoever they land on, caltrops that lame horses, and ladder forks to push siege ladders off the wall.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Arrow slits, gun loops and battlements (Civ13 #5775), pouring and dropping with the murder hole, machicolations, hoardings and the tar kiln (Civ13 #5787), and the gateway traps (Civ13 #5802) are merged, with a Defending a Castle wiki guide. Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
