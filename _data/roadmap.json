@@ -797,6 +797,16 @@
       "availability_note": "The home ledger records which region owns each player. Fenced ownership of goods and a recovery path remain.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "homes-towns-and-crafts",
+      "title": "Homes, towns and player crafts",
+      "summary": "Give players reasons to decorate and keep up their homes and towns. A comfortable, varied, well-kept room lifts mood and lets you wake well rested; walls and floors take limewash, paint and stain; furniture fabric and curtains take dyes. Later steps add woven rugs and tapestries, player-designed pottery and statues, named towns with prosperity tiers that new players can choose to start near, and more crafts such as mosaics and stained glass.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Home comfort, Judge This Room, limewash, paint, stain and dyed furniture fabric are merged (Civ13 #5615 and #5617). Rugs, tapestries, pottery, statues and towns are not built yet.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
