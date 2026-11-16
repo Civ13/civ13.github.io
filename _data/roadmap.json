@@ -827,6 +827,16 @@
       "availability_note": "Door fittings, locks, bars, fire doors, smoke, opening windows, door features, trapdoors and agent routing are merged (Civ13 #5719, #5726, #5736, #5765, #5780, #5783, #5789, #5796 and #5806). Not yet checked in a live game.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "bee-farming",
+      "title": "Bees, honey and beeswax",
+      "summary": "Keep bees the way people did through history. Rob wild nests in hollow trees with smoke from a smouldering bundle or a torch, then squeeze the comb for honey and melt the wax into beeswax for candles. Later, keep colonies in log hives, clay hives and straw skeps that you stock by catching spring swarms. A colony needs enough honey left to last the winter, and hives raise the harvest of crops that need insects. In the Industrial era, frame hives come with a honey extractor and a beekeeper's veil and suit, and beeswax goes into sealing wax while honey ferments slowly into mead. Characters can be allergic to stings, or hardened against them.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Wild nests, honey hunting, stings, beeswax candles and the sting and allergy traits are merged (Civ13 #5805). Kept hives, pollination, frame hives, sealing wax and mead are not built yet. Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
