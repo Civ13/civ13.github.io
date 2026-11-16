@@ -807,6 +807,16 @@
       "availability_note": "Home comfort, Judge This Room, limewash, paint, stain and dyed furniture fabric are merged (Civ13 #5615 and #5617), and so are fine placement with Nudge Object, player-designed pottery, and woven rugs and tapestries (Civ13 #5623, #5627 and #5631). Statues, towns and the later crafts are not built yet.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "tamahagane-steel",
+      "title": "Tamahagane: steel from iron sand",
+      "summary": "Make steel the Japanese way. Iron sand is panned from riverbeds, sifted from beaches or washed out of hillside soil in a washing channel, then fired with charcoal in a single-use clay tatara furnace while bellows blow into it. Breaking the furnace open gives a kera bloom and some pig iron; on an anvil the kera sorts into tamahagane and wrought iron, and tamahagane folds into steel. Japanese Swordsmithing adds the tachi and clay hardening, which gives katana and other Japanese blades a hamon and higher quality.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Iron sand, the tatara, the washing channel, sand washing, the tachi and clay hardening are merged (Civ13 #5730, #5746, #5751 and #5766). Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
