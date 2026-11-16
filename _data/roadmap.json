@@ -817,6 +817,16 @@
       "availability_note": "Iron sand, the tatara, the washing channel, sand washing, the tachi and clay hardening are merged (Civ13 #5730, #5746, #5751 and #5766). Not yet checked in a live game.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "door-designs",
+      "title": "Doors, locks, bars and trapdoors",
+      "summary": "Finish any door by fitting parts to it instead of picking from a long recipe list. Closers and spring hinges shut doors behind you and wedges hold them open; locks come in key families from wooden pins to machined tumblers, plus seals, hidden catches and combination locks, and the same locks fit chests and closets. Bars, bolts and bracing hold a door from your side. Fire doors keep fire and spreading smoke inside their compartment, windows and shutters open and lock, and trapdoors and hatches close the way between levels. Routes and agent characters only pass doors that would open for them.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Door fittings, locks, bars, fire doors, smoke, opening windows, door features, trapdoors and agent routing are merged (Civ13 #5719, #5726, #5736, #5765, #5780, #5783, #5789, #5796 and #5806). Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
