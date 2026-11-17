@@ -847,6 +847,16 @@
       "availability_note": "Arrow slits, gun loops and battlements (Civ13 #5775), pouring and dropping with the murder hole, machicolations, hoardings and the tar kiln (Civ13 #5787), and the gateway traps (Civ13 #5802) are merged, with a Defending a Castle wiki guide. Not yet checked in a live game.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "multi-storey-buildings",
+      "title": "Multi-storey buildings and towers",
+      "summary": "Build upward and downward on every persistent land. Each roof adds a walkable floor above, an underground level lies under every map, and you can see down through open air to the levels below. Taller buildings need stronger supports and foundations: wood carries two storeys, stone four, and concrete walls and pillars six, so a concrete tower on a proper foundation rises six storeys with a roof terrace on top.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Upper storeys with foundations and support rules, the underground level, seeing down through open air and floors over upper-floor gaps are merged, and concrete towers of six storeys on Gaia, Europe, Asia, the Desert and the Jungle are merged in Civ13 #5870 (the Americas allow four). Stairs between upper storeys are still being built. Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
