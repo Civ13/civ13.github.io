@@ -867,6 +867,16 @@
       "availability_note": "The three states and their labels in the tech tree are merged (Civ13 #5976), and so are common knowledge for new and living characters (Civ13 #5978), quicker reading and whole-subject teaching of spreading subjects (Civ13 #5983) and faster research of them at a bench (Civ13 #5986). The Books and Scholars guide explains it. Not yet checked in a live game.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "continent-control",
+      "title": "Holding land on the continents",
+      "status": "in_progress",
+      "summary": "Factions compete to become the main stakeholders of a continent. Each continent is divided into provinces that follow its coasts, rivers and mountains. Members who live and play there with a bed near the faction's hall give it stake, and a side that leads a province for three days takes it and holds it until a rival out-stakes it. Recruitment stations on a continent work only in provinces the faction's side holds, and starting at a bed after death costs twice what starting at your faction's station does. A faction's claimed island across the sea stays its own unless it leaves it empty. Later steps add a rare resource for each continent, city ranks, upkeep and sieges.",
+      "availability": "unverified",
+      "availability_note": "Provinces (Civ13 #6076), stake and the Province Holdings view (#6079), holding provinces and station rules (#6080), the bed start cost (#6082) and claimed islands (#6084) are merged, and the Civilizations and Nomads guide explains them. Station rules start three weeks after a world first counts stake. Not yet checked in a live game.",
+      "completion": null,
+      "evidence": []
     }
   ]
 }
