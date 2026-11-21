@@ -897,6 +897,16 @@
       "availability_note": "Hit kinds, armor kinds and materials, weapon roles, the padded jack and the examine lines are merged (Civ13 #6355, #6368, #6382, #6399 and #6420). Not yet checked in a live game.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "nation-governments",
+      "title": "Nation governments",
+      "summary": "Nations choose how they are ruled: a confederation of equal factions, a theocracy, monarchy or dictatorship ruled by one person, or a republic, democracy or merchant league that votes and elects its head for a term. Each has trade-offs in how many factions it holds, who admits members and how long leaving takes. Heads who stay away lose their seat to an heir, a deputy or an election, and citizens can overthrow any government by petition and by holding a nation assembly. Next: tying nation laws and courts to the government, then offices of state and treaties between nations.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Government types, citizen votes and elections, succession, revolts and staff tools are merged (Civ13 #6396, #6413, #6423, #6433 and #6444), and the Civilizations and Nomads guide explains them. Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
