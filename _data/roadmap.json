@@ -887,6 +887,16 @@
       "availability_note": "Provinces (Civ13 #6076), stake and the Province Holdings view (#6079), holding provinces and station rules (#6080), the bed start cost (#6082) claimed islands (#6084), continent resources (#6089, Earth Asia #6104), settlement ranks (#6095), upkeep and ruins (#6098), sieges (#6102), rich provinces (#6106, more lands #6109), land oil (#6112), Gaia crops (#6115), Americas fracking (#6121) and rubber trees (#6125) are merged, and the Civilizations and Nomads, Resource Extraction and Farming guides explain them. Station rules start three weeks after a world first counts stake. Not yet checked in a live game.",
       "completion": null,
       "evidence": []
+    },
+    {
+      "id": "armor-roles",
+      "title": "Armor that fits its purpose",
+      "summary": "Armor protects by how it is built and what it is made of, never by which culture it looks like. Hits are cuts, thrusts or blows: padding stops blows and arrows, leather turns cuts, lamellar stops arrows, mail stops cuts, and plate stops most things but is heavy. Maces bruise through armor and wear it down, spears find the gaps in mail and lamellar, a padded jack goes under other armor, and no armor recipe ever goes out of date. Next: a heavy proof cuirass against early guns, and reworked First World War body armor.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Hit kinds, armor kinds and materials, weapon roles, the padded jack and the examine lines are merged (Civ13 #6355, #6368, #6382, #6399 and #6420). Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
