@@ -889,6 +889,16 @@
       "completion": null
     },
     {
+      "id": "peoples-that-grow",
+      "title": "Peoples that grow from the world",
+      "summary": "Peoples are living groups of this world rather than fixed real-world labels. Looks come from where you were born, never from your people, and nobody can see your people on sight. Gaia has peoples of its own. New characters are born into the people of the community they start in. A nation that stays out of touch with every other faction for a long time becomes a people of its own, peoples living together in one nation grow a people of both, and someone who lives among another people can be welcomed by its leader. Nations' leaders name new peoples, and no game rule ever depends on a character's people.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Looks apart from peoples (Civ13 #6601), peoples as world records and Gaia's own peoples (#6623), birth into a community (#6632), splits after long isolation (#6645), blends and belonging (#6654) and the Your people view in Check Known Languages (#6661) are merged, and the Peoples and Languages guide explains them (wiki #951). Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "continent-control",
       "title": "Holding land on the continents",
       "status": "in_progress",
