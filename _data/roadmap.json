@@ -775,7 +775,7 @@
       "summary": "Draw a ship tile by tile on a ship's draught: her floors, deck above, masts, rowing benches, anchors, cabin walls and helm, with her size, cost and speed worked out as you draw. Share designs as codes, copy the lines of a ship you admire, then build her on a slipway on the shore with your crew, piece by piece, and launch her down the ways ready to sail.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: ship's draughts and drawing the lines of a ship afloat (Civ13 #6358), the drawing window with ready-made designs (Civ13 #6376), building a draught on the slipway (Civ13 #6390) and launching her as a sailing hull (Civ13 #6398), with the Guide to Boats updated (wiki #864, #867, #873). The designer shows every floor and fitting with its in-game picture (Civ13 #6418). The drawing window was redesigned with a parchment sheet you can zoom, a picture palette, a preview of each tile, undo and redo and a figures panel, and clicks now land on the tile under the pointer (Civ13 #6430, wiki #883). The ship and submarine designers now list what must be fixed, warnings and advice before building, and describe every part you pick. The ship palette gained pumps, a steam engine, cannons, a torpedo tube and steel doors and windows (Civ13 #6465, wiki #897). Not yet checked in a live game.",
+      "availability_note": "Merged: ship's draughts and drawing the lines of a ship afloat (Civ13 #6358), the drawing window with ready-made designs (Civ13 #6376), building a draught on the slipway (Civ13 #6390) and launching her as a sailing hull (Civ13 #6398), with the Guide to Boats updated (wiki #864, #867, #873). The designer shows every floor and fitting with its in-game picture (Civ13 #6418). The drawing window was redesigned with a zoomable parchment sheet, picture palette, tile preview, undo and redo and a figures panel (Civ13 #6430, wiki #883). The ship and submarine designers list problems and advice before building and describe every part. The ship palette gained pumps, a steam engine, cannons, a torpedo tube and steel doors and windows (Civ13 #6465, wiki #897). Not yet checked in a live game.",
       "evidence": [],
       "completion": null
     },
@@ -875,6 +875,16 @@
       "status": "in_progress",
       "availability": "unverified",
       "availability_note": "The three states and their labels in the tech tree are merged (Civ13 #5976), and so are common knowledge for new and living characters (Civ13 #5978), quicker reading and whole-subject teaching of spreading subjects (Civ13 #5983) and faster research of them at a bench (Civ13 #5986), and learning a little from using and living around things (Civ13 #6369, wiki #865). The Books and Scholars guide explains it. Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
+    },
+    {
+      "id": "languages-that-grow-apart",
+      "title": "Languages that grow apart",
+      "summary": "Languages change as the eras pass, the way Latin became French and Spanish. When a nation's native speakers mostly talk among themselves, their speech slowly drifts away from everyone else's, and talking with outsiders who speak it holds it together. When the world enters a new era, a nation whose speech has drifted far enough becomes ready to split, and its leader names the new language. Its speakers keep the old one, speakers of the old language follow most of the new one, and it writes in the same script. A language that keeps to itself through later eras grows further from its parent, and travellers carry new languages to other lands.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Drift tracking for each nation's speech community is merged (Civ13 #6456), and so are splits at an era change, Name Our Language, saving and travel (Civ13 #6475, wiki #898). A family view in Check Known Languages is being built. Not yet checked in a live game.",
       "evidence": [],
       "completion": null
     },
