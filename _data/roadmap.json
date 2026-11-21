@@ -524,14 +524,6 @@
           "label": "Colder hills and mountains",
           "state": "merged",
           "merge_sha": "b4fda7c9bc6c7b49f01c7bff57770dde6448a986"
-        },
-        {
-          "repository": "Civ13/Civ13",
-          "number": 6510,
-          "role": "implementation",
-          "label": "Shared world calendar, time zones and southern seasons",
-          "state": "merged",
-          "merge_sha": "b26ee8c30df92b2e6b2f63039ceacf78e4dde6dd"
         }
       ],
       "completion": null
