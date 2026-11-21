@@ -512,10 +512,10 @@
     {
       "id": "geographic-layers",
       "title": "Geography, elevation, weather-driven snow and the sun",
-      "summary": "Keep biome, elevation and shelter independent, make hills and mountains colder, and let snowfall build ground cover that melts or can be shovelled away without replacing the soil underneath. A sun crosses the sky by latitude and season, lighting the hills and casting tree and hill shadows that stretch at dawn and dusk.",
+      "summary": "Keep biome, elevation and shelter independent, make hills and mountains colder, and let snowfall build ground cover that melts or can be shovelled away without replacing the soil underneath. A sun crosses the sky by latitude and season, lighting the hills and casting tree and hill shadows that stretch at dawn and dusk. Every region shares one world clock and calendar, each with its own time zone, and southern lands have the opposite season.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Elevation metadata, colder high ground on generated maps, weather-driven snow and the moving sun with its shadows (Civ13 #5969, #5988) are merged. Hand-made maps opting in and real-client checks of the snow and the sun remain.",
+      "availability_note": "Elevation metadata, colder high ground on generated maps, weather-driven snow and the moving sun with its shadows (Civ13 #5969, #5988) are merged. Hand-made maps opting in and real-client checks of the snow and the sun remain. The shared world calendar with time zones and southern seasons (Civ13 #6510) is merged; shared weather across region edges comes next.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -524,6 +524,14 @@
           "label": "Colder hills and mountains",
           "state": "merged",
           "merge_sha": "b4fda7c9bc6c7b49f01c7bff57770dde6448a986"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6510,
+          "role": "implementation",
+          "label": "Shared world calendar, time zones and southern seasons",
+          "state": "merged",
+          "merge_sha": "b26ee8c30df92b2e6b2f63039ceacf78e4dde6dd"
         }
       ],
       "completion": null
