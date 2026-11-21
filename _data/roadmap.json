@@ -917,6 +917,16 @@
       "availability_note": "Government types, citizen votes and elections, succession, revolts and staff tools are merged (Civ13 #6396, #6413, #6423, #6433 and #6444), and the Civilizations and Nomads guide explains them. Not yet checked in a live game.",
       "evidence": [],
       "completion": null
+    },
+    {
+      "id": "accolades-and-extra-characters",
+      "title": "Accolades and extra characters",
+      "summary": "Lifetime achievements that belong to your account rather than one character. Each of 26 accolades, from finishing the tutorial to surviving a long winter, founding a faction or judging at court, is claimed once ever and gives lifetime points. Spend them to unlock up to three more characters, so you can play someone new without giving up the one you have. Switching happens from your character's own bed, and extra characters need a Discord-verified account. An account's characters are publicly known as kin, share one leadership seat, and share province limits, and staff break up any group split into factions to get around claim limits.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Accolades and the Accolades window (Civ13 #6467, #6477), characters saved per slot (#6516), the Characters window and switching (#6530), kin, one leadership seat, shared province caps, court marks on kin, the Magistrate accolade and staff bloc tools (#6543), and the staff account lookup (#6553) are merged, with a Guide to Accolades and Characters (wiki #917). Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
     }
   ]
 }
