@@ -909,6 +909,16 @@
       "completion": null
     },
     {
+      "id": "resin-materials",
+      "title": "Resins, silk and modern fabrics",
+      "summary": "Players tap pines for resin and trees for lacquer, raise silkworms for silk, and coat cloth into tarred canvas, oilcloth, waxed cloth and rubberised cloth that shed rain. Spirit varnish brushes a finish that slows wear. Later the bakelizer cooks phenolic resin for pressed resin laminate and spins nylon thread for nylon cloth, epoxy binds glass cloth into fiberglass and aramid laminate, and a resin 3D printer prints parts from photopolymer resin. Resin laminate and steel make the First World War body armor.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Merged in Civ13 #6481, #6502, #6525, #6544, #6561, #6578, #6599, #6611, #6622 and #6633, with the wiki guide Resins, Silk & Fabrics (civ13-wiki #942). Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "nation-governments",
       "title": "Nation governments",
       "summary": "Nations choose how they are ruled: a confederation of equal factions, a theocracy, monarchy or dictatorship ruled by one person, or a republic, democracy or merchant league that votes and elects its head for a term. Each has trade-offs in how many factions it holds, who admits members and how long leaving takes. Heads who stay away lose their seat to an heir, a deputy or an election, and citizens can overthrow any government by petition and by holding a nation assembly. Next: tying nation laws and courts to the government, then offices of state and treaties between nations.",
