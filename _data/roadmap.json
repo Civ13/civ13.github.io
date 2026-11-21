@@ -861,10 +861,10 @@
     {
       "id": "knowledge-spread",
       "title": "Knowledge that spreads",
-      "summary": "Old knowledge no longer stays locked up with whoever found it first. Every subject is guarded, spreading or common knowledge, by how many ages it is behind the world's age. The newest two ages stay guarded and are learned as before. Subjects two or three ages behind are spreading: their chapters take half as long to read or hear, a teacher can show you the whole subject by hand, and researching them again goes three times as fast. Subjects four or more ages behind are common knowledge that every character knows, so someone arriving in an advanced world no longer starts with nothing.",
+      "summary": "Old knowledge no longer stays locked up with whoever found it first. Every subject is guarded, spreading or common knowledge, by how many ages it is behind the world's age. The newest two ages stay guarded and are learned as before. Subjects two or three ages behind are spreading: their chapters take half as long to read or hear, a teacher can show you the whole subject by hand, and researching them again goes three times as fast. Subjects four or more ages behind are common knowledge that every character knows, so someone arriving in an advanced world no longer starts with nothing. Using a subject's things and living around them also teaches a little of it, slowly and never the whole subject on its own.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "The three states and their labels in the tech tree are merged (Civ13 #5976), and so are common knowledge for new and living characters (Civ13 #5978), quicker reading and whole-subject teaching of spreading subjects (Civ13 #5983) and faster research of them at a bench (Civ13 #5986). The Books and Scholars guide explains it. Not yet checked in a live game.",
+      "availability_note": "The three states and their labels in the tech tree are merged (Civ13 #5976), and so are common knowledge for new and living characters (Civ13 #5978), quicker reading and whole-subject teaching of spreading subjects (Civ13 #5983) and faster research of them at a bench (Civ13 #5986), and learning a little from using and living around things (Civ13 #6369, wiki #865). The Books and Scholars guide explains it. Not yet checked in a live game.",
       "evidence": [],
       "completion": null
     },
