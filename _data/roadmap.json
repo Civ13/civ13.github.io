@@ -512,10 +512,10 @@
     {
       "id": "geographic-layers",
       "title": "Geography, elevation, weather-driven snow and the sun",
-      "summary": "Keep biome, elevation and shelter independent, make hills and mountains colder, and let snowfall build ground cover that melts or can be shovelled away without replacing the soil underneath. A sun crosses the sky by latitude and season, lighting the hills and casting tree and hill shadows that stretch at dawn and dusk. Every region shares one world clock and calendar, each with its own time zone, and southern lands have the opposite season.",
+      "summary": "Keep biome, elevation and shelter independent, make hills and mountains colder, and let snowfall build ground cover that melts or can be shovelled away without replacing the soil underneath. A sun crosses the sky by latitude and season, lighting the hills and casting tree and hill shadows that stretch at dawn and dusk. Every region shares one world clock and calendar, each with its own time zone, and southern lands have the opposite season; neighbouring regions share weather systems that roll on across their edges.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Elevation metadata, colder high ground on generated maps, weather-driven snow and the moving sun with its shadows (Civ13 #5969, #5988) are merged. Hand-made maps opting in and real-client checks of the snow and the sun remain. The shared world calendar with time zones and southern seasons (Civ13 #6510) is merged; shared weather across region edges comes next.",
+      "availability_note": "Elevation metadata, colder high ground on generated maps, weather-driven snow and the moving sun with its shadows (Civ13 #5969, #5988) are merged. Hand-made maps opting in and real-client checks of the snow and the sun remain. The shared world calendar with time zones and southern seasons (Civ13 #6510) and shared lows, highs and storms that cross region edges (Civ13 #6540) are merged.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
