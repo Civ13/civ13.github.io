@@ -881,10 +881,10 @@
     {
       "id": "languages-that-grow-apart",
       "title": "Languages that grow apart",
-      "summary": "Languages change as the eras pass, the way Latin became French and Spanish. When a nation's native speakers mostly talk among themselves, their speech slowly drifts away from everyone else's, and talking with outsiders who speak it holds it together. When the world enters a new era, a nation whose speech has drifted far enough becomes ready to split, and its leader names the new language. Its speakers keep the old one, speakers of the old language follow most of the new one, and it writes in the same script. A language that keeps to itself through later eras grows further from its parent, and travellers carry new languages to other lands.",
+      "summary": "Languages can change over a long time, the way Latin became French and Spanish, but only for nations cut off from everyone else. When a nation's native speakers hear nobody but each other, their speech slowly drifts away; any regular contact with other nations pulls it back. A nation that stays drifted and isolated for a week of real time becomes ready to split, and its leader names the new language. Its speakers keep the old one, speakers of the old language follow most of the new one, and it writes in the same script. A language that stays isolated again grows further from its parent, and travellers carry new languages to other lands.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Drift tracking for each nation's speech community is merged (Civ13 #6456), and so are splits at an era change, Name Our Language, saving and travel (Civ13 #6475, wiki #898), and a Language families view in Check Known Languages (Civ13 #6501, wiki #901). Not yet checked in a live game.",
+      "availability_note": "Drift tracking for each nation's speech community is merged (Civ13 #6456), and so are splits after long isolation (Civ13 #6598, wiki #932; no longer tied to eras), Name Our Language, saving and travel (Civ13 #6475, wiki #898), and a Language families view in Check Known Languages (Civ13 #6501, wiki #901). Not yet checked in a live game.",
       "evidence": [],
       "completion": null
     },
