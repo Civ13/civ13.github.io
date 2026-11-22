@@ -898,6 +898,16 @@
       "completion": null
     },
     {
+      "id": "late-age-materials",
+      "title": "Late ages built on scarce materials",
+      "summary": "Reaching the later ages takes the materials of the wider world, not only time at a bench. Late age discoveries need a bill of materials delivered to the research bench with their book: coal and iron for steam, and steel, rubber, lead, sulphur and saltpeter for powered flight and armoured warfare. Some of these come mostly from particular lands, so trading or holding land abroad is the practical way to the top, although any faction can still do every part itself. Later: bills for electricity, nuclear power and computing that call on most of the world's continents.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "Bills for Steam Power, Powered Flight and Mechanized Warfare are merged (Civ13 #6797, wiki #976), and the World War II discoveries no longer accept a single part. The Books and Scholars guide explains it. Bills for the later ages are planned. Not yet checked in a live game.",
+      "evidence": [],
+      "completion": null
+    },
+    {
       "id": "languages-that-grow-apart",
       "title": "Languages that grow apart",
       "summary": "Languages can change over a long time, the way Latin became French and Spanish, but only for nations cut off from everyone else. When a nation's native speakers hear nobody but each other, their speech slowly drifts away; any regular contact with other nations pulls it back. A nation that stays drifted and isolated for a week of real time becomes ready to split, and its leader names the new language. Its speakers keep the old one, speakers of the old language follow most of the new one, and it writes in the same script. A language that stays isolated again grows further from its parent, and travellers carry new languages to other lands.",
