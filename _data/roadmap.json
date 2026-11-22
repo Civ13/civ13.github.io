@@ -389,6 +389,25 @@
       }
     },
     {
+      "id": "modular-computers",
+      "title": "Computers and data networks",
+      "summary": "Build computers from swappable parts: a processor, drives, a diskette drive and a printer, each giving the machine new abilities. A 1969 minicomputer runs a command-line OS for writing, printing and copying files. Later ages bring desktops and laptops, wired networks with switches and routers, Wi-Fi, phones as computers, and links between regions through stations players build.",
+      "status": "in_progress",
+      "availability": "unverified",
+      "availability_note": "The 1969 minicomputer, its parts and the Files program are merged. Wired networks come next.",
+      "evidence": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6701,
+          "role": "implementation",
+          "label": "1969 minicomputer and hardware modules",
+          "state": "merged",
+          "merge_sha": "5363e9a444c891a70c50c565067bb70afe396953"
+        }
+      ],
+      "completion": null
+    },
+    {
       "id": "raiders-and-traders",
       "title": "Raiders, traders and reputation",
       "summary": "Nomad settlements meet NPC raiding parties and trader caravans, and build a reputation with the groups they deal with.",
