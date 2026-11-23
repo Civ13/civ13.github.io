@@ -151,10 +151,10 @@
     {
       "id": "orbital-stations",
       "title": "Rockets and space stations in orbit",
-      "summary": "Launch into orbit from 1969 with two-stage rockets and capsules, work outside on EVA with handholds and safety tethers, and build a starter station through a launch complex project. Next comes the 2013 stage: modular pods that dock, extra decks and station upkeep, then reusable rockets and wider station networks from 2026.",
+      "summary": "Launch into orbit from 1969 with two-stage rockets and capsules, work outside on EVA with handholds and safety tethers, and found a station through a launch complex project, as the starter layout or a station you plan yourself. Every station has a docking airlock: a rocket's crew choose a free port that welcomes them before launch, dock against the hatch and walk aboard, and either side can bar the port. Stations grow with modular pods, extra decks and upkeep, with reusable rockets and wider station networks from 2026.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Stage B is merged: orbital flight, EVA, station hardware, starter stations and Moon sortie gear. Stage C (modular docking stations) is next, and the Orbit region still has to go live.",
+      "availability_note": "Merged: orbital flight, EVA, starter stations, module pods and docking, the station designer, and rockets docking at station ports (Civ13 PR 6990). Docking spacecraft built in orbit firmly to a station is still to come. Not yet checked in a live game.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -171,6 +171,30 @@
           "label": "Starter stations and Moon sorties",
           "state": "merged",
           "merge_sha": "da350a85508074c71a8249e117288627a0c1bf9e"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3948,
+          "role": "implementation",
+          "label": "Module pods and docking",
+          "state": "merged",
+          "merge_sha": "ad2978834bfe6db2dd833ad7e5219f69ee09e33d"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6735,
+          "role": "implementation",
+          "label": "Station designer",
+          "state": "merged",
+          "merge_sha": "02ad0c2b56284c5cf652a92b7a0b81431f1c2951"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6990,
+          "role": "implementation",
+          "label": "Rockets dock at station ports",
+          "state": "merged",
+          "merge_sha": "f6b6f62c267bd8939e8f71428b68223ae5fe774d"
         }
       ],
       "completion": null
