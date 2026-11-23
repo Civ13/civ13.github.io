@@ -138,10 +138,9 @@ in Civ13/civ13-wiki. They are not images of the extraction-survival mode.
 JavaScript or GitHub access. Only curated public PR evidence is queried; no
 private coordinator logs or arbitrary PR titles become player copy.
 
-The registry was reviewed against Civ13 master on 2026-11-07. Goals whose
-implementation is merged carry a completion contract and show **Code complete**;
-everything else is **In progress** or **Planned**. Only the region group and
-Discord sign-in show **Available**, confirmed live by the maintainer on 2026-11-07.
+During open playtest, goals whose reviewed implementation is merged show
+**Available**. Otherwise, goals show **In progress** or **Planned**, unless they
+have an existing record of independently verified availability.
 
 The **Refresh roadmap progress** workflow runs every six hours, on manual
 dispatch, or on a `roadmap-progress` repository dispatch. It validates the whole
@@ -153,14 +152,14 @@ Cross-repository push dispatch is optional and is not configured by this change.
 
 Milestone definitions and acceptance contracts require maintainer review.
 Tracked implementation leaving draft advances a planned goal to **In progress**;
-prerequisites cannot do this. To enable automatic **Code complete**, set `completion` to
+prerequisites cannot do this. To enable automatic completion, set `completion` to
 `{"acceptance_verified":true,"basis":"what acceptance was verified","required_prs":["Civ13/Civ13#123"]}`.
 Every required PR must be listed as implementation evidence and represent the
 whole milestone's reviewed acceptance, not a prerequisite. The updater advances
 only when all are merged.
-**Available** additionally requires independently verified public server
-availability, a public `availability_evidence` HTTPS URL and reviewed explanatory
-copy. Merge status never grants availability.
+Completion is enough for the **Available** label during open playtest. The
+registry still preserves separately verified availability and its evidence when
+recorded; it does not manufacture a live verification record from a merge.
 
 Run `node --test tools/test_roadmap.cjs` offline. Run
 `node tools/refresh_roadmap.cjs` to refresh public data; `GH_TOKEN` is optional for

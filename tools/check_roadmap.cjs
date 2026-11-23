@@ -2,14 +2,17 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
-const {validate} = require('../public/js/roadmap.js');
+const {validate, statusLabel} = require('../public/js/roadmap.js');
 const root = process.argv[2] || '_site';
 const html = fs.readFileSync(path.join(root, 'roadmap.html'), 'utf8');
 const embedded = html.match(/<script id="roadmap-data" type="application\/json">([\s\S]*?)<\/script>/);
 assert.ok(embedded, 'Missing static roadmap data');
 const data = validate(JSON.parse(embedded[1]));
+assert.doesNotMatch(html, /code complete/i, 'Obsolete roadmap label is still rendered');
 for (const m of data.milestones) {
-  assert.ok(html.includes(`data-milestone="${m.id}"`), `Missing static card ${m.id}`);
+  const card = html.match(new RegExp(`<article[^>]+data-milestone="${m.id}"[^>]*>([\\s\\S]*?)</article>`));
+  assert.ok(card, `Missing static card ${m.id}`);
+  assert.ok(card[1].includes(`<p class="roadmap-status">${statusLabel(m)}</p>`), `Wrong status for ${m.id}`);
   assert.ok(html.includes(m.title), `Missing readable title ${m.id}`);
 }
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
