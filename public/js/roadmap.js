@@ -1,5 +1,7 @@
 (function (root) {
   'use strict';
+  // Leave headroom below GitHub's unauthenticated 60 requests per hour.
+  const MAX_EVIDENCE = 45;
   const STATES = ['draft', 'open', 'closed', 'merged'];
   function validate(data) {
     if (!data || data.schema_version !== 1 || !Array.isArray(data.milestones) || data.milestones.length > 60) throw new Error('Invalid roadmap');
@@ -21,7 +23,7 @@
       }
       if (m.status === 'completed' && !m.completion) throw new Error('Completion needs reviewed acceptance');
     }
-    if (count > 40) throw new Error('Too many requests');
+    if (count > MAX_EVIDENCE) throw new Error('Too many requests');
     return data;
   }
   function progress(pr, evidence) {
@@ -41,11 +43,15 @@
       }
       if (m.status === 'planned' && m.evidence.some(e => e.role === 'implementation' && ['open', 'merged'].includes(e.state))) m.status = 'in_progress';
       if (m.completion && m.completion.required_prs.every(key => m.evidence.some(e => `${e.repository}#${e.number}` === key && e.state === 'merged'))) m.status = 'completed';
-      // Availability is maintainer-verified independently of GitHub merges.
+      // Preserve historical live verification; the display also treats completed goals as available.
     }
     return validate(next);
   }
-  const api = {validate, progress, refresh};
+  function statusLabel(m) {
+    if (m.availability === 'verified' || m.status === 'completed') return 'Available';
+    return m.status === 'in_progress' ? 'In progress' : 'Planned';
+  }
+  const api = {validate, progress, refresh, statusLabel};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (!root.document) return;
   const embedded = root.document.getElementById('roadmap-data');
@@ -60,10 +66,10 @@
       });
       for (const m of next.milestones) {
         const card = root.document.querySelector(`[data-milestone="${m.id}"]`);
-        if (m.availability !== 'verified') card.querySelector('.roadmap-status').textContent = m.status === 'completed' ? 'Code complete' : m.status === 'in_progress' ? 'In progress' : 'Planned';
+        card.querySelector('.roadmap-status').textContent = statusLabel(m);
         for (const e of m.evidence) card.querySelector(`[data-evidence="${e.repository}#${e.number}"]`).textContent = labels[e.state];
       }
-      root.document.getElementById('roadmap-refresh').textContent = 'Linked development progress checked just now. Server availability is verified separately.';
+      root.document.getElementById('roadmap-refresh').textContent = 'Linked development progress checked just now.';
     } catch (_) {
       root.document.getElementById('roadmap-refresh').textContent = 'Live progress could not be checked. The last saved roadmap is still shown.';
     }
