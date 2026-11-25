@@ -136,7 +136,10 @@ in Civ13/civ13-wiki. They are not images of the extraction-survival mode.
 `_data/roadmap.json` is the reviewed public milestone registry. Jekyll renders
 `/roadmap.html` with navigation automatically, so it remains readable without
 JavaScript or GitHub access. Only curated public PR evidence is queried; no
-private coordinator logs or arbitrary PR titles become player copy.
+private coordinator logs or arbitrary PR titles become player copy. Each card has a
+**Development progress** dropdown. Use `evidence` for actively refreshed PRs
+and `references` for historical and wiki PR links. References do not trigger
+API requests or affect the milestone's completion or availability.
 
 During open playtest, goals whose reviewed implementation is merged show
 **Available**. Otherwise, goals show **In progress** or **Planned**, unless they

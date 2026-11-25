@@ -154,7 +154,7 @@
       "summary": "Launch into orbit from 1969 with two-stage rockets and capsules, work outside on EVA with handholds and safety tethers, and found a station through a launch complex project, as the starter layout or a station you plan yourself. Every station has a docking airlock: a rocket's crew choose a free port that welcomes them before launch, dock against the hatch and walk aboard, and either side can bar the port. Stations grow with modular pods, extra decks and upkeep, with reusable rockets and wider station networks from 2026.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: orbital flight, EVA, starter stations, module pods and docking, the station designer, and rockets docking at station ports (Civ13 PR 6990). Docking spacecraft built in orbit firmly to a station is still to come. Not yet checked in a live game.",
+      "availability_note": "Merged: orbital flight, EVA, starter stations, module pods and docking, the station designer, and rockets docking at station ports. Docking spacecraft built in orbit firmly to a station is still to come. Not yet checked in a live game.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -558,7 +558,7 @@
       "summary": "Biomes, elevation and shelter shape local conditions independently. Mountains are colder, snow builds up without replacing soil, and the sun follows latitude and season, stretching shadows at dawn and dusk. Regions share a calendar but have local time zones and opposite seasons across hemispheres. Weather crosses region boundaries. Climate and air simulation drive pressure, fronts, wind, rain, sleet, snow, freezing rain, hail, fog, dew, frost, wind chill and humid heat. Instruments from bronze rain gauges to modern weather stations help forecast conditions.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Elevation metadata, colder high ground on generated maps, weather-driven snow and the moving sun with its shadows (Civ13 #5969, #5988) are merged. Hand-made maps opting in and real-client checks of the snow and the sun remain. The shared world calendar with time zones and southern seasons (Civ13 #6510) and shared lows, highs and storms that cross region edges (Civ13 #6540) are merged. Realistic meteorology is merged: climate normals (Civ13 #6163), the air grid (#6359), lows, highs and fronts (#6391), the wind field (#6460), precipitation by kind (#6550), fog, dew and frost (#6589) with crop frost covers (#6610), feels-like temperature (#6635) and instruments by era (#6650), with a Weather and Climate guide on the wiki (civ13-wiki #950). Not yet checked in a live game.",
+      "availability_note": "Elevation metadata, colder high ground on generated maps, weather-driven snow, and moving sun and shadows are merged. Hand-made maps opting in and real-client checks remain. The shared calendar, time zones and southern seasons, cross-region weather, climate normals, air grid, fronts, wind, precipitation, fog, dew, frost, crop frost covers, feels-like temperature, and instruments by era are also merged. See the Weather and Climate wiki guide. Not yet checked in a live game.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -569,7 +569,65 @@
           "merge_sha": "b4fda7c9bc6c7b49f01c7bff57770dde6448a986"
         }
       ],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5969
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5988
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6510
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6540
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6163
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6359
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6391
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6460
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6550
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6589
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6610
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6635
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6650
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 950
+        }
+      ]
     },
     {
       "id": "persistent-world-authoring",
@@ -748,9 +806,15 @@
       "summary": "Call in close air support and watch it arrive: jets sweep across the battlefield with their shadows below, missiles streak in on smoke trails and bombs walk along the attack line. A forward air controller on modern battles marks targets with a laser designator, and enemy SAM sites can still shoot the jets down.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: F-16 and Su-25 strikes now draw the jet, its shadow and rocket smoke trails, and every Delta Force operator on Syria carries a laser designator (Civ13 PR 5028). Still to come: air controllers on more modern battles.",
+      "availability_note": "Merged: F-16 and Su-25 strikes now draw the jet, its shadow and rocket smoke trails, and every Delta Force operator on Syria carries a laser designator. Still to come: air controllers on more modern battles.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5028
+        }
+      ]
     },
     {
       "id": "wild-west-mounted-raids",
@@ -758,9 +822,15 @@
       "summary": "Ride into town with your gang. A new Little Creek battle starts the outlaws in the saddle outside town, with loot spread along the main street so the raid is a gallop past the bank and the shops, firing from horseback while the Sheriff's posse mounts up to give chase.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: on Little Creek every outlaw now starts in the saddle at the gang's camp, and galloping horses kick up dust (Civ13 PR 5031). Still to come: loot spread along the main street and a mounted Sheriff's posse.",
+      "availability_note": "Merged: on Little Creek every outlaw now starts in the saddle at the gang's camp, and galloping horses kick up dust. Still to come: loot spread along the main street and a mounted Sheriff's posse.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5031
+        }
+      ]
     },
     {
       "id": "ides-of-march",
@@ -768,9 +838,15 @@
       "summary": "A new Roman battle in and around the senate house. Caesar and his loyal friends and lictors stand together in white togas while conspirators among the senators draw hidden daggers. Keep Caesar alive and get him out, or strike him down and escape to the Capitol.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: The Ides of March battle, with the Curia of Pompey, Caesar, his lictors and friends against Brutus and the senators, who carry a pugio hidden in a pocket; the conspirators win when Caesar dies (Civ13 PR 5034). Still to come: senators' striped togas and the lictors' fasces.",
+      "availability_note": "Merged: The Ides of March battle, with the Curia of Pompey, Caesar, his lictors and friends against Brutus and the senators, who carry a pugio hidden in a pocket; the conspirators win when Caesar dies. Still to come: senators' striped togas and the lictors' fasces.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5034
+        }
+      ]
     },
     {
       "id": "naval-broadsides",
@@ -778,9 +854,19 @@
       "summary": "Crew a sailing warship with your friends. The ships in the naval battle sail and turn for position, full gun decks are worked by gun crews who sponge, load and run out each cannon, and the captain orders a broadside that fires down the whole side in clouds of powder smoke.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: on the Naval Battle the captain's boatswain's call fires every loaded gun on one side in a ripple (Civ13 PR 5036), and the new Broadside battle puts two ships under sail that close on each other, lay their guns on the enemy hull and win by sinking or boarding her (Civ13 PR 5042). Still to come: gun crew drills and splashes for misses.",
+      "availability_note": "Merged: on the Naval Battle the captain's boatswain's call fires every loaded gun on one side in a ripple, and the new Broadside battle puts two ships under sail that close on each other, lay their guns on the enemy hull and win by sinking or boarding her. Still to come: gun crew drills and splashes for misses.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5036
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5042
+        }
+      ]
     },
     {
       "id": "huey-air-assault",
@@ -788,9 +874,15 @@
       "summary": "Ride a Huey into battle in Vietnam. Squads board a helicopter at base, fly low over the map with a door gunner firing below, and jump out at a landing zone while the helicopter heads back for the next wave. Ground fire can damage it and bring it down.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: on the Vietnam battles a UH-1 Huey waits at the American base; squads board it, pick a landing zone or pop signal smoke, and it flies them in over the treetops, drops them off and flies back for the next squad (Civ13 PR 5044). Still to come: door gunners who fire and ground fire that can bring it down.",
+      "availability_note": "Merged: on the Vietnam battles a UH-1 Huey waits at the American base; squads board it, pick a landing zone or pop signal smoke, and it flies them in over the treetops, drops them off and flies back for the next squad. Still to come: door gunners who fire and ground fire that can bring it down.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5044
+        }
+      ]
     },
     {
       "id": "better-cooked-dishes",
@@ -800,7 +892,14 @@
       "availability": "unverified",
       "availability_note": "The groundwork is in: pot stews with three quality tiers (salt seasons the best one), learned tastes, and the herbs, teas, mortar-ground oils, vinegar, pickles and jam from the plant processing work. Seasonings, garnishes and the new dishes are not built yet.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3597,
+          "label": "Groundwork: balanced diet and learned tastes"
+        }
+      ]
     },
     {
       "id": "cross-server-travel",
@@ -810,7 +909,14 @@
       "availability": "unverified",
       "availability_note": "Travel works within one host's region group. Groups spanning machines need design and testing.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3715,
+          "label": "Groundwork: travel between regions on one host"
+        }
+      ]
     },
     {
       "id": "ship-designer",
@@ -818,9 +924,63 @@
       "summary": "Draw a ship tile by tile on a ship's draught: her floors, deck above, masts, rowing benches, anchors, cabin walls and helm, with her size, cost and speed worked out as you draw. Share designs as codes, copy the lines of a ship you admire, then build her on a slipway on the shore with your crew, piece by piece, and launch her down the ways ready to sail.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged: ship’s draughts (#6358), ready-made designs (#6376), slipway construction (#6390) and launching (#6398). The redesigned window shows in-game pictures and checks ship and submarine designs (#6418, #6430). Ships can include pumps, steam engines, cannons, torpedo tubes and steel fittings (#6465). Draw and hand-build cars, trucks, tanks and planes from a vehicle sheet (#6524), or build from it at the automobile workshop or aircraft hangar, which also builds helicopters (#6572). Draw crewed airships in the airship designer and build them at the airship yard (#6626). See Guide to Boats and wiki #908, #928 and #952.",
+      "availability_note": "Merged: ship’s draughts, ready-made designs, slipway construction and launching. The redesigned window shows in-game pictures and checks ship and submarine designs. Ships can include pumps, steam engines, cannons, torpedo tubes and steel fittings. Draw and hand-build cars, trucks, tanks and planes from a vehicle sheet, or use the automobile workshop or aircraft hangar; the hangar also builds helicopters. Draw crewed airships in the airship designer and build them at the airship yard. See Guide to Boats.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6358
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6376
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6390
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6398
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6418
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6430
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6465
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6524
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6572
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6626
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 908
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 928
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 952
+        }
+      ]
     },
     {
       "id": "ocean-voyages-and-submarines",
@@ -849,7 +1009,14 @@
       "availability": "unverified",
       "availability_note": "The home ledger records which region owns each player. Fenced ownership of goods and a recovery path remain.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 3740,
+          "label": "Groundwork: one home world per character"
+        }
+      ]
     },
     {
       "id": "homes-towns-and-crafts",
@@ -857,9 +1024,51 @@
       "summary": "Give players reasons to decorate and keep up their homes and towns. A comfortable, varied, well-kept room lifts mood and lets you wake well rested; walls and floors take limewash, paint and stain; furniture fabric and curtains take dyes. Later steps add woven rugs and tapestries, player-designed pottery and statues, named towns with prosperity tiers that new players can choose to start near, and more crafts such as mosaics and stained glass.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Home comfort, Judge This Room, limewash, paint, stain and dyed furniture fabric are merged (Civ13 #5615 and #5617), and so are fine placement with Nudge Object, player-designed pottery, and woven rugs and tapestries (Civ13 #5623, #5627 and #5631). More floors to lay are merged as well: redrawn cobblestone, stone, marble and wood floors, terracotta tiles and brick paving, iron plate and grating, flagstone, copper, bronze, lead, glass block, rush matting, obsidian and steel tread plate floors, and pelt rugs (Civ13 #6356, #6365, #6401, #6422 and #6523). Statues, towns and the later crafts are not built yet.",
+      "availability_note": "Home comfort, Judge This Room, limewash, paint, stain and dyed furniture fabric are merged, and so are fine placement with Nudge Object, player-designed pottery, and woven rugs and tapestries. More floors to lay are merged as well: redrawn cobblestone, stone, marble and wood floors, terracotta tiles and brick paving, iron plate and grating, flagstone, copper, bronze, lead, glass block, rush matting, obsidian and steel tread plate floors, and pelt rugs. Statues, towns and the later crafts are not built yet.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5615
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5617
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5623
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5627
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5631
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6356
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6365
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6401
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6422
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6523
+        }
+      ]
     },
     {
       "id": "tamahagane-steel",
@@ -867,9 +1076,27 @@
       "summary": "Make steel the Japanese way. Iron sand is panned from riverbeds, sifted from beaches or washed out of hillside soil in a washing channel, then fired with charcoal in a single-use clay tatara furnace while bellows blow into it. Breaking the furnace open gives a kera bloom and some pig iron; on an anvil the kera sorts into tamahagane and wrought iron, and tamahagane folds into steel. Japanese Swordsmithing adds the tachi and clay hardening, which gives katana and other Japanese blades a hamon and higher quality.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Iron sand, the tatara, the washing channel, sand washing, the tachi and clay hardening are merged (Civ13 #5730, #5746, #5751 and #5766). Not yet checked in a live game.",
+      "availability_note": "Iron sand, the tatara, the washing channel, sand washing, the tachi and clay hardening are merged. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5730
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5746
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5751
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5766
+        }
+      ]
     },
     {
       "id": "door-designs",
@@ -877,9 +1104,47 @@
       "summary": "Finish any door by fitting parts to it instead of picking from a long recipe list. Closers and spring hinges shut doors behind you and wedges hold them open; locks come in key families from wooden pins to machined tumblers, plus seals, hidden catches and combination locks, and the same locks fit chests and closets. Bars, bolts and bracing hold a door from your side. Fire doors keep fire and spreading smoke inside their compartment, windows and shutters open and lock, and trapdoors and hatches close the way between levels. Routes and agent characters only pass doors that would open for them.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Door fittings, locks, bars, fire doors, smoke, opening windows, door features, trapdoors and agent routing are merged (Civ13 #5719, #5726, #5736, #5765, #5780, #5783, #5789, #5796 and #5806). Not yet checked in a live game.",
+      "availability_note": "Door fittings, locks, bars, fire doors, smoke, opening windows, door features, trapdoors and agent routing are merged. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5719
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5726
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5736
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5765
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5780
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5783
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5789
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5796
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5806
+        }
+      ]
     },
     {
       "id": "bee-farming",
@@ -887,9 +1152,35 @@
       "summary": "Keep bees the way people did through history. Rob wild nests in hollow trees with smoke from a smouldering bundle or a torch, then squeeze the comb for honey and melt the wax into beeswax for candles. Later, keep colonies in log hives, clay hives and straw skeps that you stock by catching spring swarms. A colony needs enough honey left to last the winter, and hives raise the harvest of crops that need insects. In the Industrial era, frame hives come with a honey extractor and a beekeeper's veil and suit, and beeswax goes into sealing wax while honey ferments slowly into mead. Characters can be allergic to stings, or hardened against them.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Wild nests, honey hunting, stings, beeswax candles and the sting and allergy traits are merged (Civ13 #5805), and so are log hives, clay hives, skeps and swarms (Civ13 #5812), and bees now pollinate fruit, beans, cotton and flax (Civ13 #5816). Frame hives with the honey extractor, bellows smoker and nucleus box are merged (Civ13 #5819), and so are the veil and suit, sealing wax for seals and slow-fermenting mead (Civ13 #5821). The honeycomb sprite is redrawn and the whole craft has its own Guide to Beekeeping (Civ13 #5822). Not yet checked in a live game.",
+      "availability_note": "Wild nests, honey hunting, stings, beeswax candles and the sting and allergy traits are merged, and so are log hives, clay hives, skeps and swarms, and bees now pollinate fruit, beans, cotton and flax. Frame hives with the honey extractor, bellows smoker and nucleus box are merged, and so are the veil and suit, sealing wax for seals and slow-fermenting mead. The honeycomb sprite is redrawn and the whole craft has its own Guide to Beekeeping. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5805
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5812
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5816
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5819
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5821
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5822
+        }
+      ]
     },
     {
       "id": "castle-defences",
@@ -897,9 +1188,23 @@
       "summary": "Make castles worth building and hard to take. Cut arrow slits and gun loops through walls to shoot out from cover, build battlements that shield one side, and heat water, oil, pitch, sand or molten lead to pour through murder holes, machicolations and timber hoardings onto attackers below, or drop stones on them. A tar kiln makes pitch. Gateways get drop trapdoors over staked pits worked from a lever, portcullises that crush whoever they land on, caltrops that lame horses, and ladder forks to push siege ladders off the wall.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Arrow slits, gun loops and battlements (Civ13 #5775), pouring and dropping with the murder hole, machicolations, hoardings and the tar kiln (Civ13 #5787), and the gateway traps (Civ13 #5802) are merged, with a Defending a Castle wiki guide. Not yet checked in a live game.",
+      "availability_note": "Arrow slits, gun loops and battlements, pouring and dropping with the murder hole, machicolations, hoardings and the tar kiln, and the gateway traps are merged, with a Defending a Castle wiki guide. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5775
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5787
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5802
+        }
+      ]
     },
     {
       "id": "multi-storey-buildings",
@@ -907,9 +1212,91 @@
       "summary": "Build upward and downward on every persistent land. Each roof adds a floor above, four underground levels lie under every map, and you can see down through open air. Taller buildings need stronger supports and foundations: wood carries two storeys, stone four, and concrete walls and pillars six, so a concrete tower on a proper foundation rises six storeys with a roof terrace on top. Every floor earns its place: cellars stay cool and keep food, mice and floods never reach the rooms upstairs, lofts dry food faster, a chimney carries the hearth's warmth up to the bedrooms, lifts and ramps carry people and goods between floors, railings keep people from walking off balconies, a quiet upstairs bedroom adds comfort, and from the roof you can shoot down and send smoke signals further.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Upper storeys with foundations and support rules, seeing down through open air and floors over upper-floor gaps are merged; six-storey concrete towers: Civ13 #5870. Every land allows ten levels above the ground (Civ13 #5876); supports for storeys seven to ten are not built yet. Four underground levels under every map, each deeper one slower to dig and richer in ores: Civ13 #6482, #6547 (wiki #902, #920). Stairs down from upper floors: Civ13 #5865. Cellars, lofts, shooting down, upstairs bedrooms, rooftop signals and chimneys: Civ13 #5871, #5872, #5874, #5875 and #5877 (wiki #723). Lifts: Civ13 #5880. Ramps and stair loads: Civ13 #6142, #6357 (wiki #863). Railings and gates: Civ13 #6367, #6386 (wiki #870). Not yet checked in a live game.",
+      "availability_note": "Upper storeys with foundations and support rules, seeing down through open air, floors over upper-floor gaps, and six-storey concrete towers are merged. Every land allows ten levels above ground; supports for storeys seven to ten are not built yet. Four underground levels under every map get slower to dig and richer in ores. Stairs down from upper floors, cellars, lofts, shooting down, upstairs bedrooms, rooftop signals, chimneys, lifts, ramps, stair loads, railings and gates are also merged. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5870
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5876
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6482
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6547
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 902
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 920
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5865
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5871
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5872
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5874
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5875
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5877
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 723
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5880
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6142
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6357
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 863
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6367
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6386
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 870
+        }
+      ]
     },
     {
       "id": "knowledge-spread",
@@ -917,9 +1304,35 @@
       "summary": "Old knowledge no longer stays locked up with whoever found it first. Every subject is guarded, spreading or common knowledge, by how many ages it is behind the world's age. The newest two ages stay guarded and are learned as before. Subjects two or three ages behind are spreading: their chapters take half as long to read or hear, a teacher can show you the whole subject by hand, and researching them again goes three times as fast. Subjects four or more ages behind are common knowledge that every character knows, so someone arriving in an advanced world no longer starts with nothing. Using a subject's things and living around them also teaches a little of it, slowly and never the whole subject on its own.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "The three states and their labels in the tech tree are merged (Civ13 #5976), and so are common knowledge for new and living characters (Civ13 #5978), quicker reading and whole-subject teaching of spreading subjects (Civ13 #5983) and faster research of them at a bench (Civ13 #5986), and learning a little from using and living around things (Civ13 #6369, wiki #865). The Books and Scholars guide explains it. Not yet checked in a live game.",
+      "availability_note": "The three states and their labels in the tech tree are merged, and so are common knowledge for new and living characters, quicker reading and whole-subject teaching of spreading subjects and faster research of them at a bench, and learning a little from using and living around things. The Books and Scholars guide explains it. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5976
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5978
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5983
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 5986
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6369
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 865
+        }
+      ]
     },
     {
       "id": "late-age-materials",
@@ -927,9 +1340,27 @@
       "summary": "Reaching the later ages takes the materials of the wider world, not only time at a bench. Every age discovery from steam power on, and the biggest late subjects such as rocketry, missiles and orbital flight, needs a bill of materials delivered to the research bench with its book: coal and iron for steam, rubber and zinc for electricity, steel, rubber, lead, sulphur and saltpeter for the World Wars, uranium for nuclear power, and aluminium, gold, silver and gems for computing and spaceflight. Many of these come mostly from particular lands, so trading or holding land abroad is the practical way to the top, although any faction can still do every part itself.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Bills for every age discovery from Steam Power on and for six big late subjects are merged (Civ13 #6797, #6813; wiki #976, #982), and the World War II discoveries no longer accept a single part. The Books and Scholars guide explains it. Not yet checked in a live game.",
+      "availability_note": "Bills for every age discovery from Steam Power on and for six big late subjects are merged, and the World War II discoveries no longer accept a single part. The Books and Scholars guide explains it. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6797
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6813
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 976
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 982
+        }
+      ]
     },
     {
       "id": "languages-that-grow-apart",
@@ -937,9 +1368,39 @@
       "summary": "Languages can change over a long time, the way Latin became French and Spanish, but only for nations cut off from everyone else. When a nation's native speakers hear nobody but each other, their speech slowly drifts away; any regular contact with other nations pulls it back. A nation that stays drifted and isolated for a week of real time becomes ready to split, and its leader names the new language. Its speakers keep the old one, speakers of the old language follow most of the new one, and it writes in the same script. A language that stays isolated again grows further from its parent, and travellers carry new languages to other lands.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Drift tracking for each nation's speech community is merged (Civ13 #6456), and so are splits after long isolation (Civ13 #6598, wiki #932), Name Our Language, saving and travel (Civ13 #6475, wiki #898), and a Language families view in Check Known Languages (Civ13 #6501, wiki #901). Not yet checked in a live game.",
+      "availability_note": "Drift tracking for each nation's speech community is merged, and so are splits after long isolation, Name Our Language, saving and travel, and a Language families view in Check Known Languages. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6456
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6598
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 932
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6475
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 898
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6501
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 901
+        }
+      ]
     },
     {
       "id": "peoples-that-grow",
@@ -947,9 +1408,39 @@
       "summary": "Peoples are living groups of this world rather than fixed real-world labels. Looks come from where you were born, never from your people, and nobody can see your people on sight. Gaia has peoples of its own. New characters are born into the people of the community they start in. A nation that stays out of touch with every other faction for a long time becomes a people of its own, peoples living together in one nation grow a people of both, and someone who lives among another people can be welcomed by its leader. Nations' leaders name new peoples, and no game rule ever depends on a character's people.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Looks apart from peoples (Civ13 #6601), peoples as world records and Gaia's own peoples (#6623), birth into a community (#6632), splits after long isolation (#6645), blends and belonging (#6654) and the Your people view in Check Known Languages (#6661) are merged, and the Peoples and Languages guide explains them (wiki #951). Not yet checked in a live game.",
+      "availability_note": "Looks apart from peoples, peoples as world records and Gaia's own peoples, birth into a community, splits after long isolation, blends and belonging and the Your people view in Check Known Languages are merged, and the Peoples and Languages guide explains them. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6601
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6623
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6632
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6645
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6654
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6661
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 951
+        }
+      ]
     },
     {
       "id": "continent-control",
@@ -957,9 +1448,75 @@
       "status": "in_progress",
       "summary": "Factions compete to hold the continents, which are divided into provinces along coasts, rivers and mountains. Members who live and play there give their side stake, and the side that leads a province for three days holds it. Recruitment stations work only in provinces your side holds, and a bed start after death costs more. A claimed island stays yours unless you leave it empty. A held province's seat ranks from Camp to City, pays weekly upkeep and can be besieged in its daily defence window. Each continent is rich in its own ores, with rich provinces whose seams never run out. Rubber grows only in the jungles of Africa and Asia, land oil flows only on Africa's desert ground, the Americas can frack at a cost to their land, and crops grow faster on Gaia.",
       "availability": "unverified",
-      "availability_note": "Provinces (Civ13 #6076), stake and the Province Holdings view (#6079), holding provinces and station rules (#6080), the bed start cost (#6082) claimed islands (#6084), continent resources (#6089, Earth Asia #6104), settlement ranks (#6095), upkeep and ruins (#6098), sieges (#6102), rich provinces (#6106, more lands #6109), land oil (#6112), Gaia crops (#6115), Americas fracking (#6121) and rubber trees (#6125) are merged, and the Civilizations and Nomads, Resource Extraction and Farming guides explain them. Station rules start three weeks after a world first counts stake. Not yet checked in a live game.",
+      "availability_note": "Provinces, stake and the Province Holdings view, station rules, the bed start cost, claimed islands, continent resources (including Earth Asia), settlement ranks, upkeep and ruins, sieges, rich provinces across lands, land oil, Gaia crops, Americas fracking and rubber trees are merged. The Civilizations and Nomads, Resource Extraction and Farming guides explain them. Station rules start three weeks after a world first counts stake. Not yet checked in a live game.",
       "completion": null,
-      "evidence": []
+      "evidence": [],
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6076
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6079
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6080
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6082
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6084
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6089
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6104
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6095
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6098
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6102
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6106
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6109
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6112
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6115
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6121
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6125
+        }
+      ]
     },
     {
       "id": "armor-roles",
@@ -967,9 +1524,47 @@
       "summary": "Armor protects by how it is built and what it is made of, never by which culture it looks like. Hits are cuts, thrusts or blows: padding stops blows and arrows, leather turns cuts, lamellar stops arrows, mail stops cuts, and plate stops most things but is heavy. Maces bruise through armor and wear it down, spears find the gaps in mail and lamellar, a padded jack goes under other armor, and no armor recipe ever goes out of date. From the Imperial age a steel proof cuirass turns musket balls, and in the First World War a resin body shield, the Dayfield and a heavy rifle-proof Dayfield are made from resin laminate and steel.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Hit kinds, armor kinds and materials, weapon roles, the padded jack, the examine lines and armor against guns are merged (Civ13 #6355, #6368, #6382, #6399, #6420, #6548, #6565, #6585 and #6616). Not yet checked in a live game.",
+      "availability_note": "Hit kinds, armor kinds and materials, weapon roles, the padded jack, the examine lines and armor against guns are merged. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6355
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6368
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6382
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6399
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6420
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6548
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6565
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6585
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6616
+        }
+      ]
     },
     {
       "id": "resin-materials",
@@ -977,9 +1572,55 @@
       "summary": "Players tap pines for resin and trees for lacquer, raise silkworms for silk, and coat cloth into tarred canvas, oilcloth, waxed cloth and rubberised cloth that shed rain. Spirit varnish brushes a finish that slows wear. Later the bakelizer cooks phenolic resin for pressed resin laminate and spins nylon thread for nylon cloth, epoxy binds glass cloth into fiberglass and aramid laminate, and a resin 3D printer prints parts from photopolymer resin. Resin laminate and steel make the First World War body armor.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Merged in Civ13 #6481, #6502, #6525, #6544, #6561, #6578, #6599, #6611, #6622 and #6633, with the wiki guide Resins, Silk & Fabrics (civ13-wiki #942). Not yet checked in a live game.",
+      "availability_note": "The resin materials work is merged, with the wiki guide Resins, Silk & Fabrics. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6481
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6502
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6525
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6544
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6561
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6578
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6599
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6611
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6622
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6633
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 942
+        }
+      ]
     },
     {
       "id": "nation-governments",
@@ -987,9 +1628,31 @@
       "summary": "Nations choose how they are ruled: a confederation of equal factions, a theocracy, monarchy or dictatorship ruled by one person, or a republic, democracy or merchant league that votes and elects its head for a term. Each has trade-offs in how many factions it holds, who admits members and how long leaving takes. Heads who stay away lose their seat to an heir, a deputy or an election, and citizens can overthrow any government by petition and by holding a nation assembly. Next: tying nation laws and courts to the government, then offices of state and treaties between nations.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Government types, citizen votes and elections, succession, revolts and staff tools are merged (Civ13 #6396, #6413, #6423, #6433 and #6444), and the Civilizations and Nomads guide explains them. Not yet checked in a live game.",
+      "availability_note": "Government types, citizen votes and elections, succession, revolts and staff tools are merged, and the Civilizations and Nomads guide explains them. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6396
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6413
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6423
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6433
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6444
+        }
+      ]
     },
     {
       "id": "accolades-and-extra-characters",
@@ -997,9 +1660,39 @@
       "summary": "Lifetime achievements that belong to your account rather than one character. Each of 26 accolades, from finishing the tutorial to surviving a long winter, founding a faction or judging at court, is claimed once ever and gives lifetime points. Spend them to unlock up to three more characters, so you can play someone new without giving up the one you have. Switching happens from your character's own bed, and extra characters need a Discord-verified account. An account's characters are publicly known as kin, share one leadership seat, and share province limits, and staff break up any group split into factions to get around claim limits.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Accolades and the Accolades window (Civ13 #6467, #6477), characters saved per slot (#6516), the Characters window and switching (#6530), kin, one leadership seat, shared province caps, court marks on kin, the Magistrate accolade and staff bloc tools (#6543), and the staff account lookup (#6553) are merged, with a Guide to Accolades and Characters (wiki #917). Not yet checked in a live game.",
+      "availability_note": "Accolades and the Accolades window, characters saved per slot, the Characters window and switching, kin, one leadership seat, shared province caps, court marks on kin, the Magistrate accolade and staff bloc tools, and the staff account lookup are merged, with a Guide to Accolades and Characters. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6467
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6477
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6516
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6530
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6543
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6553
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 917
+        }
+      ]
     },
     {
       "id": "drug-crops-and-trade",
@@ -1007,9 +1700,35 @@
       "summary": "Tobacco, opium poppies, coca, cannabis and the new khat shrub grow wild and on farms only in their real climates, so the people who grow them are rarely the people who want them. Lance poppies for opium, chew coca with wood ash, brew poppy and coca tea, rub hashish and chew fresh khat before it wilts. Doctors mix laudanum and refine morphine and cocaine, and heroin comes with modern medicine. Purity depends on the maker's skill, and paper twists hide how strong they are until tasted. Every drug has a real use and a real danger: habits by drug class, tolerance and relapse, deadly overdoses and mixes, and lasting organ damage. Factions allow, license or ban each kind of drug on their land, and trade is between players only.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Wild crops and real climates (Civ13 #6489), drug classes with tolerance, mixing and lasting harm (Civ13 #6539), traditional preparations and khat (Civ13 #6568), apothecary refining and paper twists (Civ13 #6588) and faction substance rules (Civ13 #6617) are merged, with a Guide to Drugs and Stimulants on the wiki (civ13-wiki #937). Not yet checked in a live game.",
+      "availability_note": "Wild crops and real climates, drug classes with tolerance, mixing and lasting harm, traditional preparations and khat, apothecary refining and paper twists and faction substance rules are merged, with a Guide to Drugs and Stimulants on the wiki. Not yet checked in a live game.",
       "evidence": [],
-      "completion": null
+      "completion": null,
+      "references": [
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6489
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6539
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6568
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6588
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 6617
+        },
+        {
+          "repository": "Civ13/civ13-wiki",
+          "number": 937
+        }
+      ]
     }
   ]
 }

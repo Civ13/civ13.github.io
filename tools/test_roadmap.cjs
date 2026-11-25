@@ -66,3 +66,25 @@ test('the evidence budget stays bounded', () => {
   data.milestones[0].evidence.push({...extra, number: 100045});
   assert.throws(() => validate(data), /Too many requests/);
 });
+
+test('every existing card has linked progress; static links neither fetch nor advance state', async () => {
+  const data = copy();
+  const staticOnly = data.milestones.find(m => m.id === 'cross-server-travel');
+  assert.equal(staticOnly.status, 'planned');
+  assert.ok(staticOnly.references.length && !staticOnly.evidence.length);
+  assert.ok(data.milestones.every(m => m.evidence.length || m.references?.length));
+  const expected = new Set(data.milestones.flatMap(m => m.evidence.map(e => `${e.repository}#${e.number}`)));
+  const requested = new Set();
+  const result = await refresh(data, async e => { requested.add(`${e.repository}#${e.number}`); return pr(e); });
+  assert.deepEqual(requested, expected);
+  assert.deepEqual(result.milestones.find(m => m.id === staticOnly.id), staticOnly);
+});
+test('invalid static references and duplicate links fail closed', () => {
+  const data = copy(), m = data.milestones[0];
+  m.references = [{repository: 'other/repo', number: 1}];
+  assert.throws(() => validate(data), /Invalid reference/);
+  m.references = [m.evidence[0]];
+  assert.throws(() => validate(data), /Duplicate reference/);
+  m.references = [{repository: 'Civ13/civ13-wiki', number: 10, label: ''}];
+  assert.throws(() => validate(data), /Invalid reference/);
+});
