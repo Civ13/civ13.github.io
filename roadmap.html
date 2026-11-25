@@ -22,13 +22,20 @@ image:
     <h2>{{ milestone.title | escape }}</h2>
     <p>{{ milestone.summary | escape }}</p>
     <p class="roadmap-availability">{{ milestone.availability_note | escape }}</p>
-    {% if milestone.evidence.size > 0 %}
-    <details><summary>Development progress</summary><ul class="roadmap-evidence">
+    <details><summary>Development progress</summary>
+      {% if milestone.evidence.size > 0 or milestone.references.size > 0 %}
+      <ul class="roadmap-evidence">
       {% for evidence in milestone.evidence %}
       <li><a href="https://github.com/{{ evidence.repository | escape }}/pull/{{ evidence.number }}">{{ evidence.label | escape }}</a> <span data-evidence="{{ evidence.repository | escape }}#{{ evidence.number }}">{% if evidence.state == 'merged' %}Merged{% elsif evidence.state == 'draft' %}Early draft{% elsif evidence.state == 'open' %}Under development{% else %}Closed without merging{% endif %}</span>{% if evidence.role == 'prerequisite' %} <small>Groundwork for this goal</small>{% endif %}</li>
       {% endfor %}
-    </ul></details>
-    {% endif %}
+      {% for reference in milestone.references %}
+      <li><a href="https://github.com/{{ reference.repository | escape }}/pull/{{ reference.number }}">{% if reference.label %}{{ reference.label | escape }} (PR #{{ reference.number }}){% elsif reference.repository == 'Civ13/civ13-wiki' %}Civ13 Wiki PR #{{ reference.number }}{% else %}Civ13 PR #{{ reference.number }}{% endif %}</a></li>
+      {% endfor %}
+      </ul>
+      {% else %}
+      <p>No pull requests linked yet.</p>
+      {% endif %}
+    </details>
   </article>
 {% endfor %}
 </div>

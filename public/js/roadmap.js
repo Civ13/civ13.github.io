@@ -17,6 +17,17 @@
         if (!/^Civ13\/[A-Za-z0-9_.-]+$/.test(e.repository) || !Number.isSafeInteger(e.number) || e.number < 1 || !['prerequisite', 'implementation'].includes(e.role) || !STATES.includes(e.state) || typeof e.label !== 'string' || !e.label.trim()) throw new Error('Invalid evidence');
         count++;
       }
+      // Historical links are rendered by Jekyll but never requested or used to advance a milestone.
+      if (m.references !== undefined) {
+        if (!Array.isArray(m.references) || m.references.length > 30) throw new Error('Invalid references');
+        const seen = new Set(m.evidence.map(e => `${e.repository}#${e.number}`));
+        for (const ref of m.references) {
+          if (!ref || !['Civ13/Civ13', 'Civ13/civ13-wiki'].includes(ref.repository) || !Number.isSafeInteger(ref.number) || ref.number < 1 || (ref.label !== undefined && (typeof ref.label !== 'string' || !ref.label.trim() || ref.label.length > 160))) throw new Error('Invalid reference');
+          const key = `${ref.repository}#${ref.number}`;
+          if (seen.has(key)) throw new Error('Duplicate reference');
+          seen.add(key);
+        }
+      }
       if (m.completion !== null) {
         const c = m.completion;
         if (!c || c.acceptance_verified !== true || typeof c.basis !== 'string' || !c.basis.trim() || !Array.isArray(c.required_prs) || !c.required_prs.length || c.required_prs.some(key => !m.evidence.some(e => e.role === 'implementation' && key === `${e.repository}#${e.number}`))) throw new Error('Invalid completion contract');
