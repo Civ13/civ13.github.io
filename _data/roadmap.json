@@ -558,7 +558,7 @@
       "summary": "Biomes, elevation and shelter shape local conditions independently. Mountains are colder, snow builds up without replacing soil, and the sun follows latitude and season, stretching shadows at dawn and dusk. Regions share a calendar but have local time zones and opposite seasons across hemispheres. Weather crosses region boundaries. Climate and air simulation drive pressure, fronts, wind, rain, sleet, snow, freezing rain, hail, fog, dew, frost, wind chill and humid heat. Instruments from bronze rain gauges to modern weather stations help forecast conditions.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Elevation metadata, colder high ground on generated maps, weather-driven snow, and moving sun and shadows are merged. Hand-made maps opting in and real-client checks remain. The shared calendar, time zones and southern seasons, cross-region weather, climate normals, air grid, fronts, wind, precipitation, fog, dew, frost, crop frost covers, feels-like temperature, and instruments by era are also merged. See the Weather and Climate wiki guide. Not yet checked in a live game.",
+      "availability_note": "Elevation metadata, colder high ground on generated maps, weather-driven snow, and moving sun and shadows are merged. Hand-made maps opting in and real-client checks remain. The shared calendar, time zones and southern seasons, cross-region weather, climate normals, air grid, fronts, wind, precipitation, fog, dew, frost, crop frost covers, feels-like temperature, and instruments by era are also merged. Severe storms can now bring directional gusts and rare land tornadoes with local warnings. See the Weather and Climate wiki guide. Not yet checked in a live game.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -626,6 +626,10 @@
         {
           "repository": "Civ13/civ13-wiki",
           "number": 950
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 7511
         }
       ]
     },
@@ -1024,7 +1028,7 @@
       "summary": "Give players reasons to decorate and keep up their homes and towns. A comfortable, varied, well-kept room lifts mood and lets you wake well rested; walls and floors take limewash, paint and stain; furniture fabric and curtains take dyes. Later steps add woven rugs and tapestries, player-designed pottery and statues, named towns with prosperity tiers that new players can choose to start near, and more crafts such as mosaics and stained glass.",
       "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Home comfort, Judge This Room, limewash, paint, stain and dyed furniture fabric are merged, and so are fine placement with Nudge Object, player-designed pottery, and woven rugs and tapestries. More floors to lay are merged as well: redrawn cobblestone, stone, marble and wood floors, terracotta tiles and brick paving, iron plate and grating, flagstone, copper, bronze, lead, glass block, rush matting, obsidian and steel tread plate floors, and pelt rugs. Statues, towns and the later crafts are not built yet.",
+      "availability_note": "Home comfort, Judge This Room, limewash, paint, stain and dyed furniture fabric are merged, and so are fine placement with Nudge Object, player-designed pottery, and woven rugs and tapestries. More floors to lay are merged as well: redrawn cobblestone, stone, marble and wood floors, terracotta tiles and brick paving, iron plate and grating, flagstone, copper, bronze, lead, glass block, rush matting, obsidian and steel tread plate floors, and pelt rugs. Player-designed chairs, beds and stools with replaceable upholstery are merged, and sleeping in a furnished room banks rested research points. Statues, towns and the later crafts are not built yet.",
       "evidence": [],
       "completion": null,
       "references": [
@@ -1067,6 +1071,14 @@
         {
           "repository": "Civ13/Civ13",
           "number": 6523
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 7571
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 7595
         }
       ]
     },
