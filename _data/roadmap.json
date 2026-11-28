@@ -990,9 +990,9 @@
       "id": "ocean-voyages-and-submarines",
       "title": "Ocean voyages, offshore rigs and submarines",
       "summary": "Sail between ocean maps, build and maintain offshore oil rigs, and build submarines and underwater habitats with pressure, air and power.",
-      "status": "planned",
+      "status": "in_progress",
       "availability": "unverified",
-      "availability_note": "Ocean bridges, boats and a shared air ledger for submarine compartments are groundwork. Routes, depth and the vessels themselves need design.",
+      "availability_note": "Offshore oil is merged: survey a field from an anchored boat, lower a fixed platform on the shelf, pump from a shared, finite field and ship crude by cargo tank or pipeline. Ocean bridges, boats and a shared air ledger for submarine compartments are groundwork for the rest.",
       "evidence": [
         {
           "repository": "Civ13/Civ13",
@@ -1001,6 +1001,14 @@
           "label": "Shared submarine air ledger",
           "state": "merged",
           "merge_sha": "55a36446b7ba2c5da9a4e3bf829c2ca40b5e8f2d"
+        },
+        {
+          "repository": "Civ13/Civ13",
+          "number": 7693,
+          "role": "implementation",
+          "label": "Offshore oil from survey to export",
+          "state": "merged",
+          "merge_sha": "d821f50e4cf690c78144080d6930a7242e34e445"
         }
       ],
       "completion": null
